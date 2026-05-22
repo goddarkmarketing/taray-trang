@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>วิดีโอ TikTok ทะเลตรัง — ทริปจริงจาก @talaytrang | Talay Trang</title>
+  <meta name="description" content="รวมวิดีโอ TikTok ทะเลตรังจากช่อง @talaytrang ดูบรรยากาศจริงก่อนตัดสินใจจอง อัปเดตล่าสุดทุกสัปดาห์" />
+  <meta name="theme-color" content="#0277bd" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.pexels.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/fonts.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="hero-sub">
+    <div class="hero-media"><img id="hero-img" alt="วิดีโอ TikTok ทะเลตรังจาก Talay Trang" /></div>
+    <div class="container hero-inner" data-reveal>
+      <span class="crumb">วิดีโอ TikTok</span>
+      <h1>ดูทริปจริงก่อนตัดสินใจ</h1>
+      <p class="lead">บรรยากาศบนเรือ ปะการังใต้น้ำ ถ้ำมรกต และทุกมุมเด็ดของทะเลตรัง<br/>เราอัปเดตคลิปใหม่ทุกสัปดาห์ที่ <a href="https://www.tiktok.com/@talaytrang" target="_blank" rel="noopener" style="color:#9bdcfb; text-decoration:underline;">@talaytrang</a></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="video-grid" id="videos-list"></div>
+      <div class="text-center mt-4" data-reveal>
+        <a class="btn btn-primary btn-lg" href="https://www.tiktok.com/@talaytrang" target="_blank" rel="noopener">
+          <span data-icon="tt"></span>ติดตามที่ TikTok
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TikTok embed placeholder section -->
+  <section class="section section-soft">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">วิดีโอแนะนำ</span>
+        <h2>ฝัง TikTok ของจริงเพิ่มได้ที่นี่</h2>
+        <p class="lead">เตรียมพื้นที่ไว้สำหรับฝังโค้ด TikTok Embed อย่างเป็นทางการ เมื่อมี URL วิดีโอที่ต้องการแนะนำ ก็เพียงคัดลอกโค้ด Embed มาวาง</p>
+      </div>
+      <div class="grid grid-2" data-reveal>
+        <div style="background:#fff; border:1.5px dashed var(--c-line); border-radius:var(--r-card); padding:32px; text-align:center;">
+          <span class="pill">วิดีโอแนะนำที่ 1</span>
+          <p class="muted" style="margin:1rem 0 .5rem;">วางโค้ด TikTok Embed ของจริงตรงนี้</p>
+          <code style="font-size:.8rem; background:var(--c-bg-soft); padding:.5rem 1rem; border-radius:6px; display:inline-block;">&lt;blockquote class="tiktok-embed" …&gt;…&lt;/blockquote&gt;</code>
+        </div>
+        <div style="background:#fff; border:1.5px dashed var(--c-line); border-radius:var(--r-card); padding:32px; text-align:center;">
+          <span class="pill">วิดีโอแนะนำที่ 2</span>
+          <p class="muted" style="margin:1rem 0 .5rem;">วางโค้ด TikTok Embed ของจริงตรงนี้</p>
+          <code style="font-size:.8rem; background:var(--c-bg-soft); padding:.5rem 1rem; border-radius:6px; display:inline-block;">&lt;blockquote class="tiktok-embed" …&gt;…&lt;/blockquote&gt;</code>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const { VIDEOS, IMAGES, ICONS } = window.TT;
+      document.getElementById('hero-img').src = IMAGES.heroVideos;
+      document.getElementById('videos-list').innerHTML = VIDEOS.map((v, i) => `
+        <a class="video-thumb" href="${v.url}" target="_blank" rel="noopener" style="--rd:${i*.04}s" data-reveal>
+          <img src="${v.thumb}" alt="วิดีโอ TikTok: ${v.title}" loading="lazy"/>
+          <div class="play"><span>${ICONS.play}</span></div>
+          <div class="meta"><strong>${v.title}</strong><span class="views">${ICONS.tt} ${v.views}</span></div>
+        </a>
+      `).join('');
+      window.TT.injectIcons();
+      window.TT.bindReveal();
+    });
+  </script>
+  <script async src="https://www.tiktok.com/embed.js"></script>
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Talay Trang — เช่าเรือเที่ยวทะเลตรัง เลือกเรือได้ตามสไตล์คุณ</title>
+  <meta name="description" content="บริการเช่าเรือเที่ยวทะเลตรัง โดยทีมงานเจ้าถิ่น เลือกได้ทั้งเรือหางยาว Speed Boat และเรือใหญ่ พร้อมโปรแกรม 4 เกาะ ถ้ำมรกต เกาะกระดาน จองง่ายผ่าน LINE @talaytrang" />
+  <meta name="theme-color" content="#0277bd" />
+  <meta property="og:title" content="Talay Trang — เช่าเรือเที่ยวทะเลตรัง" />
+  <meta property="og:description" content="เช่าเรือทะเลตรัง 3 ประเภท หางยาว / Speed Boat / เรือใหญ่ พร้อมโปรแกรมเที่ยวยอดนิยม" />
+  <meta property="og:image" content="https://images.pexels.com/photos/14573822/pexels-photo-14573822.jpeg?auto=compress&w=1200" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230277bd'/%3E%3Ctext x='50%25' y='58%25' font-family='Inter,Arial' font-size='34' font-weight='700' fill='white' text-anchor='middle'%3ET%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.pexels.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/fonts.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div id="site-header" class="transparent"></div>
+
+  <!-- =================== HERO BANNER SLIDER + SERVICES OVERLAY =================== -->
+  <section class="banner-slider has-overlay" id="hero-slider" aria-roledescription="carousel" aria-label="แบนเนอร์ Talay Trang">
+    <div class="banner-track" id="banner-track" aria-live="polite"></div>
+    <button class="banner-arrow prev" type="button" aria-label="ภาพก่อนหน้า">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <button class="banner-arrow next" type="button" aria-label="ภาพถัดไป">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </button>
+    <div class="banner-dots" id="banner-dots" role="tablist" aria-label="เลือกภาพแบนเนอร์"></div>
+
+    <div class="banner-overlay">
+      <div class="container">
+        <div class="overlay-head">
+          <img class="overlay-logo" src="assets/logo/logo-hero.png" alt="Talay Trang — เช่าเรือเที่ยวทะเลตรัง" />
+          <h2>แพ็คเกจทัวร์ตรัง</h2>
+          <p>รวมแพ็คเกจทัวร์เที่ยวเมืองตรัง หลากหลายบริการครบในที่เดียว ตั้งแต่เรือ ที่พัก รถ ตั๋วเรือ ไปจนถึงสัมมนาและสถานที่ถ่ายทำ</p>
+        </div>
+        <div class="service-pills service-pills--overlay" id="home-services"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== BOATS =================== -->
+  <section class="section" id="boats">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">ประเภทเรือ</span>
+        <h2>เลือกเรือให้เหมาะกับทริปของคุณ</h2>
+        <p class="lead">มีให้เลือก 3 ประเภท ตั้งแต่บรรยากาศโลคอลเรือหางยาว ความเร็ว Speed Boat ไปจนถึงเรือใหญ่สำหรับกรุ๊ปบริษัทและครอบครัวขยายใหญ่</p>
+      </div>
+      <div class="grid grid-4" id="home-boats"></div>
+      <div class="btn-row center mt-4" data-reveal>
+        <a class="btn btn-outline" href="boats.html">ดูรายละเอียดเรือทั้งหมด</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== PROGRAMS =================== -->
+  <section class="section section-soft">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">โปรแกรมยอดนิยม</span>
+        <h2>เส้นทางเที่ยวทะเลตรัง ที่ทุกคนอยากลอง</h2>
+        <p class="lead">เก็บไฮไลต์ ถ้ำมรกต เกาะกระดาน เกาะเชือก หรือออกแบบเส้นทางส่วนตัวก็ได้ ราคาเริ่มต้น 3,200 บาทต่อทริป</p>
+      </div>
+      <div class="grid grid-4" id="home-programs"></div>
+      <div class="btn-row center mt-4" data-reveal>
+        <a class="btn btn-primary" href="programs.html">ดูโปรแกรมทั้งหมด</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== HOW TO BOOK =================== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head section-head-wide" data-reveal>
+        <span class="eyebrow">จองง่ายใน 4 ขั้นตอน</span>
+        <h2>จองเรือเที่ยวทะเลตรังใช้เวลาไม่ถึง 2 นาที</h2>
+        <p class="lead">ระบบคำนวณราคาให้อัตโนมัติ จากนั้นกดปุ่มเดียวเปิด LINE @talaytrang ติดต่อแอดมินได้ทันที</p>
+      </div>
+      <div class="steps" id="home-steps"></div>
+      <div class="btn-row center mt-4" data-reveal>
+        <a class="btn btn-line btn-lg" href="booking.html"><span data-icon="line"></span>เริ่มจองตอนนี้</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== REVIEWS =================== -->
+  <section class="section section-soft">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">รีวิวลูกค้า</span>
+        <h2>เสียงจริงจากทริปจริง</h2>
+        <p class="lead">ลูกค้าหลายร้อยทริปบอกต่อ ทั้งครอบครัว คู่รัก เพื่อนกลุ่ม และบริษัท</p>
+      </div>
+      <div class="grid grid-3 mobile-slider" id="home-reviews"></div>
+      <div class="slider-dots" id="home-reviews-dots" role="tablist" aria-label="เลือกรีวิว"></div>
+      <div class="btn-row center mt-4" data-reveal>
+        <a class="btn btn-outline" href="reviews.html">อ่านรีวิวทั้งหมด</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== TIKTOK =================== -->
+  <section class="section section-deep">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow" style="color:#9bdcfb;">TikTok ล่าสุด</span>
+        <h2>ทะเลตรังในมุมที่คุณยังไม่เคยเห็น</h2>
+        <p class="lead">อัปเดตทุกสัปดาห์ที่ <a href="https://www.tiktok.com/@talaytrang" target="_blank" rel="noopener" style="color:#9bdcfb; text-decoration:underline;">@talaytrang</a></p>
+      </div>
+      <div class="video-grid" id="home-videos"></div>
+      <div class="btn-row center mt-4" data-reveal>
+        <a class="btn btn-ghost" href="videos.html">ดูวิดีโอทั้งหมด</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== OFFICE / TRUST =================== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head left" data-reveal>
+        <span class="eyebrow">ออฟฟิศมีตัวตนจริง</span>
+        <h2>มาเจอเราได้จริงที่กันตัง จังหวัดตรัง</h2>
+      </div>
+      <div class="office" data-reveal>
+        <div class="office-map">
+          <iframe src="https://www.google.com/maps?q=Kantang+pier+Trang&output=embed" loading="lazy" title="ที่ตั้งออฟฟิศ Talay Trang อ.กันตัง จ.ตรัง"></iframe>
+        </div>
+        <div class="office-info">
+          <h2>มั่นใจได้ทุกทริป</h2>
+          <p class="lead">เรามีออฟฟิศตั้งอยู่จริงที่อำเภอกันตัง เปิดบริการทุกวัน คุณสามารถนัดเข้ามาดูเรือก่อนตกลงจองได้</p>
+          <ul class="contact-list">
+            <li><span class="ico" data-icon="map"></span><span><strong>ที่ตั้งออฟฟิศ</strong><span>อำเภอกันตัง จังหวัดตรัง 92110</span></span></li>
+            <li><span class="ico" data-icon="clock"></span><span><strong>เวลาทำการ</strong><span>เปิดบริการทุกวัน 07:00 – 21:00 น.</span></span></li>
+            <li><span class="ico" data-icon="phone"></span><span><strong>โทรหาเรา</strong><span><a href="tel:0812345678">081-234-5678</a></span></span></li>
+            <li><span class="ico" data-icon="line"></span><span><strong>LINE Official</strong><span><a href="https://line.me/R/ti/p/%40talaytrang" target="_blank" rel="noopener">@talaytrang</a></span></span></li>
+          </ul>
+          <div class="btn-row">
+            <a class="btn btn-line" href="https://line.me/R/ti/p/%40talaytrang" target="_blank" rel="noopener"><span data-icon="line"></span>แอด LINE</a>
+            <a class="btn btn-outline" href="contact.html">ดูข้อมูลติดต่อ</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== FINAL CTA =================== -->
+  <section class="section section-deep">
+    <div class="container text-center" data-reveal>
+      <span class="eyebrow" style="color:#9bdcfb;">พร้อมออกทะเลแล้วใช่ไหม</span>
+      <h2 style="max-width:680px; margin: 0 auto 1rem;">เลือกเรือ คำนวณราคา และจองผ่าน LINE ได้เลย</h2>
+      <p class="lead" style="max-width:540px; margin: 0 auto 2rem;">ทีมงานแอดมินตอบกลับใน LINE รวดเร็ว ดูแลคุณตั้งแต่ก่อนเที่ยวจนจบทริป</p>
+      <div class="btn-row center">
+        <a class="btn btn-line btn-lg" href="booking.html"><span data-icon="line"></span>เริ่มจองเลย</a>
+        <a class="btn btn-ghost btn-lg" href="programs.html">ดูโปรแกรมก่อน</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const { BOATS, PROGRAMS, REVIEWS, VIDEOS, STEPS, SERVICES, ICONS } = window.TT;
+      const fmt = new Intl.NumberFormat('th-TH');
+
+      // Services — pill buttons (แพ็คเกจทัวร์ตรัง)
+      const renderPill = (s) => {
+        const ext = s.external ? ' target="_blank" rel="noopener"' : '';
+        const icon = ICONS[s.icon] || ICONS.arrow;
+        return `<a class="service-pill" href="${s.href}"${ext}>${icon}<span>${s.title}</span></a>`;
+      };
+      // Duplicate set ที่สองให้ aria-hidden + tabindex=-1 (ซ่อนจาก a11y) สำหรับ marquee loop
+      const dupHidden = (html) => html.replace(/<a class="service-pill"/g, '<a class="service-pill" aria-hidden="true" tabindex="-1"');
+      // แบ่งครึ่ง: 6 รายการแรก = แถวบน (เลื่อนซ้าย), ที่เหลือ = แถวล่าง (เลื่อนขวา)
+      const halfIdx = Math.ceil(SERVICES.length / 2);
+      const rowTopHtml = SERVICES.slice(0, halfIdx).map(renderPill).join('');
+      const rowBotHtml = SERVICES.slice(halfIdx).map(renderPill).join('');
+      document.getElementById('home-services').innerHTML = `
+        <div class="pills-row pills-row--top">
+          <div class="pills-track">${rowTopHtml}${dupHidden(rowTopHtml)}</div>
+        </div>
+        <div class="pills-row pills-row--bot">
+          <div class="pills-track">${rowBotHtml}${dupHidden(rowBotHtml)}</div>
+        </div>
+      `;
+
+      // Boats — Traveloka-style deal cards (4 cards)
+      const starsSvg = (n) => Array.from({length: n}).map(() => ICONS.star).join('');
+      const homeBoats = [
+        ...BOATS.map(b => ({
+          href: `booking.html?boat=${b.id}`,
+          image: b.image,
+          name: b.name,
+          sub: b.tag,
+          rating: 4.9,
+          reviews: '2.1พัน',
+          stars: 5,
+          basePrice: b.basePrice,
+          badgeTL: 'กันตัง · ตรัง',
+          badgeTR: b.id === 'longtail' ? 'ยอดนิยม' : (b.id === 'bigboat' ? 'กรุ๊ปใหญ่' : ''),
+          badgeTRClass: b.id === 'longtail' ? 'is-hot' : 'is-info',
+        })),
+        {
+          href: 'booking.html',
+          image: IMAGES.programPrivate,
+          name: 'เหมาลำพิเศษ Custom Trip',
+          sub: 'ออกแบบเส้นทาง เลือก Option ได้เอง',
+          rating: 5.0,
+          reviews: '850',
+          stars: 5,
+          basePrice: 8000,
+          badgeTL: 'Tailor-made',
+          badgeTR: 'Custom',
+          badgeTRClass: 'is-info',
+        },
+      ];
+      document.getElementById('home-boats').innerHTML = homeBoats.map((b) => `
+        <a class="deal-card" href="${b.href}">
+          <div class="deal-media">
+            <img src="${b.image}" alt="${b.name}" loading="lazy"/>
+            <span class="deal-badge-tl">${b.badgeTL}</span>
+            ${b.badgeTR ? `<span class="deal-badge-tr ${b.badgeTRClass || ''}">${b.badgeTR}</span>` : ''}
+          </div>
+          <div class="deal-body">
+            <h3>${b.name}</h3>
+            <p class="deal-sub">${b.sub}</p>
+            <div class="deal-stars" aria-label="${b.stars} ดาว">${starsSvg(b.stars)}</div>
+            <div class="deal-rate"><strong>${b.rating.toFixed(1)}</strong>/5 <span class="dot"></span> <span>${b.reviews} รีวิว</span></div>
+            <div class="deal-price">
+              <small>เริ่มต้น</small>
+              <strong>THB ${fmt.format(b.basePrice)}</strong>
+            </div>
+          </div>
+        </a>
+      `).join('');
+
+      // Programs — Traveloka-style deal cards (4 cards)
+      const programRatings = {
+        'four-islands': { rating: 4.9, reviews: '3.2พัน', oldPrice: 4200 },
+        'kradan':       { rating: 4.8, reviews: '1.8พัน', oldPrice: 5500 },
+        'diving':       { rating: 4.9, reviews: '1.4พัน', oldPrice: 6500 },
+        'emerald-cave': { rating: 4.9, reviews: '2.5พัน', oldPrice: 3800 },
+        'private-charter': { rating: 5.0, reviews: '760',  oldPrice: 9500 },
+      };
+      const top = PROGRAMS.slice(0, 4);
+      document.getElementById('home-programs').innerHTML = top.map((p) => {
+        const r = programRatings[p.id] || { rating: 4.8, reviews: '500', oldPrice: 0 };
+        const discount = r.oldPrice ? Math.round((1 - p.basePrice / r.oldPrice) * 100) : 0;
+        const tr = p.ribbon ? `<span class="deal-badge-tr ${p.ribbon === 'ยอดนิยม' ? 'is-hot' : 'is-info'}">${p.ribbon}</span>`
+                 : discount > 0 ? `<span class="deal-badge-tr">ประหยัด ${discount}%</span>` : '';
+        return `
+        <a class="deal-card" href="booking.html?program=${p.id}">
+          <div class="deal-media">
+            <img src="${p.image}" alt="ภาพประกอบ ${p.name}" loading="lazy"/>
+            <span class="deal-badge-tl">ทะเลตรัง</span>
+            ${tr}
+          </div>
+          <div class="deal-body">
+            <h3>${p.name}</h3>
+            <p class="deal-sub">${p.route}</p>
+            <div class="deal-stars" aria-label="${5} ดาว">${starsSvg(5)}</div>
+            <div class="deal-rate"><strong>${r.rating.toFixed(1)}</strong>/5 <span class="dot"></span> <span>${r.reviews} รีวิว</span></div>
+            <div class="deal-price">
+              <small>เริ่มต้น · ${p.duration}</small>
+              ${r.oldPrice && r.oldPrice > p.basePrice ? `<s>THB ${fmt.format(r.oldPrice)}</s>` : ''}
+              <strong>THB ${fmt.format(p.basePrice)}</strong>
+            </div>
+          </div>
+        </a>`;
+      }).join('');
+
+      // Steps
+      document.getElementById('home-steps').innerHTML = STEPS.map((s, i) => `
+        <div class="step-card" style="--rd:${i * .07}s" data-reveal>
+          <span class="num">0${s.n}</span>
+          <span class="badge">${ICONS[s.icon] || s.n}</span>
+          <h3>${s.title}</h3>
+          <p>${s.desc}</p>
+        </div>
+      `).join('');
+
+      // Reviews — 6 cards
+      const starsHtml = (n) => Array.from({length: n}).map(() => ICONS.star).join('');
+      const r6 = REVIEWS.slice(0, 6);
+      document.getElementById('home-reviews').innerHTML = r6.map((r, i) => `
+        <article class="review" style="--rd:${i * .06}s" data-reveal>
+          <div class="stars" aria-label="${r.rating} ดาว">${starsHtml(r.rating)}</div>
+          <p class="review-text">“${r.text}”</p>
+          <div class="review-foot">
+            <span class="avatar">${r.initial}</span>
+            <div><strong>${r.name}</strong><span>${r.trip}</span></div>
+          </div>
+        </article>
+      `).join('');
+      // มือถือ: เปลี่ยน reviews เป็น slider ทีละ 1 ใบ + dots
+      if (window.TT && window.TT.initMobileSlider) {
+        window.TT.initMobileSlider('#home-reviews', '#home-reviews-dots');
+      }
+
+      // Videos — 8
+      document.getElementById('home-videos').innerHTML = VIDEOS.slice(0, 8).map((v, i) => `
+        <a class="video-thumb" href="${v.url}" target="_blank" rel="noopener" style="--rd:${i * .05}s" data-reveal>
+          <img src="${v.thumb}" alt="วิดีโอ TikTok: ${v.title}" loading="lazy"/>
+          <div class="play"><span>${ICONS.play}</span></div>
+          <div class="meta"><strong>${v.title}</strong><span class="views">${ICONS.tt} ${v.views}</span></div>
+        </a>
+      `).join('');
+
+      window.TT.injectIcons();
+      window.TT.bindReveal();
+    });
+  </script>
+</body>
+</html>

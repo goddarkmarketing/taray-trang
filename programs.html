@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>โปรแกรมเที่ยวทะเลตรัง — 4 เกาะ ถ้ำมรกต เกาะกระดาน | Talay Trang</title>
+  <meta name="description" content="โปรแกรมเช่าเรือเที่ยวทะเลตรังยอดนิยม 4 เกาะ ถ้ำมรกต เกาะกระดาน ดำน้ำดูปะการัง และเหมาลำส่วนตัว ราคาเริ่มต้น 3,200 บาท" />
+  <meta name="theme-color" content="#0277bd" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.pexels.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/fonts.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="hero-sub">
+    <div class="hero-media"><img id="hero-img" alt="โปรแกรมเที่ยวทะเลตรัง หมู่เกาะหลายจุดสวยงาม" /></div>
+    <div class="container hero-inner" data-reveal>
+      <span class="crumb">โปรแกรมเที่ยว</span>
+      <h1>โปรแกรมเที่ยวทะเลตรัง</h1>
+      <p class="lead">เก็บไฮไลต์ 4 เกาะ ลอดถ้ำมรกต พักผ่อนเกาะกระดาน ดำน้ำดูปะการัง หรือเหมาลำส่วนตัวออกแบบเส้นทางเอง — เลือกสไตล์ที่ใช่สำหรับทริปคุณ</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-auto" id="programs-list"></div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">เพิ่มเติม</span>
+        <h2>อยากเที่ยวแบบที่ไม่มีในรายการ?</h2>
+        <p class="lead">ปรับเส้นทาง เปลี่ยนจุดแวะ เพิ่ม Option อาหาร ไกด์ ช่างภาพ ได้ทั้งหมด แค่บอกแอดมินเรามาทาง LINE</p>
+      </div>
+      <div class="btn-row center" data-reveal>
+        <a class="btn btn-line btn-lg" href="https://line.me/R/ti/p/%40talaytrang" target="_blank" rel="noopener"><span data-icon="line"></span>คุยกับแอดมิน</a>
+        <a class="btn btn-primary btn-lg" href="booking.html">เริ่มจองเรือ</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const { PROGRAMS, BOATS, IMAGES, ICONS } = window.TT;
+      const fmt = new Intl.NumberFormat('th-TH');
+      const boatName = (id) => (BOATS.find(b => b.id === id) || {}).name || '';
+      document.getElementById('hero-img').src = IMAGES.heroPrograms;
+
+      document.getElementById('programs-list').innerHTML = PROGRAMS.map((p, i) => `
+        <article class="program" style="--rd:${i * .06}s" data-reveal>
+          <div class="program-media">
+            <img src="${p.image}" alt="ภาพประกอบ ${p.name}" loading="lazy"/>
+            ${p.ribbon ? `<span class="ribbon">${p.ribbon}</span>` : ''}
+          </div>
+          <div class="program-body">
+            <h3>${p.name}</h3>
+            <p class="program-route">${p.route}</p>
+            <p class="program-desc">${p.desc}</p>
+            <div class="program-meta">
+              <span>${ICONS.clock} ${p.duration}</span>
+              <span>${ICONS.route} ${p.stops.length} จุดแวะ</span>
+              <span>${ICONS.users} ${p.boats.map(boatName).join(' / ')}</span>
+            </div>
+            <div class="program-foot">
+              <div class="price"><small>เริ่มต้น</small><strong>฿${fmt.format(p.basePrice)}</strong></div>
+              <a class="btn btn-primary btn-sm" href="booking.html?program=${p.id}">เลือกโปรแกรมนี้</a>
+            </div>
+          </div>
+        </article>
+      `).join('');
+      window.TT.injectIcons();
+      window.TT.bindReveal();
+    });
+  </script>
+</body>
+</html>
