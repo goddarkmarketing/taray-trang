@@ -9,3 +9,11 @@ desktop.ini
 
 # Accidental temp files
 -sS
+
+# CMS — อย่า commit รหัสผ่าน admin
+data/admin-credentials.json
+data/site.json.tmp
+
+# Uploads (เก็บโฟลเดอร์ ไม่เก็บไฟล์รูป)
+assets/uploads/*
+!assets/uploads/.gitkeep

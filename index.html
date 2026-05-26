@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="assets/css/fonts.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body>
+<body data-tt-page="index">
   <div id="site-header" class="transparent"></div>
 
   <!-- =================== HERO BANNER SLIDER + SERVICES OVERLAY =================== -->
@@ -100,7 +100,7 @@
       <div class="grid grid-3 mobile-slider" id="home-reviews"></div>
       <div class="slider-dots" id="home-reviews-dots" role="tablist" aria-label="เลือกรีวิว"></div>
       <div class="btn-row center mt-4" data-reveal>
-        <a class="btn btn-outline" href="reviews.html">อ่านรีวิวทั้งหมด</a>
+        <a class="btn btn-outline" href="articles.html">อ่านบทความและคู่มือเที่ยวตรัง</a>
       </div>
     </div>
   </section>
@@ -153,8 +153,8 @@
   <section class="section section-deep">
     <div class="container text-center" data-reveal>
       <span class="eyebrow" style="color:#9bdcfb;">พร้อมออกทะเลแล้วใช่ไหม</span>
-      <h2 style="max-width:680px; margin: 0 auto 1rem;">เลือกเรือ คำนวณราคา และจองผ่าน LINE ได้เลย</h2>
-      <p class="lead" style="max-width:540px; margin: 0 auto 2rem;">ทีมงานแอดมินตอบกลับใน LINE รวดเร็ว ดูแลคุณตั้งแต่ก่อนเที่ยวจนจบทริป</p>
+      <h2 class="cta-headline-nowrap" style="margin: 0 auto 1rem;">เลือกเรือ คำนวณราคา และจองผ่าน LINE ได้เลย</h2>
+      <p class="lead cta-headline-nowrap" style="margin: 0 auto 2rem;">ทีมงานแอดมินตอบกลับใน LINE รวดเร็ว ดูแลคุณตั้งแต่ก่อนเที่ยวจนจบทริป</p>
       <div class="btn-row center">
         <a class="btn btn-line btn-lg" href="booking.html"><span data-icon="line"></span>เริ่มจองเลย</a>
         <a class="btn btn-ghost btn-lg" href="programs.html">ดูโปรแกรมก่อน</a>
@@ -164,11 +164,12 @@
 
   <div id="site-footer"></div>
 
+  <script src="assets/js/data-fallback.js"></script>
   <script src="assets/js/data.js"></script>
   <script src="assets/js/main.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const { BOATS, PROGRAMS, REVIEWS, VIDEOS, STEPS, SERVICES, ICONS } = window.TT;
+      const { BOATS, PROGRAMS, REVIEWS, VIDEOS, STEPS, SERVICES, ICONS, IMAGES, HOME_DEALS } = window.TT;
       const fmt = new Intl.NumberFormat('th-TH');
 
       // Services — pill buttons (แพ็คเกจทัวร์ตรัง)
@@ -200,28 +201,31 @@
           image: b.image,
           name: b.name,
           sub: b.tag,
-          rating: 4.9,
-          reviews: '2.1พัน',
-          stars: 5,
+          rating: b.rating ?? 4.8,
+          reviews: b.reviewCount || '500',
+          stars: b.stars ?? 5,
           basePrice: b.basePrice,
-          badgeTL: 'กันตัง · ตรัง',
-          badgeTR: b.id === 'longtail' ? 'ยอดนิยม' : (b.id === 'bigboat' ? 'กรุ๊ปใหญ่' : ''),
-          badgeTRClass: b.id === 'longtail' ? 'is-hot' : 'is-info',
+          badgeTL: b.badgeTL || 'กันตัง · ตรัง',
+          badgeTR: b.badgeTR || '',
+          badgeTRClass: b.badgeTRClass || 'is-info',
         })),
-        {
-          href: 'booking.html',
-          image: IMAGES.programPrivate,
-          name: 'เหมาลำพิเศษ Custom Trip',
-          sub: 'ออกแบบเส้นทาง เลือก Option ได้เอง',
-          rating: 5.0,
-          reviews: '850',
-          stars: 5,
-          basePrice: 8000,
-          badgeTL: 'Tailor-made',
-          badgeTR: 'Custom',
-          badgeTRClass: 'is-info',
-        },
       ];
+      const custom = HOME_DEALS?.customTrip;
+      if (custom?.enabled !== false && custom?.name) {
+        homeBoats.push({
+          href: custom.href || 'booking.html',
+          image: custom.image || IMAGES.programPrivate,
+          name: custom.name,
+          sub: custom.sub,
+          rating: custom.rating ?? 5,
+          reviews: custom.reviewCount || '500',
+          stars: custom.stars ?? 5,
+          basePrice: custom.basePrice ?? 8000,
+          badgeTL: custom.badgeTL || '',
+          badgeTR: custom.badgeTR || '',
+          badgeTRClass: custom.badgeTRClass || 'is-info',
+        });
+      }
       document.getElementById('home-boats').innerHTML = homeBoats.map((b) => `
         <a class="deal-card" href="${b.href}">
           <div class="deal-media">
@@ -243,16 +247,14 @@
       `).join('');
 
       // Programs — Traveloka-style deal cards (4 cards)
-      const programRatings = {
-        'four-islands': { rating: 4.9, reviews: '3.2พัน', oldPrice: 4200 },
-        'kradan':       { rating: 4.8, reviews: '1.8พัน', oldPrice: 5500 },
-        'diving':       { rating: 4.9, reviews: '1.4พัน', oldPrice: 6500 },
-        'emerald-cave': { rating: 4.9, reviews: '2.5พัน', oldPrice: 3800 },
-        'private-charter': { rating: 5.0, reviews: '760',  oldPrice: 9500 },
-      };
       const top = PROGRAMS.slice(0, 4);
       document.getElementById('home-programs').innerHTML = top.map((p) => {
-        const r = programRatings[p.id] || { rating: 4.8, reviews: '500', oldPrice: 0 };
+        const r = {
+          rating: p.rating ?? 4.8,
+          reviews: p.reviewCount || '500',
+          oldPrice: p.oldPrice ?? 0,
+          stars: p.stars ?? 5,
+        };
         const discount = r.oldPrice ? Math.round((1 - p.basePrice / r.oldPrice) * 100) : 0;
         const tr = p.ribbon ? `<span class="deal-badge-tr ${p.ribbon === 'ยอดนิยม' ? 'is-hot' : 'is-info'}">${p.ribbon}</span>`
                  : discount > 0 ? `<span class="deal-badge-tr">ประหยัด ${discount}%</span>` : '';
@@ -266,8 +268,8 @@
           <div class="deal-body">
             <h3>${p.name}</h3>
             <p class="deal-sub">${p.route}</p>
-            <div class="deal-stars" aria-label="${5} ดาว">${starsSvg(5)}</div>
-            <div class="deal-rate"><strong>${r.rating.toFixed(1)}</strong>/5 <span class="dot"></span> <span>${r.reviews} รีวิว</span></div>
+            <div class="deal-stars" aria-label="${r.stars} ดาว">${starsSvg(r.stars)}</div>
+            <div class="deal-rate"><strong>${Number(r.rating).toFixed(1)}</strong>/5 <span class="dot"></span> <span>${r.reviews} รีวิว</span></div>
             <div class="deal-price">
               <small>เริ่มต้น · ${p.duration}</small>
               ${r.oldPrice && r.oldPrice > p.basePrice ? `<s>THB ${fmt.format(r.oldPrice)}</s>` : ''}

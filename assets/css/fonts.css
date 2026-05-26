@@ -1,17 +1,22 @@
 /* =========================================================
    Talay Trang — Typography
-   Display: DB Adman X (จาก LK3 — github.com/daclubb/LK3)
-   Body: IBM Plex Sans Thai Looped (Google Fonts)
+   - Primary: SF Pro TH (Local, รองรับไทย+อังกฤษ — Regular weight)
+   - Fallback: system fonts ของแต่ละ OS, IBM Plex Sans Thai Looped
    ========================================================= */
 
-/* DB Adman X — ฟอนต์หัวข้อ / แบรนด์ */
+/* SF Pro TH — โหลด local (Regular เท่านั้น)
+   ครอบคลุม weight 100-900 ทั้งหมด: weight อื่นจะใช้ regular แล้ว browser
+   จะ synthesize bold ให้ (faux-bold) — ถ้าไม่ต้องการ faux-bold ลบ font-weight range
+   แล้ว heading จะ fallback ไปฟอนต์ระบบ */
 @font-face {
-  font-family: 'DB Adman X';
-  src: url('../fonts/lk3/DB-Adman-X-Li.ttf') format('truetype');
-  font-weight: 300;
+  font-family: 'SF Pro TH';
+  src: url('../fonts/SFProTH_regular.woff/SFProTH_regular.woff.ttf') format('truetype');
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
+
+/* DB Adman X — เก็บไว้สำหรับใช้เฉพาะจุดที่ต้องการกลิ่นอายไทยดั้งเดิม (เช่น brand) */
 @font-face {
   font-family: 'DB Adman X';
   src: url('../fonts/lk3/DB-Adman-X.ttf') format('truetype');
@@ -24,19 +29,5 @@
   src: url('../fonts/lk3/DB-Adman-X-Bd.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'DB Adman X';
-  src: url('../fonts/lk3/DB-Adman-X-It.ttf') format('truetype');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'DB Adman X';
-  src: url('../fonts/lk3/DB-Adman-X-Bd-It.ttf') format('truetype');
-  font-weight: 700;
-  font-style: italic;
   font-display: swap;
 }

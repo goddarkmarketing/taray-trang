@@ -1,0 +1,4 @@
+# ป้องกันการเข้าถึง JSON โดยตรง (ใช้ผ่าน api/data.php)
+<IfModule mod_authz_core.c>
+  Require all denied
+</IfModule>

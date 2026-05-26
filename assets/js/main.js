@@ -164,7 +164,7 @@
       { label: 'วิธีจองเรือ',     href: 'booking.html' },
       { label: 'ติดต่อเรา',        href: 'contact.html' },
       { label: 'เกี่ยวกับ Talay Trang', href: 'about.html' },
-      { label: 'รีวิวลูกค้า',       href: 'reviews.html' },
+      { label: 'บทความและคู่มือ',    href: 'articles.html' },
       { label: 'วิดีโอจาก TikTok', href: 'videos.html' },
     ];
     const serviceLinks = [
@@ -505,8 +505,34 @@
   }
   window.TT.initMobileSlider = initMobileSlider;
 
+  /* ---------- SEO meta from CMS ---------- */
+  function setMeta(attr, name, content) {
+    if (!content) return;
+    let el = document.querySelector(`meta[${attr}="${name}"]`);
+    if (!el) {
+      el = document.createElement('meta');
+      el.setAttribute(attr, name);
+      document.head.appendChild(el);
+    }
+    el.setAttribute('content', content);
+  }
+
+  function applySeo(pageKey) {
+    const seo = window.TT?.SEO?.[pageKey];
+    if (!seo) return;
+    if (seo.title) document.title = seo.title;
+    setMeta('name', 'description', seo.description);
+    setMeta('property', 'og:title', seo.ogTitle || seo.title);
+    setMeta('property', 'og:description', seo.ogDescription || seo.description);
+    setMeta('property', 'og:image', seo.ogImage);
+    setMeta('property', 'og:type', 'website');
+  }
+  window.TT.applySeo = applySeo;
+
   /* ---------- Init ---------- */
   document.addEventListener('DOMContentLoaded', () => {
+    const pageKey = document.body.dataset.ttPage;
+    if (pageKey) applySeo(pageKey);
     renderHeader();
     renderFooter();
     renderStickyCta();
