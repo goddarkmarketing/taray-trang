@@ -39,8 +39,8 @@
             <li><span class="ico" data-icon="phone"></span><span><strong>โทรศัพท์</strong><span><a href="tel:0812345678">081-234-5678</a> · เปิดทุกวัน 07:00–21:00</span></span></li>
             <li><span class="ico" data-icon="map"></span><span><strong>ที่ตั้งออฟฟิศ</strong><span>อำเภอกันตัง จังหวัดตรัง 92110</span></span></li>
             <li><span class="ico" data-icon="clock"></span><span><strong>เวลาทำการ</strong><span>เปิดบริการทุกวัน 07:00 – 21:00 น.</span></span></li>
-            <li><span class="ico" data-icon="fb"></span><span><strong>Facebook</strong><span><a href="https://www.facebook.com/share/185Q3dvN1q/?mibextid=wwXIfr" target="_blank" rel="noopener">เพจ Talay Trang</a></span></span></li>
-            <li><span class="ico" data-icon="tt"></span><span><strong>TikTok</strong><span><a href="https://www.tiktok.com/@talaytrang" target="_blank" rel="noopener">@talaytrang</a></span></span></li>
+            <li><span class="ico" data-icon="fb"></span><span><strong>Facebook</strong><span><a id="contact-fb-link" href="#" target="_blank" rel="noopener">เพจ Talay Trang</a></span></span></li>
+            <li><span class="ico" data-icon="tt"></span><span><strong>TikTok</strong><span><a id="contact-tt-link" href="#" target="_blank" rel="noopener">@talaytrang</a></span></span></li>
           </ul>
           <div class="btn-row" style="margin-top:1rem;">
             <a class="btn btn-line btn-lg" href="https://line.me/R/ti/p/%40talaytrang" target="_blank" rel="noopener"><span data-icon="line"></span>แอด LINE</a>
@@ -93,7 +93,12 @@
   <script src="assets/js/main.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      document.getElementById('hero-img').src = window.TT.IMAGES.heroContact;
+      const { SITE, IMAGES } = window.TT;
+      document.getElementById('hero-img').src = IMAGES.heroContact;
+      const fb = document.getElementById('contact-fb-link');
+      const tt = document.getElementById('contact-tt-link');
+      if (fb && SITE.facebookUrl) fb.href = SITE.facebookUrl;
+      if (tt && SITE.tiktokUrl) tt.href = SITE.tiktokUrl;
     });
   </script>
 </body>

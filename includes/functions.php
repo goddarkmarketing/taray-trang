@@ -58,6 +58,50 @@ function tt_api_to_frontend(array $data): array
     return $data;
 }
 
+/** แปลงลิงก์ share Facebook → URL เพจจริง (สำหรับ Page Plugin) */
+function tt_resolve_facebook_page_url(string $url): string
+{
+    $url = trim($url);
+    if ($url === '') {
+        return '';
+    }
+
+    if (!preg_match('#facebook\.com/share/#i', $url)) {
+        if (preg_match('#facebook\.com/(?:profile\.php\?id=\d+|pages/[^/]+/\d+|people/[^/]+/\d+|[A-Za-z0-9.]+)/?#i', $url)) {
+            return preg_replace('#\?.*$#', '', $url);
+        }
+        return '';
+    }
+
+    if (!function_exists('curl_init')) {
+        return '';
+    }
+
+    $ch = curl_init($url);
+    curl_setopt_array($ch, [
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_NOBODY => true,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_TIMEOUT => 12,
+        CURLOPT_USERAGENT => 'Mozilla/5.0 (compatible; TalayTrangCMS/1.0)',
+    ]);
+    curl_exec($ch);
+    $final = (string)curl_getinfo($ch, CURLINFO_EFFECTIVE_URL);
+    curl_close($ch);
+
+    if ($final === '' || !preg_match('#facebook\.com/([^/?&]+)#i', $final, $m)) {
+        return '';
+    }
+
+    $slug = $m[1];
+    $blocked = ['share', 'login', 'watch', 'sharer', 'dialog', 'plugins', 'l.php'];
+    if (in_array(strtolower($slug), $blocked, true)) {
+        return '';
+    }
+
+    return 'https://www.facebook.com/' . $slug;
+}
+
 function tt_json_response(array $payload, int $code = 200): void
 {
     http_response_code($code);

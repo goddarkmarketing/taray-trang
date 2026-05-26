@@ -20,7 +20,7 @@ if (isset($_GET['delete']) && $_GET['delete'] !== '') {
     exit;
 }
 
-tt_admin_header('วิดีโอ TikTok', 'videos');
+tt_admin_header('วิดีโอ Social', 'videos');
 $flash = tt_flash();
 if ($flash): ?><div class="alert alert-success"><?= htmlspecialchars($flash, ENT_QUOTES, 'UTF-8') ?></div><?php endif; ?>
 
@@ -34,10 +34,12 @@ if ($flash): ?><div class="alert alert-success"><?= htmlspecialchars($flash, ENT
   <?php else: ?>
   <table class="table">
     <thead>
-      <tr><th>รูปปก</th><th>ชื่อวิดีโอ</th><th>ยอดวิว</th><th></th></tr>
+      <tr><th>รูปปก</th><th>แพลตฟอร์ม</th><th>ชื่อวิดีโอ</th><th>ยอดวิว</th><th></th></tr>
     </thead>
     <tbody>
-      <?php foreach ($videos as $i => $v): ?>
+      <?php foreach ($videos as $i => $v):
+        $plat = ($v['platform'] ?? '') === 'facebook' ? 'Facebook' : 'TikTok';
+      ?>
         <tr>
           <td>
             <?php if (!empty($v['thumb'])): ?>
@@ -46,6 +48,7 @@ if ($flash): ?><div class="alert alert-success"><?= htmlspecialchars($flash, ENT
               <span class="field-hint">—</span>
             <?php endif; ?>
           </td>
+          <td><?= htmlspecialchars($plat, ENT_QUOTES, 'UTF-8') ?></td>
           <td>
             <strong><?= htmlspecialchars($v['title'] ?? '', ENT_QUOTES, 'UTF-8') ?></strong>
             <?php if (!empty($v['id'])): ?>

@@ -9,6 +9,12 @@ $data = tt_read_data();
 $site = $data['site'] ?? [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $facebookUrl = trim($_POST['facebookUrl'] ?? '');
+    $facebookPageUrl = trim($_POST['facebookPageUrl'] ?? '');
+    if ($facebookPageUrl === '' && $facebookUrl !== '') {
+        $facebookPageUrl = tt_resolve_facebook_page_url($facebookUrl);
+    }
+
     $site = [
         'brand' => trim($_POST['brand'] ?? ''),
         'brandTh' => trim($_POST['brandTh'] ?? ''),
@@ -17,7 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'phoneDisplay' => trim($_POST['phoneDisplay'] ?? ''),
         'lineId' => trim($_POST['lineId'] ?? ''),
         'lineUrl' => trim($_POST['lineUrl'] ?? ''),
-        'facebookUrl' => trim($_POST['facebookUrl'] ?? ''),
+        'facebookUrl' => $facebookUrl,
+        'facebookPageUrl' => $facebookPageUrl,
         'tiktokUrl' => trim($_POST['tiktokUrl'] ?? ''),
         'address' => trim($_POST['address'] ?? ''),
         'addressFull' => trim($_POST['addressFull'] ?? ''),
@@ -45,7 +52,8 @@ if ($flash): ?><div class="alert alert-success"><?= htmlspecialchars($flash, ENT
     <div class="field"><label>เบอร์แสดงผล</label><input name="phoneDisplay" value="<?= htmlspecialchars($site['phoneDisplay'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
     <div class="field"><label>LINE ID</label><input name="lineId" value="<?= htmlspecialchars($site['lineId'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
     <div class="field"><label>LINE URL</label><input name="lineUrl" value="<?= htmlspecialchars($site['lineUrl'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
-    <div class="field"><label>Facebook URL</label><input name="facebookUrl" value="<?= htmlspecialchars($site['facebookUrl'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
+    <div class="field"><label>Facebook URL (ลิงก์ทั่วไป)</label><input name="facebookUrl" value="<?= htmlspecialchars($site['facebookUrl'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
+    <div class="field"><label>URL เพจ Facebook (Feed)</label><input name="facebookPageUrl" value="<?= htmlspecialchars($site['facebookPageUrl'] ?? '', ENT_QUOTES, 'UTF-8') ?>" placeholder="https://www.facebook.com/gototrang"/><p class="field-hint">ใช้ฝัง feed บนหน้าวิดีโอ — ว่างแล้วระบบจะหา URL เพจจากลิงก์ share ให้อัตโนมัติ</p></div>
     <div class="field"><label>TikTok URL</label><input name="tiktokUrl" value="<?= htmlspecialchars($site['tiktokUrl'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
     <div class="field"><label>ที่อยู่สั้น</label><input name="address" value="<?= htmlspecialchars($site['address'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
     <div class="field"><label>ที่อยู่เต็ม</label><input name="addressFull" value="<?= htmlspecialchars($site['addressFull'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>

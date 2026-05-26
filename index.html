@@ -111,11 +111,11 @@
       <div class="section-head" data-reveal>
         <span class="eyebrow" style="color:#9bdcfb;">TikTok ล่าสุด</span>
         <h2>ทะเลตรังในมุมที่คุณยังไม่เคยเห็น</h2>
-        <p class="lead">อัปเดตทุกสัปดาห์ที่ <a href="https://www.tiktok.com/@talaytrang" target="_blank" rel="noopener" style="color:#9bdcfb; text-decoration:underline;">@talaytrang</a></p>
+        <p class="lead">อัปเดตทุกสัปดาห์ที่ <a id="home-tiktok-link" href="#" target="_blank" rel="noopener" style="color:#9bdcfb; text-decoration:underline;">@talaytrang</a></p>
       </div>
       <div class="video-grid" id="home-videos"></div>
       <div class="btn-row center mt-4" data-reveal>
-        <a class="btn btn-ghost" href="videos.html">ดูวิดีโอทั้งหมด</a>
+        <a class="btn btn-ghost" href="videos.html">ดูคลิป TikTok & Facebook</a>
       </div>
     </div>
   </section>
@@ -169,7 +169,7 @@
   <script src="assets/js/main.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const { BOATS, PROGRAMS, REVIEWS, VIDEOS, STEPS, SERVICES, ICONS, IMAGES, HOME_DEALS } = window.TT;
+      const { BOATS, PROGRAMS, REVIEWS, VIDEOS, STEPS, SERVICES, ICONS, IMAGES, HOME_DEALS, SITE } = window.TT;
       const fmt = new Intl.NumberFormat('th-TH');
 
       // Services — pill buttons (แพ็คเกจทัวร์ตรัง)
@@ -308,6 +308,9 @@
       }
 
       // Videos — 8
+      const ttLink = document.getElementById('home-tiktok-link');
+      if (ttLink && SITE.tiktokUrl) ttLink.href = SITE.tiktokUrl;
+
       document.getElementById('home-videos').innerHTML = VIDEOS.slice(0, 8).map((v, i) => `
         <a class="video-thumb" href="${v.url}" target="_blank" rel="noopener" style="--rd:${i * .05}s" data-reveal>
           <img src="${v.thumb}" alt="วิดีโอ TikTok: ${v.title}" loading="lazy"/>

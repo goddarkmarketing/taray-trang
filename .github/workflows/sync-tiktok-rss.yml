@@ -1,0 +1,48 @@
+name: Sync TikTok RSS
+
+on:
+  schedule:
+    # ทุก 4 ชม. (UTC) — ตรงกับ tiktok-rss-flat
+    - cron: '15 */4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-tiktok-rss
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Sync TikTok videos from RSS
+        env:
+          TIKTOK_RSS_URL: ${{ vars.TIKTOK_RSS_URL }}
+        run: node tools/sync-tiktok-rss.js
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/site.json assets/js/data-fallback.js
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "$(cat <<'EOF'
+chore: sync TikTok videos from RSS feed.
+
+Auto-update site.json from tiktok-rss-flat RSS (conoro/tiktok-rss-flat).
+EOF
+)"
+          git push
