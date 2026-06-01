@@ -1,0 +1,4 @@
+# Allow admin PHP on hosts that block unknown paths
+<IfModule mod_authz_core.c>
+  Require all granted
+</IfModule>
