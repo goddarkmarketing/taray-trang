@@ -39,10 +39,5 @@ jobs:
             echo "No changes to commit."
             exit 0
           fi
-          git commit -m "$(cat <<'EOF'
-chore: sync TikTok videos from RSS feed.
-
-Auto-update site.json from tiktok-rss-flat RSS (conoro/tiktok-rss-flat).
-EOF
-)"
+          git commit -m "chore: sync TikTok videos from RSS feed"
           git push
