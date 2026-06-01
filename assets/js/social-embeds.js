@@ -18,6 +18,15 @@
     return video?.platform === 'facebook' ? 'facebook' : 'tiktok';
   }
 
+  function tikTokVideoId(url) {
+    const m = (url || '').match(/\/video\/(\d+)/);
+    return m ? m[1] : '';
+  }
+
+  function isTikTokPhotoPost(video) {
+    return /photomode/i.test(video?.thumb || '');
+  }
+
   function isTikTokVideoUrl(url) {
     if (!url) return false;
     return /tiktok\.com\/@[^/]+\/video\/\d+/i.test(url)
@@ -36,14 +45,28 @@
 
   function canEmbed(video) {
     const url = video?.url || '';
-    return platformOf(video) === 'facebook'
-      ? isFacebookVideoUrl(url)
-      : isTikTokVideoUrl(url);
+    if (platformOf(video) === 'facebook') {
+      return isFacebookVideoUrl(url);
+    }
+    if (isTikTokPhotoPost(video)) return false;
+    return isTikTokVideoUrl(url);
   }
 
   function tikTokEmbedHtml(url) {
-    const cite = url.split('?')[0];
-    return `<blockquote class="tiktok-embed" cite="${esc(cite)}" style="max-width:605px;min-width:325px;margin:0 auto;"><section></section></blockquote>`;
+    const videoId = tikTokVideoId(url);
+    if (!videoId) return '';
+    return `<div class="tiktok-iframe-wrap">
+      <iframe
+        src="https://www.tiktok.com/embed/v2/${esc(videoId)}"
+        width="325"
+        height="738"
+        style="border:0;max-width:100%;"
+        allow="fullscreen; encrypted-media; picture-in-picture"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+        title="TikTok video"></iframe>
+    </div>`;
   }
 
   function facebookVideoHtml(url, width) {
@@ -228,19 +251,13 @@
     }
 
     if (fbFeedHost) mountFacebookPageFeed('facebook-feed', site || TT.SITE || {});
-
-    if (tiktokEmbeds && !document.getElementById('tiktok-embed-js')) {
-      const s = document.createElement('script');
-      s.id = 'tiktok-embed-js';
-      s.async = true;
-      s.src = 'https://www.tiktok.com/embed.js';
-      document.body.appendChild(s);
-    }
   }
 
   Object.assign(TT, {
     platformOf,
     isTikTokVideoUrl,
+    isTikTokPhotoPost,
+    tikTokVideoId,
     isFacebookVideoUrl,
     canEmbedVideo: canEmbed,
     renderVideoItem,

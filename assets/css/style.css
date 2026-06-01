@@ -1790,6 +1790,19 @@ p  { margin: 0 0 1em; }
   max-width: 100%;
   border-radius: 0;
 }
+.tiktok-iframe-wrap {
+  width: 100%;
+  max-width: 325px;
+  margin: 0 auto;
+  line-height: 0;
+  background: #000;
+}
+.tiktok-iframe-wrap iframe {
+  display: block;
+  width: 100%;
+  min-height: 738px;
+  border: 0;
+}
 .fb-page-wrap {
   display: flex;
   justify-content: center;
