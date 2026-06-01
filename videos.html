@@ -21,7 +21,6 @@
     <div class="container hero-inner" data-reveal>
       <span class="crumb">วิดีโอ & โซเชียล</span>
       <h1>ดูทริปจริงก่อนตัดสินใจ</h1>
-      <p class="lead">คลิปจาก TikTok และ Facebook ของเรา — โพสบนโซเชียลแล้วนำลิงก์มาใส่ใน admin เพื่อแสดงบนเว็บ<br/>ไม่ต้องใช้ API ใช้ embed อย่างเป็นทางการ</p>
     </div>
   </section>
 
@@ -30,7 +29,6 @@
       <div class="section-head" data-reveal>
         <span class="eyebrow">TikTok</span>
         <h2>คลิปล่าสุดจาก TikTok</h2>
-        <p class="lead">ติดตาม <a id="tiktok-profile-link" href="#" target="_blank" rel="noopener">@talaytrang</a> — คลิปที่มีลิงก์เฉพาะจะเล่นบนเว็บได้เลย</p>
       </div>
       <div id="tiktok-feed"></div>
       <div class="text-center mt-4" data-reveal>
@@ -46,17 +44,11 @@
       <div class="section-head" data-reveal>
         <span class="eyebrow">Facebook</span>
         <h2>เพจ Talay Trang บน Facebook</h2>
-        <p class="lead">โพสต์และคลิปจากเพจ <strong>@gototrang</strong> — อัปเดตตามที่โพสบน Facebook</p>
       </div>
       <div id="facebook-feed" data-reveal></div>
       <div id="facebook-clips-wrap" class="mt-4" hidden>
         <h3 class="h4" style="margin:2rem 0 1rem;">คลิปที่เลือกไว้</h3>
         <div id="facebook-videos"></div>
-      </div>
-      <div class="text-center mt-4" data-reveal>
-        <a class="btn btn-primary btn-lg" id="facebook-page-btn" href="#" target="_blank" rel="noopener">
-          <span data-icon="fb"></span>ไปที่เพจ Facebook
-        </a>
       </div>
     </div>
   </section>
@@ -73,10 +65,7 @@
       document.getElementById('hero-img').src = IMAGES.heroVideos;
 
       const tiktokUrl = SITE.tiktokUrl || 'https://www.tiktok.com/@talaytrang';
-      const fbUrl = SITE.facebookUrl || '#';
-      document.getElementById('tiktok-profile-link').href = tiktokUrl;
       document.getElementById('tiktok-follow-btn').href = tiktokUrl;
-      document.getElementById('facebook-page-btn').href = fbUrl;
 
       window.TT.mountSocialFeeds({ videos: VIDEOS, site: SITE });
       window.TT.injectIcons();

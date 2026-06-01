@@ -53,7 +53,7 @@ if ($flash): ?><div class="alert alert-success"><?= htmlspecialchars($flash, ENT
     <div class="field"><label>LINE ID</label><input name="lineId" value="<?= htmlspecialchars($site['lineId'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
     <div class="field"><label>LINE URL</label><input name="lineUrl" value="<?= htmlspecialchars($site['lineUrl'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
     <div class="field"><label>Facebook URL (ลิงก์ทั่วไป)</label><input name="facebookUrl" value="<?= htmlspecialchars($site['facebookUrl'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
-    <div class="field"><label>URL เพจ Facebook (Feed)</label><input name="facebookPageUrl" value="<?= htmlspecialchars($site['facebookPageUrl'] ?? '', ENT_QUOTES, 'UTF-8') ?>" placeholder="https://www.facebook.com/gototrang"/><p class="field-hint">ใช้ฝัง feed บนหน้าวิดีโอ — ว่างแล้วระบบจะหา URL เพจจากลิงก์ share ให้อัตโนมัติ</p></div>
+    <div class="field"><label>URL เพจ Facebook (Feed)</label><input name="facebookPageUrl" value="<?= htmlspecialchars($site['facebookPageUrl'] ?? '', ENT_QUOTES, 'UTF-8') ?>" placeholder="https://www.facebook.com/talaytrang"/><p class="field-hint">ใช้ฝัง feed บนหน้าวิดีโอ — ว่างแล้วระบบจะหา URL เพจจากลิงก์ share ให้อัตโนมัติ</p></div>
     <div class="field"><label>TikTok URL</label><input name="tiktokUrl" value="<?= htmlspecialchars($site['tiktokUrl'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
     <div class="field"><label>ที่อยู่สั้น</label><input name="address" value="<?= htmlspecialchars($site['address'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
     <div class="field"><label>ที่อยู่เต็ม</label><input name="addressFull" value="<?= htmlspecialchars($site['addressFull'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
