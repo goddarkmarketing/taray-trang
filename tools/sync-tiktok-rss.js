@@ -59,7 +59,13 @@ function normalizeTikTokUrl(url) {
 
 function videoIdFromUrl(url) {
   const m = url.match(/\/video\/(\d+)/);
-  return m ? parseInt(m[1], 10) : 0;
+  return m ? m[1] : '';
+}
+
+function pubDateFromBlock(block) {
+  const raw = extractTag(block, 'pubDate');
+  const t = raw ? Date.parse(raw) : NaN;
+  return Number.isFinite(t) ? t : 0;
 }
 
 function parseRssItems(xml) {
@@ -74,8 +80,10 @@ function parseRssItems(xml) {
     const thumbMatch = desc.match(/src="([^"]+)"/i);
     const thumb = thumbMatch ? thumbMatch[1] : '';
     if (!link || !title) continue;
-    items.push({ title, link, thumb });
+    items.push({ title, link, thumb, pubDate: pubDateFromBlock(block) });
   }
+  // RSS จาก tiktok-rss-flat เรียงเก่า→ใหม่ — เอาคลิปล่าสุดก่อน
+  items.sort((a, b) => b.pubDate - a.pubDate);
   return items;
 }
 
@@ -127,7 +135,7 @@ async function main() {
   const keepFacebook = (data.videos || []).filter((v) => v.platform === 'facebook');
 
   const tiktokVideos = picked.map((item, i) => {
-    const vid = videoIdFromUrl(item.link) || i + 1;
+    const vid = videoIdFromUrl(item.link) || String(i + 1);
     return {
       id: vid,
       platform: 'tiktok',
