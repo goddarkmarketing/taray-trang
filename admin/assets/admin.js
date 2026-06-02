@@ -191,24 +191,55 @@
 
   const nextFrame = () => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
 
+  function revealHiddenWizardStep(el) {
+    const step = el.closest('.wizard-step');
+    if (!step || step.classList.contains('is-active')) return;
+    const form = step.closest('form');
+    (form ? form.querySelectorAll('.wizard-step') : [step]).forEach((s) => {
+      s.classList.toggle('is-active', s === step);
+    });
+  }
+
+  function isMeasurable(el) {
+    if (!el) return false;
+    const rect = el.getBoundingClientRect();
+    return rect.height > 0 && rect.width > 0;
+  }
+
   async function waitForTarget(doc, selector, waitChildren) {
-    const deadline = Date.now() + 12000;
+    const deadline = Date.now() + 8000;
+    let previewSignal = false;
+    doc.addEventListener('tt:preview-ready', () => { previewSignal = true; }, { once: true });
+
     while (Date.now() < deadline) {
       const el = doc.querySelector(selector);
       if (!el) {
-        await sleep(100);
+        await sleep(80);
         continue;
       }
       if (waitChildren && el.children.length === 0) {
-        await sleep(100);
+        await sleep(80);
         continue;
       }
-      if (el.offsetHeight > 0 && el.offsetWidth > 0) {
+      if (isMeasurable(el)) {
         return el;
       }
-      await sleep(100);
+      revealHiddenWizardStep(el);
+      if (isMeasurable(el)) {
+        return el;
+      }
+      if (previewSignal) {
+        await nextFrame();
+        if (isMeasurable(el)) return el;
+      }
+      await sleep(80);
     }
-    return null;
+
+    const el = doc.querySelector(selector);
+    if (!el) return null;
+    if (waitChildren && el.children.length === 0) return null;
+    revealHiddenWizardStep(el);
+    return isMeasurable(el) ? el : null;
   }
 
   function resolvePreviewTarget(el, scope) {
@@ -228,24 +259,25 @@
     };
   }
 
-  async function waitForLayoutStable(doc, win) {
+  async function waitForLayoutStable(doc, win, targetEl) {
     if (doc.fonts && doc.fonts.ready) {
       try {
-        await Promise.race([doc.fonts.ready, sleep(1500)]);
+        await Promise.race([doc.fonts.ready, sleep(600)]);
       } catch (_) { /* ignore */ }
     }
-    const pending = Array.from(doc.images || []).filter((img) => !img.complete);
+    const scope = targetEl || doc.documentElement;
+    const pending = Array.from(scope.querySelectorAll('img')).filter((img) => !img.complete);
     if (pending.length) {
       await Promise.race([
         Promise.all(pending.map((img) => new Promise((resolve) => {
           img.addEventListener('load', resolve, { once: true });
           img.addEventListener('error', resolve, { once: true });
         }))),
-        sleep(2500),
+        sleep(900),
       ]);
     }
     win.scrollTo(0, 0);
-    await sleep(120);
+    await sleep(60);
     await nextFrame();
   }
 
@@ -304,8 +336,6 @@
     `;
     doc.head.appendChild(previewStyle);
 
-    if (loading) loading.textContent = 'กำลังจัดตำแหน่ง…';
-
     const found = await waitForTarget(doc, selector, waitChildren);
     if (!found) {
       if (loading) loading.textContent = 'ไม่พบส่วนนี้บนหน้าเว็บ';
@@ -314,9 +344,10 @@
       return;
     }
 
-    await waitForLayoutStable(doc, win);
+    if (loading) loading.textContent = 'กำลังจัดตำแหน่ง…';
 
-    const el = resolvePreviewTarget(doc.querySelector(selector), scope);
+    const el = resolvePreviewTarget(found, scope);
+    await waitForLayoutStable(doc, win, el);
     if (!el) {
       if (loading) loading.textContent = 'ไม่พบส่วนนี้บนหน้าเว็บ';
       iframe.style.visibility = '';

@@ -663,7 +663,15 @@
 
     // Render summary & move to initial step (without scrolling on first load)
     renderSummary();
-    if (initialStep !== 'boat') {
+    if (qp.get('tt_preview') === '1') {
+      const previewStep = qp.get('step') || 'trip';
+      if (STEPS.includes(previewStep)) {
+        setTimeout(() => {
+          gotoStep(previewStep, { skipScroll: true });
+          document.dispatchEvent(new CustomEvent('tt:preview-ready', { detail: { step: previewStep } }));
+        }, 50);
+      }
+    } else if (initialStep !== 'boat') {
       // After tiny delay so DOM is ready
       setTimeout(() => gotoStep(initialStep), 50);
     } else {

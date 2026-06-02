@@ -158,10 +158,10 @@ function tt_admin_page_help_map(): array
                 'อาหาร, ไกด์, ช่างภาพ, ดำน้ำ, รถรับส่ง ฯลฯ',
                 'ลูกค้าเลือกเพิ่มตอนคำนวณราคา (booking.html)',
             ],
-            'preview' => '../booking.html',
+            'preview' => '../booking.html?step=trip',
             'visuals' => [[
                 'caption' => 'ตัวเลือกเสริมในฟอร์มจอง',
-                'page' => '../booking.html',
+                'page' => '../booking.html?step=trip',
                 'selector' => '#option-choices',
                 'scope' => 'section',
                 'maxHeight' => 280,
