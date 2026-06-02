@@ -9,10 +9,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $action = $_POST['action'] ?? '';
 
     if ($action === 'create') {
-        $includeUploads = !empty($_POST['include_uploads']);
-        $result = tt_backup_create($includeUploads);
+        $result = tt_backup_create();
         if ($result['ok']) {
-            tt_set_flash('สำรองข้อมูลเรียบร้อยแล้ว');
+            if (!empty($result['partial'])) {
+                tt_set_flash('สำรองข้อความและข้อมูลแล้ว — โฮสนี้ไม่รองรับ ZIP จึงไม่มีรูปในไฟล์');
+            } else {
+                $count = (int)($result['uploadCount'] ?? 0);
+                $msg = 'สำรองข้อมูลครบทุกส่วนแล้ว (ข้อความ + รูปที่อัปโหลด';
+                $msg .= $count > 0 ? ' ' . $count . ' ไฟล์)' : ')';
+                tt_set_flash($msg);
+            }
         } else {
             tt_set_flash($result['error'] ?? 'สำรองไม่สำเร็จ ลองอีกครั้ง', 'error');
         }
@@ -51,7 +57,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 $backups = tt_backup_list();
-$hasZip = class_exists('ZipArchive');
 $autoCount = count(array_filter($backups, fn($b) => $b['type'] === 'auto'));
 
 tt_admin_header('สำรอง & กู้คืนข้อมูล', 'backup');
@@ -63,7 +68,7 @@ if ($flash): ?>
 
 <div class="card backup-guide">
   <h2>สำรองข้อมูลคืออะไร?</h2>
-  <p>เหมือน<strong>ถ่ายรูปหน้าจอเก็บไว้</strong> — เก็บข้อความ เบอร์โทร ราคา รูป และทุกอย่างที่แก้ในหลังบ้านไว้ชุดหนึ่ง ถ้าแก้ผิดหรือข้อมูลหาย สามารถ<strong>ย้อนกลับ</strong>ได้</p>
+  <p>เหมือน<strong>ถ่ายรูปหน้าจอเก็บไว้</strong> — เก็บข้อความ เบอร์โทร ราคา รูปที่อัปโหลด และทุกอย่างที่แก้ในหลังบ้านไว้ชุดหนึ่ง ถ้าแก้ผิดหรือข้อมูลหาย สามารถ<strong>ย้อนกลับ</strong>ได้</p>
 
   <h3 style="margin-top:20px;font-size:1rem">ขั้นตอนใช้งาน (อ่านตามลำดับ)</h3>
   <ol class="backup-steps">
@@ -72,13 +77,13 @@ if ($flash): ?>
     <li><strong>แก้เว็บตามปกติ</strong> — ใช้เมนูอื่นในหลังบ้านได้เลย</li>
     <li><strong>ถ้าแก้ผิด</strong> — เลือกวันที่ต้องการในตาราง กด 「กู้คืน」 แล้วพิมพ์คำว่า <strong>กู้คืน</strong> เพื่อยืนยัน</li>
   </ol>
-  <p class="field-hint" style="margin-top:12px">💡 ทุกครั้งที่กด 「บันทึก」 ในหลังบ้าน ระบบจะสำรองให้อัตโนมัติ (เก็บล่าสุด <?= (int)TT_BACKUP_MAX_AUTO ?> ชุด) — ไม่ต้องทำเองทุกครั้ง</p>
+  <p class="field-hint" style="margin-top:12px">💡 ทุกครั้งที่กด 「บันทึก」 ในหลังบ้าน ระบบจะสำรองข้อความให้อัตโนมัติ (เก็บล่าสุด <?= (int)TT_BACKUP_MAX_AUTO ?> ชุด) — กด 「สำรองข้อมูลตอนนี้」 เมื่อต้องการไฟล์ครบทุกส่วนรวมรูป</p>
 </div>
 
 <div class="card backup-create">
   <div class="backup-create__head">
     <h2>สำรองข้อมูลตอนนี้</h2>
-    <p class="field-hint">บันทึกข้อมูลทั้งหมดบนเว็บ ณ ขณะนี้</p>
+    <p class="field-hint">บันทึกข้อมูลทั้งหมดบนเว็บ ณ ขณะนี้ — รวมข้อความและรูปที่อัปโหลดในระบบ</p>
   </div>
 
   <form method="post" class="backup-create__form">
@@ -89,23 +94,11 @@ if ($flash): ?>
       <ul class="backup-create__tags">
         <li>เบอร์โทร & ติดต่อ</li>
         <li>โปรแกรมทัวร์</li>
-        <li>บทความ</li>
-        <li>รีวิว</li>
-        <li>เมนู & ข้อความอื่นๆ</li>
+        <li>บทความ & รีวิว</li>
+        <li>เมนู & SEO</li>
+        <li>รูปที่อัปโหลด</li>
       </ul>
     </div>
-
-    <?php if ($hasZip): ?>
-      <label class="backup-create__option">
-        <input type="checkbox" name="include_uploads" value="1"/>
-        <span class="backup-create__option-body">
-          <strong>รวมรูปที่อัปโหลดในระบบด้วย</strong>
-          <span class="field-hint">ไฟล์จะใหญ่ขึ้น — เหมาะตอนย้ายเว็บไปโฮสใหม่</span>
-        </span>
-      </label>
-    <?php else: ?>
-      <div class="backup-create__notice">โฮสนี้สำรองได้เฉพาะข้อความและข้อมูล — รูปแยกดาวน์โหลดจากเมนู 「อัปโหลดรูป」</div>
-    <?php endif; ?>
 
     <div class="backup-create__actions">
       <button type="submit" class="btn btn-primary">สำรองข้อมูลตอนนี้</button>
@@ -115,7 +108,7 @@ if ($flash): ?>
 
 <div class="card">
   <h2>ระบบสำรองให้อัตโนมัติ</h2>
-  <p class="field-hint">ทุกครั้งที่กด 「บันทึก」 ในหน้าต่างๆ ของหลังบ้าน ระบบจะเก็บสำเนาไว้ให้ — ใช้ตอนกดบันทึกผิดหรือลบข้อมูลผิด</p>
+  <p class="field-hint">ทุกครั้งที่กด 「บันทึก」 ในหน้าต่างๆ ของหลังบ้าน ระบบจะเก็บสำเนาข้อความไว้ให้ — ใช้ตอนกดบันทึกผิดหรือลบข้อมูลผิด (ไม่รวมรูป — ใช้ 「สำรองข้อมูลตอนนี้」 สำหรับไฟล์ครบทุกส่วน)</p>
   <p>ตอนนี้มีสำเนาอัตโนมัติ: <strong><?= $autoCount ?></strong> ชุด (เก็บได้สูงสุด <?= (int)TT_BACKUP_MAX_AUTO ?> ชุด)</p>
 </div>
 
@@ -139,7 +132,7 @@ if ($flash): ?>
         <tr>
           <td>
             <strong><?= htmlspecialchars($b['createdDisplay'], ENT_QUOTES, 'UTF-8') ?></strong>
-            <?php if ($b['isZip']): ?><br><span class="field-hint">มีรูปรวมอยู่ด้วย</span><?php endif; ?>
+            <?php if ($b['isZip']): ?><br><span class="field-hint">ข้อความ + รูปที่อัปโหลด</span><?php endif; ?>
           </td>
           <td><?= htmlspecialchars($b['label'], ENT_QUOTES, 'UTF-8') ?></td>
           <td><?= htmlspecialchars(tt_backup_format_bytes($b['size']), ENT_QUOTES, 'UTF-8') ?></td>

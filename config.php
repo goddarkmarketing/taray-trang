@@ -5,6 +5,8 @@
  */
 declare(strict_types=1);
 
+date_default_timezone_set('Asia/Bangkok');
+
 define('TT_ROOT', __DIR__);
 define('TT_DATA_FILE', TT_ROOT . '/data/site.json');
 define('TT_UPLOAD_DIR', TT_ROOT . '/assets/uploads/');

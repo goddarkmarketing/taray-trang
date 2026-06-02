@@ -348,6 +348,25 @@ function tt_backup_format_bytes(int $bytes): string
     return round($bytes / (1024 * 1024), 1) . ' MB';
 }
 
+/** เวลาจากชื่อไฟล์แบ็คอัพ เช่น 20260602-163045_manual.zip */
+function tt_backup_created_from_filename(string $file): ?int
+{
+    if (!preg_match('/^(\d{4})(\d{2})(\d{2})-(\d{2})(\d{2})(\d{2})_(manual|auto)/', $file, $m)) {
+        return null;
+    }
+    $dt = DateTimeImmutable::createFromFormat(
+        'Y-m-d H:i:s',
+        sprintf('%s-%s-%s %s:%s:%s', $m[1], $m[2], $m[3], $m[4], $m[5], $m[6]),
+        new DateTimeZone('Asia/Bangkok')
+    );
+    return $dt ? $dt->getTimestamp() : null;
+}
+
+function tt_backup_format_datetime(int $timestamp): string
+{
+    return date('d/m/Y H:i:s', $timestamp);
+}
+
 /** @return list<array{file:string,type:string,created:string,size:int,label:string}> */
 function tt_backup_list(): array
 {
@@ -359,14 +378,16 @@ function tt_backup_list(): array
             continue;
         }
         $type = str_contains($file, '_auto.') ? 'auto' : 'manual';
-        $mtime = filemtime($path) ?: time();
+        $created = tt_backup_created_from_filename($file) ?? (filemtime($path) ?: time());
         $items[] = [
             'file' => $file,
             'type' => $type,
-            'created' => date('c', $mtime),
-            'createdDisplay' => date('d/m/Y H:i:s', $mtime),
+            'created' => date('c', $created),
+            'createdDisplay' => tt_backup_format_datetime($created),
             'size' => (int)filesize($path),
-            'label' => $type === 'auto' ? 'ระบบสำรองให้ (ตอนกดบันทึก)' : 'สำรองเอง',
+            'label' => $type === 'auto'
+                ? 'ระบบสำรองให้ (ตอนกดบันทึก — ข้อความอย่างเดียว)'
+                : (str_ends_with($file, '.zip') ? 'สำรองเอง (ครบทุกส่วน)' : 'สำรองเอง (ข้อความอย่างเดียว)'),
             'isZip' => str_ends_with($file, '.zip'),
         ];
     }
@@ -412,65 +433,126 @@ function tt_auto_backup_before_write(): void
     tt_backup_prune('_auto.json', TT_BACKUP_MAX_AUTO);
 }
 
-/** @return array{ok:bool,error?:string,file?:string} */
-function tt_backup_create(bool $includeUploads = false): array
+/** ให้ไฟล์ fallback บนหน้าเว็บตรงกับ site.json ก่อนสำรอง */
+function tt_backup_sync_frontend_cache(): void
 {
+    $data = tt_read_data();
+    if ($data !== []) {
+        tt_write_fallback_js($data);
+    }
+}
+
+/** @return list<string> absolute paths under uploads */
+function tt_backup_collect_upload_files(): array
+{
+    if (!is_dir(TT_UPLOAD_DIR)) {
+        return [];
+    }
+    $files = [];
+    $iterator = new RecursiveIteratorIterator(
+        new RecursiveDirectoryIterator(TT_UPLOAD_DIR, FilesystemIterator::SKIP_DOTS)
+    );
+    foreach ($iterator as $file) {
+        if (!$file->isFile()) {
+            continue;
+        }
+        $base = $file->getFilename();
+        if ($base === '.gitkeep') {
+            continue;
+        }
+        $files[] = $file->getPathname();
+    }
+    sort($files);
+    return $files;
+}
+
+/**
+ * @return array{ok:bool,error?:string,uploadCount?:int}
+ */
+function tt_backup_pack_full_zip(string $zipPath): array
+{
+    if (!class_exists('ZipArchive')) {
+        return ['ok' => false, 'error' => 'เซิร์ฟเวอร์ไม่รองรับ ZipArchive'];
+    }
     if (!is_file(TT_DATA_FILE)) {
         return ['ok' => false, 'error' => 'ไม่พบ data/site.json'];
     }
-    $dir = tt_backup_ensure_dir();
-    $stamp = date('Ymd-His');
-    $jsonName = $stamp . '_manual.json';
-    $jsonPath = $dir . '/' . $jsonName;
 
-    if (!copy(TT_DATA_FILE, $jsonPath)) {
-        return ['ok' => false, 'error' => 'คัดลอก site.json ไม่สำเร็จ'];
-    }
-
-    if (!$includeUploads) {
-        tt_backup_prune('_manual.json', TT_BACKUP_MAX_MANUAL);
-        return ['ok' => true, 'file' => $jsonName];
-    }
-
-    if (!class_exists('ZipArchive')) {
-        @unlink($jsonPath);
-        return ['ok' => false, 'error' => 'เซิร์ฟเวอร์ไม่รองรับ ZipArchive — ใช้แบ็คอัพเนื้อหาอย่างเดียว'];
-    }
-
-    $zipName = $stamp . '_manual.zip';
-    $zipPath = $dir . '/' . $zipName;
-    @unlink($jsonPath);
+    tt_backup_sync_frontend_cache();
 
     $zip = new ZipArchive();
     if ($zip->open($zipPath, ZipArchive::CREATE | ZipArchive::OVERWRITE) !== true) {
         return ['ok' => false, 'error' => 'สร้างไฟล์ ZIP ไม่สำเร็จ'];
     }
+
     $zip->addFile(TT_DATA_FILE, 'site.json');
+
+    $frontendFiles = [
+        'assets/js/data-fallback.js' => TT_FALLBACK_JS,
+        'assets/js/tt-cache-version.js' => TT_ROOT . '/assets/js/tt-cache-version.js',
+    ];
+    foreach ($frontendFiles as $entry => $abs) {
+        if (is_file($abs)) {
+            $zip->addFile($abs, $entry);
+        }
+    }
+
+    $uploadCount = 0;
+    $uploadRoot = rtrim(str_replace('\\', '/', TT_UPLOAD_DIR), '/') . '/';
+    foreach (tt_backup_collect_upload_files() as $uploadPath) {
+        $normalized = str_replace('\\', '/', $uploadPath);
+        $rel = str_starts_with($normalized, $uploadRoot)
+            ? substr($normalized, strlen($uploadRoot))
+            : basename($uploadPath);
+        $zip->addFile($uploadPath, 'uploads/' . $rel);
+        $uploadCount++;
+    }
+
     $manifest = json_encode([
         'created' => date('c'),
         'type' => 'full',
         'hasUploads' => true,
+        'hasFallback' => true,
+        'uploadCount' => $uploadCount,
         'php' => PHP_VERSION,
     ], JSON_UNESCAPED_UNICODE);
     $zip->addFromString('manifest.json', (string)$manifest);
-
-    if (is_dir(TT_UPLOAD_DIR)) {
-        $uploadFiles = glob(TT_UPLOAD_DIR . '*') ?: [];
-        foreach ($uploadFiles as $uploadPath) {
-            if (!is_file($uploadPath)) {
-                continue;
-            }
-            $base = basename($uploadPath);
-            if ($base === '.gitkeep') {
-                continue;
-            }
-            $zip->addFile($uploadPath, 'uploads/' . $base);
-        }
-    }
     $zip->close();
 
-    tt_backup_prune('_manual.zip', TT_BACKUP_MAX_MANUAL);
-    return ['ok' => true, 'file' => $zipName];
+    return ['ok' => true, 'uploadCount' => $uploadCount];
+}
+
+/** @return array{ok:bool,error?:string,file?:string,uploadCount?:int,partial?:bool} */
+function tt_backup_create(): array
+{
+    if (!is_file(TT_DATA_FILE)) {
+        return ['ok' => false, 'error' => 'ไม่พบ data/site.json'];
+    }
+
+    $dir = tt_backup_ensure_dir();
+    $stamp = date('Ymd-His');
+
+    if (class_exists('ZipArchive')) {
+        $zipName = $stamp . '_manual.zip';
+        $packed = tt_backup_pack_full_zip($dir . '/' . $zipName);
+        if (!$packed['ok']) {
+            return ['ok' => false, 'error' => $packed['error'] ?? 'สร้างแบ็คอัพไม่สำเร็จ'];
+        }
+        tt_backup_prune('_manual.zip', TT_BACKUP_MAX_MANUAL);
+        return [
+            'ok' => true,
+            'file' => $zipName,
+            'uploadCount' => (int)($packed['uploadCount'] ?? 0),
+        ];
+    }
+
+    tt_backup_sync_frontend_cache();
+    $jsonName = $stamp . '_manual.json';
+    if (!copy(TT_DATA_FILE, $dir . '/' . $jsonName)) {
+        return ['ok' => false, 'error' => 'คัดลอก site.json ไม่สำเร็จ'];
+    }
+    tt_backup_prune('_manual.json', TT_BACKUP_MAX_MANUAL);
+    return ['ok' => true, 'file' => $jsonName, 'partial' => true];
 }
 
 /** @return array{ok:bool,error?:string} */
@@ -523,13 +605,35 @@ function tt_backup_restore(string $filename): array
         return ['ok' => false, 'error' => 'เขียน site.json ไม่สำเร็จ'];
     }
 
+    $restoreMap = [
+        'assets/js/data-fallback.js' => TT_FALLBACK_JS,
+        'assets/js/tt-cache-version.js' => TT_ROOT . '/assets/js/tt-cache-version.js',
+    ];
+
     for ($i = 0; $i < $zip->numFiles; $i++) {
         $entry = $zip->getNameIndex($i);
-        if (!is_string($entry) || !str_starts_with($entry, 'uploads/')) {
+        if (!is_string($entry) || str_ends_with($entry, '/')) {
             continue;
         }
-        $base = basename($entry);
-        if ($base === '' || $base === '.gitkeep') {
+
+        if (isset($restoreMap[$entry])) {
+            $content = $zip->getFromIndex($i);
+            if ($content !== false) {
+                $dest = $restoreMap[$entry];
+                $destDir = dirname($dest);
+                if (!is_dir($destDir)) {
+                    mkdir($destDir, 0755, true);
+                }
+                file_put_contents($dest, $content, LOCK_EX);
+            }
+            continue;
+        }
+
+        if (!str_starts_with($entry, 'uploads/')) {
+            continue;
+        }
+        $rel = substr($entry, strlen('uploads/'));
+        if ($rel === '' || $rel === '.gitkeep' || str_contains($rel, '..')) {
             continue;
         }
         $content = $zip->getFromIndex($i);
@@ -539,7 +643,12 @@ function tt_backup_restore(string $filename): array
         if (!is_dir(TT_UPLOAD_DIR)) {
             mkdir(TT_UPLOAD_DIR, 0755, true);
         }
-        file_put_contents(TT_UPLOAD_DIR . $base, $content, LOCK_EX);
+        $dest = TT_UPLOAD_DIR . str_replace('/', DIRECTORY_SEPARATOR, $rel);
+        $destDir = dirname($dest);
+        if (!is_dir($destDir)) {
+            mkdir($destDir, 0755, true);
+        }
+        file_put_contents($dest, $content, LOCK_EX);
     }
     $zip->close();
 
