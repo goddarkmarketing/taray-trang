@@ -11,16 +11,16 @@ $site = $data['site'] ?? [];
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $facebookUrl = trim($_POST['facebookUrl'] ?? '');
     $facebookPageUrl = trim($_POST['facebookPageUrl'] ?? '');
-    if ($facebookPageUrl === '' && $facebookUrl !== '') {
-        $facebookPageUrl = tt_resolve_facebook_page_url($facebookUrl);
-    }
 
-    $site = [
+    $oldSite = $data['site'] ?? [];
+    $phone = trim($_POST['phone'] ?? '');
+
+    $site = array_merge($oldSite, [
         'brand' => trim($_POST['brand'] ?? ''),
         'brandTh' => trim($_POST['brandTh'] ?? ''),
         'tagline' => trim($_POST['tagline'] ?? ''),
-        'phone' => trim($_POST['phone'] ?? ''),
-        'phoneDisplay' => trim($_POST['phoneDisplay'] ?? ''),
+        'phone' => $phone,
+        'phoneDisplay' => $phone,
         'lineId' => trim($_POST['lineId'] ?? ''),
         'lineUrl' => trim($_POST['lineUrl'] ?? ''),
         'facebookUrl' => $facebookUrl,
@@ -30,17 +30,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'addressFull' => trim($_POST['addressFull'] ?? ''),
         'hours' => trim($_POST['hours'] ?? ''),
         'mapEmbed' => trim($_POST['mapEmbed'] ?? ''),
-    ];
+    ]);
+
+    if ($site['facebookPageUrl'] === '' && $facebookUrl !== '') {
+        $resolved = tt_resolve_facebook_page_url($facebookUrl);
+        if ($resolved !== '') {
+            $site['facebookPageUrl'] = $resolved;
+        }
+    }
+
     $data['site'] = $site;
-    tt_write_data($data);
-    tt_set_flash('บันทึกข้อมูลเว็บแล้ว');
+    if (tt_write_data($data)) {
+        tt_set_flash('บันทึกข้อมูลเว็บแล้ว — ข้อมูลจะอัปเดตบนหน้าเว็บทันที');
+    } else {
+        tt_set_flash('บันทึกไม่สำเร็จ — ตรวจสอบสิทธิ์เขียนไฟล์ data/site.json และ assets/js/data-fallback.js', 'error');
+    }
     header('Location: site.php');
     exit;
 }
 
 tt_admin_header('ข้อมูลเว็บ', 'site');
 $flash = tt_flash();
-if ($flash): ?><div class="alert alert-success"><?= htmlspecialchars($flash, ENT_QUOTES, 'UTF-8') ?></div><?php endif; ?>
+$flashType = tt_flash_type();
+if ($flash): ?><div class="alert alert-<?= $flashType === 'error' ? 'error' : 'success' ?>"><?= htmlspecialchars($flash, ENT_QUOTES, 'UTF-8') ?></div><?php endif; ?>
 
 <form method="post" class="card">
   <h2>ข้อมูลติดต่อ & แบรนด์</h2>
@@ -48,8 +60,7 @@ if ($flash): ?><div class="alert alert-success"><?= htmlspecialchars($flash, ENT
     <div class="field"><label>ชื่อแบรนด์ (EN)</label><input name="brand" value="<?= htmlspecialchars($site['brand'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
     <div class="field"><label>ชื่อแบรนด์ (TH)</label><input name="brandTh" value="<?= htmlspecialchars($site['brandTh'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
     <div class="field" style="grid-column:1/-1"><label>Tagline</label><input name="tagline" value="<?= htmlspecialchars($site['tagline'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
-    <div class="field"><label>เบอร์โทร</label><input name="phone" value="<?= htmlspecialchars($site['phone'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
-    <div class="field"><label>เบอร์แสดงผล</label><input name="phoneDisplay" value="<?= htmlspecialchars($site['phoneDisplay'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
+    <div class="field"><label>เบอร์โทร</label><input name="phone" id="site-phone" value="<?= htmlspecialchars($site['phone'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/><p class="field-hint">แสดงบนเว็บและใช้ในลิงก์กดโทร (tel:) ทุกหน้า</p></div>
     <div class="field"><label>LINE ID</label><input name="lineId" value="<?= htmlspecialchars($site['lineId'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
     <div class="field"><label>LINE URL</label><input name="lineUrl" value="<?= htmlspecialchars($site['lineUrl'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
     <div class="field"><label>Facebook URL (ลิงก์ทั่วไป)</label><input name="facebookUrl" value="<?= htmlspecialchars($site['facebookUrl'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>

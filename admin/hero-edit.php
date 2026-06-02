@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/includes/auth.php';
 require_once __DIR__ . '/includes/layout.php';
+require_once __DIR__ . '/includes/image-field.php';
 tt_require_admin();
 
 $data = tt_read_data();
@@ -47,7 +48,7 @@ if ($flash): ?><div class="alert alert-success"><?= htmlspecialchars($flash, ENT
 <form method="post">
   <div class="card">
     <h2>สไลด์ Hero (หน้าแรก)</h2>
-    <p class="field-hint">ใส่ path รูปในเว็บ เช่น <code>assets/cover%20hero/slide-01.png</code> หรือ URL จาก <a href="media.php">อัปโหลดรูป</a></p>
+    <p class="field-hint">ใส่ path รูปในเว็บ เช่น <code>assets/cover%20hero/slide-01.png</code> หรือกดอัปโหลดด้านล่าง · <a href="media.php">ดูตารางขนาดรูป</a></p>
 
     <?php if (!empty($slide['src'])): ?>
       <img src="../<?= htmlspecialchars($slide['src'], ENT_QUOTES, 'UTF-8') ?>" alt="" style="max-width:320px;border-radius:10px;margin-bottom:16px;border:1px solid var(--adm-border)"/>
@@ -56,7 +57,12 @@ if ($flash): ?><div class="alert alert-success"><?= htmlspecialchars($flash, ENT
     <input type="hidden" name="idx" value="<?= $isNew ? -1 : $idx ?>"/>
 
     <div class="grid-2">
-      <div class="field" style="grid-column:1/-1"><label>ที่อยู่รูป (src)</label><input name="src" required value="<?= htmlspecialchars($slide['src'] ?? '', ENT_QUOTES, 'UTF-8') ?>" placeholder="assets/cover%20hero/slide-01.png"/></div>
+      <?php tt_render_image_url_field('ที่อยู่รูป (src)', 'src', $slide['src'] ?? '', [
+          'context' => 'hero_slide',
+          'required' => true,
+          'placeholder' => 'assets/cover%20hero/slide-01.png',
+          'style' => 'grid-column:1/-1',
+      ]); ?>
       <div class="field" style="grid-column:1/-1"><label>คำอธิบายรูป (alt)</label><input name="alt" value="<?= htmlspecialchars($slide['alt'] ?? '', ENT_QUOTES, 'UTF-8') ?>" placeholder="เช่าเรือเที่ยวทะเลตรัง — Talay Trang"/></div>
     </div>
 

@@ -84,9 +84,10 @@
 
   <div id="site-footer"></div>
 
-  <script src="assets/js/data-fallback.js"></script>
-  <script src="assets/js/data.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script>document.write('<script src="assets/js/tt-cache-version.js?t='+Date.now()+'"><\/script>');</script>
+  <script>document.write('<script src="assets/js/data-fallback.js?v='+(encodeURIComponent(window.__TT_SCRIPT_V||Date.now()))+'"><\/script>');</script>
+  <script>document.write('<script src="assets/js/data.js?v='+(encodeURIComponent(window.__TT_SCRIPT_V||Date.now()))+'"><\/script>');</script>
+  <script>document.write('<script src="assets/js/main.js?v='+(encodeURIComponent(window.__TT_SCRIPT_V||Date.now()))+'"><\/script>');</script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const { WHY_US, IMAGES, ICONS, SITE, ABOUT } = window.TT;
@@ -137,12 +138,13 @@
       document.getElementById('about-office-title').textContent = office.title || '';
       document.getElementById('about-office-info-title').textContent = office.infoTitle || '';
       document.getElementById('about-office-info-text').textContent = office.infoText || '';
-      document.getElementById('about-map').src = SITE.mapEmbed || '';
+      document.getElementById('about-map').src = window.TT?.SITE?.mapEmbed || '';
+      const aboutSite = window.TT?.SITE || {};
       document.getElementById('about-contact-list').innerHTML = `
-        <li><span class="ico" data-icon="map"></span><span><strong>ที่ตั้งออฟฟิศ</strong><span>${SITE.addressFull || SITE.address || ''}</span></span></li>
-        <li><span class="ico" data-icon="clock"></span><span><strong>เวลาทำการ</strong><span>${SITE.hours || ''}</span></span></li>
-        <li><span class="ico" data-icon="phone"></span><span><strong>โทรหาเรา</strong><span><a href="tel:${(SITE.phone || '').replace(/\D/g, '')}">${SITE.phoneDisplay || SITE.phone || ''}</a></span></span></li>
-        <li><span class="ico" data-icon="line"></span><span><strong>LINE Official</strong><span><a href="${SITE.lineUrl || '#'}" target="_blank" rel="noopener">${SITE.lineId || ''}</a></span></span></li>
+        <li><span class="ico" data-icon="map"></span><span><strong>ที่ตั้งออฟฟิศ</strong><span>${aboutSite.addressFull || aboutSite.address || ''}</span></span></li>
+        <li><span class="ico" data-icon="clock"></span><span><strong>เวลาทำการ</strong><span>${aboutSite.hours || ''}</span></span></li>
+        <li><span class="ico" data-icon="phone"></span><span><strong>โทรหาเรา</strong><span><a href="tel:${(aboutSite.phone || '').replace(/\D/g, '')}">${aboutSite.phone || aboutSite.phoneDisplay || ''}</a></span></span></li>
+        <li><span class="ico" data-icon="line"></span><span><strong>LINE Official</strong><span><a href="${aboutSite.lineUrl || '#'}" target="_blank" rel="noopener">${aboutSite.lineId || ''}</a></span></span></li>
       `;
 
       document.getElementById('about-cta-title').textContent = cta.title || '';

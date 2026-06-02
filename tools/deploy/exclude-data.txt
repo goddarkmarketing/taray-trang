@@ -1,0 +1,8 @@
+# ไฟล์/โฟลเดอร์ที่ห้ามทับบนโฮสติ้ง (เนื้อหาลูกค้า + ไฟล์ที่ระบบสร้างบน server)
+# ใช้กับ Deploy-CodeOnly.ps1
+
+site.json
+admin-credentials.json
+data-fallback.js
+tt-cache-version.js
+.gitkeep

@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/includes/auth.php';
 require_once __DIR__ . '/includes/layout.php';
+require_once __DIR__ . '/includes/image-sizes.php';
 tt_require_admin();
 
 $data = tt_read_data();
@@ -57,10 +58,10 @@ if ($flash): ?><div class="alert alert-success"><?= htmlspecialchars($flash, ENT
   <?php if (!$images): ?>
     <p class="field-hint">ยังไม่มีรูปใน Registry — กดปุ่มด้านบนเพื่อเพิ่ม key ใหม่</p>
   <?php else: ?>
-  <p class="field-hint" style="margin-top:0;margin-bottom:16px">คลังรูป IMAGES ที่หน้าเว็บใช้ — URL เต็ม (Pexels) หรือ path ในเว็บ (assets/...)</p>
+  <p class="field-hint" style="margin-top:0;margin-bottom:16px">คลังรูป IMAGES ที่หน้าเว็บใช้ — URL เต็ม (Pexels) หรือ path ในเว็บ (assets/...) · <a href="media.php">ดูตารางขนาดรูปทั้งหมด</a></p>
   <table class="table">
     <thead>
-      <tr><th>ตัวอย่าง</th><th>Key</th><th>ประเภท</th><th>ค่า</th><th></th></tr>
+      <tr><th>ตัวอย่าง</th><th>Key</th><th>ขนาดแนะนำ</th><th>ประเภท</th><th>ค่า</th><th></th></tr>
     </thead>
     <tbody>
       <?php foreach ($images as $key => $val):
@@ -75,6 +76,7 @@ if ($flash): ?><div class="alert alert-success"><?= htmlspecialchars($flash, ENT
             <?php endif; ?>
           </td>
           <td><strong><?= htmlspecialchars((string)$key, ENT_QUOTES, 'UTF-8') ?></strong></td>
+          <td><small class="field-hint"><?= htmlspecialchars(tt_image_size_hint((string)$key), ENT_QUOTES, 'UTF-8') ?></small></td>
           <td><?= is_array($val) ? 'หลาย URL' : 'URL เดียว' ?></td>
           <td><small class="field-hint"><?= htmlspecialchars(tt_image_value_summary($val), ENT_QUOTES, 'UTF-8') ?></small></td>
           <td class="table-actions">

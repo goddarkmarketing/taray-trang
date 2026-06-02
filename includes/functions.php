@@ -18,6 +18,8 @@ function tt_read_data(): array
 
 function tt_write_data(array $data): bool
 {
+    tt_auto_backup_before_write();
+
     $data['meta'] = array_merge($data['meta'] ?? [], [
         'version' => 1,
         'updated' => date('c'),
@@ -50,7 +52,23 @@ function tt_write_fallback_js(array $data): void
 {
     $js = "/* Auto-generated — อัปเดตจากระบบหลังบ้าน */\nwindow.__TT_FALLBACK = " .
         json_encode($data, JSON_UNESCAPED_UNICODE) . ";\n";
-    file_put_contents(TT_FALLBACK_JS, $js, LOCK_EX);
+    $tmp = TT_FALLBACK_JS . '.tmp';
+    if (file_put_contents($tmp, $js, LOCK_EX) === false) {
+        return;
+    }
+    if (!rename($tmp, TT_FALLBACK_JS)) {
+        @unlink($tmp);
+        return;
+    }
+
+    $updated = (string)($data['meta']['updated'] ?? date('c'));
+    $versionJs = TT_ROOT . '/assets/js/tt-cache-version.js';
+    $verContent = '/* Auto-generated */ window.__TT_SCRIPT_V = ' .
+        json_encode($updated, JSON_UNESCAPED_UNICODE) . ";\n";
+    $vtmp = $versionJs . '.tmp';
+    if (file_put_contents($vtmp, $verContent, LOCK_EX) !== false) {
+        rename($vtmp, $versionJs);
+    }
 }
 
 function tt_api_to_frontend(array $data): array
@@ -304,4 +322,244 @@ function tt_body_to_markdown(array $body): string
         $out[] = '';
     }
     return trim(implode("\n", $out));
+}
+
+function tt_backup_ensure_dir(): string
+{
+    if (!is_dir(TT_BACKUP_DIR)) {
+        mkdir(TT_BACKUP_DIR, 0755, true);
+    }
+    return TT_BACKUP_DIR;
+}
+
+function tt_backup_is_valid_filename(string $name): bool
+{
+    return (bool)preg_match('/^\d{8}-\d{6}_(manual|auto)(-\d+)?\.(json|zip)$/', $name);
+}
+
+function tt_backup_format_bytes(int $bytes): string
+{
+    if ($bytes < 1024) {
+        return $bytes . ' B';
+    }
+    if ($bytes < 1024 * 1024) {
+        return round($bytes / 1024, 1) . ' KB';
+    }
+    return round($bytes / (1024 * 1024), 1) . ' MB';
+}
+
+/** @return list<array{file:string,type:string,created:string,size:int,label:string}> */
+function tt_backup_list(): array
+{
+    $dir = tt_backup_ensure_dir();
+    $items = [];
+    foreach (glob($dir . '/*.{json,zip}', GLOB_BRACE) ?: [] as $path) {
+        $file = basename($path);
+        if (!tt_backup_is_valid_filename($file)) {
+            continue;
+        }
+        $type = str_contains($file, '_auto.') ? 'auto' : 'manual';
+        $mtime = filemtime($path) ?: time();
+        $items[] = [
+            'file' => $file,
+            'type' => $type,
+            'created' => date('c', $mtime),
+            'createdDisplay' => date('d/m/Y H:i:s', $mtime),
+            'size' => (int)filesize($path),
+            'label' => $type === 'auto' ? 'ระบบสำรองให้ (ตอนกดบันทึก)' : 'สำรองเอง',
+            'isZip' => str_ends_with($file, '.zip'),
+        ];
+    }
+    usort($items, fn($a, $b) => strcmp($b['file'], $a['file']));
+    return $items;
+}
+
+function tt_backup_prune(string $suffix, int $max): void
+{
+    $dir = tt_backup_ensure_dir();
+    $files = [];
+    foreach (glob($dir . '/*' . $suffix) ?: [] as $path) {
+        $file = basename($path);
+        if (tt_backup_is_valid_filename($file)) {
+            $files[] = $file;
+        }
+    }
+    rsort($files);
+    foreach (array_slice($files, $max) as $old) {
+        @unlink($dir . '/' . $old);
+    }
+}
+
+function tt_auto_backup_before_write(): void
+{
+    if (!is_file(TT_DATA_FILE)) {
+        return;
+    }
+    $current = file_get_contents(TT_DATA_FILE);
+    if ($current === false || $current === '') {
+        return;
+    }
+    $hash = md5($current);
+    $dir = tt_backup_ensure_dir();
+    foreach (glob($dir . '/*_auto.json') ?: [] as $path) {
+        $prev = file_get_contents($path);
+        if ($prev !== false && md5($prev) === $hash) {
+            return;
+        }
+    }
+    $name = date('Ymd-His') . '_auto.json';
+    file_put_contents($dir . '/' . $name, $current, LOCK_EX);
+    tt_backup_prune('_auto.json', TT_BACKUP_MAX_AUTO);
+}
+
+/** @return array{ok:bool,error?:string,file?:string} */
+function tt_backup_create(bool $includeUploads = false): array
+{
+    if (!is_file(TT_DATA_FILE)) {
+        return ['ok' => false, 'error' => 'ไม่พบ data/site.json'];
+    }
+    $dir = tt_backup_ensure_dir();
+    $stamp = date('Ymd-His');
+    $jsonName = $stamp . '_manual.json';
+    $jsonPath = $dir . '/' . $jsonName;
+
+    if (!copy(TT_DATA_FILE, $jsonPath)) {
+        return ['ok' => false, 'error' => 'คัดลอก site.json ไม่สำเร็จ'];
+    }
+
+    if (!$includeUploads) {
+        tt_backup_prune('_manual.json', TT_BACKUP_MAX_MANUAL);
+        return ['ok' => true, 'file' => $jsonName];
+    }
+
+    if (!class_exists('ZipArchive')) {
+        @unlink($jsonPath);
+        return ['ok' => false, 'error' => 'เซิร์ฟเวอร์ไม่รองรับ ZipArchive — ใช้แบ็คอัพเนื้อหาอย่างเดียว'];
+    }
+
+    $zipName = $stamp . '_manual.zip';
+    $zipPath = $dir . '/' . $zipName;
+    @unlink($jsonPath);
+
+    $zip = new ZipArchive();
+    if ($zip->open($zipPath, ZipArchive::CREATE | ZipArchive::OVERWRITE) !== true) {
+        return ['ok' => false, 'error' => 'สร้างไฟล์ ZIP ไม่สำเร็จ'];
+    }
+    $zip->addFile(TT_DATA_FILE, 'site.json');
+    $manifest = json_encode([
+        'created' => date('c'),
+        'type' => 'full',
+        'hasUploads' => true,
+        'php' => PHP_VERSION,
+    ], JSON_UNESCAPED_UNICODE);
+    $zip->addFromString('manifest.json', (string)$manifest);
+
+    if (is_dir(TT_UPLOAD_DIR)) {
+        $uploadFiles = glob(TT_UPLOAD_DIR . '*') ?: [];
+        foreach ($uploadFiles as $uploadPath) {
+            if (!is_file($uploadPath)) {
+                continue;
+            }
+            $base = basename($uploadPath);
+            if ($base === '.gitkeep') {
+                continue;
+            }
+            $zip->addFile($uploadPath, 'uploads/' . $base);
+        }
+    }
+    $zip->close();
+
+    tt_backup_prune('_manual.zip', TT_BACKUP_MAX_MANUAL);
+    return ['ok' => true, 'file' => $zipName];
+}
+
+/** @return array{ok:bool,error?:string} */
+function tt_backup_restore(string $filename): array
+{
+    if (!tt_backup_is_valid_filename($filename)) {
+        return ['ok' => false, 'error' => 'ชื่อไฟล์ไม่ถูกต้อง'];
+    }
+    $path = tt_backup_ensure_dir() . '/' . $filename;
+    if (!is_file($path)) {
+        return ['ok' => false, 'error' => 'ไม่พบไฟล์แบ็คอัพ'];
+    }
+
+    if (str_ends_with($filename, '.json')) {
+        $raw = file_get_contents($path);
+        if ($raw === false) {
+            return ['ok' => false, 'error' => 'อ่านไฟล์ไม่สำเร็จ'];
+        }
+        $data = json_decode($raw, true);
+        if (!is_array($data)) {
+            return ['ok' => false, 'error' => 'JSON ไม่ถูกต้อง'];
+        }
+        if (!tt_write_data($data)) {
+            return ['ok' => false, 'error' => 'เขียน site.json ไม่สำเร็จ'];
+        }
+        return ['ok' => true];
+    }
+
+    if (!class_exists('ZipArchive')) {
+        return ['ok' => false, 'error' => 'เซิร์ฟเวอร์ไม่รองรับ ZipArchive'];
+    }
+
+    $zip = new ZipArchive();
+    if ($zip->open($path) !== true) {
+        return ['ok' => false, 'error' => 'เปิด ZIP ไม่สำเร็จ'];
+    }
+
+    $jsonRaw = $zip->getFromName('site.json');
+    if ($jsonRaw === false) {
+        $zip->close();
+        return ['ok' => false, 'error' => 'ไม่พบ site.json ใน ZIP'];
+    }
+    $data = json_decode($jsonRaw, true);
+    if (!is_array($data)) {
+        $zip->close();
+        return ['ok' => false, 'error' => 'site.json ใน ZIP ไม่ถูกต้อง'];
+    }
+    if (!tt_write_data($data)) {
+        $zip->close();
+        return ['ok' => false, 'error' => 'เขียน site.json ไม่สำเร็จ'];
+    }
+
+    for ($i = 0; $i < $zip->numFiles; $i++) {
+        $entry = $zip->getNameIndex($i);
+        if (!is_string($entry) || !str_starts_with($entry, 'uploads/')) {
+            continue;
+        }
+        $base = basename($entry);
+        if ($base === '' || $base === '.gitkeep') {
+            continue;
+        }
+        $content = $zip->getFromIndex($i);
+        if ($content === false) {
+            continue;
+        }
+        if (!is_dir(TT_UPLOAD_DIR)) {
+            mkdir(TT_UPLOAD_DIR, 0755, true);
+        }
+        file_put_contents(TT_UPLOAD_DIR . $base, $content, LOCK_EX);
+    }
+    $zip->close();
+
+    return ['ok' => true];
+}
+
+function tt_backup_delete(string $filename): bool
+{
+    if (!tt_backup_is_valid_filename($filename)) {
+        return false;
+    }
+    $path = tt_backup_ensure_dir() . '/' . $filename;
+    return is_file($path) && unlink($path);
+}
+
+function tt_backup_path(string $filename): ?string
+{
+    if (!tt_backup_is_valid_filename($filename)) {
+        return null;
+    }
+    $path = tt_backup_ensure_dir() . '/' . $filename;
+    return is_file($path) ? $path : null;
 }

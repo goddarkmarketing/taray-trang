@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/includes/auth.php';
 require_once __DIR__ . '/includes/layout.php';
+require_once __DIR__ . '/includes/image-field.php';
 tt_require_admin();
 
 $data = tt_read_data();
@@ -89,7 +90,7 @@ if ($flash): ?><div class="alert alert-success"><?= htmlspecialchars($flash, ENT
       <div class="field"><label>ชื่อเรือ</label><input name="name" required value="<?= htmlspecialchars($boat['name'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
       <div class="field"><label>ID (slug)</label><input name="id" value="<?= htmlspecialchars($boat['id'] ?? '', ENT_QUOTES, 'UTF-8') ?>" placeholder="longtail, speedboat, bigboat"/></div>
       <div class="field"><label>Tag</label><input name="tag" value="<?= htmlspecialchars($boat['tag'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
-      <div class="field"><label>URL รูป</label><input name="image" value="<?= htmlspecialchars($boat['image'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
+      <?php tt_render_image_url_field('URL รูป', 'image', $boat['image'] ?? '', ['context' => 'boat']); ?>
       <div class="field"><label>ความจุ (ข้อความ)</label><input name="capacity" value="<?= htmlspecialchars($boat['capacity'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
       <div class="field"><label>จำนวนสูงสุด (ตัวเลข)</label><input name="capacityMax" type="number" value="<?= (int)($boat['capacityMax'] ?? 10) ?>"/></div>
       <div class="field"><label>ราคาเริ่มต้น (บาท)</label><input name="basePrice" type="number" value="<?= (int)($boat['basePrice'] ?? 0) ?>"/></div>

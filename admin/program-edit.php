@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/includes/auth.php';
 require_once __DIR__ . '/includes/layout.php';
+require_once __DIR__ . '/includes/image-field.php';
 tt_require_admin();
 
 $data = tt_read_data();
@@ -89,7 +90,7 @@ if ($flash): ?><div class="alert alert-success"><?= htmlspecialchars($flash, ENT
     <div class="grid-2">
       <div class="field"><label>ชื่อโปรแกรม</label><input name="name" required value="<?= htmlspecialchars($program['name'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
       <div class="field"><label>ID (slug)</label><input name="id" value="<?= htmlspecialchars($program['id'] ?? '', ENT_QUOTES, 'UTF-8') ?>" placeholder="four-islands, kradan"/></div>
-      <div class="field"><label>URL รูป</label><input name="image" value="<?= htmlspecialchars($program['image'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
+      <?php tt_render_image_url_field('URL รูป', 'image', $program['image'] ?? '', ['context' => 'program']); ?>
       <div class="field"><label>ป้าย (ribbon)</label><input name="ribbon" value="<?= htmlspecialchars($program['ribbon'] ?? '', ENT_QUOTES, 'UTF-8') ?>" placeholder="ยอดนิยม"/></div>
       <div class="field"><label>เส้นทาง</label><input name="route" value="<?= htmlspecialchars($program['route'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
       <div class="field"><label>ระยะเวลา</label><input name="duration" value="<?= htmlspecialchars($program['duration'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>

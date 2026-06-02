@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/includes/auth.php';
 require_once __DIR__ . '/includes/layout.php';
+require_once __DIR__ . '/includes/image-field.php';
 tt_require_admin();
 
 $data = tt_read_data();
@@ -47,7 +48,7 @@ if ($flash): ?><div class="alert alert-success"><?= htmlspecialchars($flash, ENT
   <div class="grid-2">
     <div class="field"><label>ชื่อ</label><input name="name" value="<?= htmlspecialchars($custom['name'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
     <div class="field"><label>คำบรรยาย</label><input name="sub" value="<?= htmlspecialchars($custom['sub'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
-    <div class="field"><label>URL รูป</label><input name="image" value="<?= htmlspecialchars($custom['image'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
+    <?php tt_render_image_url_field('URL รูป', 'image', $custom['image'] ?? '', ['context' => 'deal']); ?>
     <div class="field"><label>ลิงก์</label><input name="href" value="<?= htmlspecialchars($custom['href'] ?? 'booking.html', ENT_QUOTES, 'UTF-8') ?>"/></div>
     <div class="field"><label>คะแนน (0–5)</label><input name="rating" type="number" step="0.1" min="0" max="5" value="<?= htmlspecialchars((string)($custom['rating'] ?? 5), ENT_QUOTES, 'UTF-8') ?>"/></div>
     <div class="field"><label>จำนวนรีวิว (ข้อความ)</label><input name="reviewCount" value="<?= htmlspecialchars($custom['reviewCount'] ?? '', ENT_QUOTES, 'UTF-8') ?>" placeholder="850 หรือ 2.1พัน"/></div>

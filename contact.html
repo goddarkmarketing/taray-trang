@@ -27,24 +27,17 @@
 
   <section class="section">
     <div class="container">
-      <div class="office">
+      <div class="office" data-tt-site-office="full">
         <div class="office-map" data-reveal>
-          <iframe src="https://www.google.com/maps?q=Kantang+pier+Trang&output=embed" loading="lazy" title="แผนที่ Talay Trang กันตัง"></iframe>
+          <iframe src="" loading="lazy" title="แผนที่ Talay Trang กันตัง"></iframe>
         </div>
         <div class="office-info" data-reveal>
           <span class="eyebrow">ช่องทางติดต่อ</span>
           <h2>เลือกช่องทางที่สะดวกที่สุด</h2>
-          <ul class="contact-list">
-            <li><span class="ico" data-icon="line"></span><span><strong>LINE Official Account</strong><span><a href="https://line.me/R/ti/p/%40talaytrang" target="_blank" rel="noopener">@talaytrang</a> · ตอบไวที่สุด</span></span></li>
-            <li><span class="ico" data-icon="phone"></span><span><strong>โทรศัพท์</strong><span><a href="tel:0812345678">081-234-5678</a> · เปิดทุกวัน 07:00–21:00</span></span></li>
-            <li><span class="ico" data-icon="map"></span><span><strong>ที่ตั้งออฟฟิศ</strong><span>อำเภอกันตัง จังหวัดตรัง 92110</span></span></li>
-            <li><span class="ico" data-icon="clock"></span><span><strong>เวลาทำการ</strong><span>เปิดบริการทุกวัน 07:00 – 21:00 น.</span></span></li>
-            <li><span class="ico" data-icon="fb"></span><span><strong>Facebook</strong><span><a id="contact-fb-link" href="#" target="_blank" rel="noopener">เพจ Talay Trang</a></span></span></li>
-            <li><span class="ico" data-icon="tt"></span><span><strong>TikTok</strong><span><a id="contact-tt-link" href="#" target="_blank" rel="noopener">@talaytrang</a></span></span></li>
-          </ul>
+          <ul class="contact-list"></ul>
           <div class="btn-row" style="margin-top:1rem;">
-            <a class="btn btn-line btn-lg" href="https://line.me/R/ti/p/%40talaytrang" target="_blank" rel="noopener"><span data-icon="line"></span>แอด LINE</a>
-            <a class="btn btn-call btn-lg" href="tel:0812345678"><span data-icon="phone"></span>โทรเลย</a>
+            <a class="btn btn-line btn-lg" data-tt-line-btn href="#" target="_blank" rel="noopener"><span data-icon="line"></span>แอด LINE</a>
+            <a class="btn btn-call btn-lg" data-tt-call-btn href="#"><span data-icon="phone"></span>โทรเลย</a>
           </div>
         </div>
       </div>
@@ -88,17 +81,14 @@
 
   <div id="site-footer"></div>
 
-  <script src="assets/js/data-fallback.js"></script>
-  <script src="assets/js/data.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script>document.write('<script src="assets/js/tt-cache-version.js?t='+Date.now()+'"><\/script>');</script>
+  <script>document.write('<script src="assets/js/data-fallback.js?v='+(encodeURIComponent(window.__TT_SCRIPT_V||Date.now()))+'"><\/script>');</script>
+  <script>document.write('<script src="assets/js/data.js?v='+(encodeURIComponent(window.__TT_SCRIPT_V||Date.now()))+'"><\/script>');</script>
+  <script>document.write('<script src="assets/js/main.js?v='+(encodeURIComponent(window.__TT_SCRIPT_V||Date.now()))+'"><\/script>');</script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const { SITE, IMAGES } = window.TT;
+      const { IMAGES } = window.TT;
       document.getElementById('hero-img').src = IMAGES.heroContact;
-      const fb = document.getElementById('contact-fb-link');
-      const tt = document.getElementById('contact-tt-link');
-      if (fb && SITE.facebookUrl) fb.href = SITE.facebookUrl;
-      if (tt && SITE.tiktokUrl) tt.href = SITE.tiktokUrl;
     });
   </script>
 </body>

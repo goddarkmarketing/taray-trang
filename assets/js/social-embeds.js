@@ -264,7 +264,7 @@
     const openUrl = facebookOpenUrl(site, pageUrl);
     const label = facebookPageLabel(pageUrl);
     const brand = site?.brandTh || site?.brand || 'Talay Trang';
-    const phone = site?.phoneDisplay || site?.phone || '';
+    const phone = site?.phone || site?.phoneDisplay || '';
     const lineUrl = site?.lineUrl || '#';
     const lineId = site?.lineId || '@talaytrang';
     const hours = site?.hours || '';

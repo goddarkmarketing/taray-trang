@@ -29,6 +29,7 @@ if ($flash): ?>
     <a class="btn btn-primary" href="../index.html" target="_blank">เปิดหน้าเว็บ</a>
     <a class="btn btn-ghost" href="site.php">แก้ข้อมูลเว็บ</a>
     <a class="btn btn-ghost" href="articles.php">จัดการบทความ</a>
+    <a class="btn btn-ghost" href="backup.php">สำรอง & กู้คืน</a>
   </div>
 </div>
 

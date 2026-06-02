@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/includes/auth.php';
 require_once __DIR__ . '/includes/layout.php';
+require_once __DIR__ . '/includes/image-field.php';
 tt_require_admin();
 
 $data = tt_read_data();
@@ -85,7 +86,7 @@ if ($flash): ?><div class="alert alert-success"><?= htmlspecialchars($flash, ENT
       <div class="field"><label>ID (ตัวเลข)</label><input name="vid" type="number" min="1" value="<?= (int)($video['id'] ?? 0) ?>" placeholder="ว่าง = สร้างอัตโนมัติ"/></div>
       <div class="field"><label>ยอดวิว (ข้อความ)</label><input name="views" value="<?= htmlspecialchars($video['views'] ?? '', ENT_QUOTES, 'UTF-8') ?>" placeholder="128K"/></div>
       <div class="field" style="grid-column:1/-1"><label>ลิงก์คลิป</label><input name="url" value="<?= htmlspecialchars($video['url'] ?? '', ENT_QUOTES, 'UTF-8') ?>" placeholder="วางลิงก์คลิปจาก Share → Copy link"/></div>
-      <div class="field" style="grid-column:1/-1"><label>URL รูปปก (ถ้าไม่มีลิงก์คลิปเฉพาะ)</label><input name="thumb" value="<?= htmlspecialchars($video['thumb'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
+      <?php tt_render_image_url_field('URL รูปปก', 'thumb', $video['thumb'] ?? '', ['context' => 'video_thumb', 'style' => 'grid-column:1/-1']); ?>
     </div>
 
     <p class="field-hint" id="video-url-hint">

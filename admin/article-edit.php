@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/includes/auth.php';
 require_once __DIR__ . '/includes/layout.php';
+require_once __DIR__ . '/includes/image-field.php';
 tt_require_admin();
 
 $data = tt_read_data();
@@ -78,8 +79,8 @@ if ($flash): ?><div class="alert alert-success"><?= htmlspecialchars($flash, ENT
       <div class="field"><label>วันที่</label><input name="date" value="<?= htmlspecialchars($article['date'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
       <div class="field"><label>เวลาอ่าน</label><input name="readTime" value="<?= htmlspecialchars($article['readTime'] ?? '5 นาที', ENT_QUOTES, 'UTF-8') ?>"/></div>
       <div class="field" style="grid-column:1/-1"><label>คำโปรย (excerpt)</label><textarea name="excerpt"><?= htmlspecialchars($article['excerpt'] ?? '', ENT_QUOTES, 'UTF-8') ?></textarea></div>
-      <div class="field"><label>รูปปก (cover URL)</label><input name="cover" value="<?= htmlspecialchars($article['cover'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
-      <div class="field"><label>รูปย่อ (thumb URL)</label><input name="thumb" value="<?= htmlspecialchars($article['thumb'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
+      <?php tt_render_image_url_field('รูปปก (cover URL)', 'cover', $article['cover'] ?? '', ['context' => 'article_cover']); ?>
+      <?php tt_render_image_url_field('รูปย่อ (thumb URL)', 'thumb', $article['thumb'] ?? '', ['context' => 'article_thumb']); ?>
     </div>
   </div>
 
@@ -91,6 +92,7 @@ if ($flash): ?><div class="alert alert-success"><?= htmlspecialchars($flash, ENT
     <div class="form-actions">
       <button type="submit" class="btn btn-primary">บันทึกบทความ</button>
       <a class="btn btn-ghost" href="articles.php">กลับ</a>
+      <a class="btn btn-ghost" href="media.php">อัปโหลดรูป</a>
       <?php if (!$isNew): ?>
         <a class="btn btn-ghost" href="../article.html?slug=<?= urlencode($article['slug'] ?? '') ?>" target="_blank">ดูบนเว็บ</a>
       <?php endif; ?>

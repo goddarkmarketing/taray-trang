@@ -4,7 +4,18 @@
    ========================================================= */
 
 (() => {
-  const { SITE, NAV_ITEMS } = window.TT;
+  const site = () => window.TT?.SITE || {};
+  const navItems = () => window.TT?.NAV_ITEMS || [];
+  const brandEn = () => site().brand || 'Talay Trang';
+  const brandTh = () => site().brandTh || 'เช่าเรือตรัง';
+  const brandAlt = () => {
+    const tag = site().tagline || 'เช่าเรือเที่ยวทะเลตรัง';
+    return `${brandEn()} — ${tag}`;
+  };
+  const esc = (s) => String(s ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/"/g, '&quot;');
 
   // SVG icons (inline so we keep no external deps)
   const ICONS = {
@@ -54,11 +65,12 @@
   function renderHeader() {
     const host = document.getElementById('site-header');
     if (!host) return;
+    const phoneTel = (site().phone || '').replace(/[^\d+]/g, '');
     const path = location.pathname.split('/').pop() || 'index.html';
-    const linksHtml = NAV_ITEMS
+    const linksHtml = navItems()
       .map(item => `<a class="nav-link${item.href === path ? ' active' : ''}" href="${item.href}">${item.label}</a>`)
       .join('');
-    const drawerLinksHtml = NAV_ITEMS
+    const drawerLinksHtml = navItems()
       .map(item => `<a class="drawer-link${item.href === path ? ' active' : ''}" href="${item.href}">${item.label}${ICONS.arrow}</a>`)
       .join('');
 
@@ -69,11 +81,12 @@
     host.outerHTML = `
       <header class="site-header ${transparent}" id="site-header" data-transparent="${transparent ? 1 : 0}">
         <div class="container nav">
-          <a href="index.html" class="brand" aria-label="กลับสู่หน้าแรก Talay Trang">
-            <img class="brand-logo" src="assets/logo/logo.png" alt="Talay Trang — เช่าเรือเที่ยวทะเลตรัง" />
+          <a href="index.html" class="brand" aria-label="กลับสู่หน้าแรก ${esc(brandEn())}">
+            <img class="brand-logo" src="assets/logo/logo.png" alt="${esc(brandAlt())}" />
+            <span class="brand-text"><strong>${esc(brandEn())}</strong><small>${esc(brandTh())}</small></span>
           </a>
           <nav class="nav-menu" aria-label="เมนูหลัก">${linksHtml}</nav>
-          <a class="btn btn-line btn-sm nav-cta" href="${SITE.lineUrl}" target="_blank" rel="noopener">
+          <a class="btn btn-line btn-sm nav-cta" href="${site().lineUrl}" target="_blank" rel="noopener">
             ${ICONS.line} จองผ่าน LINE
           </a>
           <button class="nav-toggle" type="button" aria-label="เปิดเมนู" id="nav-toggle">${ICONS.menu}</button>
@@ -93,8 +106,8 @@
         <button class="nav-drawer-close" type="button" aria-label="ปิดเมนู" id="nav-drawer-close">${ICONS.close}</button>
         <div>${drawerLinksHtml}</div>
         <div class="drawer-foot">
-          <a class="btn btn-line btn-block" href="${SITE.lineUrl}" target="_blank" rel="noopener">${ICONS.line} จอง LINE</a>
-          <a class="btn btn-call btn-block" href="tel:${SITE.phone.replace(/[^\d+]/g,'')}">${ICONS.phone} โทรเลย</a>
+          <a class="btn btn-line btn-block" href="${site().lineUrl}" target="_blank" rel="noopener">${ICONS.line} จอง LINE</a>
+          <a class="btn btn-call btn-block" href="tel:${phoneTel}">${ICONS.phone} โทรเลย</a>
         </div>
       </div>
     `;
@@ -158,12 +171,13 @@
     const host = document.getElementById('site-footer');
     if (!host) return;
 
-    const phoneTel = SITE.phone.replace(/[^\d+]/g, '');
+    const phoneTel = (site().phone || '').replace(/[^\d+]/g, '');
+    const phoneShow = site().phone || site().phoneDisplay || '';
 
     const aboutLinks = [
       { label: 'วิธีจองเรือ',     href: 'booking.html' },
       { label: 'ติดต่อเรา',        href: 'contact.html' },
-      { label: 'เกี่ยวกับ Talay Trang', href: 'about.html' },
+      { label: `เกี่ยวกับ ${brandEn()}`, href: 'about.html' },
       { label: 'บทความและคู่มือ',    href: 'articles.html' },
       { label: 'วิดีโอจาก TikTok', href: 'videos.html' },
     ];
@@ -174,15 +188,15 @@
       { label: 'โปรแกรม 4 เกาะ',        href: 'programs.html#four-islands' },
       { label: 'ถ้ำมรกต · เกาะกระดาน', href: 'programs.html' },
       { label: 'สอนดำน้ำ Scuba',        href: 'programs.html#diving' },
-      { label: 'จองห้องพัก / รถเช่า',   href: SITE.lineUrl, external: true },
-      { label: 'ตั๋วเรือเข้าเกาะ',      href: SITE.lineUrl, external: true },
+      { label: 'จองห้องพัก / รถเช่า',   href: site().lineUrl, external: true },
+      { label: 'ตั๋วเรือเข้าเกาะ',      href: site().lineUrl, external: true },
     ];
     const moreLinks = [
       { label: 'นโยบายความเป็นส่วนตัว', href: '#' },
       { label: 'ข้อกำหนดและเงื่อนไข',   href: '#' },
       { label: 'นโยบายการคืนเงิน',      href: '#' },
       { label: 'คำถามที่พบบ่อย (FAQ)',  href: 'booking.html#faq' },
-      { label: 'ร่วมเป็นพาร์ทเนอร์',     href: SITE.lineUrl, external: true },
+      { label: 'ร่วมเป็นพาร์ทเนอร์',     href: site().lineUrl, external: true },
     ];
 
     const renderLinks = (arr) => arr.map(i => {
@@ -214,11 +228,12 @@
           <div class="footer-grid">
             <!-- Col 1: Brand + Trust + Payment -->
             <div class="footer-col footer-col-brand">
-              <a href="index.html" class="brand brand-footer" aria-label="กลับสู่หน้าแรก Talay Trang">
-                <img class="brand-logo" src="assets/logo/logo.png" alt="Talay Trang" />
+              <a href="index.html" class="brand brand-footer" aria-label="กลับสู่หน้าแรก ${esc(brandEn())}">
+                <img class="brand-logo" src="assets/logo/logo.png" alt="${esc(brandEn())}" />
+                <span class="brand-text brand-text--footer"><strong>${esc(brandEn())}</strong><small>${esc(brandTh())}</small></span>
               </a>
-              <a class="footer-cta" href="${SITE.lineUrl}" target="_blank" rel="noopener">
-                ลงทะเบียนเป็นคู่ค้ากับ Talay Trang ${ICONS.arrow}
+              <a class="footer-cta" href="${site().lineUrl}" target="_blank" rel="noopener">
+                ลงทะเบียนเป็นคู่ค้ากับ ${esc(brandEn())} ${ICONS.arrow}
               </a>
               <div class="pay-block">
                 <h5>ช่องทางชำระเงิน</h5>
@@ -228,14 +243,14 @@
 
             <!-- Col 2: About + Social -->
             <div class="footer-col">
-              <h4>เกี่ยวกับ Talay Trang</h4>
+              <h4>เกี่ยวกับ ${esc(brandEn())}</h4>
               <ul class="footer-links">${renderLinks(aboutLinks)}</ul>
               <h4 class="mt-block">ติดตามเราได้ทาง</h4>
               <ul class="footer-social">
-                <li><a href="${SITE.facebookUrl}" target="_blank" rel="noopener"><span class="ico ico-fb">${ICONS.fb}</span>Facebook</a></li>
-                <li><a href="${SITE.tiktokUrl}"   target="_blank" rel="noopener"><span class="ico ico-tt">${ICONS.tt}</span>TikTok</a></li>
-                <li><a href="${SITE.lineUrl}"     target="_blank" rel="noopener"><span class="ico ico-line">${ICONS.line}</span>LINE Official</a></li>
-                <li><a href="tel:${phoneTel}"><span class="ico ico-call">${ICONS.phone}</span>โทร ${SITE.phoneDisplay}</a></li>
+                <li><a href="${site().facebookUrl}" target="_blank" rel="noopener"><span class="ico ico-fb">${ICONS.fb}</span>Facebook</a></li>
+                <li><a href="${site().tiktokUrl}"   target="_blank" rel="noopener"><span class="ico ico-tt">${ICONS.tt}</span>TikTok</a></li>
+                <li><a href="${site().lineUrl}"     target="_blank" rel="noopener"><span class="ico ico-line">${ICONS.line}</span>LINE Official</a></li>
+                <li><a href="tel:${phoneTel}"><span class="ico ico-call">${ICONS.phone}</span>โทร ${phoneShow}</a></li>
               </ul>
             </div>
 
@@ -251,10 +266,10 @@
               <ul class="footer-links">${renderLinks(moreLinks)}</ul>
               <div class="footer-contact-card">
                 <h5>จองด่วน 24 ชั่วโมง</h5>
-                <p>${SITE.addressFull}</p>
-                <p class="muted-thin">${SITE.hours}</p>
+                <p>${site().addressFull}</p>
+                <p class="muted-thin">${site().hours}</p>
                 <div class="footer-contact-buttons">
-                  <a class="btn btn-line btn-sm" href="${SITE.lineUrl}" target="_blank" rel="noopener">${ICONS.line} แอด LINE</a>
+                  <a class="btn btn-line btn-sm" href="${site().lineUrl}" target="_blank" rel="noopener">${ICONS.line} แอด LINE</a>
                   <a class="btn btn-ghost btn-sm" href="tel:${phoneTel}">${ICONS.phone} โทร</a>
                 </div>
               </div>
@@ -262,7 +277,7 @@
           </div>
 
           <div class="footer-bot">
-            <span>© ${new Date().getFullYear()} Talay Trang. All rights reserved.</span>
+            <span>© ${new Date().getFullYear()} ${esc(brandEn())}. All rights reserved.</span>
             <span class="footer-bot-meta">เลขประจำตัวผู้เสียภาษี xxx-xxxx-xxxxx · จ.ตรัง</span>
           </div>
         </div>
@@ -270,14 +285,76 @@
     `;
   }
 
+  /* ---------- Site contact blocks (index / contact) ---------- */
+  function hydrateSiteOffices() {
+    const s = site();
+    const phoneTel = (s.phone || '').replace(/[^\d+]/g, '');
+    const phoneDisplay = s.phone || s.phoneDisplay || '';
+    const address = s.addressFull || s.address || '';
+    const tiktokLabel = (() => {
+      const m = (s.tiktokUrl || '').match(/@([\w.]+)/i);
+      return m ? '@' + m[1] : 'TikTok';
+    })();
+
+    document.querySelectorAll('[data-tt-site-office]').forEach((office) => {
+      const mode = office.dataset.ttSiteOffice || 'basic';
+      const mapIframe = office.querySelector('.office-map iframe');
+      if (mapIframe && s.mapEmbed) {
+        mapIframe.src = s.mapEmbed;
+      }
+
+      const list = office.querySelector('.contact-list');
+      if (list) {
+        let html = '';
+        if (mode === 'basic') {
+          html = `
+          <li><span class="ico" data-icon="map"></span><span><strong>ที่ตั้งออฟฟิศ</strong><span>${address}</span></span></li>
+          <li><span class="ico" data-icon="clock"></span><span><strong>เวลาทำการ</strong><span>${s.hours || ''}</span></span></li>
+          <li><span class="ico" data-icon="phone"></span><span><strong>โทรหาเรา</strong><span><a href="tel:${phoneTel}">${phoneDisplay}</a></span></span></li>
+          <li><span class="ico" data-icon="line"></span><span><strong>LINE Official</strong><span><a href="${s.lineUrl || '#'}" target="_blank" rel="noopener">${s.lineId || ''}</a></span></span></li>`;
+        } else {
+          html = `
+          <li><span class="ico" data-icon="line"></span><span><strong>LINE Official Account</strong><span><a href="${s.lineUrl || '#'}" target="_blank" rel="noopener">${s.lineId || ''}</a> · ตอบไวที่สุด</span></span></li>
+          <li><span class="ico" data-icon="phone"></span><span><strong>โทรศัพท์</strong><span><a href="tel:${phoneTel}">${phoneDisplay}</a> · เปิดทุกวัน</span></span></li>
+          <li><span class="ico" data-icon="map"></span><span><strong>ที่ตั้งออฟฟิศ</strong><span>${address}</span></span></li>
+          <li><span class="ico" data-icon="clock"></span><span><strong>เวลาทำการ</strong><span>${s.hours || ''}</span></span></li>
+          <li><span class="ico" data-icon="fb"></span><span><strong>Facebook</strong><span><a href="${s.facebookUrl || '#'}" target="_blank" rel="noopener">เพจ ${esc(brandEn())}</a></span></span></li>
+          <li><span class="ico" data-icon="tt"></span><span><strong>TikTok</strong><span><a href="${s.tiktokUrl || '#'}" target="_blank" rel="noopener">${tiktokLabel}</a></span></span></li>`;
+        }
+        list.innerHTML = html;
+      }
+
+      office.querySelectorAll('[data-tt-line-btn]').forEach((a) => {
+        a.href = s.lineUrl || '#';
+      });
+      office.querySelectorAll('[data-tt-call-btn]').forEach((a) => {
+        a.href = 'tel:' + phoneTel;
+      });
+    });
+  }
+
+  function refreshSiteShell() {
+    const pageKey = document.body.dataset.ttPage;
+    if (pageKey) applySeo(pageKey);
+    renderHeader();
+    renderFooter();
+    document.querySelector('.sticky-cta')?.remove();
+    document.body.classList.remove('has-sticky');
+    renderStickyCta();
+    hydrateSiteOffices();
+    injectIcons();
+  }
+  window.TT.refreshSiteShell = refreshSiteShell;
+
   /* ---------- Sticky bottom CTA (mobile only) ---------- */
   function renderStickyCta() {
     if (document.body.dataset.sticky === 'off') return;
+    document.querySelector('.sticky-cta')?.remove();
     const el = document.createElement('div');
     el.className = 'sticky-cta';
     el.innerHTML = `
-      <a class="btn btn-call" href="tel:${SITE.phone.replace(/[^\d+]/g,'')}">${ICONS.phone} โทรเลย</a>
-      <a class="btn btn-line" href="${SITE.lineUrl}" target="_blank" rel="noopener">${ICONS.line} จอง LINE</a>
+      <a class="btn btn-call" href="tel:${(site().phone || '').replace(/[^\d+]/g,'')}">${ICONS.phone} โทรเลย</a>
+      <a class="btn btn-line" href="${site().lineUrl}" target="_blank" rel="noopener">${ICONS.line} จอง LINE</a>
     `;
     document.body.appendChild(el);
     document.body.classList.add('has-sticky');
@@ -391,7 +468,11 @@
     }
     function next() { go(cur + 1); }
     function prev() { go(cur - 1); }
-    function start() { stop(); if (slides.length > 1) timer = setInterval(next, DURATION); }
+    function start() {
+      stop();
+      if (window.__TT_PREVIEW || slides.length <= 1) return;
+      timer = setInterval(next, DURATION);
+    }
     function stop() { if (timer) { clearInterval(timer); timer = null; } }
 
     nextBtn.addEventListener('click', () => { next(); start(); });
@@ -530,14 +611,15 @@
   window.TT.applySeo = applySeo;
 
   /* ---------- Init ---------- */
+  window.__TT_PREVIEW = new URLSearchParams(location.search).has('tt_preview');
+
   document.addEventListener('DOMContentLoaded', () => {
-    const pageKey = document.body.dataset.ttPage;
-    if (pageKey) applySeo(pageKey);
-    renderHeader();
-    renderFooter();
-    renderStickyCta();
+    refreshSiteShell();
     bindReveal();
-    injectIcons();
     initBannerSlider();
+  });
+
+  document.addEventListener('tt:data-updated', () => {
+    refreshSiteShell();
   });
 })();

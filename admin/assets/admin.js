@@ -88,4 +88,287 @@
       if (!wrap.contains(e.target)) close();
     });
   });
+
+  window.ttUploadImageFile = async function (file) {
+    const fd = new FormData();
+    fd.append('file', file);
+    const res = await fetch('api/upload.php', { method: 'POST', body: fd });
+    const json = await res.json();
+    if (!res.ok || !json.ok) {
+      throw new Error(json.error || 'อัปโหลดไม่สำเร็จ');
+    }
+    return json.url;
+  };
+
+  window.ttBindImageUrlRow = function (row) {
+    const input = row.querySelector('.image-url-input');
+    const btn = row.querySelector('.image-upload-btn');
+    const fileEl = row.querySelector('.image-upload-file');
+    if (!input || !btn || !fileEl || row.dataset.uploadBound === '1') return;
+    row.dataset.uploadBound = '1';
+
+    btn.addEventListener('click', () => fileEl.click());
+
+    fileEl.addEventListener('change', async () => {
+      const file = fileEl.files && fileEl.files[0];
+      fileEl.value = '';
+      if (!file) return;
+
+      btn.classList.add('is-loading');
+      btn.textContent = 'กำลังอัปโหลด…';
+      try {
+        const url = await ttUploadImageFile(file);
+        const append = input.dataset.imageAppend === '1';
+        if (input.tagName === 'TEXTAREA') {
+          const cur = input.value.trim();
+          input.value = append && cur ? cur + '\n' + url : url;
+        } else {
+          input.value = url;
+        }
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+        ttToast('อัปโหลดสำเร็จ — ใส่ path ในช่องแล้ว');
+      } catch (err) {
+        ttToast(err.message || 'อัปโหลดไม่สำเร็จ', true);
+      } finally {
+        btn.classList.remove('is-loading');
+        btn.textContent = 'อัปโหลด';
+      }
+    });
+  };
+
+  window.ttBuildImageUrlField = function (opts) {
+    const field = document.createElement('div');
+    field.className = 'field';
+    if (opts.gridColumn) field.style.gridColumn = opts.gridColumn;
+
+    const labelEl = document.createElement('label');
+    labelEl.htmlFor = opts.id;
+    labelEl.textContent = opts.label;
+    labelEl.id = opts.labelId || '';
+
+    const row = document.createElement('div');
+    row.className = 'image-url-row';
+
+    let input;
+    if (opts.multiline) {
+      input = document.createElement('textarea');
+      input.rows = opts.rows || 8;
+      if (opts.append) input.dataset.imageAppend = '1';
+    } else {
+      input = document.createElement('input');
+      input.type = 'text';
+      if (opts.required) input.required = true;
+    }
+    input.name = opts.name;
+    input.id = opts.id;
+    input.className = 'image-url-input';
+    input.placeholder = opts.placeholder || 'https://... หรือ assets/uploads/photo.jpg';
+    input.value = opts.value || '';
+
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'btn btn-ghost image-upload-btn';
+    btn.textContent = 'อัปโหลด';
+
+    const fileEl = document.createElement('input');
+    fileEl.type = 'file';
+    fileEl.className = 'image-upload-file';
+    fileEl.accept = 'image/*';
+    fileEl.hidden = true;
+
+    row.append(input, btn, fileEl);
+    field.append(labelEl, row);
+    ttBindImageUrlRow(row);
+    return field;
+  };
+
+  document.querySelectorAll('.image-url-row').forEach((row) => ttBindImageUrlRow(row));
+
+  /* ---------- Page help: live site preview in popover ---------- */
+  const PREVIEW_W = 1280;
+
+  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+  const nextFrame = () => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+
+  async function waitForTarget(doc, selector, waitChildren) {
+    const deadline = Date.now() + 12000;
+    while (Date.now() < deadline) {
+      const el = doc.querySelector(selector);
+      if (!el) {
+        await sleep(100);
+        continue;
+      }
+      if (waitChildren && el.children.length === 0) {
+        await sleep(100);
+        continue;
+      }
+      if (el.offsetHeight > 0 && el.offsetWidth > 0) {
+        return el;
+      }
+      await sleep(100);
+    }
+    return null;
+  }
+
+  function resolvePreviewTarget(el, scope) {
+    if (!el) return null;
+    if (scope === 'section') {
+      return el.closest('section') || el;
+    }
+    return el;
+  }
+
+  function measureDocOffset(el, win) {
+    const rect = el.getBoundingClientRect();
+    const scrollY = win.scrollY || win.document.documentElement.scrollTop || 0;
+    return {
+      top: rect.top + scrollY,
+      height: rect.height,
+    };
+  }
+
+  async function waitForLayoutStable(doc, win) {
+    if (doc.fonts && doc.fonts.ready) {
+      try {
+        await Promise.race([doc.fonts.ready, sleep(1500)]);
+      } catch (_) { /* ignore */ }
+    }
+    const pending = Array.from(doc.images || []).filter((img) => !img.complete);
+    if (pending.length) {
+      await Promise.race([
+        Promise.all(pending.map((img) => new Promise((resolve) => {
+          img.addEventListener('load', resolve, { once: true });
+          img.addEventListener('error', resolve, { once: true });
+        }))),
+        sleep(2500),
+      ]);
+    }
+    win.scrollTo(0, 0);
+    await sleep(120);
+    await nextFrame();
+  }
+
+  async function mountLivePreview(fig) {
+    if (fig.dataset.previewReady === '1' || fig.dataset.previewLoading === '1') return;
+
+    const live = fig.querySelector('.admin-page-help-live');
+    const iframe = fig.querySelector('.admin-page-help-iframe');
+    const stage = fig.querySelector('.admin-page-help-live-stage');
+    const clip = fig.querySelector('.admin-page-help-live-clip');
+    const loading = fig.querySelector('.admin-page-help-live-loading');
+    if (!live || !iframe || !stage || !clip) return;
+
+    const page = fig.dataset.page;
+    const selector = fig.dataset.selector;
+    if (!page || !selector) return;
+
+    const maxH = parseInt(fig.dataset.maxHeight || '200', 10);
+    const waitChildren = fig.dataset.waitChildren === '1';
+    const scope = fig.dataset.scope || '';
+
+    fig.dataset.previewLoading = '1';
+
+    iframe.style.width = PREVIEW_W + 'px';
+    iframe.style.maxWidth = 'none';
+    iframe.style.visibility = 'hidden';
+    stage.style.width = PREVIEW_W + 'px';
+    stage.style.marginTop = '0';
+    stage.style.transform = 'none';
+
+    const pageUrl = page + (page.includes('?') ? '&' : '?') + 'tt_preview=1';
+    iframe.src = pageUrl;
+
+    await new Promise((resolve) => {
+      iframe.addEventListener('load', resolve, { once: true });
+    });
+
+    const doc = iframe.contentDocument;
+    const win = iframe.contentWindow;
+    if (!doc || !win) {
+      if (loading) loading.textContent = 'โหลดตัวอย่างไม่สำเร็จ';
+      iframe.style.visibility = '';
+      delete fig.dataset.previewLoading;
+      return;
+    }
+
+    const previewStyle = doc.createElement('style');
+    previewStyle.textContent = `
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+      }
+      .nav-drawer, .sticky-cta { display: none !important; }
+      body.has-sticky { padding-bottom: 0 !important; }
+    `;
+    doc.head.appendChild(previewStyle);
+
+    if (loading) loading.textContent = 'กำลังจัดตำแหน่ง…';
+
+    const found = await waitForTarget(doc, selector, waitChildren);
+    if (!found) {
+      if (loading) loading.textContent = 'ไม่พบส่วนนี้บนหน้าเว็บ';
+      iframe.style.visibility = '';
+      delete fig.dataset.previewLoading;
+      return;
+    }
+
+    await waitForLayoutStable(doc, win);
+
+    const el = resolvePreviewTarget(doc.querySelector(selector), scope);
+    if (!el) {
+      if (loading) loading.textContent = 'ไม่พบส่วนนี้บนหน้าเว็บ';
+      iframe.style.visibility = '';
+      delete fig.dataset.previewLoading;
+      return;
+    }
+
+    el.style.outline = '3px solid rgba(25, 118, 210, .55)';
+    el.style.outlineOffset = '2px';
+
+    win.scrollTo(0, 0);
+    await nextFrame();
+
+    const bounds = measureDocOffset(el, win);
+    const pad = 8;
+    const top = Math.max(0, bounds.top - pad);
+    const elHeight = bounds.height + pad * 2;
+    const docHeight = Math.max(
+      doc.documentElement.scrollHeight,
+      doc.body ? doc.body.scrollHeight : 0,
+      top + elHeight + 24
+    );
+
+    iframe.style.height = docHeight + 'px';
+    stage.style.height = docHeight + 'px';
+
+    await nextFrame();
+
+    const clipWidth = clip.clientWidth || live.clientWidth || 392;
+    const scale = clipWidth / PREVIEW_W;
+    let viewH = Math.ceil(elHeight * scale);
+    if (maxH > 0) viewH = Math.min(viewH, maxH);
+
+    live.style.height = viewH + 'px';
+    stage.style.transform = 'scale(' + scale + ')';
+    stage.style.marginTop = (-top * scale) + 'px';
+
+    clip.classList.add('is-ready');
+    iframe.style.visibility = '';
+    if (loading) loading.hidden = true;
+    fig.dataset.previewReady = '1';
+    delete fig.dataset.previewLoading;
+  }
+
+  function loadPageHelpPreviews(help) {
+    help.querySelectorAll('.admin-page-help-live-wrap').forEach((fig) => {
+      mountLivePreview(fig);
+    });
+  }
+
+  document.querySelectorAll('.admin-page-help').forEach((help) => {
+    help.addEventListener('mouseenter', () => loadPageHelpPreviews(help));
+    help.addEventListener('focusin', () => loadPageHelpPreviews(help));
+  });
 })();

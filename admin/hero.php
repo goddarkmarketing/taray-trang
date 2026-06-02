@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/includes/auth.php';
 require_once __DIR__ . '/includes/layout.php';
+require_once __DIR__ . '/includes/image-field.php';
 tt_require_admin();
 
 $data = tt_read_data();
@@ -28,6 +29,8 @@ if ($flash): ?><div class="alert alert-success"><?= htmlspecialchars($flash, ENT
   <a class="btn btn-primary" href="hero-edit.php">+ เพิ่มสไลด์</a>
   <a class="btn btn-ghost" href="media.php">อัปโหลดรูป</a>
 </div>
+
+<p class="field-hint" style="margin:0 0 16px"><?= htmlspecialchars(tt_image_field_label('สไลด์แบนเนอร์หน้าแรก', null, 'hero_slide'), ENT_QUOTES, 'UTF-8') ?> · <a href="media.php">ดูตารางขนาดทั้งหมด</a></p>
 
 <div class="card">
   <?php if (!$slides): ?>

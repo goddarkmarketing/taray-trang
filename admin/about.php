@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/includes/auth.php';
 require_once __DIR__ . '/includes/layout.php';
+require_once __DIR__ . '/includes/image-sizes.php';
 tt_require_admin();
 
 $data = tt_read_data();
@@ -89,7 +90,7 @@ if ($flash): ?><div class="alert alert-success"><?= htmlspecialchars($flash, ENT
       <div class="field" style="grid-column:1/-1"><label>หัวข้อหลัก</label><input name="hero_title" value="<?= htmlspecialchars($hero['title'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
       <div class="field" style="grid-column:1/-1"><label>Lead</label><textarea name="hero_lead"><?= htmlspecialchars($hero['lead'] ?? '', ENT_QUOTES, 'UTF-8') ?></textarea></div>
     </div>
-    <p class="field-hint">รูป Hero แก้ที่เมนู <a href="images.php">รูปภาพ (Registry)</a> → key <code>heroAbout</code></p>
+    <p class="field-hint">รูป Hero แก้ที่เมนู <a href="images.php">รูปภาพ (Registry)</a> → key <code>heroAbout</code> (<?= htmlspecialchars(tt_image_size_hint('heroAbout'), ENT_QUOTES, 'UTF-8') ?>)</p>
   </div>
 
   <div class="card">
@@ -103,7 +104,7 @@ if ($flash): ?><div class="alert alert-success"><?= htmlspecialchars($flash, ENT
       <div class="field"><label>ปุ่มรอง — ข้อความ</label><input name="story_cta2_label" value="<?= htmlspecialchars($ctaSecondary['label'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
       <div class="field"><label>ปุ่มรอง — ลิงก์</label><input name="story_cta2_href" value="<?= htmlspecialchars($ctaSecondary['href'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
     </div>
-    <p class="field-hint">รูป 3 รูปใน story grid แก้ที่ <code>about1</code>, <code>about2</code>, <code>about3</code> ในเมนูรูปภาพ</p>
+    <p class="field-hint">รูป 3 รูปใน story grid แก้ที่ <code>about1</code> (<?= htmlspecialchars(tt_image_size_hint('about1'), ENT_QUOTES, 'UTF-8') ?>), <code>about2</code> / <code>about3</code> (<?= htmlspecialchars(tt_image_size_hint('about2'), ENT_QUOTES, 'UTF-8') ?>) ในเมนู <a href="images.php">รูปภาพ</a></p>
   </div>
 
   <div class="card">

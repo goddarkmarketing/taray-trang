@@ -13,7 +13,12 @@ desktop.ini
 # CMS — อย่า commit รหัสผ่าน admin
 data/admin-credentials.json
 data/site.json.tmp
+data/backups/*
+!data/backups/.gitkeep
 
 # Uploads (เก็บโฟลเดอร์ ไม่เก็บไฟล์รูป)
 assets/uploads/*
 !assets/uploads/.gitkeep
+
+# Deploy packages (สร้างจาก tools/deploy)
+dist/
