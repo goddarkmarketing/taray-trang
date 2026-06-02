@@ -1,62 +1,62 @@
 {
     "meta": {
         "version": 1,
-        "updated": "2026-06-02T08:53:06+02:00",
-        "tiktokRssSynced": "https:\/\/raw.githubusercontent.com\/goddarkmarketing\/tiktok-rss-flat\/main\/rss\/talaytrang.xml"
+        "updated": "2026-06-02T12:15:52.847Z",
+        "tiktokRssSynced": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/rss/talaytrang.xml"
     },
     "images": {
-        "heroHome": "https:\/\/images.pexels.com\/photos\/14573822\/pexels-photo-14573822.jpeg?auto=compress&cs=tinysrgb&w=1920",
-        "heroBoats": "https:\/\/images.pexels.com\/photos\/1591376\/pexels-photo-1591376.jpeg?auto=compress&cs=tinysrgb&w=1920",
-        "heroPrograms": "https:\/\/images.pexels.com\/photos\/1647064\/pexels-photo-1647064.jpeg?auto=compress&cs=tinysrgb&w=1920",
-        "heroBooking": "https:\/\/images.pexels.com\/photos\/31200075\/pexels-photo-31200075.jpeg?auto=compress&cs=tinysrgb&w=1920",
-        "heroArticles": "https:\/\/images.pexels.com\/photos\/9164423\/pexels-photo-9164423.jpeg?auto=compress&cs=tinysrgb&w=1920",
-        "heroVideos": "https:\/\/images.pexels.com\/photos\/28581876\/pexels-photo-28581876.jpeg?auto=compress&cs=tinysrgb&w=1920",
-        "heroAbout": "https:\/\/images.pexels.com\/photos\/13419316\/pexels-photo-13419316.jpeg?auto=compress&cs=tinysrgb&w=1920",
-        "heroContact": "https:\/\/images.pexels.com\/photos\/457881\/pexels-photo-457881.jpeg?auto=compress&cs=tinysrgb&w=1920",
-        "boatLongtail": "https:\/\/images.pexels.com\/photos\/237741\/pexels-photo-237741.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        "boatSpeedboat": "https:\/\/images.pexels.com\/photos\/90427\/pexels-photo-90427.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        "boatLarge": "https:\/\/images.pexels.com\/photos\/13680386\/pexels-photo-13680386.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        "programFourIslands": "https:\/\/images.pexels.com\/photos\/14573822\/pexels-photo-14573822.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        "programKradan": "https:\/\/images.pexels.com\/photos\/1450363\/pexels-photo-1450363.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        "programDiving": "https:\/\/images.pexels.com\/photos\/15763636\/pexels-photo-15763636.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        "programEmerald": "https:\/\/images.pexels.com\/photos\/1647064\/pexels-photo-1647064.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        "programPrivate": "https:\/\/images.pexels.com\/photos\/17942107\/pexels-photo-17942107.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "heroHome": "https://images.pexels.com/photos/14573822/pexels-photo-14573822.jpeg?auto=compress&cs=tinysrgb&w=1920",
+        "heroBoats": "https://images.pexels.com/photos/1591376/pexels-photo-1591376.jpeg?auto=compress&cs=tinysrgb&w=1920",
+        "heroPrograms": "https://images.pexels.com/photos/1647064/pexels-photo-1647064.jpeg?auto=compress&cs=tinysrgb&w=1920",
+        "heroBooking": "https://images.pexels.com/photos/31200075/pexels-photo-31200075.jpeg?auto=compress&cs=tinysrgb&w=1920",
+        "heroArticles": "https://images.pexels.com/photos/9164423/pexels-photo-9164423.jpeg?auto=compress&cs=tinysrgb&w=1920",
+        "heroVideos": "https://images.pexels.com/photos/28581876/pexels-photo-28581876.jpeg?auto=compress&cs=tinysrgb&w=1920",
+        "heroAbout": "https://images.pexels.com/photos/13419316/pexels-photo-13419316.jpeg?auto=compress&cs=tinysrgb&w=1920",
+        "heroContact": "https://images.pexels.com/photos/457881/pexels-photo-457881.jpeg?auto=compress&cs=tinysrgb&w=1920",
+        "boatLongtail": "https://images.pexels.com/photos/237741/pexels-photo-237741.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "boatSpeedboat": "https://images.pexels.com/photos/90427/pexels-photo-90427.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "boatLarge": "https://images.pexels.com/photos/13680386/pexels-photo-13680386.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "programFourIslands": "https://images.pexels.com/photos/14573822/pexels-photo-14573822.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "programKradan": "https://images.pexels.com/photos/1450363/pexels-photo-1450363.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "programDiving": "https://images.pexels.com/photos/15763636/pexels-photo-15763636.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "programEmerald": "https://images.pexels.com/photos/1647064/pexels-photo-1647064.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "programPrivate": "https://images.pexels.com/photos/17942107/pexels-photo-17942107.jpeg?auto=compress&cs=tinysrgb&w=1200",
         "videoThumbs": [
-            "https:\/\/images.pexels.com\/photos\/14573822\/pexels-photo-14573822.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https:\/\/images.pexels.com\/photos\/15763636\/pexels-photo-15763636.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https:\/\/images.pexels.com\/photos\/90427\/pexels-photo-90427.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https:\/\/images.pexels.com\/photos\/13419316\/pexels-photo-13419316.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https:\/\/images.pexels.com\/photos\/1647064\/pexels-photo-1647064.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https:\/\/images.pexels.com\/photos\/1450363\/pexels-photo-1450363.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https:\/\/images.pexels.com\/photos\/6698714\/pexels-photo-6698714.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https:\/\/images.pexels.com\/photos\/28581876\/pexels-photo-28581876.jpeg?auto=compress&cs=tinysrgb&w=800"
+            "https://images.pexels.com/photos/14573822/pexels-photo-14573822.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/15763636/pexels-photo-15763636.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/90427/pexels-photo-90427.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/13419316/pexels-photo-13419316.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/1647064/pexels-photo-1647064.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/1450363/pexels-photo-1450363.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/6698714/pexels-photo-6698714.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/28581876/pexels-photo-28581876.jpeg?auto=compress&cs=tinysrgb&w=800"
         ],
-        "about1": "https:\/\/images.pexels.com\/photos\/1591376\/pexels-photo-1591376.jpeg?auto=compress&cs=tinysrgb&w=1000",
-        "about2": "https:\/\/images.pexels.com\/photos\/237741\/pexels-photo-237741.jpeg?auto=compress&cs=tinysrgb&w=1000",
-        "about3": "https:\/\/images.pexels.com\/photos\/31029704\/pexels-photo-31029704.jpeg?auto=compress&cs=tinysrgb&w=1000",
-        "svcBigBoat": "https:\/\/images.pexels.com\/photos\/13680386\/pexels-photo-13680386.jpeg?auto=compress&cs=tinysrgb&w=900",
-        "svcLongtail": "https:\/\/images.pexels.com\/photos\/1591376\/pexels-photo-1591376.jpeg?auto=compress&cs=tinysrgb&w=900",
-        "svcSpeedboat": "https:\/\/images.pexels.com\/photos\/90427\/pexels-photo-90427.jpeg?auto=compress&cs=tinysrgb&w=900",
-        "svcHotel": "https:\/\/images.pexels.com\/photos\/5740342\/pexels-photo-5740342.jpeg?auto=compress&cs=tinysrgb&w=900",
-        "svcFerry": "https:\/\/images.pexels.com\/photos\/14573822\/pexels-photo-14573822.jpeg?auto=compress&cs=tinysrgb&w=900",
-        "svcCar": "https:\/\/images.pexels.com\/photos\/15804640\/pexels-photo-15804640.jpeg?auto=compress&cs=tinysrgb&w=900",
-        "svcSeminar": "https:\/\/images.pexels.com\/photos\/3184292\/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=900",
-        "svcScuba": "https:\/\/images.pexels.com\/photos\/6173672\/pexels-photo-6173672.jpeg?auto=compress&cs=tinysrgb&w=900",
-        "svcFood": "https:\/\/images.pexels.com\/photos\/769289\/pexels-photo-769289.jpeg?auto=compress&cs=tinysrgb&w=900",
-        "svcPlan": "https:\/\/images.pexels.com\/photos\/7235811\/pexels-photo-7235811.jpeg?auto=compress&cs=tinysrgb&w=900",
-        "svcFilm": "https:\/\/images.pexels.com\/photos\/17051407\/pexels-photo-17051407.jpeg?auto=compress&cs=tinysrgb&w=900",
+        "about1": "https://images.pexels.com/photos/1591376/pexels-photo-1591376.jpeg?auto=compress&cs=tinysrgb&w=1000",
+        "about2": "https://images.pexels.com/photos/237741/pexels-photo-237741.jpeg?auto=compress&cs=tinysrgb&w=1000",
+        "about3": "https://images.pexels.com/photos/31029704/pexels-photo-31029704.jpeg?auto=compress&cs=tinysrgb&w=1000",
+        "svcBigBoat": "https://images.pexels.com/photos/13680386/pexels-photo-13680386.jpeg?auto=compress&cs=tinysrgb&w=900",
+        "svcLongtail": "https://images.pexels.com/photos/1591376/pexels-photo-1591376.jpeg?auto=compress&cs=tinysrgb&w=900",
+        "svcSpeedboat": "https://images.pexels.com/photos/90427/pexels-photo-90427.jpeg?auto=compress&cs=tinysrgb&w=900",
+        "svcHotel": "https://images.pexels.com/photos/5740342/pexels-photo-5740342.jpeg?auto=compress&cs=tinysrgb&w=900",
+        "svcFerry": "https://images.pexels.com/photos/14573822/pexels-photo-14573822.jpeg?auto=compress&cs=tinysrgb&w=900",
+        "svcCar": "https://images.pexels.com/photos/15804640/pexels-photo-15804640.jpeg?auto=compress&cs=tinysrgb&w=900",
+        "svcSeminar": "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=900",
+        "svcScuba": "https://images.pexels.com/photos/6173672/pexels-photo-6173672.jpeg?auto=compress&cs=tinysrgb&w=900",
+        "svcFood": "https://images.pexels.com/photos/769289/pexels-photo-769289.jpeg?auto=compress&cs=tinysrgb&w=900",
+        "svcPlan": "https://images.pexels.com/photos/7235811/pexels-photo-7235811.jpeg?auto=compress&cs=tinysrgb&w=900",
+        "svcFilm": "https://images.pexels.com/photos/17051407/pexels-photo-17051407.jpeg?auto=compress&cs=tinysrgb&w=900",
         "local": [
-            "assets\/images\/img-01.webp",
-            "assets\/images\/img-02.webp",
-            "assets\/images\/img-03.webp",
-            "assets\/images\/img-04.webp",
-            "assets\/images\/img-05.webp",
-            "assets\/images\/img-06.webp",
-            "assets\/images\/img-07.webp",
-            "assets\/images\/img-08.webp",
-            "assets\/images\/img-09.webp",
-            "assets\/images\/img-10.webp",
-            "assets\/images\/img-11.webp"
+            "assets/images/img-01.webp",
+            "assets/images/img-02.webp",
+            "assets/images/img-03.webp",
+            "assets/images/img-04.webp",
+            "assets/images/img-05.webp",
+            "assets/images/img-06.webp",
+            "assets/images/img-07.webp",
+            "assets/images/img-08.webp",
+            "assets/images/img-09.webp",
+            "assets/images/img-10.webp",
+            "assets/images/img-11.webp"
         ]
     },
     "site": {
@@ -66,14 +66,14 @@
         "phone": "0812345678",
         "phoneDisplay": "0812345678",
         "lineId": "@talaytrang",
-        "lineUrl": "https:\/\/line.me\/R\/ti\/p\/%40talaytrang",
-        "facebookUrl": "https:\/\/www.facebook.com\/share\/185Q3dvN1q\/?mibextid=wwXIfr",
-        "facebookPageUrl": "https:\/\/www.facebook.com\/talaytrang",
-        "tiktokUrl": "https:\/\/www.tiktok.com\/@talaytrang",
+        "lineUrl": "https://line.me/R/ti/p/%40talaytrang",
+        "facebookUrl": "https://www.facebook.com/share/185Q3dvN1q/?mibextid=wwXIfr",
+        "facebookPageUrl": "https://www.facebook.com/talaytrang",
+        "tiktokUrl": "https://www.tiktok.com/@talaytrang",
         "address": "อำเภอกันตัง จังหวัดตรัง",
         "addressFull": "ออฟฟิศ เช่าเรือตรัง (Talay Trang) อ.กันตัง จ.ตรัง 92110",
         "hours": "เปิดบริการทุกวัน 07:00 – 21:00 น.",
-        "mapEmbed": "https:\/\/www.google.com\/maps?q=Kantang+pier+Trang&output=embed"
+        "mapEmbed": "https://www.google.com/maps?q=Kantang+pier+Trang&output=embed"
     },
     "navItems": [
         {
@@ -114,7 +114,7 @@
             "id": "longtail",
             "name": "เรือหางยาว",
             "tag": "Local Vibes",
-            "image": "https:\/\/images.pexels.com\/photos\/237741\/pexels-photo-237741.jpeg?auto=compress&cs=tinysrgb&w=1200",
+            "image": "https://images.pexels.com/photos/237741/pexels-photo-237741.jpeg?auto=compress&cs=tinysrgb&w=1200",
             "capacity": "6–10 ท่าน",
             "capacityMax": 10,
             "basePrice": 3500,
@@ -138,7 +138,7 @@
             "id": "speedboat",
             "name": "Speed Boat",
             "tag": "Fast & Comfort",
-            "image": "https:\/\/images.pexels.com\/photos\/90427\/pexels-photo-90427.jpeg?auto=compress&cs=tinysrgb&w=1200",
+            "image": "https://images.pexels.com/photos/90427/pexels-photo-90427.jpeg?auto=compress&cs=tinysrgb&w=1200",
             "capacity": "10–25 ท่าน",
             "capacityMax": 25,
             "basePrice": 8000,
@@ -162,7 +162,7 @@
             "id": "bigboat",
             "name": "เรือใหญ่",
             "tag": "Premium Group",
-            "image": "https:\/\/images.pexels.com\/photos\/13680386\/pexels-photo-13680386.jpeg?auto=compress&cs=tinysrgb&w=1200",
+            "image": "https://images.pexels.com/photos/13680386/pexels-photo-13680386.jpeg?auto=compress&cs=tinysrgb&w=1200",
             "capacity": "25–60 ท่าน",
             "capacityMax": 60,
             "basePrice": 12000,
@@ -191,16 +191,16 @@
             "desc": "เซ็ตอาหารทะเลสด",
             "price": 250,
             "unit": "per_person",
-            "priceLabel": "+250 บาท\/คน"
+            "priceLabel": "+250 บาท/คน"
         },
         {
             "id": "guide",
             "icon": "users",
             "label": "ไกด์นำเที่ยว",
-            "desc": "ไกด์ท้องถิ่นพูดไทย\/อังกฤษ",
+            "desc": "ไกด์ท้องถิ่นพูดไทย/อังกฤษ",
             "price": 1500,
             "unit": "flat",
-            "priceLabel": "+1,500 บาท\/ทริป"
+            "priceLabel": "+1,500 บาท/ทริป"
         },
         {
             "id": "photo",
@@ -209,7 +209,7 @@
             "desc": "ส่งภาพภายใน 3 วัน",
             "price": 2500,
             "unit": "flat",
-            "priceLabel": "+2,500 บาท\/ทริป"
+            "priceLabel": "+2,500 บาท/ทริป"
         },
         {
             "id": "snorkel",
@@ -218,7 +218,7 @@
             "desc": "หน้ากาก + ท่อหายใจ",
             "price": 150,
             "unit": "per_person",
-            "priceLabel": "+150 บาท\/คน"
+            "priceLabel": "+150 บาท/คน"
         },
         {
             "id": "shuttle",
@@ -227,14 +227,14 @@
             "desc": "รับส่งจากที่พักในตัวเมือง",
             "price": 1000,
             "unit": "flat",
-            "priceLabel": "+1,000 บาท\/ทริป"
+            "priceLabel": "+1,000 บาท/ทริป"
         }
     ],
     "programs": [
         {
             "id": "four-islands",
             "name": "โปรแกรม 4 เกาะ ทะเลตรัง",
-            "image": "https:\/\/images.pexels.com\/photos\/14573822\/pexels-photo-14573822.jpeg?auto=compress&cs=tinysrgb&w=1200",
+            "image": "https://images.pexels.com/photos/14573822/pexels-photo-14573822.jpeg?auto=compress&cs=tinysrgb&w=1200",
             "route": "เกาะมุก → ถ้ำมรกต → เกาะกระดาน → เกาะเชือก",
             "stops": [
                 "เกาะมุก",
@@ -259,7 +259,7 @@
         {
             "id": "kradan",
             "name": "โปรแกรมเกาะกระดาน",
-            "image": "https:\/\/images.pexels.com\/photos\/1450363\/pexels-photo-1450363.jpeg?auto=compress&cs=tinysrgb&w=1200",
+            "image": "https://images.pexels.com/photos/1450363/pexels-photo-1450363.jpeg?auto=compress&cs=tinysrgb&w=1200",
             "route": "เกาะกระดาน → จุดดำน้ำ → ชมพระอาทิตย์",
             "stops": [
                 "หาดเกาะกระดาน",
@@ -281,7 +281,7 @@
         {
             "id": "diving",
             "name": "โปรแกรมดำน้ำดูปะการัง",
-            "image": "https:\/\/images.pexels.com\/photos\/15763636\/pexels-photo-15763636.jpeg?auto=compress&cs=tinysrgb&w=1200",
+            "image": "https://images.pexels.com/photos/15763636/pexels-photo-15763636.jpeg?auto=compress&cs=tinysrgb&w=1200",
             "route": "เกาะเชือก → เกาะม้า → เกาะแหวน",
             "stops": [
                 "ดำน้ำดูปะการัง 3 จุด",
@@ -302,8 +302,8 @@
         },
         {
             "id": "emerald-cave",
-            "name": "โปรแกรมเกาะมุก \/ ถ้ำมรกต",
-            "image": "https:\/\/images.pexels.com\/photos\/1647064\/pexels-photo-1647064.jpeg?auto=compress&cs=tinysrgb&w=1200",
+            "name": "โปรแกรมเกาะมุก / ถ้ำมรกต",
+            "image": "https://images.pexels.com/photos/1647064/pexels-photo-1647064.jpeg?auto=compress&cs=tinysrgb&w=1200",
             "route": "เกาะมุก → ถ้ำมรกต → จุดดำน้ำ",
             "stops": [
                 "ว่ายเข้าถ้ำมรกต",
@@ -326,7 +326,7 @@
         {
             "id": "private-charter",
             "name": "โปรแกรมเหมาลำส่วนตัว",
-            "image": "https:\/\/images.pexels.com\/photos\/17942107\/pexels-photo-17942107.jpeg?auto=compress&cs=tinysrgb&w=1200",
+            "image": "https://images.pexels.com/photos/17942107/pexels-photo-17942107.jpeg?auto=compress&cs=tinysrgb&w=1200",
             "route": "ออกแบบเส้นทางเองได้ตามใจคุณ",
             "stops": [
                 "ปรับเส้นทางได้",
@@ -424,100 +424,100 @@
     ],
     "videos": [
         {
+            "id": "7646659626930392340",
+            "platform": "tiktok",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_osoQEUXcEFAN1HSgQRSDcxr8mOZPP4qebBQfBH~tplv-tiktokx-origin.image.jpg",
+            "title": "ช่วงหน้าโลซีซั่นถ้ามรกตยังเปิดให้บริการอยู่ แต่ ⚠️ งดเข้าก่อนนะคะ ช่วงนี้คลื่นลมไม่ค่อยดีค่ะ ก่อนเดินทางเช็กสภาพอากาศล่วงหน้าทุกครั้งนะคะ #เที่ยวทั่วไทย #ถ้ํามรกต #ทะเลตรัง #ทะเลตรังดอทคอม",
+            "views": "",
+            "url": "https://www.tiktok.com/@talaytrang/video/7646659626930392340"
+        },
+        {
             "id": "7646270813951298823",
             "platform": "tiktok",
-            "thumb": "https:\/\/raw.githubusercontent.com\/goddarkmarketing\/tiktok-rss-flat\/main\/thumbnails\/talaytrang\/screenshot_oMKQAfOIUIABDjUgDLglIdIA6GEaeVAejAEWA4~tplv-tiktokx-origin.image.jpg",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_oMKQAfOIUIABDjUgDLglIdIA6GEaeVAejAEWA4~tplv-tiktokx-origin.image.jpg",
             "title": "🌧️⛵ อัปเดตสภาพอากาศวันนี้ มีฝนตก ลมค่อนข้างแรง และมีคลื่นสูงในทะเล 🌊 ก่อนออกเดินทางหรือออกทริปทะเล อย่าลืมเช็กสภาพอากาศวันต่อวัน เพื่อความปลอดภัยและความสนุกตลอดทริปนะคะ 💙 #อัปเดตสภาพอากาศ #ทะเลตรัง #ทะเลตรังดอทคอม #tiktok #tiktokพาเที่ยว",
             "views": "",
-            "url": "https:\/\/www.tiktok.com\/@talaytrang\/video\/7646270813951298823"
+            "url": "https://www.tiktok.com/@talaytrang/video/7646270813951298823"
         },
         {
             "id": "7645913070694386951",
             "platform": "tiktok",
-            "thumb": "https:\/\/raw.githubusercontent.com\/goddarkmarketing\/tiktok-rss-flat\/main\/thumbnails\/talaytrang\/screenshot_e64284dcf1804f0fb0939f650799aaa3~tplv-photomode-image.jpeg.jpg",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_e64284dcf1804f0fb0939f650799aaa3~tplv-photomode-image.jpeg.jpg",
             "title": "🌊 เช็คก่อน เตรียมตัวเที่ยวทะเลตรัง! 🏝️ เดือนมิถุนายน69 #เช็กสภาพอากาศ #เที่ยวทะเลตรัง #ทะเลตรัง #เที่ยวหน้าฝน #เตรียมตัวเที่ยว",
             "views": "",
-            "url": "https:\/\/www.tiktok.com\/@talaytrang\/video\/7645913070694386951"
+            "url": "https://www.tiktok.com/@talaytrang/video/7645913070694386951"
         },
         {
             "id": "7645622454672477447",
             "platform": "tiktok",
-            "thumb": "https:\/\/raw.githubusercontent.com\/goddarkmarketing\/tiktok-rss-flat\/main\/thumbnails\/talaytrang\/screenshot_oIAAqSBMiAdRDta3AIn0ABxC36JEIOAfw1VUvi~tplv-tiktokx-origin.image.jpg",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_oIAAqSBMiAdRDta3AIn0ABxC36JEIOAfw1VUvi~tplv-tiktokx-origin.image.jpg",
             "title": "🌊 เหมาลำเรือหางยาวส่วนตัว เที่ยวทะเลตรัง 4 เกาะ     ถ้ำมรกต • เกาะมุก (อ่าวเสือ) • เกาะกระดาน  • เกาะม้า     ราคาเริ่มต้นเพียงลำละ 4,000 บาท     มีสตาฟดูแลทั้งทริป ในช่วงนี้อย่าลืมเช็คสภาพอากาศก่อนออกเดินทางนะคะ💙🌊 #ทะเลตรัง #ทะเลตรังดอทคอม #tiktok #tiktok",
             "views": "",
-            "url": "https:\/\/www.tiktok.com\/@talaytrang\/video\/7645622454672477447"
+            "url": "https://www.tiktok.com/@talaytrang/video/7645622454672477447"
         },
         {
             "id": "7645536817030417672",
             "platform": "tiktok",
-            "thumb": "https:\/\/raw.githubusercontent.com\/goddarkmarketing\/tiktok-rss-flat\/main\/thumbnails\/talaytrang\/screenshot_ocaAISAJiAnAp13hBYjta8ZiEARB07ElPnIAE~tplv-tiktokx-origin.image.jpg",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_ocaAISAJiAnAp13hBYjta8ZiEARB07ElPnIAE~tplv-tiktokx-origin.image.jpg",
             "title": "🌊 ทะเลตรังช่วงโลซีซั่น อย่าลืมเช็คสภาพอากาศก่อนเที่ยวนะคะ🌧️⛈️  แพ็คเกจเที่ยวทะเลตรัง แบบไปเช้า-เย็นกลับ 💙 ราคาเพียงท่านละ 950 บาท ⛵ เดินทางโดยเรือใหญ่ 🍽️ รวมอาหารเช้า + อาหารเที่ยงแบบบุฟเฟ่ต์ 📸 เที่ยวครบ เล่นน้ำ ถ่ายรูป ฟินทั้งทริป จองง่าย เที่ยวสบาย มีที",
             "views": "",
-            "url": "https:\/\/www.tiktok.com\/@talaytrang\/video\/7645536817030417672"
+            "url": "https://www.tiktok.com/@talaytrang/video/7645536817030417672"
         },
         {
             "id": "7642679103274962184",
             "platform": "tiktok",
-            "thumb": "https:\/\/raw.githubusercontent.com\/goddarkmarketing\/tiktok-rss-flat\/main\/thumbnails\/talaytrang\/screenshot_oYAAHBM6IEEJ0vc6SYaiBQBnCriyAAhhKAQAA~tplv-tiktokx-origin.image.jpg",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_oYAAHBM6IEEJ0vc6SYaiBQBnCriyAAhhKAQAA~tplv-tiktokx-origin.image.jpg",
             "title": "🌊เที่ยวทะเลตรังแบบ VIP เหมาลำเรือสปีดโบ๊ท เที่ยวเกาะสุดฟิน 🚤✨ ราคาเริ่มต้นเพียง 14,000 บาท เท่านั้น จะสายถ่ายรูป สายชิล หรือสายดำน้ำ ก็ฟินครบจบทริปเดียว 🏝️🐠 📍เที่ยวแบบส่วนตัว ไม่ต้องรอใคร 📍เหมาะกับแก๊งเพื่อน ครอบครัว และคู่รัก #เที่ยวกับทะเลตรังดอทคอม #ti",
             "views": "",
-            "url": "https:\/\/www.tiktok.com\/@talaytrang\/video\/7642679103274962184"
+            "url": "https://www.tiktok.com/@talaytrang/video/7642679103274962184"
         },
         {
             "id": "7642559157475757319",
             "platform": "tiktok",
-            "thumb": "https:\/\/raw.githubusercontent.com\/goddarkmarketing\/tiktok-rss-flat\/main\/thumbnails\/talaytrang\/screenshot_okA5BExqciTI9RPIljPfBi0DsBmg7eI0lEWuBg~tplv-tiktokx-origin.image.jpg",
-            "title": "🌤️🌈อัพเดตสภาพอากาศวันนี้ 22\/5\/69 อากาศดี มีแดดออก ไม่มีฝนตก เรือสามารถท่องทะเลได้ปกติค่ะ 💖☀️ #ทะเลตรัง #ทะเลตรังดอทคอม #tikokพาเที่ยว #tiktok #การท่องเที่ยวแห่งประเทศไทย",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_okA5BExqciTI9RPIljPfBi0DsBmg7eI0lEWuBg~tplv-tiktokx-origin.image.jpg",
+            "title": "🌤️🌈อัพเดตสภาพอากาศวันนี้ 22/5/69 อากาศดี มีแดดออก ไม่มีฝนตก เรือสามารถท่องทะเลได้ปกติค่ะ 💖☀️ #ทะเลตรัง #ทะเลตรังดอทคอม #tikokพาเที่ยว #tiktok #การท่องเที่ยวแห่งประเทศไทย",
             "views": "",
-            "url": "https:\/\/www.tiktok.com\/@talaytrang\/video\/7642559157475757319"
+            "url": "https://www.tiktok.com/@talaytrang/video/7642559157475757319"
         },
         {
             "id": "7641825494635285778",
             "platform": "tiktok",
-            "thumb": "https:\/\/raw.githubusercontent.com\/goddarkmarketing\/tiktok-rss-flat\/main\/thumbnails\/talaytrang\/screenshot_osXvEKI6oBA9N4AEApi5AI1AACywmBEBIxf0Ni~tplv-tiktokx-origin.image.jpg",
-            "title": "⛈️ อัปเดตสภาพอากาศวันนี้ มีฝนตกตลอดดดดตั้งเเต่เช้า 20\/5\/69 วันนี้เรือไม่สามารถออกได้ ⛴️✅❤️ #เที่ยวกับทะเลตรังดอทคอม #tiktokพาเที่ยว #tiktoktravel #ฝนตก #พายุ",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_osXvEKI6oBA9N4AEApi5AI1AACywmBEBIxf0Ni~tplv-tiktokx-origin.image.jpg",
+            "title": "⛈️ อัปเดตสภาพอากาศวันนี้ มีฝนตกตลอดดดดตั้งเเต่เช้า 20/5/69 วันนี้เรือไม่สามารถออกได้ ⛴️✅❤️ #เที่ยวกับทะเลตรังดอทคอม #tiktokพาเที่ยว #tiktoktravel #ฝนตก #พายุ",
             "views": "",
-            "url": "https:\/\/www.tiktok.com\/@talaytrang\/video\/7641825494635285778"
+            "url": "https://www.tiktok.com/@talaytrang/video/7641825494635285778"
         },
         {
             "id": "7641558594298727698",
             "platform": "tiktok",
-            "thumb": "https:\/\/raw.githubusercontent.com\/goddarkmarketing\/tiktok-rss-flat\/main\/thumbnails\/talaytrang\/screenshot_ocqAU9MmTC0EEAFRoBLIeRNAADERgufA0URDEw~tplv-tiktokx-origin.image.jpg",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_ocqAU9MmTC0EEAFRoBLIeRNAADERgufA0URDEw~tplv-tiktokx-origin.image.jpg",
             "title": "🌊 เหมาลำเรือหางยาวส่วนตัว เที่ยวทะเลตรัง 4 เกาะแบบชิลๆ     💖ถ้ำมรกต • เกาะกระดาน • เกาะแหวน • เกาะเชือก💖     ราคาเริ่มต้นเพียงลำละ 4,000 บาท     มีสตาฟดูแลทั้งทริป ถ่ายรูปให้ เล่นน้ำได้เต็มที่ 🚤✨ #เที่ยวกับทะเลตรังดอทคอม #tiktokพาเที่ยว #tiktoktravel #การ",
             "views": "",
-            "url": "https:\/\/www.tiktok.com\/@talaytrang\/video\/7641558594298727698"
+            "url": "https://www.tiktok.com/@talaytrang/video/7641558594298727698"
         },
         {
             "id": "7641447779180580103",
             "platform": "tiktok",
-            "thumb": "https:\/\/raw.githubusercontent.com\/goddarkmarketing\/tiktok-rss-flat\/main\/thumbnails\/talaytrang\/screenshot_okH1il4AiAAqRALAYEABzLahvBIwPmjSTEEgg~tplv-tiktokx-origin.image.jpg",
-            "title": "จะเที่ยวแบบไหน ก็มีแพ็กเกจให้เลือกครบ 💙 ☀️ ทริปไปเช้าเย็นกลับ เริ่มต้นเพียง 950.-\/ท่าน 🌙 แพ็กเกจ 2วัน1คืน เริ่มต้นเพียง 1,275.-\/ท่าน 🏝 แพ็กเกจ 3วัน2คืน เริ่มต้นเพียง 1,600.-\/ท่าน ครบทั้งเรือ ที่พัก อาหาร และทีมงานดูแลตลอดทริป เที่ยวง่าย ไม่ต้องวางแผนเอง แ",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_okH1il4AiAAqRALAYEABzLahvBIwPmjSTEEgg~tplv-tiktokx-origin.image.jpg",
+            "title": "จะเที่ยวแบบไหน ก็มีแพ็กเกจให้เลือกครบ 💙 ☀️ ทริปไปเช้าเย็นกลับ เริ่มต้นเพียง 950.-/ท่าน 🌙 แพ็กเกจ 2วัน1คืน เริ่มต้นเพียง 1,275.-/ท่าน 🏝 แพ็กเกจ 3วัน2คืน เริ่มต้นเพียง 1,600.-/ท่าน ครบทั้งเรือ ที่พัก อาหาร และทีมงานดูแลตลอดทริป เที่ยวง่าย ไม่ต้องวางแผนเอง แ",
             "views": "",
-            "url": "https:\/\/www.tiktok.com\/@talaytrang\/video\/7641447779180580103"
+            "url": "https://www.tiktok.com/@talaytrang/video/7641447779180580103"
         },
         {
             "id": "7641189461597900040",
             "platform": "tiktok",
-            "thumb": "https:\/\/raw.githubusercontent.com\/goddarkmarketing\/tiktok-rss-flat\/main\/thumbnails\/talaytrang\/screenshot_o0Al1IgKxlAmBIDNV1vBa9lqEiYsHiEIzXrP0~tplv-tiktokx-origin.image.jpg",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_o0Al1IgKxlAmBIDNV1vBa9lqEiYsHiEIzXrP0~tplv-tiktokx-origin.image.jpg",
             "title": "🚤 ทะเลตรังไม่ได้ไปยาก แค่จองแล้วออกเที่ยวได้เลย🌊⚓️     เหมาลำเรือหางยาวส่วนตัว เที่ยวครบ 4 เกาะดัง     ฟีลส่วนตัว ถ่ายรูปได้เต็มที่ ไม่มีแออัด 🏝️     ราคาเพียงลำละ 4,000 บาทเท่านั้น #เที่ยวกับทะเลตรังดอทคอม #tiktokพาเที่ยว #tiktoktravel #การท่องเที่ยวแห่ง",
             "views": "",
-            "url": "https:\/\/www.tiktok.com\/@talaytrang\/video\/7641189461597900040"
+            "url": "https://www.tiktok.com/@talaytrang/video/7641189461597900040"
         },
         {
             "id": "7641073248439930119",
             "platform": "tiktok",
-            "thumb": "https:\/\/raw.githubusercontent.com\/goddarkmarketing\/tiktok-rss-flat\/main\/thumbnails\/talaytrang\/screenshot_osALAf4oBAA1iAPCUKiiUxE6BBOIycVw7nIJXA~tplv-tiktokx-origin.image.jpg",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_osALAf4oBAA1iAPCUKiiUxE6BBOIycVw7nIJXA~tplv-tiktokx-origin.image.jpg",
             "title": "🌊 รวมแพ็กเกจขายดีจากทะเล ตรัง ดอท คอม 🌴 เที่ยวครบ จบในที่เดียว ราคาสบายกระเป๋า 💙 🏝 ไปเช้าเย็นกลับ เริ่มต้นเพียงท่านละ 950.- 🏨 2วัน1คืน เริ่มต้นเพียงท่านละ 1,275.- ✨ 3วัน2คืน เริ่มต้นเพียงท่านละ 1,600.- เรือใหญ่ อาหาร ที่พัก และสตาฟดูแลตลอดทริป จองกับเรา ท",
             "views": "",
-            "url": "https:\/\/www.tiktok.com\/@talaytrang\/video\/7641073248439930119"
-        },
-        {
-            "id": "7640812168786611474",
-            "platform": "tiktok",
-            "thumb": "https:\/\/raw.githubusercontent.com\/goddarkmarketing\/tiktok-rss-flat\/main\/thumbnails\/talaytrang\/screenshot_oIsjIscRAEMZeADDBAgFOCjgEfnMqzECGA47JA~tplv-tiktokx-origin.image.jpg",
-            "title": "แพ็คเกจเที่ยวทะเลตรัง แบบไปเช้า-เย็นกลับ 💙 ราคาเพียงท่านละ 950 บาท ⛵ เดินทางโดยเรือใหญ่ 🍽️ รวมอาหารเช้า + อาหารเที่ยงแบบบุฟเฟ่ต์ 📸 เที่ยวครบ เล่นน้ำ ถ่ายรูป ฟินทั้งทริป จองง่าย เที่ยวสบาย มีทีมดูแลตลอด ❤️ รีบจองน้าาา 🔥 #เที่ยวกับทะเลตรังดอทคอม #tiktokพาเท",
-            "views": "",
-            "url": "https:\/\/www.tiktok.com\/@talaytrang\/video\/7640812168786611474"
+            "url": "https://www.tiktok.com/@talaytrang/video/7641073248439930119"
         }
     ],
     "whyUs": [
@@ -547,7 +547,7 @@
             "n": 1,
             "icon": "anchor",
             "title": "เลือกประเภทเรือ",
-            "desc": "เรือหางยาว \/ Speed Boat \/ เรือใหญ่ ตามจำนวนคนและงบประมาณ"
+            "desc": "เรือหางยาว / Speed Boat / เรือใหญ่ ตามจำนวนคนและงบประมาณ"
         },
         {
             "n": 2,
@@ -588,25 +588,25 @@
         {
             "icon": "bed",
             "title": "จองห้องพัก",
-            "href": "https:\/\/line.me\/R\/ti\/p\/%40talaytrang",
+            "href": "https://line.me/R/ti/p/%40talaytrang",
             "external": true
         },
         {
             "icon": "ticket",
             "title": "รับจองตั๋วเรือเข้าเกาะ",
-            "href": "https:\/\/line.me\/R\/ti\/p\/%40talaytrang",
+            "href": "https://line.me/R/ti/p/%40talaytrang",
             "external": true
         },
         {
             "icon": "car",
             "title": "บริการเช่ารถ",
-            "href": "https:\/\/line.me\/R\/ti\/p\/%40talaytrang",
+            "href": "https://line.me/R/ti/p/%40talaytrang",
             "external": true
         },
         {
             "icon": "briefcase",
             "title": "จัดประชุมสัมมนา",
-            "href": "https:\/\/line.me\/R\/ti\/p\/%40talaytrang",
+            "href": "https://line.me/R/ti/p/%40talaytrang",
             "external": true
         },
         {
@@ -617,7 +617,7 @@
         {
             "icon": "cutlery",
             "title": "รับจัดทำอาหาร",
-            "href": "https:\/\/line.me\/R\/ti\/p\/%40talaytrang",
+            "href": "https://line.me/R/ti/p/%40talaytrang",
             "external": true
         },
         {
@@ -628,25 +628,25 @@
         {
             "icon": "camera",
             "title": "สถานที่ถ่ายหนัง",
-            "href": "https:\/\/line.me\/R\/ti\/p\/%40talaytrang",
+            "href": "https://line.me/R/ti/p/%40talaytrang",
             "external": true
         }
     ],
     "heroSlides": [
         {
-            "src": "assets\/cover%20hero\/slide-01.png",
+            "src": "assets/cover%20hero/slide-01.png",
             "alt": "เช่าเรือเที่ยวทะเลตรัง — Talay Trang"
         },
         {
-            "src": "assets\/cover%20hero\/slide-02.png",
+            "src": "assets/cover%20hero/slide-02.png",
             "alt": "โปรแกรมเที่ยวทะเลตรัง — ทีมงานเจ้าถิ่น"
         },
         {
-            "src": "assets\/cover%20hero\/slide-03.png",
+            "src": "assets/cover%20hero/slide-03.png",
             "alt": "เช่าเรือหางยาว Speedboat เรือใหญ่ ครบครัน"
         },
         {
-            "src": "assets\/cover%20hero\/slide-04.png",
+            "src": "assets/cover%20hero/slide-04.png",
             "alt": "แพ็คเกจทัวร์ตรัง 4 เกาะ ถ้ำมรกต เกาะกระดาน"
         }
     ],
@@ -656,8 +656,8 @@
             "category": "แนะนำเส้นทาง",
             "title": "5 เกาะห้ามพลาดเมื่อมาเที่ยวทะเลตรัง",
             "excerpt": "รวมไฮไลต์เกาะสวยของจังหวัดตรัง ตั้งแต่ถ้ำมรกตอันลึกลับ ไปจนถึงหาดทรายขาวของเกาะกระดาน คู่มือฉบับเดียวจบ",
-            "cover": "https:\/\/images.pexels.com\/photos\/14573822\/pexels-photo-14573822.jpeg?auto=compress&cs=tinysrgb&w=1600",
-            "thumb": "https:\/\/images.pexels.com\/photos\/14573822\/pexels-photo-14573822.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "cover": "https://images.pexels.com/photos/14573822/pexels-photo-14573822.jpeg?auto=compress&cs=tinysrgb&w=1600",
+            "thumb": "https://images.pexels.com/photos/14573822/pexels-photo-14573822.jpeg?auto=compress&cs=tinysrgb&w=800",
             "author": "ทีมงาน Talay Trang",
             "date": "15 พ.ค. 2026",
             "readTime": "6 นาที",
@@ -676,7 +676,7 @@
                 },
                 {
                     "type": "img",
-                    "src": "https:\/\/images.pexels.com\/photos\/1450363\/pexels-photo-1450363.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    "src": "https://images.pexels.com/photos/1450363/pexels-photo-1450363.jpeg?auto=compress&cs=tinysrgb&w=1600",
                     "alt": "หาดทรายขาวที่เกาะกระดาน ทะเลตรัง"
                 },
                 {
@@ -709,7 +709,7 @@
                 },
                 {
                     "type": "img",
-                    "src": "https:\/\/images.pexels.com\/photos\/1647064\/pexels-photo-1647064.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    "src": "https://images.pexels.com/photos/1647064/pexels-photo-1647064.jpeg?auto=compress&cs=tinysrgb&w=1600",
                     "alt": "มุมมองจากเรือ มองเห็นเกาะหินปูน"
                 },
                 {
@@ -744,8 +744,8 @@
             "category": "คู่มือเลือกเรือ",
             "title": "เลือกเรืออะไรดี? หางยาว vs Speed Boat vs เรือใหญ่",
             "excerpt": "เปรียบเทียบเรือทั้ง 3 ประเภทแบบหมดเปลือก ราคาเริ่มต้น จำนวนคนที่รับได้ และเหมาะกับใคร — อ่านก่อนตัดสินใจจอง",
-            "cover": "https:\/\/images.pexels.com\/photos\/1591376\/pexels-photo-1591376.jpeg?auto=compress&cs=tinysrgb&w=1600",
-            "thumb": "https:\/\/images.pexels.com\/photos\/1591376\/pexels-photo-1591376.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "cover": "https://images.pexels.com/photos/1591376/pexels-photo-1591376.jpeg?auto=compress&cs=tinysrgb&w=1600",
+            "thumb": "https://images.pexels.com/photos/1591376/pexels-photo-1591376.jpeg?auto=compress&cs=tinysrgb&w=800",
             "author": "ทีมงาน Talay Trang",
             "date": "8 พ.ค. 2026",
             "readTime": "5 นาที",
@@ -760,11 +760,11 @@
                 },
                 {
                     "type": "p",
-                    "text": "เรือหางยาวคือสัญลักษณ์ของทะเลใต้ ราคาเริ่มต้นต่ำที่สุด ประมาณ 1,800 – 2,500 บาท\/วัน รับได้ 8–12 คน เหมาะกับครอบครัวเล็ก คู่รัก หรือกลุ่มเพื่อน 4–8 คนที่ไม่รีบ ความเร็วประมาณ 15–20 กม.\/ชม. ทำให้สนุกกับวิวระหว่างทาง ไม่กระแทกคลื่น เหมาะกับเด็กและผู้สูงอายุ"
+                    "text": "เรือหางยาวคือสัญลักษณ์ของทะเลใต้ ราคาเริ่มต้นต่ำที่สุด ประมาณ 1,800 – 2,500 บาท/วัน รับได้ 8–12 คน เหมาะกับครอบครัวเล็ก คู่รัก หรือกลุ่มเพื่อน 4–8 คนที่ไม่รีบ ความเร็วประมาณ 15–20 กม./ชม. ทำให้สนุกกับวิวระหว่างทาง ไม่กระแทกคลื่น เหมาะกับเด็กและผู้สูงอายุ"
                 },
                 {
                     "type": "img",
-                    "src": "https:\/\/images.pexels.com\/photos\/237741\/pexels-photo-237741.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    "src": "https://images.pexels.com/photos/237741/pexels-photo-237741.jpeg?auto=compress&cs=tinysrgb&w=1600",
                     "alt": "เรือหางยาวจอดที่ชายฝั่งกระบี่"
                 },
                 {
@@ -773,7 +773,7 @@
                 },
                 {
                     "type": "p",
-                    "text": "Speed Boat คือทางเลือกที่นิยมที่สุดสำหรับทริปวันเดียว 4 เกาะ + ถ้ำมรกต ราคาเริ่ม 9,000 – 12,000 บาท\/วัน รับได้ 15–35 คน เครื่องยนต์ 2-3 เครื่อง ทำความเร็วได้ 35–45 กม.\/ชม. เดินทางถึงเกาะปลายทางเร็วขึ้นมาก หมายความว่าได้เวลาเล่นน้ำเต็มที่ในแต่ละจุด"
+                    "text": "Speed Boat คือทางเลือกที่นิยมที่สุดสำหรับทริปวันเดียว 4 เกาะ + ถ้ำมรกต ราคาเริ่ม 9,000 – 12,000 บาท/วัน รับได้ 15–35 คน เครื่องยนต์ 2-3 เครื่อง ทำความเร็วได้ 35–45 กม./ชม. เดินทางถึงเกาะปลายทางเร็วขึ้นมาก หมายความว่าได้เวลาเล่นน้ำเต็มที่ในแต่ละจุด"
                 },
                 {
                     "type": "quote",
@@ -785,11 +785,11 @@
                 },
                 {
                     "type": "p",
-                    "text": "เรือใหญ่รับได้ตั้งแต่ 30 ถึง 130 คน ราคาเริ่มต้น 12,000 บาท\/วัน ขึ้นไปตามขนาดและสิ่งอำนวยความสะดวก เหมาะกับกรุ๊ปบริษัท ทริปแต่งงาน หรือกรุ๊ปนักเรียน-นักศึกษา มีห้องโดยสารปรับอากาศ ห้องน้ำ และพื้นที่กิจกรรมบนเรือ"
+                    "text": "เรือใหญ่รับได้ตั้งแต่ 30 ถึง 130 คน ราคาเริ่มต้น 12,000 บาท/วัน ขึ้นไปตามขนาดและสิ่งอำนวยความสะดวก เหมาะกับกรุ๊ปบริษัท ทริปแต่งงาน หรือกรุ๊ปนักเรียน-นักศึกษา มีห้องโดยสารปรับอากาศ ห้องน้ำ และพื้นที่กิจกรรมบนเรือ"
                 },
                 {
                     "type": "img",
-                    "src": "https:\/\/images.pexels.com\/photos\/13680386\/pexels-photo-13680386.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    "src": "https://images.pexels.com/photos/13680386/pexels-photo-13680386.jpeg?auto=compress&cs=tinysrgb&w=1600",
                     "alt": "เรือยอชต์ขนาดใหญ่บนน้ำสีคราม"
                 },
                 {
@@ -799,9 +799,9 @@
                 {
                     "type": "list",
                     "items": [
-                        "เรือหางยาว — รับ 8–12 คน · เริ่ม 1,800 บ. · เหมาะกับครอบครัว\/คู่รัก",
+                        "เรือหางยาว — รับ 8–12 คน · เริ่ม 1,800 บ. · เหมาะกับครอบครัว/คู่รัก",
                         "Speed Boat — รับ 15–35 คน · เริ่ม 9,000 บ. · เหมาะกับทริปวันเดียวหลายเกาะ",
-                        "เรือใหญ่ — รับ 30–130 คน · เริ่ม 12,000 บ. · เหมาะกับกรุ๊ปบริษัท\/สัมมนา"
+                        "เรือใหญ่ — รับ 30–130 คน · เริ่ม 12,000 บ. · เหมาะกับกรุ๊ปบริษัท/สัมมนา"
                     ]
                 },
                 {
@@ -819,8 +819,8 @@
             "category": "วางแผนการเดินทาง",
             "title": "ฤดูที่เหมาะกับการเที่ยวทะเลตรัง — เดือนไหนน้ำใสที่สุด?",
             "excerpt": "รู้จัก 3 ช่วงเวลาของทะเลตรัง ทั้งช่วงไฮซีซั่นน้ำใส ช่วงฝนพระอาทิตย์ตกสวย และช่วงเปลี่ยนผ่านที่น่าจอง",
-            "cover": "https:\/\/images.pexels.com\/photos\/31200075\/pexels-photo-31200075.jpeg?auto=compress&cs=tinysrgb&w=1600",
-            "thumb": "https:\/\/images.pexels.com\/photos\/31200075\/pexels-photo-31200075.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "cover": "https://images.pexels.com/photos/31200075/pexels-photo-31200075.jpeg?auto=compress&cs=tinysrgb&w=1600",
+            "thumb": "https://images.pexels.com/photos/31200075/pexels-photo-31200075.jpeg?auto=compress&cs=tinysrgb&w=800",
             "author": "ทีมงาน Talay Trang",
             "date": "1 พ.ค. 2026",
             "readTime": "4 นาที",
@@ -839,7 +839,7 @@
                 },
                 {
                     "type": "img",
-                    "src": "https:\/\/images.pexels.com\/photos\/28581876\/pexels-photo-28581876.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    "src": "https://images.pexels.com/photos/28581876/pexels-photo-28581876.jpeg?auto=compress&cs=tinysrgb&w=1600",
                     "alt": "น้ำทะเลใสในช่วงไฮซีซั่นที่ตรัง"
                 },
                 {
@@ -901,8 +901,8 @@
             "category": "เตรียมตัวก่อนเที่ยว",
             "title": "Pack อะไรไปทะเลตรังบ้าง? Checklist ฉบับครบจบ",
             "excerpt": "รายการของที่ต้องเตรียม + ของที่ลืมแล้วเสียดาย รวม 20 รายการพร้อมเหตุผล สำหรับทริปทะเลตรัง 1-3 วัน",
-            "cover": "https:\/\/images.pexels.com\/photos\/457881\/pexels-photo-457881.jpeg?auto=compress&cs=tinysrgb&w=1600",
-            "thumb": "https:\/\/images.pexels.com\/photos\/457881\/pexels-photo-457881.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "cover": "https://images.pexels.com/photos/457881/pexels-photo-457881.jpeg?auto=compress&cs=tinysrgb&w=1600",
+            "thumb": "https://images.pexels.com/photos/457881/pexels-photo-457881.jpeg?auto=compress&cs=tinysrgb&w=800",
             "author": "ทีมงาน Talay Trang",
             "date": "23 เม.ย. 2026",
             "readTime": "5 นาที",
@@ -928,7 +928,7 @@
                 },
                 {
                     "type": "img",
-                    "src": "https:\/\/images.pexels.com\/photos\/9164423\/pexels-photo-9164423.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    "src": "https://images.pexels.com/photos/9164423/pexels-photo-9164423.jpeg?auto=compress&cs=tinysrgb&w=1600",
                     "alt": "อุปกรณ์เตรียมไปทะเล"
                 },
                 {
@@ -976,7 +976,7 @@
                         "เสื้อผ้าเตรียมเปลี่ยน 2-3 ชุด — ผ้าบางแห้งเร็ว",
                         "รองเท้าแตะ + รองเท้าปิดหน้าเดินเกาะ",
                         "ยาประจำตัวและชุดปฐมพยาบาลเล็กๆ",
-                        "หูฟัง \/ หนังสือ — ช่วงพักผ่อนบนรีสอร์ท"
+                        "หูฟัง / หนังสือ — ช่วงพักผ่อนบนรีสอร์ท"
                     ]
                 },
                 {
@@ -990,7 +990,7 @@
         "customTrip": {
             "enabled": true,
             "href": "booking.html",
-            "image": "https:\/\/images.pexels.com\/photos\/17942107\/pexels-photo-17942107.jpeg?auto=compress&cs=tinysrgb&w=1200",
+            "image": "https://images.pexels.com/photos/17942107/pexels-photo-17942107.jpeg?auto=compress&cs=tinysrgb&w=1200",
             "name": "เหมาลำพิเศษ Custom Trip",
             "sub": "ออกแบบเส้นทาง เลือก Option ได้เอง",
             "rating": 5,
@@ -1065,64 +1065,64 @@
             "title": "Talay Trang — เช่าเรือเที่ยวทะเลตรัง เลือกเรือได้ตามสไตล์คุณ",
             "description": "บริการเช่าเรือเที่ยวทะเลตรัง โดยทีมงานเจ้าถิ่น เลือกได้ทั้งเรือหางยาว Speed Boat และเรือใหญ่ พร้อมโปรแกรม 4 เกาะ ถ้ำมรกต เกาะกระดาน จองง่ายผ่าน LINE @talaytrang",
             "ogTitle": "Talay Trang — เช่าเรือเที่ยวทะเลตรัง",
-            "ogDescription": "เช่าเรือทะเลตรัง 3 ประเภท หางยาว \/ Speed Boat \/ เรือใหญ่ พร้อมโปรแกรมเที่ยวยอดนิยม",
-            "ogImage": "https:\/\/images.pexels.com\/photos\/14573822\/pexels-photo-14573822.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            "ogDescription": "เช่าเรือทะเลตรัง 3 ประเภท หางยาว / Speed Boat / เรือใหญ่ พร้อมโปรแกรมเที่ยวยอดนิยม",
+            "ogImage": "https://images.pexels.com/photos/14573822/pexels-photo-14573822.jpeg?auto=compress&cs=tinysrgb&w=1920"
         },
         "about": {
             "title": "เกี่ยวกับเรา — Talay Trang เช่าเรือตรัง โดยเจ้าถิ่นกันตัง",
             "description": "Talay Trang ทีมงานเจ้าถิ่นกันตัง บริการเช่าเรือเที่ยวทะเลตรัง มีออฟฟิศจริง รู้เส้นทาง ดูแลตั้งแต่ก่อนเดินทางจนจบทริป",
             "ogTitle": "เกี่ยวกับ Talay Trang — เช่าเรือตรัง",
             "ogDescription": "ทีมงานเจ้าถิ่นกันตัง บริการเช่าเรือเที่ยวทะเลตรัง มีออฟฟิศจริง",
-            "ogImage": "https:\/\/images.pexels.com\/photos\/13419316\/pexels-photo-13419316.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            "ogImage": "https://images.pexels.com/photos/13419316/pexels-photo-13419316.jpeg?auto=compress&cs=tinysrgb&w=1920"
         },
         "boats": {
             "title": "ประเภทเรือ — เรือหางยาว Speed Boat เรือใหญ่ | Talay Trang",
             "description": "เลือกเช่าเรือเที่ยวทะเลตรังให้เหมาะกับทริปคุณ มี 3 ประเภท: เรือหางยาว Speed Boat และเรือใหญ่ พร้อมราคาและจำนวนคนรองรับชัดเจน",
             "ogTitle": "ประเภทเรือ — Talay Trang",
             "ogDescription": "เรือหางยาว Speed Boat และเรือใหญ่ เลือกได้ตามสไตล์ทริป",
-            "ogImage": "https:\/\/images.pexels.com\/photos\/1591376\/pexels-photo-1591376.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            "ogImage": "https://images.pexels.com/photos/1591376/pexels-photo-1591376.jpeg?auto=compress&cs=tinysrgb&w=1920"
         },
         "programs": {
             "title": "โปรแกรมเที่ยวทะเลตรัง — 4 เกาะ ถ้ำมรกต เกาะกระดาน | Talay Trang",
             "description": "โปรแกรมเช่าเรือเที่ยวทะเลตรังยอดนิยม 4 เกาะ ถ้ำมรกต เกาะกระดาน ดำน้ำดูปะการัง และเหมาลำส่วนตัว ราคาเริ่มต้น 3,200 บาท",
             "ogTitle": "โปรแกรมเที่ยวทะเลตรัง — Talay Trang",
             "ogDescription": "โปรแกรม 4 เกาะ ถ้ำมรกต เกาะกระดาน และเหมาลำส่วนตัว",
-            "ogImage": "https:\/\/images.pexels.com\/photos\/1647064\/pexels-photo-1647064.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            "ogImage": "https://images.pexels.com/photos/1647064/pexels-photo-1647064.jpeg?auto=compress&cs=tinysrgb&w=1920"
         },
         "booking": {
             "title": "จองเรือเที่ยวทะเลตรัง — คำนวณราคาก่อนจอง | Talay Trang",
             "description": "เลือกเรือ เลือกโปรแกรม กรอกข้อมูล ระบบคำนวณราคาทันที พร้อมส่งจองผ่าน LINE — ใช้เวลาไม่ถึง 2 นาที",
             "ogTitle": "จองเรือเที่ยวทะเลตรัง — Talay Trang",
             "ogDescription": "คำนวณราคาและส่งจองผ่าน LINE ได้ทันที",
-            "ogImage": "https:\/\/images.pexels.com\/photos\/31200075\/pexels-photo-31200075.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            "ogImage": "https://images.pexels.com/photos/31200075/pexels-photo-31200075.jpeg?auto=compress&cs=tinysrgb&w=1920"
         },
         "articles": {
             "title": "บทความ — เคล็ดลับเที่ยวทะเลตรัง | Talay Trang",
             "description": "รวมบทความและคู่มือเที่ยวทะเลตรัง — แนะนำเกาะยอดนิยม การเลือกเรือ ฤดูที่เหมาะสม และ Checklist เตรียมตัวก่อนออกเดินทาง",
             "ogTitle": "บทความเที่ยวทะเลตรัง — Talay Trang",
             "ogDescription": "คู่มือและเคล็ดลับเที่ยวทะเลตรังจากทีมงาน Talay Trang",
-            "ogImage": "https:\/\/images.pexels.com\/photos\/9164423\/pexels-photo-9164423.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            "ogImage": "https://images.pexels.com/photos/9164423/pexels-photo-9164423.jpeg?auto=compress&cs=tinysrgb&w=1920"
         },
         "article": {
             "title": "บทความ | Talay Trang",
             "description": "บทความเที่ยวทะเลตรัง จาก Talay Trang",
             "ogTitle": "บทความ — Talay Trang",
             "ogDescription": "บทความและคู่มือเที่ยวทะเลตรัง",
-            "ogImage": "https:\/\/images.pexels.com\/photos\/9164423\/pexels-photo-9164423.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            "ogImage": "https://images.pexels.com/photos/9164423/pexels-photo-9164423.jpeg?auto=compress&cs=tinysrgb&w=1920"
         },
         "videos": {
             "title": "วิดีโอ TikTok ทะเลตรัง — ทริปจริงจาก @talaytrang | Talay Trang",
             "description": "รวมวิดีโอ TikTok ทะเลตรังจากช่อง @talaytrang ดูบรรยากาศจริงก่อนตัดสินใจจอง อัปเดตล่าสุดทุกสัปดาห์",
             "ogTitle": "วิดีโอ TikTok — Talay Trang",
             "ogDescription": "ทริปจริงจากช่อง @talaytrang",
-            "ogImage": "https:\/\/images.pexels.com\/photos\/28581876\/pexels-photo-28581876.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            "ogImage": "https://images.pexels.com/photos/28581876/pexels-photo-28581876.jpeg?auto=compress&cs=tinysrgb&w=1920"
         },
         "contact": {
-            "title": "ติดต่อ Talay Trang — โทร \/ LINE \/ แผนที่ออฟฟิศกันตัง",
+            "title": "ติดต่อ Talay Trang — โทร / LINE / แผนที่ออฟฟิศกันตัง",
             "description": "ติดต่อ Talay Trang เช่าเรือเที่ยวทะเลตรัง โทร 081-234-5678 LINE @talaytrang ออฟฟิศตั้งอยู่ที่อำเภอกันตัง จังหวัดตรัง",
             "ogTitle": "ติดต่อ Talay Trang",
             "ogDescription": "โทร LINE แผนที่ออฟฟิศกันตัง",
-            "ogImage": "https:\/\/images.pexels.com\/photos\/457881\/pexels-photo-457881.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            "ogImage": "https://images.pexels.com/photos/457881/pexels-photo-457881.jpeg?auto=compress&cs=tinysrgb&w=1920"
         }
     }
 }
