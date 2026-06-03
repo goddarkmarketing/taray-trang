@@ -1,7 +1,7 @@
 {
     "meta": {
         "version": 1,
-        "updated": "2026-06-02T22:28:10.682Z",
+        "updated": "2026-06-03T05:17:22.898Z",
         "tiktokRssSynced": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/rss/talaytrang.xml"
     },
     "images": {
@@ -424,6 +424,14 @@
     ],
     "videos": [
         {
+            "id": "7646989143523740935",
+            "platform": "tiktok",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_oQUA4XfzFEcIyALjJD8QhCLAAPIfA8eAJBkGI2~tplv-tiktokx-origin.image.jpg",
+            "title": "🏝️ เกาะกระดาน เปิดรับนักท่องเที่ยว 1 ตุลาคมนี้! 🌊 ✨ เตรียมตัวออกไปสัมผัสทะเลใส หาดทรายขาว และความสวยงามของธรรมชาติอีกครั้ง เปิดฤดูกาลท่องเที่ยว: 1 ตุลาคม 69 📍 เกาะกระดาน จังหวัดตรัง 💙 ฟ้าสวย น้ำใส พร้อมต้อนรับทุกการเดินทาง 📸 เก็บภาพความประทับใจบนหนึ่งในชา",
+            "views": "",
+            "url": "https://www.tiktok.com/@talaytrang/video/7646989143523740935"
+        },
+        {
             "id": "7646659626930392340",
             "platform": "tiktok",
             "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_osoQEUXcEFAN1HSgQRSDcxr8mOZPP4qebBQfBH~tplv-tiktokx-origin.image.jpg",
@@ -510,14 +518,6 @@
             "title": "🚤 ทะเลตรังไม่ได้ไปยาก แค่จองแล้วออกเที่ยวได้เลย🌊⚓️     เหมาลำเรือหางยาวส่วนตัว เที่ยวครบ 4 เกาะดัง     ฟีลส่วนตัว ถ่ายรูปได้เต็มที่ ไม่มีแออัด 🏝️     ราคาเพียงลำละ 4,000 บาทเท่านั้น #เที่ยวกับทะเลตรังดอทคอม #tiktokพาเที่ยว #tiktoktravel #การท่องเที่ยวแห่ง",
             "views": "",
             "url": "https://www.tiktok.com/@talaytrang/video/7641189461597900040"
-        },
-        {
-            "id": "7641073248439930119",
-            "platform": "tiktok",
-            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_osALAf4oBAA1iAPCUKiiUxE6BBOIycVw7nIJXA~tplv-tiktokx-origin.image.jpg",
-            "title": "🌊 รวมแพ็กเกจขายดีจากทะเล ตรัง ดอท คอม 🌴 เที่ยวครบ จบในที่เดียว ราคาสบายกระเป๋า 💙 🏝 ไปเช้าเย็นกลับ เริ่มต้นเพียงท่านละ 950.- 🏨 2วัน1คืน เริ่มต้นเพียงท่านละ 1,275.- ✨ 3วัน2คืน เริ่มต้นเพียงท่านละ 1,600.- เรือใหญ่ อาหาร ที่พัก และสตาฟดูแลตลอดทริป จองกับเรา ท",
-            "views": "",
-            "url": "https://www.tiktok.com/@talaytrang/video/7641073248439930119"
         }
     ],
     "whyUs": [
