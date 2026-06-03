@@ -1,7 +1,7 @@
 {
     "meta": {
         "version": 1,
-        "updated": "2026-06-03T05:17:22.898Z",
+        "updated": "2026-06-03T12:50:49.303Z",
         "tiktokRssSynced": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/rss/talaytrang.xml"
     },
     "images": {
@@ -424,6 +424,22 @@
     ],
     "videos": [
         {
+            "id": "7647115521673923858",
+            "platform": "tiktok",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_oQ2IwTEEyaAAA71aOiAKCpiAgB9xfXAEIABGAO~tplv-tiktokx-origin.image.jpg",
+            "title": "เที่ยวง่าย ราคาคุ้มค่า เหมาะสำหรับทุกวัย จองครั้งเดียว ที่เหลือให้เราดูแล ✨  🌊⛴️เที่ยวทะเลตรังแบบสบาย ๆ เริ่มต้นเพียง 950 บาท/ท่าน ⛴️ เดินทางด้วยเรือใหญ่ 🍽️ อิ่มอร่อยกับอาหารบุฟเฟ่ต์ 📩 สอบถามรายละเอียดและสำรองที่นั่งได้เลย จองได้ตั้งแต่วันนี้ โปรแกรมนี้เร",
+            "views": "",
+            "url": "https://www.tiktok.com/@talaytrang/video/7647115521673923858"
+        },
+        {
+            "id": "7647046709838679304",
+            "platform": "tiktok",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_ocIfQADAjxfPACMUnXAt8krfWkiIBQAA424IEu.image.jpg",
+            "title": "🌊 ทะเลตรังหน้าร้อนนี้ ต้องมีชื่อเราอยู่ในทริป! ☀️ แพ็คเกจเที่ยวทะเลตรัง แบบไปเช้า-เย็นกลับ 💙 ราคาเพียงท่านละ 950 บาท ⛵ เดินทางโดยเรือใหญ่ 🍽️ รวมอาหารเช้า + อาหารเที่ยงแบบบุฟเฟ่ต์ 📸 เที่ยวครบ เล่นน้ำ ถ่ายรูป ฟินทั้งทริป#FootballTikTok #ทะเลตรัง #ทะเลตรังดอ",
+            "views": "",
+            "url": "https://www.tiktok.com/@talaytrang/video/7647046709838679304"
+        },
+        {
             "id": "7646989143523740935",
             "platform": "tiktok",
             "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_oQUA4XfzFEcIyALjJD8QhCLAAPIfA8eAJBkGI2~tplv-tiktokx-origin.image.jpg",
@@ -502,22 +518,6 @@
             "title": "🌊 เหมาลำเรือหางยาวส่วนตัว เที่ยวทะเลตรัง 4 เกาะแบบชิลๆ     💖ถ้ำมรกต • เกาะกระดาน • เกาะแหวน • เกาะเชือก💖     ราคาเริ่มต้นเพียงลำละ 4,000 บาท     มีสตาฟดูแลทั้งทริป ถ่ายรูปให้ เล่นน้ำได้เต็มที่ 🚤✨ #เที่ยวกับทะเลตรังดอทคอม #tiktokพาเที่ยว #tiktoktravel #การ",
             "views": "",
             "url": "https://www.tiktok.com/@talaytrang/video/7641558594298727698"
-        },
-        {
-            "id": "7641447779180580103",
-            "platform": "tiktok",
-            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_okH1il4AiAAqRALAYEABzLahvBIwPmjSTEEgg~tplv-tiktokx-origin.image.jpg",
-            "title": "จะเที่ยวแบบไหน ก็มีแพ็กเกจให้เลือกครบ 💙 ☀️ ทริปไปเช้าเย็นกลับ เริ่มต้นเพียง 950.-/ท่าน 🌙 แพ็กเกจ 2วัน1คืน เริ่มต้นเพียง 1,275.-/ท่าน 🏝 แพ็กเกจ 3วัน2คืน เริ่มต้นเพียง 1,600.-/ท่าน ครบทั้งเรือ ที่พัก อาหาร และทีมงานดูแลตลอดทริป เที่ยวง่าย ไม่ต้องวางแผนเอง แ",
-            "views": "",
-            "url": "https://www.tiktok.com/@talaytrang/video/7641447779180580103"
-        },
-        {
-            "id": "7641189461597900040",
-            "platform": "tiktok",
-            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_o0Al1IgKxlAmBIDNV1vBa9lqEiYsHiEIzXrP0~tplv-tiktokx-origin.image.jpg",
-            "title": "🚤 ทะเลตรังไม่ได้ไปยาก แค่จองแล้วออกเที่ยวได้เลย🌊⚓️     เหมาลำเรือหางยาวส่วนตัว เที่ยวครบ 4 เกาะดัง     ฟีลส่วนตัว ถ่ายรูปได้เต็มที่ ไม่มีแออัด 🏝️     ราคาเพียงลำละ 4,000 บาทเท่านั้น #เที่ยวกับทะเลตรังดอทคอม #tiktokพาเที่ยว #tiktoktravel #การท่องเที่ยวแห่ง",
-            "views": "",
-            "url": "https://www.tiktok.com/@talaytrang/video/7641189461597900040"
         }
     ],
     "whyUs": [
