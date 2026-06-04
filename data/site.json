@@ -1,7 +1,7 @@
 {
     "meta": {
         "version": 1,
-        "updated": "2026-06-04T05:05:24.913Z",
+        "updated": "2026-06-04T11:26:09.743Z",
         "tiktokRssSynced": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/rss/talaytrang.xml"
     },
     "images": {
@@ -424,6 +424,14 @@
     ],
     "videos": [
         {
+            "id": "7647489080007216392",
+            "platform": "tiktok",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_ocXIFU4YItAIBiEWRi1CEEPinV7ABqaAAhAEA~tplv-tiktokx-origin.image.jpg",
+            "title": "🌊 หนีความวุ่นวาย แล้วไปให้ทะเลฮีลใจ 💙     เที่ยวทะเลตรังแบบไปเช้าเย็นกลับ เพียงท่านละ 950.-     นั่งเรือใหญ่สบาย ๆ พร้อมอาหารบุฟเฟ่ต์อิ่มครบทั้งทริป 🍽️✨ ❤️📍จองใด้ตั้งเเค่วันนี้ เริ่มเที่ยว 1 ตุลาคม เป้นต้นไป 📍💌 #tiktokพาเที่ยว #ทะเลตรัง #ทะเลตรังดอทคอม #t",
+            "views": "",
+            "url": "https://www.tiktok.com/@talaytrang/video/7647489080007216392"
+        },
+        {
             "id": "7647392448305466632",
             "platform": "tiktok",
             "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_oY9oTo3BAAAqAGUKAILegfwGpeHYRvfIGRJBBQ~tplv-tiktokx-origin.image.jpg",
@@ -510,14 +518,6 @@
             "title": "🌤️🌈อัพเดตสภาพอากาศวันนี้ 22/5/69 อากาศดี มีแดดออก ไม่มีฝนตก เรือสามารถท่องทะเลได้ปกติค่ะ 💖☀️ #ทะเลตรัง #ทะเลตรังดอทคอม #tikokพาเที่ยว #tiktok #การท่องเที่ยวแห่งประเทศไทย",
             "views": "",
             "url": "https://www.tiktok.com/@talaytrang/video/7642559157475757319"
-        },
-        {
-            "id": "7641825494635285778",
-            "platform": "tiktok",
-            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_osXvEKI6oBA9N4AEApi5AI1AACywmBEBIxf0Ni~tplv-tiktokx-origin.image.jpg",
-            "title": "⛈️ อัปเดตสภาพอากาศวันนี้ มีฝนตกตลอดดดดตั้งเเต่เช้า 20/5/69 วันนี้เรือไม่สามารถออกได้ ⛴️✅❤️ #เที่ยวกับทะเลตรังดอทคอม #tiktokพาเที่ยว #tiktoktravel #ฝนตก #พายุ",
-            "views": "",
-            "url": "https://www.tiktok.com/@talaytrang/video/7641825494635285778"
         }
     ],
     "whyUs": [
