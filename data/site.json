@@ -1,7 +1,7 @@
 {
     "meta": {
         "version": 1,
-        "updated": "2026-06-03T22:33:33.860Z",
+        "updated": "2026-06-04T05:05:24.913Z",
         "tiktokRssSynced": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/rss/talaytrang.xml"
     },
     "images": {
@@ -424,6 +424,14 @@
     ],
     "videos": [
         {
+            "id": "7647392448305466632",
+            "platform": "tiktok",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_oY9oTo3BAAAqAGUKAILegfwGpeHYRvfIGRJBBQ~tplv-tiktokx-origin.image.jpg",
+            "title": "🌊 เหมาลำส่วนตัว เที่ยวทะเลตรังสุดฟิน     ราคาเพียง 4000 บาท/ลำ เท่านั้น!     เป็นส่วนตัวสุดๆ พร้อมสตาฟดูแลตลอดทริป 💙 จองวันนี้ เที่ยวใด้ 1 ตุลาคมเป็นต้นไป 🌊✅#FootballTikTok #ทะเลตรัง #ทะเลตรังดอทคอม #tiktok #tiktokพาเที่ยว",
+            "views": "",
+            "url": "https://www.tiktok.com/@talaytrang/video/7647392448305466632"
+        },
+        {
             "id": "7647115521673923858",
             "platform": "tiktok",
             "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_oQ2IwTEEyaAAA71aOiAKCpiAgB9xfXAEIABGAO~tplv-tiktokx-origin.image.jpg",
@@ -510,14 +518,6 @@
             "title": "⛈️ อัปเดตสภาพอากาศวันนี้ มีฝนตกตลอดดดดตั้งเเต่เช้า 20/5/69 วันนี้เรือไม่สามารถออกได้ ⛴️✅❤️ #เที่ยวกับทะเลตรังดอทคอม #tiktokพาเที่ยว #tiktoktravel #ฝนตก #พายุ",
             "views": "",
             "url": "https://www.tiktok.com/@talaytrang/video/7641825494635285778"
-        },
-        {
-            "id": "7641558594298727698",
-            "platform": "tiktok",
-            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_ocqAU9MmTC0EEAFRoBLIeRNAADERgufA0URDEw~tplv-tiktokx-origin.image.jpg",
-            "title": "🌊 เหมาลำเรือหางยาวส่วนตัว เที่ยวทะเลตรัง 4 เกาะแบบชิลๆ     💖ถ้ำมรกต • เกาะกระดาน • เกาะแหวน • เกาะเชือก💖     ราคาเริ่มต้นเพียงลำละ 4,000 บาท     มีสตาฟดูแลทั้งทริป ถ่ายรูปให้ เล่นน้ำได้เต็มที่ 🚤✨ #เที่ยวกับทะเลตรังดอทคอม #tiktokพาเที่ยว #tiktoktravel #การ",
-            "views": "",
-            "url": "https://www.tiktok.com/@talaytrang/video/7641558594298727698"
         }
     ],
     "whyUs": [
