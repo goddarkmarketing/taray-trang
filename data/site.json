@@ -1,7 +1,7 @@
 {
     "meta": {
         "version": 1,
-        "updated": "2026-06-05T04:47:16.176Z",
+        "updated": "2026-06-05T11:36:28.708Z",
         "tiktokRssSynced": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/rss/talaytrang.xml"
     },
     "images": {
@@ -424,6 +424,14 @@
     ],
     "videos": [
         {
+            "id": "7647861434105203986",
+            "platform": "tiktok",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_oMAIUE4IDhjlqCqcgEfXAjAAHFeTAqBEs7gRmi~tplv-tiktokx-origin.image.jpg",
+            "title": "🌊 เที่ยวตรังครบ จบในที่เดียว ทะเลตรัง ดอท คอม  มีหลายแพ็กเกจให้เลือก  🏝️ ✨ แพ็คเกจ ค้างคืน และไปเก็บไปเช้าเย็นกลับ แพ็กเกจขายดี มาแนะนำ✅💙 จองวันนี้ เที่ยวได้ 1 ตุลาคมเป็นต้นไป #FootballTikTok #tiktokพาเที่ยว #ทะเลตรัง #ทะเลตรังดอทคอม #tiktok",
+            "views": "",
+            "url": "https://www.tiktok.com/@talaytrang/video/7647861434105203986"
+        },
+        {
             "id": "7647745461956168978",
             "platform": "tiktok",
             "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_oABhAQvEjiAAWCSAE1iB0Hf2IAWIwAk3AKi6WI~tplv-tiktokx-origin.image.jpg",
@@ -510,14 +518,6 @@
             "title": "🌊 ทะเลตรังช่วงโลซีซั่น อย่าลืมเช็คสภาพอากาศก่อนเที่ยวนะคะ🌧️⛈️  แพ็คเกจเที่ยวทะเลตรัง แบบไปเช้า-เย็นกลับ 💙 ราคาเพียงท่านละ 950 บาท ⛵ เดินทางโดยเรือใหญ่ 🍽️ รวมอาหารเช้า + อาหารเที่ยงแบบบุฟเฟ่ต์ 📸 เที่ยวครบ เล่นน้ำ ถ่ายรูป ฟินทั้งทริป จองง่าย เที่ยวสบาย มีที",
             "views": "",
             "url": "https://www.tiktok.com/@talaytrang/video/7645536817030417672"
-        },
-        {
-            "id": "7642679103274962184",
-            "platform": "tiktok",
-            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_oYAAHBM6IEEJ0vc6SYaiBQBnCriyAAhhKAQAA~tplv-tiktokx-origin.image.jpg",
-            "title": "🌊เที่ยวทะเลตรังแบบ VIP เหมาลำเรือสปีดโบ๊ท เที่ยวเกาะสุดฟิน 🚤✨ ราคาเริ่มต้นเพียง 14,000 บาท เท่านั้น จะสายถ่ายรูป สายชิล หรือสายดำน้ำ ก็ฟินครบจบทริปเดียว 🏝️🐠 📍เที่ยวแบบส่วนตัว ไม่ต้องรอใคร 📍เหมาะกับแก๊งเพื่อน ครอบครัว และคู่รัก #เที่ยวกับทะเลตรังดอทคอม #ti",
-            "views": "",
-            "url": "https://www.tiktok.com/@talaytrang/video/7642679103274962184"
         }
     ],
     "whyUs": [
