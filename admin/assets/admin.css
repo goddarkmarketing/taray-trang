@@ -132,10 +132,24 @@ body.admin-body {
   gap: 10px;
   min-width: 0;
 }
+.admin-section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.admin-section-title h2 {
+  margin: 0;
+}
 .admin-page-help {
   position: relative;
   display: inline-flex;
   flex-shrink: 0;
+}
+.admin-page-help--inline .admin-page-help-popover {
+  left: 0;
+  z-index: 220;
 }
 .admin-page-help-btn {
   width: 22px;

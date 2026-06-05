@@ -274,21 +274,6 @@ function tt_admin_page_help_map(): array
                 ],
             ],
         ],
-        'section-headings' => [
-            'lead' => 'หัวข้อ Section หลักบนหน้าแรก (index.html)',
-            'items' => [
-                'แบนเนอร์, เรือ, โปรแกรม, ขั้นตอนจอง, รีวิว, TikTok, ออฟฟิศ, CTA ท้ายหน้า',
-                'แก้เฉพาะ Eyebrow / H2 / คำอธิบาย — การ์ดรายการแก้ที่เมนูเรือ/โปรแกรม/รีวิว',
-            ],
-            'preview' => '../index.html',
-            'visuals' => [[
-                'caption' => 'หัวข้อ Section โปรแกรมยอดนิยม (ตัวอย่าง)',
-                'page' => '../index.html',
-                'selector' => '#home-section-programs',
-                'scope' => 'section',
-                'maxHeight' => 200,
-            ]],
-        ],
         'deals' => [
             'lead' => 'การ์ดโปรโมชัน Custom Trip บนหน้าแรก',
             'items' => [
@@ -355,13 +340,181 @@ function tt_admin_page_help_map(): array
     ];
 }
 
+/**
+ * @return array<string, array{
+ *   lead: string,
+ *   items: list<string>,
+ *   preview?: string,
+ *   visual: array{page:string,selector:string,maxHeight?:int,waitChildren?:bool,scope?:string,caption?:string}
+ * }>
+ */
+function tt_home_section_help_map(): array
+{
+    return [
+        'hero' => [
+            'lead' => 'หัวข้อบนแบนเนอร์สไลด์ — หน้าแรก',
+            'items' => ['ข้อความทับรูปสไลด์ด้านบน', 'ไม่รวมปุ่มบริการเลื่อนด้านล่าง'],
+            'preview' => '../index.html',
+            'visual' => [
+                'caption' => 'ตำแหน่งบนหน้าแรก',
+                'page' => '../index.html',
+                'selector' => '#hero-slider .overlay-head',
+                'maxHeight' => 200,
+                'waitChildren' => true,
+            ],
+        ],
+        'boats' => [
+            'lead' => 'หัวข้อ Section ประเภทเรือ — หน้าแรก',
+            'items' => ['อยู่เหนือการ์ดเรือ 4 ใบ', 'การ์ดเรือแก้ที่เมนูประเภทเรือ'],
+            'preview' => '../index.html#boats',
+            'visual' => [
+                'page' => '../index.html',
+                'selector' => '[data-tt-home-section="boats"]',
+                'scope' => 'section',
+                'maxHeight' => 180,
+            ],
+        ],
+        'programs' => [
+            'lead' => 'หัวข้อ Section โปรแกรมยอดนิยม — หน้าแรก',
+            'items' => ['อยู่เหนือการ์ดโปรแกรม', 'การ์ดโปรแกรมแก้ที่เมนูโปรแกรมทัวร์'],
+            'preview' => '../index.html',
+            'visual' => [
+                'page' => '../index.html',
+                'selector' => '#home-section-programs .section-head',
+                'scope' => 'section',
+                'maxHeight' => 200,
+            ],
+        ],
+        'booking' => [
+            'lead' => 'หัวข้อ Section ขั้นตอนจอง — หน้าแรก',
+            'items' => ['อยู่เหนือ 4 ขั้นตอนจอง', 'ขั้นตอนแก้ที่เมนูขั้นตอนจอง'],
+            'preview' => '../index.html',
+            'visual' => [
+                'page' => '../index.html',
+                'selector' => '[data-tt-home-section="booking"]',
+                'scope' => 'section',
+                'maxHeight' => 180,
+            ],
+        ],
+        'reviews' => [
+            'lead' => 'หัวข้อ Section รีวิว — หน้าแรก',
+            'items' => ['อยู่เหนือการ์ดรีวิว', 'รีวิวแก้ที่เมนูรีวิว'],
+            'preview' => '../index.html',
+            'visual' => [
+                'page' => '../index.html',
+                'selector' => '[data-tt-home-section="reviews"]',
+                'scope' => 'section',
+                'maxHeight' => 180,
+            ],
+        ],
+        'videos' => [
+            'lead' => 'หัวข้อ Section TikTok — หน้าแรก',
+            'items' => ['อยู่เหนือคลิปวิดีโอ', 'คลิปแก้ที่เมนูวิดีโอ'],
+            'preview' => '../index.html',
+            'visual' => [
+                'page' => '../index.html',
+                'selector' => '[data-tt-home-section="videos"]',
+                'scope' => 'section',
+                'maxHeight' => 180,
+            ],
+        ],
+        'office' => [
+            'lead' => 'หัวข้อ Section ออฟฟิศ — หน้าแรก',
+            'items' => ['หัวข้อด้านบน + กล่องข้อมูลออฟฟิศ', 'แผนที่/เบอร์ดึงจากข้อมูลเว็บ'],
+            'preview' => '../index.html',
+            'visual' => [
+                'page' => '../index.html',
+                'selector' => '[data-tt-home-section="office"]',
+                'scope' => 'section',
+                'maxHeight' => 200,
+            ],
+        ],
+        'cta' => [
+            'lead' => 'หัวข้อ Section CTA ท้ายหน้า — หน้าแรก',
+            'items' => ['ข้อความก่อนปุ่มจองท้ายหน้าแรก'],
+            'preview' => '../index.html',
+            'visual' => [
+                'page' => '../index.html',
+                'selector' => '[data-tt-home-section="cta"]',
+                'maxHeight' => 200,
+            ],
+        ],
+    ];
+}
+
+function tt_admin_page_help_visual_figure(array $visual): string
+{
+    $caption = trim((string)($visual['caption'] ?? ''));
+    $page = (string)($visual['page'] ?? '');
+    $selector = (string)($visual['selector'] ?? '');
+    if ($page === '' || $selector === '') {
+        return '';
+    }
+    $maxHeight = (int)($visual['maxHeight'] ?? 200);
+    $waitChildren = !empty($visual['waitChildren']) ? '1' : '0';
+    $scope = trim((string)($visual['scope'] ?? ''));
+
+    $html = '<figure class="admin-page-help-figure admin-page-help-live-wrap"'
+        . ' data-page="' . htmlspecialchars($page, ENT_QUOTES, 'UTF-8') . '"'
+        . ' data-selector="' . htmlspecialchars($selector, ENT_QUOTES, 'UTF-8') . '"'
+        . ' data-max-height="' . $maxHeight . '"'
+        . ' data-wait-children="' . $waitChildren . '"'
+        . ($scope !== '' ? ' data-scope="' . htmlspecialchars($scope, ENT_QUOTES, 'UTF-8') . '"' : '')
+        . '>'
+        . '<div class="admin-page-help-live">'
+        . '<div class="admin-page-help-live-clip">'
+        . '<div class="admin-page-help-live-stage">'
+        . '<iframe class="admin-page-help-iframe" title="ตัวอย่างหน้าเว็บ" tabindex="-1" loading="eager"></iframe>'
+        . '</div></div>'
+        . '<div class="admin-page-help-live-loading">กำลังโหลดตัวอย่าง…</div>'
+        . '</div>';
+    if ($caption !== '') {
+        $html .= '<figcaption>' . htmlspecialchars($caption, ENT_QUOTES, 'UTF-8') . '</figcaption>';
+    }
+    return $html . '</figure>';
+}
+
 function tt_admin_page_help(?string $pageId): ?array
 {
-    if ($pageId === '' || $pageId === 'password') {
+    if ($pageId === '' || $pageId === 'password' || $pageId === 'section-headings') {
         return null;
     }
     $map = tt_admin_page_help_map();
     return $map[$pageId] ?? null;
+}
+
+function tt_render_admin_section_help(string $sectionKey): string
+{
+    $map = tt_home_section_help_map();
+    $help = $map[$sectionKey] ?? null;
+    if ($help === null) {
+        return '';
+    }
+
+    $visualsHtml = tt_admin_page_help_visual_figure($help['visual'] ?? []);
+    $hasVisuals = $visualsHtml !== '';
+    $popoverClass = 'admin-page-help-popover' . ($hasVisuals ? ' has-visuals' : '');
+
+    $items = '';
+    foreach ($help['items'] as $item) {
+        $items .= '<li>' . htmlspecialchars($item, ENT_QUOTES, 'UTF-8') . '</li>';
+    }
+
+    $preview = '';
+    if (!empty($help['preview'])) {
+        $preview = '<p class="admin-page-help-foot"><a href="'
+            . htmlspecialchars($help['preview'], ENT_QUOTES, 'UTF-8')
+            . '" target="_blank" rel="noopener">เปิดดูบนเว็บ ↗</a></p>';
+    }
+
+    return '<span class="admin-page-help admin-page-help--inline">'
+        . '<button type="button" class="admin-page-help-btn" aria-label="ดูว่าแสดงที่ไหนบนเว็บ">?</button>'
+        . '<div class="' . $popoverClass . '" role="tooltip">'
+        . $visualsHtml
+        . '<p class="admin-page-help-lead">' . htmlspecialchars($help['lead'], ENT_QUOTES, 'UTF-8') . '</p>'
+        . '<ul class="admin-page-help-list">' . $items . '</ul>'
+        . $preview
+        . '</div></span>';
 }
 
 function tt_render_admin_page_help(?string $pageId): string
@@ -373,34 +526,7 @@ function tt_render_admin_page_help(?string $pageId): string
 
     $visualsHtml = '';
     foreach ($help['visuals'] ?? [] as $visual) {
-        $caption = trim((string)($visual['caption'] ?? ''));
-        $page = (string)($visual['page'] ?? '');
-        $selector = (string)($visual['selector'] ?? '');
-        if ($page === '' || $selector === '') {
-            continue;
-        }
-        $maxHeight = (int)($visual['maxHeight'] ?? 200);
-        $waitChildren = !empty($visual['waitChildren']) ? '1' : '0';
-        $scope = trim((string)($visual['scope'] ?? ''));
-
-        $visualsHtml .= '<figure class="admin-page-help-figure admin-page-help-live-wrap"'
-            . ' data-page="' . htmlspecialchars($page, ENT_QUOTES, 'UTF-8') . '"'
-            . ' data-selector="' . htmlspecialchars($selector, ENT_QUOTES, 'UTF-8') . '"'
-            . ' data-max-height="' . $maxHeight . '"'
-            . ' data-wait-children="' . $waitChildren . '"'
-            . ($scope !== '' ? ' data-scope="' . htmlspecialchars($scope, ENT_QUOTES, 'UTF-8') . '"' : '')
-            . '>'
-            . '<div class="admin-page-help-live">'
-            . '<div class="admin-page-help-live-clip">'
-            . '<div class="admin-page-help-live-stage">'
-            . '<iframe class="admin-page-help-iframe" title="ตัวอย่างหน้าเว็บ" tabindex="-1" loading="eager"></iframe>'
-            . '</div></div>'
-            . '<div class="admin-page-help-live-loading">กำลังโหลดตัวอย่าง…</div>'
-            . '</div>';
-        if ($caption !== '') {
-            $visualsHtml .= '<figcaption>' . htmlspecialchars($caption, ENT_QUOTES, 'UTF-8') . '</figcaption>';
-        }
-        $visualsHtml .= '</figure>';
+        $visualsHtml .= tt_admin_page_help_visual_figure($visual);
     }
 
     $hasVisuals = $visualsHtml !== '';

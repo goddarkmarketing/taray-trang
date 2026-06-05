@@ -67,7 +67,10 @@ if ($flash): ?>
     $label = $labels[$key] ?? $key;
   ?>
   <div class="card" style="margin-bottom:16px" id="section-<?= htmlspecialchars($key, ENT_QUOTES, 'UTF-8') ?>">
-    <h2><?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?></h2>
+    <div class="admin-section-title">
+      <h2><?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?></h2>
+      <?= tt_render_admin_section_help($key) ?>
+    </div>
     <div class="grid-2">
       <?php if ($key !== 'hero'): ?>
       <div class="field">
