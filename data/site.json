@@ -1,7 +1,7 @@
 {
     "meta": {
         "version": 1,
-        "updated": "2026-06-04T21:53:43.485Z",
+        "updated": "2026-06-05T04:47:16.176Z",
         "tiktokRssSynced": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/rss/talaytrang.xml"
     },
     "images": {
@@ -424,6 +424,14 @@
     ],
     "videos": [
         {
+            "id": "7647745461956168978",
+            "platform": "tiktok",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_oABhAQvEjiAAWCSAE1iB0Hf2IAWIwAk3AKi6WI~tplv-tiktokx-origin.image.jpg",
+            "title": "🌊✨ แพ็กเกจสุดคุ้ม 2 วัน 1 คืน ✨🌊 ที่พักพร้อมทริปเที่ยวทะเลสุดฟิน 🌴☀️ 💙 ราคาเริ่มต้นเพียง ท่านละ 975 บาท (ราคาสำหรับ 6 ท่านขึ้นไป) 📅 จองใด้ตั้งเเต่วันนี้ เที่ยวได้ตั้งแต่ 1 ตุลาคม เป็นต้นไป ครบทั้งที่พักและทริปทะเลในราคาเบา ๆ ให้คุณได้พักผ่อนแบบคุ้มค่า 💦🏝️",
+            "views": "",
+            "url": "https://www.tiktok.com/@talaytrang/video/7647745461956168978"
+        },
+        {
             "id": "7647489080007216392",
             "platform": "tiktok",
             "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_ocXIFU4YItAIBiEWRi1CEEPinV7ABqaAAhAEA~tplv-tiktokx-origin.image.jpg",
@@ -510,14 +518,6 @@
             "title": "🌊เที่ยวทะเลตรังแบบ VIP เหมาลำเรือสปีดโบ๊ท เที่ยวเกาะสุดฟิน 🚤✨ ราคาเริ่มต้นเพียง 14,000 บาท เท่านั้น จะสายถ่ายรูป สายชิล หรือสายดำน้ำ ก็ฟินครบจบทริปเดียว 🏝️🐠 📍เที่ยวแบบส่วนตัว ไม่ต้องรอใคร 📍เหมาะกับแก๊งเพื่อน ครอบครัว และคู่รัก #เที่ยวกับทะเลตรังดอทคอม #ti",
             "views": "",
             "url": "https://www.tiktok.com/@talaytrang/video/7642679103274962184"
-        },
-        {
-            "id": "7642559157475757319",
-            "platform": "tiktok",
-            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_okA5BExqciTI9RPIljPfBi0DsBmg7eI0lEWuBg~tplv-tiktokx-origin.image.jpg",
-            "title": "🌤️🌈อัพเดตสภาพอากาศวันนี้ 22/5/69 อากาศดี มีแดดออก ไม่มีฝนตก เรือสามารถท่องทะเลได้ปกติค่ะ 💖☀️ #ทะเลตรัง #ทะเลตรังดอทคอม #tikokพาเที่ยว #tiktok #การท่องเที่ยวแห่งประเทศไทย",
-            "views": "",
-            "url": "https://www.tiktok.com/@talaytrang/video/7642559157475757319"
         }
     ],
     "whyUs": [
