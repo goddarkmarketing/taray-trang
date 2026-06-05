@@ -7,27 +7,6 @@ tt_require_admin();
 
 $data = tt_read_data();
 $boats = $data['boats'] ?? [];
-$boatsHead = tt_home_sections($data)['boats'] ?? [];
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'section_heading') {
-    $sections = $data['homeSections'] ?? [];
-    if (!is_array($sections)) {
-        $sections = [];
-    }
-    $sections['boats'] = [
-        'eyebrow' => trim($_POST['boats_eyebrow'] ?? ''),
-        'title' => trim($_POST['boats_title'] ?? ''),
-        'lead' => trim($_POST['boats_lead'] ?? ''),
-    ];
-    $data['homeSections'] = $sections;
-    if (tt_write_data($data)) {
-        tt_set_flash('บันทึกหัวข้อส่วนประเภทเรือบนหน้าแรกแล้ว');
-    } else {
-        tt_set_flash('บันทึกไม่สำเร็จ', 'error');
-    }
-    header('Location: boats.php');
-    exit;
-}
 
 if (isset($_GET['delete']) && $_GET['delete'] !== '') {
     $id = $_GET['delete'];
@@ -41,34 +20,11 @@ if (isset($_GET['delete']) && $_GET['delete'] !== '') {
 
 tt_admin_header('ประเภทเรือ', 'boats');
 $flash = tt_flash();
-$flashType = tt_flash_type();
-if ($flash): ?>
-  <div class="alert alert-<?= $flashType === 'error' ? 'error' : 'success' ?>"><?= htmlspecialchars($flash, ENT_QUOTES, 'UTF-8') ?></div>
-<?php endif; ?>
+if ($flash): ?><div class="alert alert-success"><?= htmlspecialchars($flash, ENT_QUOTES, 'UTF-8') ?></div><?php endif; ?>
 
-<form method="post" class="card" style="margin-bottom:16px">
-  <input type="hidden" name="action" value="section_heading"/>
-  <h2>หัวข้อส่วนประเภทเรือบนหน้าแรก</h2>
-  <p class="field-hint">แก้เฉพาะข้อความด้านบนการ์ดเรือบนหน้าแรก (ไม่ใช่รายการเรือด้านล่าง)</p>
-  <div class="grid-2">
-    <div class="field">
-      <label>ข้อความเล็กด้านบน (Eyebrow)</label>
-      <input name="boats_eyebrow" value="<?= htmlspecialchars($boatsHead['eyebrow'] ?? '', ENT_QUOTES, 'UTF-8') ?>" placeholder="ประเภทเรือ"/>
-    </div>
-    <div class="field">
-      <label>หัวข้อหลัก (H2)</label>
-      <input name="boats_title" value="<?= htmlspecialchars($boatsHead['title'] ?? '', ENT_QUOTES, 'UTF-8') ?>" placeholder="เลือกเรือให้เหมาะกับทริปของคุณ"/>
-    </div>
-    <div class="field" style="grid-column:1/-1">
-      <label>คำอธิบาย (Lead)</label>
-      <textarea name="boats_lead" rows="2" placeholder="มีให้เลือก 3 ประเภท..."><?= htmlspecialchars($boatsHead['lead'] ?? '', ENT_QUOTES, 'UTF-8') ?></textarea>
-    </div>
-  </div>
-  <div class="form-actions" style="border:0;padding-top:12px">
-    <button type="submit" class="btn btn-primary">บันทึกหัวข้อหน้าแรก</button>
-    <a class="btn btn-ghost" href="../index.html#boats" target="_blank" rel="noopener">ดูบนหน้าแรก ↗</a>
-  </div>
-</form>
+<div class="card" style="margin-bottom:16px">
+  <p class="field-hint">หัวข้อ Section 「ประเภทเรือ」บนหน้าแรก แก้ที่เมนู <a href="section-headings.php"><strong>หัวข้อ Section</strong></a></p>
+</div>
 
 <div class="form-actions" style="border:0;margin-bottom:16px;padding:0">
   <a class="btn btn-primary" href="boat-edit.php">+ เพิ่มประเภทเรือ</a>

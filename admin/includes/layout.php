@@ -21,7 +21,7 @@ function tt_admin_nav(): array
         ['id' => 'steps', 'label' => 'ขั้นตอนจอง', 'href' => 'steps.php'],
         ['id' => 'articles', 'label' => 'บทความ', 'href' => 'articles.php'],
         ['id' => 'about', 'label' => 'หน้าเกี่ยวกับเรา', 'href' => 'about.php'],
-        ['id' => 'home', 'label' => 'หัวข้อหน้าแรก', 'href' => 'home.php'],
+        ['id' => 'section-headings', 'label' => 'หัวข้อ Section', 'href' => 'section-headings.php'],
         ['id' => 'deals', 'label' => 'การ์ดหน้าแรก', 'href' => 'deals.php'],
         ['id' => 'seo', 'label' => 'SEO / Meta', 'href' => 'seo.php'],
         ['id' => 'images', 'label' => 'รูปภาพ (Registry)', 'href' => 'images.php'],

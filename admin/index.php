@@ -27,7 +27,7 @@ if ($flash): ?>
   <p class="field-hint">การบันทึกจากหลังบ้านจะอัปเดต <code>data/site.json</code> และ <code>assets/js/data-fallback.js</code> ทันที</p>
   <div class="form-actions" style="border:0;padding-top:8px">
     <a class="btn btn-primary" href="../index.html" target="_blank">เปิดหน้าเว็บ</a>
-    <a class="btn btn-ghost" href="home.php">หัวข้อหน้าแรก</a>
+    <a class="btn btn-ghost" href="section-headings.php">หัวข้อ Section</a>
     <a class="btn btn-ghost" href="site.php">แก้ข้อมูลเว็บ</a>
     <a class="btn btn-ghost" href="articles.php">จัดการบทความ</a>
     <a class="btn btn-ghost" href="backup.php">สำรอง & กู้คืน</a>
