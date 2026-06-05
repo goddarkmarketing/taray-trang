@@ -273,6 +273,21 @@ function tt_admin_page_help_map(): array
                 ],
             ],
         ],
+        'home' => [
+            'lead' => 'หัวข้อและคำอธิบายแต่ละส่วนบนหน้าแรก',
+            'items' => [
+                'แบนเนอร์, เรือ, โปรแกรม, ขั้นตอนจอง, รีวิว, TikTok, ออฟฟิศ, CTA ท้ายหน้า',
+                'ไม่รวมการ์ดรายการ — การ์ดแก้ที่เมนูเรือ/โปรแกรม/รีวิว',
+            ],
+            'preview' => '../index.html',
+            'visuals' => [[
+                'caption' => 'หัวข้อส่วนโปรแกรมยอดนิยม (ตัวอย่าง)',
+                'page' => '../index.html',
+                'selector' => '#home-section-programs',
+                'scope' => 'section',
+                'maxHeight' => 200,
+            ]],
+        ],
         'deals' => [
             'lead' => 'การ์ดโปรโมชัน Custom Trip บนหน้าแรก',
             'items' => [

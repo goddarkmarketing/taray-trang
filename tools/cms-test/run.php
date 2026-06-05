@@ -42,6 +42,7 @@ try {
     cms_test_images($runner);
     cms_test_about($runner);
     cms_test_seo($runner);
+    cms_test_home_sections($runner);
     cms_test_home_deals($runner);
     cms_test_api_save_endpoint($runner);
     cms_test_cache_version($runner);

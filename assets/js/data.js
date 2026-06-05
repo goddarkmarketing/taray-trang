@@ -42,6 +42,7 @@
       ABOUT: d.about || {},
       SEO: d.seo || {},
       HOME_DEALS: d.homeDeals || {},
+      HOME_SECTIONS: d.homeSections || {},
     };
     return true;
   }
@@ -63,6 +64,7 @@
     about: {},
     seo: {},
     homeDeals: {},
+    homeSections: {},
   };
 
   if (!apply(window.__TT_FALLBACK)) {

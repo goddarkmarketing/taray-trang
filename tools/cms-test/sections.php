@@ -286,6 +286,39 @@ function cms_test_seo(CmsTestRunner $t): void
     $t->write($data);
 }
 
+function cms_test_home_sections(CmsTestRunner $t): void
+{
+    $data = $t->read();
+    $sections = $data['homeSections'] ?? [];
+    $orig = $sections['programs']['title'] ?? '';
+    if ($sections === []) {
+        $sections = tt_home_sections_defaults();
+    }
+    $sections['programs']['title'] = $t->marker();
+    $data['homeSections'] = $sections;
+    $t->assert('homeSections: update', $t->write($data));
+    $t->assertPersisted('homeSections.programs.title', fn(array $d) =>
+        ($d['homeSections']['programs']['title'] ?? '') === $t->marker()
+    );
+
+    $fe = $t->frontendMap();
+    $t->assert('frontend: HOME_SECTIONS', ($fe['HOME_SECTIONS']['programs']['title'] ?? '') === $t->marker());
+
+    $data = $t->read();
+    if ($orig === '' && ($data['homeSections']['programs']['title'] ?? '') === $t->marker()) {
+        unset($data['homeSections']['programs']['title']);
+        if (($data['homeSections']['programs'] ?? []) === []) {
+            unset($data['homeSections']['programs']);
+        }
+        if (($data['homeSections'] ?? []) === []) {
+            unset($data['homeSections']);
+        }
+    } else {
+        $data['homeSections']['programs']['title'] = $orig;
+    }
+    $t->write($data);
+}
+
 function cms_test_home_deals(CmsTestRunner $t): void
 {
     $data = $t->read();

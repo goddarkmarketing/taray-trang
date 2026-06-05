@@ -110,6 +110,7 @@ final class CmsTestRunner
             'ABOUT' => $d['about'] ?? [],
             'SEO' => $d['seo'] ?? [],
             'HOME_DEALS' => $d['homeDeals'] ?? [],
+            'HOME_SECTIONS' => $d['homeSections'] ?? [],
         ];
     }
 
@@ -157,7 +158,7 @@ final class CmsTestRunner
         $allowed = [
             'site', 'navItems', 'images', 'heroSlides', 'services',
             'boats', 'programs', 'options', 'reviews', 'videos',
-            'whyUs', 'steps', 'articles', 'about', 'seo', 'homeDeals',
+            'whyUs', 'steps', 'articles', 'about', 'seo', 'homeDeals', 'homeSections',
         ];
         if (!in_array($section, $allowed, true)) {
             return false;

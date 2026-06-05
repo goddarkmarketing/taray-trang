@@ -73,7 +73,69 @@ function tt_write_fallback_js(array $data): void
 
 function tt_api_to_frontend(array $data): array
 {
+    $data['homeSections'] = tt_home_sections($data);
     return $data;
+}
+
+/** @return array<string, array<string, string>> */
+function tt_home_sections_defaults(): array
+{
+    return [
+        'hero' => [
+            'title' => 'แพ็คเกจทัวร์ตรัง',
+            'lead' => 'รวมแพ็คเกจทัวร์เที่ยวเมืองตรัง หลากหลายบริการครบในที่เดียว ตั้งแต่เรือ ที่พัก รถ ตั๋วเรือ ไปจนถึงสัมมนาและสถานที่ถ่ายทำ',
+        ],
+        'boats' => [
+            'eyebrow' => 'ประเภทเรือ',
+            'title' => 'เลือกเรือให้เหมาะกับทริปของคุณ',
+            'lead' => 'มีให้เลือก 3 ประเภท ตั้งแต่บรรยากาศโลคอลเรือหางยาว ความเร็ว Speed Boat ไปจนถึงเรือใหญ่สำหรับกรุ๊ปบริษัทและครอบครัวขยายใหญ่',
+        ],
+        'programs' => [
+            'eyebrow' => 'โปรแกรมยอดนิยม',
+            'title' => 'เส้นทางเที่ยวทะเลตรัง ที่ทุกคนอยากลอง',
+            'lead' => 'เก็บไฮไลต์ ถ้ำมรกต เกาะกระดาน เกาะเชือก หรือออกแบบเส้นทางส่วนตัวก็ได้ ราคาเริ่มต้น 3,200 บาทต่อทริป',
+        ],
+        'booking' => [
+            'eyebrow' => 'จองง่ายใน 4 ขั้นตอน',
+            'title' => 'จองเรือเที่ยวทะเลตรังใช้เวลาไม่ถึง 2 นาที',
+            'lead' => 'ระบบคำนวณราคาให้อัตโนมัติ จากนั้นกดปุ่มเดียวเปิด LINE @talaytrang ติดต่อแอดมินได้ทันที',
+        ],
+        'reviews' => [
+            'eyebrow' => 'รีวิวลูกค้า',
+            'title' => 'เสียงจริงจากทริปจริง',
+            'lead' => 'ลูกค้าหลายร้อยทริปบอกต่อ ทั้งครอบครัว คู่รัก เพื่อนกลุ่ม และบริษัท',
+        ],
+        'videos' => [
+            'eyebrow' => 'TikTok ล่าสุด',
+            'title' => 'ทะเลตรังในมุมที่คุณยังไม่เคยเห็น',
+            'lead' => 'อัปเดตทุกสัปดาห์ที่',
+            'tiktokHandle' => '@talaytrang',
+        ],
+        'office' => [
+            'eyebrow' => 'ออฟฟิศมีตัวตนจริง',
+            'title' => 'มาเจอเราได้จริงที่กันตัง จังหวัดตรัง',
+            'infoTitle' => 'มั่นใจได้ทุกทริป',
+            'infoLead' => 'เรามีออฟฟิศตั้งอยู่จริงที่อำเภอกันตัง เปิดบริการทุกวัน คุณสามารถนัดเข้ามาดูเรือก่อนตกลงจองได้',
+        ],
+        'cta' => [
+            'eyebrow' => 'พร้อมออกทะเลแล้วใช่ไหม',
+            'title' => 'เลือกเรือ คำนวณราคา และจองผ่าน LINE ได้เลย',
+            'lead' => 'ทีมงานแอดมินตอบกลับใน LINE รวดเร็ว ดูแลคุณตั้งแต่ก่อนเที่ยวจนจบทริป',
+        ],
+    ];
+}
+
+/** @return array<string, array<string, string>> */
+function tt_home_sections(?array $data = null): array
+{
+    if ($data === null) {
+        $data = tt_read_data();
+    }
+    $stored = $data['homeSections'] ?? [];
+    if (!is_array($stored)) {
+        $stored = [];
+    }
+    return array_replace_recursive(tt_home_sections_defaults(), $stored);
 }
 
 /** แปลงลิงก์ share Facebook → URL เพจจริง (สำหรับ Page Plugin) */
@@ -411,6 +473,18 @@ function tt_backup_prune(string $suffix, int $max): void
     }
 }
 
+/** แฮชเนื้อหาจริง (ไม่รวม meta.updated) — กันสำรองซ้ำเมื่อกดบันทึกหลายครั้งโดยไม่ได้แก้อะไร */
+function tt_backup_content_hash(string $jsonRaw): string
+{
+    $data = json_decode($jsonRaw, true);
+    if (!is_array($data)) {
+        return md5($jsonRaw);
+    }
+    unset($data['meta']);
+    $encoded = json_encode($data, JSON_UNESCAPED_UNICODE);
+    return md5($encoded !== false ? $encoded : $jsonRaw);
+}
+
 function tt_auto_backup_before_write(): void
 {
     if (!is_file(TT_DATA_FILE)) {
@@ -420,11 +494,11 @@ function tt_auto_backup_before_write(): void
     if ($current === false || $current === '') {
         return;
     }
-    $hash = md5($current);
+    $hash = tt_backup_content_hash($current);
     $dir = tt_backup_ensure_dir();
     foreach (glob($dir . '/*_auto.json') ?: [] as $path) {
         $prev = file_get_contents($path);
-        if ($prev !== false && md5($prev) === $hash) {
+        if ($prev !== false && tt_backup_content_hash($prev) === $hash) {
             return;
         }
     }

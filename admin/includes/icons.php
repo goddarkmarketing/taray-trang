@@ -19,6 +19,7 @@ function tt_admin_icon(string $id): string
         'steps' => '<path d="M10 6h8M6 12h12M8 18h8"/>',
         'articles' => '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>',
         'about' => '<circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>',
+        'home' => '<path d="M4 6h16M4 12h16M4 18h10"/>',
         'deals' => '<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>',
         'seo' => '<circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/>',
         'images' => '<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/>',
