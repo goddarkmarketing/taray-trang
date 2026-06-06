@@ -1,7 +1,7 @@
 {
     "meta": {
         "version": 1,
-        "updated": "2026-06-06T10:22:11.339Z",
+        "updated": "2026-06-06T14:07:45.660Z",
         "tiktokRssSynced": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/rss/talaytrang.xml"
     },
     "images": {
@@ -424,6 +424,14 @@
     ],
     "videos": [
         {
+            "id": "7648240175557905682",
+            "platform": "tiktok",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_ogIEIFq6ACAzBWD0QfG8AcAgEXAiqJktqBHARe~tplv-tiktokx-origin.image.jpg",
+            "title": "เที่ยวครบ จบในที่เดียว ราคาสบายกระเป๋า 💙 🏨 2วัน1คืน เริ่มต้นเพียงท่านละ 1,375.- มีทั้งเรือใหญ่ อาหาร ที่พัก และสตาฟดูแลตลอดทริป จองกับเรา ที่เหลือปล่อยให้ทะเลเยียวยา 🌤️🌊 📌 ราคาหลักร้อย วิวหลักล้าน 📥 จองวันนี้เริ่มเที่ยวได้ 1 ตุลาคม 69 เป็นต้นไป #FootballT",
+            "views": "",
+            "url": "https://www.tiktok.com/@talaytrang/video/7648240175557905682"
+        },
+        {
             "id": "7648165195684039954",
             "platform": "tiktok",
             "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_ooQjVSgOWCT6AfM7EA8gXfA4AtQw3Av7D3RUeI~tplv-tiktokx-origin.image.jpg",
@@ -510,14 +518,6 @@
             "title": "🌊 เช็คก่อน เตรียมตัวเที่ยวทะเลตรัง! 🏝️ เดือนมิถุนายน69 #เช็กสภาพอากาศ #เที่ยวทะเลตรัง #ทะเลตรัง #เที่ยวหน้าฝน #เตรียมตัวเที่ยว",
             "views": "",
             "url": "https://www.tiktok.com/@talaytrang/video/7645913070694386951"
-        },
-        {
-            "id": "7645622454672477447",
-            "platform": "tiktok",
-            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_oIAAqSBMiAdRDta3AIn0ABxC36JEIOAfw1VUvi~tplv-tiktokx-origin.image.jpg",
-            "title": "🌊 เหมาลำเรือหางยาวส่วนตัว เที่ยวทะเลตรัง 4 เกาะ     ถ้ำมรกต • เกาะมุก (อ่าวเสือ) • เกาะกระดาน  • เกาะม้า     ราคาเริ่มต้นเพียงลำละ 4,000 บาท     มีสตาฟดูแลทั้งทริป ในช่วงนี้อย่าลืมเช็คสภาพอากาศก่อนออกเดินทางนะคะ💙🌊 #ทะเลตรัง #ทะเลตรังดอทคอม #tiktok #tiktok",
-            "views": "",
-            "url": "https://www.tiktok.com/@talaytrang/video/7645622454672477447"
         }
     ],
     "whyUs": [
