@@ -1,7 +1,7 @@
 {
     "meta": {
         "version": 1,
-        "updated": "2026-06-07T10:36:22.428Z",
+        "updated": "2026-06-07T14:20:20.903Z",
         "tiktokRssSynced": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/rss/talaytrang.xml"
     },
     "images": {
@@ -424,6 +424,14 @@
     ],
     "videos": [
         {
+            "id": "7648604793430166792",
+            "platform": "tiktok",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_oU2JDflPEE2cQxmlmAqgFChKIeRUAA30BB8Asa~tplv-tiktokx-origin.image.jpg",
+            "title": "เเพ็คเกจ 2 วัน 1 คืน มีให้เลือกหลายที่พัก 💙 🌙 แพ็กเกจ 2วัน1คืน เริ่มต้นเพียง 1,275.-/ท่าน ครบทั้งเรือ ที่พัก อาหาร และทีมงานดูแลตลอดทริป เที่ยวง่าย ไม่ต้องวางแผนเอง แค่เก็บกระเป๋าแล้วออกเดินทาง ✨ 📍งบน้อยก็เที่ยวทะเลสวย ๆ ได้ 📩 จองก่อน เต็มก่อนนะคะ #Footba",
+            "views": "",
+            "url": "https://www.tiktok.com/@talaytrang/video/7648604793430166792"
+        },
+        {
             "id": "7648487043193916690",
             "platform": "tiktok",
             "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_o4nEZAiJpEB7e6AAJcAgfRiHqkI2Ra0BcAnO4C~tplv-tiktokx-origin.image.jpg",
@@ -510,14 +518,6 @@
             "title": "ช่วงหน้าโลซีซั่นถ้ามรกตยังเปิดให้บริการอยู่ แต่ ⚠️ งดเข้าก่อนนะคะ ช่วงนี้คลื่นลมไม่ค่อยดีค่ะ ก่อนเดินทางเช็กสภาพอากาศล่วงหน้าทุกครั้งนะคะ #เที่ยวทั่วไทย #ถ้ํามรกต #ทะเลตรัง #ทะเลตรังดอทคอม",
             "views": "",
             "url": "https://www.tiktok.com/@talaytrang/video/7646659626930392340"
-        },
-        {
-            "id": "7646270813951298823",
-            "platform": "tiktok",
-            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_oMKQAfOIUIABDjUgDLglIdIA6GEaeVAejAEWA4~tplv-tiktokx-origin.image.jpg",
-            "title": "🌧️⛵ อัปเดตสภาพอากาศวันนี้ มีฝนตก ลมค่อนข้างแรง และมีคลื่นสูงในทะเล 🌊 ก่อนออกเดินทางหรือออกทริปทะเล อย่าลืมเช็กสภาพอากาศวันต่อวัน เพื่อความปลอดภัยและความสนุกตลอดทริปนะคะ 💙 #อัปเดตสภาพอากาศ #ทะเลตรัง #ทะเลตรังดอทคอม #tiktok #tiktokพาเที่ยว",
-            "views": "",
-            "url": "https://www.tiktok.com/@talaytrang/video/7646270813951298823"
         }
     ],
     "whyUs": [
