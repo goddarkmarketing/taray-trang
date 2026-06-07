@@ -1,7 +1,7 @@
 {
     "meta": {
         "version": 1,
-        "updated": "2026-06-06T21:18:25.320Z",
+        "updated": "2026-06-07T04:56:11.128Z",
         "tiktokRssSynced": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/rss/talaytrang.xml"
     },
     "images": {
@@ -424,6 +424,14 @@
     ],
     "videos": [
         {
+            "id": "7648487043193916690",
+            "platform": "tiktok",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_o4nEZAiJpEB7e6AAJcAgfRiHqkI2Ra0BcAnO4C~tplv-tiktokx-origin.image.jpg",
+            "title": "✨ เเพ็คเกจขายดี✨ เที่ยวทะเลตรังสุดคุ้ม เริ่มต้นเพียง 950 บาท/ท่าน ⛴️ เรือใหญ่ 🍽️ อาหารบุฟเฟ่ต์ 🏝️ เที่ยวครบ สนุกตลอดทริป จองง่าย เที่ยวสบาย ให้เราดูแลทุกการเดินทาง 💙 #FootballTikTok #tiktokพาเที่ยว #ทะเลตรัง #ทะเลตรังดอทคอม #เที่ยวไปเรื่อย",
+            "views": "",
+            "url": "https://www.tiktok.com/@talaytrang/video/7648487043193916690"
+        },
+        {
             "id": "7648240175557905682",
             "platform": "tiktok",
             "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_ogIEIFq6ACAzBWD0QfG8AcAgEXAiqJktqBHARe~tplv-tiktokx-origin.image.jpg",
@@ -510,14 +518,6 @@
             "title": "🌧️⛵ อัปเดตสภาพอากาศวันนี้ มีฝนตก ลมค่อนข้างแรง และมีคลื่นสูงในทะเล 🌊 ก่อนออกเดินทางหรือออกทริปทะเล อย่าลืมเช็กสภาพอากาศวันต่อวัน เพื่อความปลอดภัยและความสนุกตลอดทริปนะคะ 💙 #อัปเดตสภาพอากาศ #ทะเลตรัง #ทะเลตรังดอทคอม #tiktok #tiktokพาเที่ยว",
             "views": "",
             "url": "https://www.tiktok.com/@talaytrang/video/7646270813951298823"
-        },
-        {
-            "id": "7645913070694386951",
-            "platform": "tiktok",
-            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_e64284dcf1804f0fb0939f650799aaa3~tplv-photomode-image.jpeg.jpg",
-            "title": "🌊 เช็คก่อน เตรียมตัวเที่ยวทะเลตรัง! 🏝️ เดือนมิถุนายน69 #เช็กสภาพอากาศ #เที่ยวทะเลตรัง #ทะเลตรัง #เที่ยวหน้าฝน #เตรียมตัวเที่ยว",
-            "views": "",
-            "url": "https://www.tiktok.com/@talaytrang/video/7645913070694386951"
         }
     ],
     "whyUs": [
