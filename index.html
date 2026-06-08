@@ -44,32 +44,47 @@
     </div>
   </section>
 
-  <!-- =================== BOATS =================== -->
+  <!-- =================== DAY TRIP PACKAGES =================== -->
   <section class="section" id="boats">
     <div class="container">
-      <div class="section-head" data-reveal data-tt-home-section="boats">
-        <span class="eyebrow">ประเภทเรือ</span>
-        <h2>เลือกเรือให้เหมาะกับทริปของคุณ</h2>
-        <p class="lead">มีให้เลือก 3 ประเภท ตั้งแต่บรรยากาศโลคอลเรือหางยาว ความเร็ว Speed Boat ไปจนถึงเรือใหญ่สำหรับกรุ๊ปบริษัทและครอบครัวขยายใหญ่</p>
+      <div class="section-head section-head-wide" data-reveal data-tt-home-section="boats">
+        <span class="eyebrow">One-day trips</span>
+        <h2>แพ็กเกจไปเช้า เย็นกลับ</h2>
+        <p class="lead">ไปเช้าเย็นกลับ ถ้ำมรกต เกาะกระดาน เกาะแหวน เกาะเชือก และเกาะรอก — เริ่มต้น 650 บาท ครบเรือ ไกด์ อาหาร และประกัน</p>
       </div>
-      <div class="grid grid-4" id="home-boats"></div>
+      <div class="grid grid-4 programs-category-grid" id="home-boats"></div>
       <div class="btn-row center mt-4" data-reveal>
-        <a class="btn btn-outline" href="boats.html">ดูรายละเอียดเรือทั้งหมด</a>
+        <a class="btn btn-outline" href="programs.html#daytrip">ดูแพ็กเกจไปเช้าเย็นกลับทั้งหมด</a>
       </div>
     </div>
   </section>
 
-  <!-- =================== PROGRAMS =================== -->
+  <!-- =================== 2D1N PACKAGES =================== -->
   <section class="section section-soft" id="home-section-programs">
     <div class="container">
       <div class="section-head section-head-wide" data-reveal data-tt-home-section="programs">
-        <span class="eyebrow">โปรแกรมยอดนิยม</span>
-        <h2>เส้นทางเที่ยวทะเลตรัง ที่ทุกคนอยากลอง</h2>
-        <p class="lead">เก็บไฮไลต์ ถ้ำมรกต เกาะกระดาน เกาะเชือก หรือออกแบบเส้นทางส่วนตัวก็ได้ ราคาเริ่มต้น 3,200 บาทต่อทริป</p>
+        <span class="eyebrow">พักค้างคืน</span>
+        <h2>แพ็กเกจ 2 วัน 1 คืน</h2>
+        <p class="lead">เที่ยวทะเลเต็มอิ่ม 2 วัน 1 คืน รวมเรือ ที่พัก อาหาร และทีมงานดูแลตลอดทริป — ราคาเริ่มต้น 1,275 บาทต่อท่าน</p>
       </div>
-      <div class="grid grid-4" id="home-programs"></div>
+      <div class="grid grid-4 programs-category-grid" id="home-programs"></div>
       <div class="btn-row center mt-4" data-reveal>
-        <a class="btn btn-primary" href="programs.html">ดูโปรแกรมทั้งหมด</a>
+        <a class="btn btn-primary" href="programs.html#overnight">ดูแพ็กเกจ 2 วัน 1 คืนทั้งหมด</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== 3D2N PACKAGES =================== -->
+  <section class="section" id="home-section-packages3d2n">
+    <div class="container">
+      <div class="section-head section-head-wide" data-reveal data-tt-home-section="packages3d2n">
+        <span class="eyebrow">พักยาวขึ้น</span>
+        <h2>แพ็กเกจ 3 วัน 2 คืน</h2>
+        <p class="lead">เที่ยวทะเลตรังแบบสบาย ๆ 3 วัน 2 คืน ครบเรือ ที่พัก อาหาร กิจกรรมทะเล — ราคาเริ่มต้น 1,300 บาทต่อท่าน</p>
+      </div>
+      <div class="grid grid-4 programs-category-grid" id="home-packages-3d2n"></div>
+      <div class="btn-row center mt-4" data-reveal>
+        <a class="btn btn-outline" href="programs.html#packages3d2n">ดูแพ็กเกจ 3 วัน 2 คืนทั้งหมด</a>
       </div>
     </div>
   </section>
@@ -211,7 +226,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      const { BOATS, PROGRAMS, REVIEWS, VIDEOS, STEPS, SERVICES, ICONS, IMAGES, HOME_DEALS, HOME_SECTIONS, SITE } = window.TT;
+      const { BOATS, PROGRAMS, PACKAGES_2D1N, PACKAGES_3D2N, REVIEWS, VIDEOS, STEPS, SERVICES, ICONS, IMAGES, HOME_DEALS, HOME_SECTIONS, SITE } = window.TT;
       applyHomeSections(HOME_SECTIONS, SITE);
       const fmt = new Intl.NumberFormat('th-TH');
 
@@ -236,62 +251,9 @@
         </div>
       `;
 
-      // Boats — Traveloka-style deal cards (4 cards)
       const starsSvg = (n) => Array.from({length: n}).map(() => ICONS.star).join('');
-      const homeBoats = [
-        ...BOATS.map(b => ({
-          href: `booking.html?boat=${b.id}`,
-          image: b.image,
-          name: b.name,
-          sub: b.tag,
-          rating: b.rating ?? 4.8,
-          reviews: b.reviewCount || '500',
-          stars: b.stars ?? 5,
-          basePrice: b.basePrice,
-          badgeTL: b.badgeTL || 'กันตัง · ตรัง',
-          badgeTR: b.badgeTR || '',
-          badgeTRClass: b.badgeTRClass || 'is-info',
-        })),
-      ];
-      const custom = HOME_DEALS?.customTrip;
-      if (custom?.enabled !== false && custom?.name) {
-        homeBoats.push({
-          href: custom.href || 'booking.html',
-          image: custom.image || IMAGES.programPrivate,
-          name: custom.name,
-          sub: custom.sub,
-          rating: custom.rating ?? 5,
-          reviews: custom.reviewCount || '500',
-          stars: custom.stars ?? 5,
-          basePrice: custom.basePrice ?? 8000,
-          badgeTL: custom.badgeTL || '',
-          badgeTR: custom.badgeTR || '',
-          badgeTRClass: custom.badgeTRClass || 'is-info',
-        });
-      }
-      document.getElementById('home-boats').innerHTML = homeBoats.map((b) => `
-        <a class="deal-card" href="${b.href}">
-          <div class="deal-media">
-            <img src="${b.image}" alt="${b.name}" loading="lazy"/>
-            <span class="deal-badge-tl">${b.badgeTL}</span>
-            ${b.badgeTR ? `<span class="deal-badge-tr ${b.badgeTRClass || ''}">${b.badgeTR}</span>` : ''}
-          </div>
-          <div class="deal-body">
-            <h3>${b.name}</h3>
-            <p class="deal-sub">${b.sub}</p>
-            <div class="deal-stars" aria-label="${b.stars} ดาว">${starsSvg(b.stars)}</div>
-            <div class="deal-rate"><strong>${b.rating.toFixed(1)}</strong>/5 <span class="dot"></span> <span>${b.reviews} รีวิว</span></div>
-            <div class="deal-price">
-              <small>เริ่มต้น</small>
-              <strong>THB ${fmt.format(b.basePrice)}</strong>
-            </div>
-          </div>
-        </a>
-      `).join('');
 
-      // Programs — Traveloka-style deal cards (4 cards)
-      const top = PROGRAMS.slice(0, 4);
-      document.getElementById('home-programs').innerHTML = top.map((p) => {
+      function renderProgramDealCard(p, { badgeTL, index = 0 }) {
         const r = {
           rating: p.rating ?? 4.8,
           reviews: p.reviewCount || '500',
@@ -301,11 +263,12 @@
         const discount = r.oldPrice ? Math.round((1 - p.basePrice / r.oldPrice) * 100) : 0;
         const tr = p.ribbon ? `<span class="deal-badge-tr ${p.ribbon === 'ยอดนิยม' ? 'is-hot' : 'is-info'}">${p.ribbon}</span>`
                  : discount > 0 ? `<span class="deal-badge-tr">ประหยัด ${discount}%</span>` : '';
+        const tl = badgeTL ?? `รหัส #${p.packageCode ?? (index + 1)}`;
         return `
-        <a class="deal-card" href="booking.html?program=${p.id}">
+        <a class="deal-card" href="program.html?id=${p.id}" data-reveal>
           <div class="deal-media">
             <img src="${p.image}" alt="ภาพประกอบ ${p.name}" loading="lazy"/>
-            <span class="deal-badge-tl">ทะเลตรัง</span>
+            <span class="deal-badge-tl">${tl}</span>
             ${tr}
           </div>
           <div class="deal-body">
@@ -320,7 +283,20 @@
             </div>
           </div>
         </a>`;
-      }).join('');
+      }
+
+      const homePackageSections = [
+        { hostId: 'home-boats', items: PROGRAMS || [] },
+        { hostId: 'home-programs', items: PACKAGES_2D1N || [] },
+        { hostId: 'home-packages-3d2n', items: PACKAGES_3D2N || [] },
+      ];
+      homePackageSections.forEach(({ hostId, items }) => {
+        const host = document.getElementById(hostId);
+        if (!host) return;
+        host.innerHTML = items
+          .map((p, i) => renderProgramDealCard(p, { index: i }))
+          .join('');
+      });
 
       // Steps
       document.getElementById('home-steps').innerHTML = STEPS.map((s, i) => `

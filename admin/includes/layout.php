@@ -13,7 +13,7 @@ function tt_admin_nav(): array
         ['id' => 'hero', 'label' => 'แบนเนอร์หน้าแรก', 'href' => 'hero.php'],
         ['id' => 'services', 'label' => 'บริการ (Pills)', 'href' => 'services.php'],
         ['id' => 'boats', 'label' => 'ประเภทเรือ', 'href' => 'boats.php'],
-        ['id' => 'programs', 'label' => 'โปรแกรมทัวร์', 'href' => 'programs.php'],
+        ['id' => 'programs', 'label' => 'แพ็กเกจทัวร์', 'href' => 'programs.php'],
         ['id' => 'options', 'label' => 'ตัวเลือกจอง', 'href' => 'options.php'],
         ['id' => 'reviews', 'label' => 'รีวิว', 'href' => 'reviews.php'],
         ['id' => 'videos', 'label' => 'วิดีโอ', 'href' => 'videos.php'],

@@ -86,14 +86,19 @@ function tt_home_sections_defaults(): array
             'lead' => 'รวมแพ็คเกจทัวร์เที่ยวเมืองตรัง หลากหลายบริการครบในที่เดียว ตั้งแต่เรือ ที่พัก รถ ตั๋วเรือ ไปจนถึงสัมมนาและสถานที่ถ่ายทำ',
         ],
         'boats' => [
-            'eyebrow' => 'ประเภทเรือ',
-            'title' => 'เลือกเรือให้เหมาะกับทริปของคุณ',
-            'lead' => 'มีให้เลือก 3 ประเภท ตั้งแต่บรรยากาศโลคอลเรือหางยาว ความเร็ว Speed Boat ไปจนถึงเรือใหญ่สำหรับกรุ๊ปบริษัทและครอบครัวขยายใหญ่',
+            'eyebrow' => 'One-day trips',
+            'title' => 'แพ็กเกจไปเช้า เย็นกลับ',
+            'lead' => 'ไปเช้าเย็นกลับ ถ้ำมรกต เกาะกระดาน เกาะแหวน เกาะเชือก และเกาะรอก — เริ่มต้น 650 บาท ครบเรือ ไกด์ อาหาร และประกัน',
         ],
         'programs' => [
-            'eyebrow' => 'โปรแกรมยอดนิยม',
-            'title' => 'เส้นทางเที่ยวทะเลตรัง ที่ทุกคนอยากลอง',
-            'lead' => 'เก็บไฮไลต์ ถ้ำมรกต เกาะกระดาน เกาะเชือก หรือออกแบบเส้นทางส่วนตัวก็ได้ ราคาเริ่มต้น 3,200 บาทต่อทริป',
+            'eyebrow' => 'พักค้างคืน',
+            'title' => 'แพ็กเกจ 2 วัน 1 คืน',
+            'lead' => 'เที่ยวทะเลเต็มอิ่ม 2 วัน 1 คืน รวมเรือ ที่พัก อาหาร และทีมงานดูแลตลอดทริป — ราคาเริ่มต้น 1,275 บาทต่อท่าน',
+        ],
+        'packages3d2n' => [
+            'eyebrow' => 'พักยาวขึ้น',
+            'title' => 'แพ็กเกจ 3 วัน 2 คืน',
+            'lead' => 'เที่ยวทะเลตรังแบบสบาย ๆ 3 วัน 2 คืน ครบเรือ ที่พัก อาหาร กิจกรรมทะเล — ราคาเริ่มต้น 1,300 บาทต่อท่าน',
         ],
         'booking' => [
             'eyebrow' => 'จองง่ายใน 4 ขั้นตอน',
@@ -236,6 +241,59 @@ function tt_slugify(string $text): string
     $text = preg_replace('/[^\p{L}\p{N}\s-]/u', '', $text) ?? '';
     $text = preg_replace('/[\s-]+/', '-', $text) ?? '';
     return trim($text, '-') ?: 'item-' . time();
+}
+
+/** @return list<string> */
+function tt_parse_lines(string $text): array
+{
+    return array_values(array_filter(array_map('trim', preg_split('/\r\n|\r|\n/', $text) ?: [])));
+}
+
+/** @return list<array{time: string, title: string, text: string}> */
+function tt_parse_itinerary(string $text): array
+{
+    $out = [];
+    foreach (tt_parse_lines($text) as $line) {
+        $parts = array_map('trim', explode('|', $line));
+        if (count($parts) < 2) {
+            continue;
+        }
+        $time = $parts[0];
+        if ($time === '') {
+            continue;
+        }
+        if (count($parts) >= 3) {
+            $title = $parts[1];
+            $body = $parts[2];
+            if ($title === '' && $body === '') {
+                continue;
+            }
+            $out[] = ['time' => $time, 'title' => $title, 'text' => $body];
+            continue;
+        }
+        $body = $parts[1];
+        if ($body === '') {
+            continue;
+        }
+        $out[] = ['time' => $time, 'title' => '', 'text' => $body];
+    }
+    return $out;
+}
+
+/** @return list<string> */
+function tt_program_inclusion_options(): array
+{
+    return [
+        'boat' => 'เรือนำเที่ยว',
+        'food' => 'อาหารบุฟเฟ่ต์',
+        'guide' => 'พนักงานนำเที่ยว',
+        'snorkel' => 'อุปกรณ์ดำน้ำตื้น',
+        'park' => 'ค่าเข้าอุทยาน',
+        'insurance' => 'ประกันอุบัติเหตุ',
+        'coffee' => 'กาแฟ',
+        'snack' => 'ของว่าง',
+        'lifejacket' => 'เสื้อชูชีพ',
+    ];
 }
 
 function tt_upload_image(array $file): array

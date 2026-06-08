@@ -127,7 +127,8 @@
     /* =========================================================
        Quantity stepper
        ========================================================= */
-    const peopleInput = form.querySelector('input[name="people"]');
+    const adultsInput = form.querySelector('input[name="adults"]');
+    const childrenInput = form.querySelector('input[name="children"]');
     form.querySelectorAll('.qty-stepper').forEach(stepper => {
       stepper.addEventListener('click', (e) => {
         const btn = e.target.closest('.qty-btn');
@@ -150,11 +151,15 @@
        ========================================================= */
     function getState() {
       const fd = new FormData(form);
+      const adults = Number(fd.get('adults') || 0);
+      const children = Number(fd.get('children') || 0);
       return {
         name:      (fd.get('name') || '').toString().trim(),
         phone:     (fd.get('phone') || '').toString().trim(),
         date:      (fd.get('date') || '').toString(),
-        people:    Number(fd.get('people') || 0),
+        adults,
+        children,
+        people:    adults + children,
         transport: (fd.get('transport') || '').toString(),
         boatId:    (fd.get('boat') || '').toString(),
         programId: (fd.get('program') || '').toString(),
@@ -163,13 +168,47 @@
       };
     }
 
+    function childRateFor(program) {
+      if (!program) return 0;
+      if (program.childPrice != null && program.childPrice !== '') {
+        return Number(program.childPrice);
+      }
+      return Math.round(Number(program.basePrice) * 0.74);
+    }
+
     function calculate(state) {
       const boat = BOATS.find(b => b.id === state.boatId);
       const program = PROGRAMS.find(p => p.id === state.programId);
       const opts = OPTIONS.filter(o => state.optionIds.includes(o.id));
-      const people = Math.max(state.people || 0, 0);
+      const adults = Math.max(state.adults || 0, 0);
+      const children = Math.max(state.children || 0, 0);
+      const people = adults + children;
 
-      const tripBase = Math.max(boat ? boat.basePrice : 0, program ? program.basePrice : 0);
+      let tripBase = 0;
+      let ticketLines = [];
+      if (program) {
+        const adultPrice = Number(program.basePrice) || 0;
+        const childPrice = childRateFor(program);
+        const adultTotal = adults * adultPrice;
+        const childTotal = children * childPrice;
+        tripBase = adultTotal + childTotal;
+        if (adults > 0) {
+          ticketLines.push({
+            label: 'ผู้ใหญ่',
+            desc: `฿${fmt.format(adultPrice)} × ${adults} ท่าน`,
+            value: adultTotal,
+          });
+        }
+        if (children > 0) {
+          ticketLines.push({
+            label: 'เด็ก',
+            desc: `฿${fmt.format(childPrice)} × ${children} ท่าน`,
+            value: childTotal,
+          });
+        }
+      } else if (boat) {
+        tripBase = boat.basePrice;
+      }
 
       const wantShuttleFromTransport = state.transport === 'ให้รถไปรับ';
       const hasShuttleOpt = state.optionIds.includes('shuttle');
@@ -194,7 +233,7 @@
       const total = tripBase + shuttle + addonsTotal;
       const perHead = people > 0 ? Math.round(total / people) : 0;
 
-      return { boat, program, opts, people, tripBase, shuttle, addonsTotal, addonLines, total, perHead };
+      return { boat, program, opts, adults, children, people, tripBase, ticketLines, shuttle, addonsTotal, addonLines, total, perHead };
     }
 
     /* =========================================================
@@ -271,16 +310,31 @@
         `);
       }
       if (calc.tripBase > 0) {
-        itemRows.push(`
-          <div class="cart-line cart-line-base">
-            <span class="line-icon line-icon-strong">${ICONS.calculator || ICONS.anchor}</span>
-            <span class="line-body">
-              <strong>ราคาทริปเหมาลำ</strong>
-              <small>เรือ + โปรแกรมเที่ยว</small>
-            </span>
-            <span class="line-amt">฿${fmt.format(calc.tripBase)}</span>
-          </div>
-        `);
+        if (calc.ticketLines.length) {
+          calc.ticketLines.forEach(t => {
+            itemRows.push(`
+              <div class="cart-line cart-line-base">
+                <span class="line-icon line-icon-strong">${ICONS.calculator || ICONS.anchor}</span>
+                <span class="line-body">
+                  <strong>${t.label}</strong>
+                  <small>${t.desc}</small>
+                </span>
+                <span class="line-amt">฿${fmt.format(t.value)}</span>
+              </div>
+            `);
+          });
+        } else {
+          itemRows.push(`
+            <div class="cart-line cart-line-base">
+              <span class="line-icon line-icon-strong">${ICONS.calculator || ICONS.anchor}</span>
+              <span class="line-body">
+                <strong>ราคาทริปเหมาลำ</strong>
+                <small>เรือ + โปรแกรมเที่ยว</small>
+              </span>
+              <span class="line-amt">฿${fmt.format(calc.tripBase)}</span>
+            </div>
+          `);
+        }
       }
       if (calc.shuttle > 0) {
         itemRows.push(`
@@ -325,7 +379,9 @@
       } else {
         cartItems.innerHTML = itemRows.join('');
         cartSubtotal.hidden = false;
-        subBase.textContent = calc.people > 0 ? `${calc.people} ท่าน` : '— ท่าน';
+        subBase.textContent = calc.people > 0
+          ? `${calc.adults} ผู้ใหญ่${calc.children ? ` · ${calc.children} เด็ก` : ''}`
+          : '— ท่าน';
         rowShuttle.hidden = true;
         subPeople.textContent = state.date
           ? formatThaiDate(state.date)
@@ -392,8 +448,10 @@
       } else if (stepKey === 'trip') {
         if (!state.date) { setError('date', 'กรุณาเลือกวันที่เดินทาง'); ok = false; }
         else setError('date', '');
-        if (!state.people || state.people < 1) { setError('people', 'กรุณาเลือกจำนวนคน'); ok = false; }
-        else setError('people', '');
+        if (!state.adults || state.adults < 1) { setError('adults', 'กรุณาระบุผู้ใหญ่อย่างน้อย 1 ท่าน'); ok = false; }
+        else setError('adults', '');
+        if (state.children < 0) { setError('children', 'จำนวนเด็กไม่ถูกต้อง'); ok = false; }
+        else setError('children', '');
         if (!state.transport) { setError('transport', 'กรุณาเลือกวิธีเดินทาง'); ok = false; }
         else setError('transport', '');
       } else if (stepKey === 'contact') {
@@ -515,10 +573,14 @@
         setError('phone', 'เบอร์โทรไม่ถูกต้อง');
         ok = false;
       }
-      if (!state.people || state.people < 1) {
-        setError('people', 'กรุณาเลือกจำนวนคน');
+      if (!state.adults || state.adults < 1) {
+        setError('adults', 'กรุณาระบุผู้ใหญ่อย่างน้อย 1 ท่าน');
         ok = false;
-      } else setError('people', '');
+      } else setError('adults', '');
+      if (state.children < 0) {
+        setError('children', 'จำนวนเด็กไม่ถูกต้อง');
+        ok = false;
+      } else setError('children', '');
 
       if (!state.transport) { setError('transport', 'กรุณาเลือกวิธีเดินทาง'); ok = false; }
       else setError('transport', '');
@@ -543,7 +605,9 @@
       L.push(`ชื่อ: ${state.name}`);
       L.push(`เบอร์โทร: ${state.phone}`);
       L.push(`วันที่เดินทาง: ${formatThaiDate(state.date)}`);
-      L.push(`จำนวนคน: ${state.people} ท่าน`);
+      L.push(`ผู้ใหญ่: ${state.adults} ท่าน`);
+      if (state.children > 0) L.push(`เด็ก: ${state.children} ท่าน`);
+      L.push(`รวม: ${state.people} ท่าน`);
       L.push(`วิธีเดินทาง: ${state.transport}`);
       L.push('');
       L.push('— รายละเอียดทริป —');
@@ -562,7 +626,11 @@
       }
       L.push('');
       L.push('— สรุปราคา —');
-      L.push(`ราคาทริป: ฿${fmt.format(calc.tripBase)}`);
+      if (calc.ticketLines.length) {
+        calc.ticketLines.forEach(t => L.push(`${t.label}: ${t.desc} = ฿${fmt.format(t.value)}`));
+      } else {
+        L.push(`ราคาทริป: ฿${fmt.format(calc.tripBase)}`);
+      }
       if (calc.shuttle > 0) L.push(`รถรับส่ง: +฿${fmt.format(calc.shuttle)}`);
       if (calc.addonsTotal > 0) L.push(`Option เพิ่มเติม: +฿${fmt.format(calc.addonsTotal)}`);
       L.push(`>>> รวมโดยประมาณ: ฿${fmt.format(calc.total)} <<<`);
@@ -636,7 +704,7 @@
     const qDate   = qp.get('date');
 
     if (qPeople && !isNaN(+qPeople)) {
-      peopleInput.value = Math.max(1, Math.min(80, +qPeople));
+      adultsInput.value = Math.max(1, Math.min(80, +qPeople));
     }
     if (qDate) {
       const d = form.querySelector('input[name="date"]');
@@ -657,8 +725,13 @@
         renderSummary();
       });
       // If both boat & program already chosen, jump to trip details.
-      // Otherwise leave boat step so user can pick a compatible boat.
+      // Otherwise start at boat (step 1) so user picks a compatible boat.
       initialStep = qBoat ? 'trip' : 'boat';
+    }
+
+    const qStep = qp.get('step');
+    if (qStep && STEPS.includes(qStep)) {
+      initialStep = qStep;
     }
 
     // Render summary & move to initial step (without scrolling on first load)
@@ -672,7 +745,6 @@
         }, 50);
       }
     } else if (initialStep !== 'boat') {
-      // After tiny delay so DOM is ready
       setTimeout(() => gotoStep(initialStep), 50);
     } else {
       updatePips(getState());

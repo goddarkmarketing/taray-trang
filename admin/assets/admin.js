@@ -402,4 +402,60 @@
     help.addEventListener('mouseenter', () => loadPageHelpPreviews(help));
     help.addEventListener('focusin', () => loadPageHelpPreviews(help));
   });
+
+  function updateGalleryPreview(input) {
+    const slot = input.closest('[data-gallery-slot]');
+    if (!slot) return;
+    const preview = slot.querySelector('[data-gallery-preview]');
+    if (!preview) return;
+    const url = (input.value || '').trim();
+    if (url) {
+      preview.innerHTML = '<img src="' + url.replace(/"/g, '&quot;') + '" alt="" loading="lazy"/>';
+    } else {
+      preview.innerHTML = '<span class="gallery-slot-empty">ยังไม่มีรูป</span>';
+    }
+  }
+
+  document.querySelectorAll('.gallery-slot-input').forEach((input) => {
+    input.addEventListener('input', () => updateGalleryPreview(input));
+    input.addEventListener('change', () => updateGalleryPreview(input));
+  });
+
+  document.querySelectorAll('[data-gallery-slot] .image-url-row').forEach((row) => {
+    const input = row.querySelector('.gallery-slot-input');
+    if (!input || row.dataset.galleryUploadHooked === '1') return;
+    row.dataset.galleryUploadHooked = '1';
+    ttBindImageUrlRow(row);
+    row.querySelector('.image-upload-file')?.addEventListener('change', () => {
+      setTimeout(() => updateGalleryPreview(input), 50);
+    });
+  });
+
+  function updateCardImagePreview(input) {
+    const field = input.closest('[data-card-image-field]');
+    if (!field) return;
+    const preview = field.querySelector('[data-card-image-preview]');
+    if (!preview) return;
+    const url = (input.value || '').trim();
+    if (url) {
+      preview.innerHTML = '<img src="' + url.replace(/"/g, '&quot;') + '" alt="" loading="lazy"/>';
+    } else {
+      preview.innerHTML = '<span class="card-image-empty">ยังไม่มีภาพปกการ์ด</span>';
+    }
+  }
+
+  document.querySelectorAll('.card-image-input').forEach((input) => {
+    input.addEventListener('input', () => updateCardImagePreview(input));
+    input.addEventListener('change', () => updateCardImagePreview(input));
+  });
+
+  document.querySelectorAll('[data-card-image-field] .image-url-row').forEach((row) => {
+    const input = row.querySelector('.card-image-input');
+    if (!input || row.dataset.cardUploadHooked === '1') return;
+    row.dataset.cardUploadHooked = '1';
+    ttBindImageUrlRow(row);
+    row.querySelector('.image-upload-file')?.addEventListener('change', () => {
+      setTimeout(() => updateCardImagePreview(input), 50);
+    });
+  });
 })();

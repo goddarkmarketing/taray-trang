@@ -101,11 +101,11 @@ function tt_admin_page_help_map(): array
             ]],
         ],
         'boats' => [
-            'lead' => 'ประเภทเรือ — หน้า boats.html + การ์ดหน้าแรก',
+            'lead' => 'ประเภทเรือ — หน้า boats.html (การ์ดแพ็กเกจไปเช้าเย็นกลับบนหน้าแรกมาจากโปรแกรมทัวร์)',
             'items' => [
-                'หัวข้อ Section ประเภทเรือบนหน้าแรก — แก้ที่เมนู 「หัวข้อ Section」',
+                'หัวข้อ Section แพ็กเกจไปเช้าเย็นกลับบนหน้าแรก — แก้ที่เมนู 「หัวข้อ Section」',
                 'หน้า 「ประเภทเรือ」 — รายละเอียดเรือแต่ละแบบ',
-                'การ์ดเรือในหน้าแรก — แก้รายการในตารางด้านล่าง',
+                'การ์ดแพ็กเกจ 8 ใบบนหน้าแรก — แก้ที่เมนู 「โปรแกรมทัวร์」 (รหัส # บนการ์ด)',
             ],
             'preview' => '../boats.html',
             'visuals' => [
@@ -118,7 +118,7 @@ function tt_admin_page_help_map(): array
                     'waitChildren' => true,
                 ],
                 [
-                    'caption' => 'การ์ดเรือบนหน้าแรก',
+                    'caption' => 'การ์ดแพ็กเกจไปเช้าเย็นกลับบนหน้าแรก',
                     'page' => '../index.html',
                     'selector' => '#home-boats',
                     'scope' => 'section',
@@ -128,27 +128,29 @@ function tt_admin_page_help_map(): array
             ],
         ],
         'programs' => [
-            'lead' => 'โปรแกรมทัวร์ — หน้า programs.html + การ์ดหน้าแรก',
+            'lead' => 'แพ็กเกจทัวร์ — หน้าแรก, programs.html และ program.html (รายละเอียด)',
             'items' => [
-                'หน้า 「โปรแกรม」 — รายการโปรแกรมทั้งหมด',
-                'การ์ดโปรแกรมบนหน้าแรก และลิงก์ไปหน้าจอง',
+                'การ์ดหน้าแรก + หน้า programs.html — ชื่อ, รูปปก, ราคา, รหัส',
+                'หน้ารายละเอียด program.html — กด 「แก้หน้ารายละเอียด」 → แก้แกลเลอรี 6 รูป, โปรแกรมทัวร์, ราคา, สิ่งที่รวม',
+                'รองรับ 3 หมวด: ไปเช้าเย็นกลับ · 2 วัน 1 คืน · 3 วัน 2 คืน',
             ],
-            'preview' => '../programs.html',
+            'preview' => '../program.html?id=dl001',
+            'previewLabel' => 'ดูหน้ารายละเอียด (ตัวอย่าง)',
             'visuals' => [
                 [
-                    'caption' => 'การ์ดโปรแกรมบนหน้าแรก',
+                    'caption' => 'การ์ดแพ็กเกจบนหน้าแรก',
                     'page' => '../index.html',
-                    'selector' => '#home-programs',
+                    'selector' => '#home-boats',
                     'scope' => 'section',
                     'maxHeight' => 320,
                     'waitChildren' => true,
                 ],
                 [
-                    'caption' => 'รายการโปรแกรม — หน้า programs.html',
-                    'page' => '../programs.html',
-                    'selector' => '#programs-list',
-                    'scope' => 'section',
-                    'maxHeight' => 320,
+                    'caption' => 'หน้ารายละเอียด program.html — แกลเลอรี + เนื้อหา',
+                    'page' => '../program.html?id=dl001',
+                    'selector' => '#pkg-gallery',
+                    'scope' => 'main',
+                    'maxHeight' => 280,
                     'waitChildren' => true,
                 ],
             ],
@@ -364,8 +366,8 @@ function tt_home_section_help_map(): array
             ],
         ],
         'boats' => [
-            'lead' => 'หัวข้อ Section ประเภทเรือ — หน้าแรก',
-            'items' => ['อยู่เหนือการ์ดเรือ 4 ใบ', 'การ์ดเรือแก้ที่เมนูประเภทเรือ'],
+            'lead' => 'หัวข้อ Section แพ็กเกจไปเช้าเย็นกลับ — หน้าแรก',
+            'items' => ['อยู่เหนือการ์ดแพ็กเกจ 8 ใบ (4+4)', 'การ์ดและรหัส # แก้ที่เมนูโปรแกรมทัวร์'],
             'preview' => '../index.html#boats',
             'visual' => [
                 'page' => '../index.html',

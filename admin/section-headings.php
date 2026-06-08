@@ -7,12 +7,13 @@ tt_require_admin();
 
 $data = tt_read_data();
 $sections = tt_home_sections($data);
-$keys = ['hero', 'boats', 'programs', 'booking', 'reviews', 'videos', 'office', 'cta'];
+$keys = ['hero', 'boats', 'programs', 'packages3d2n', 'booking', 'reviews', 'videos', 'office', 'cta'];
 
 $labels = [
     'hero' => 'แบนเนอร์ — ข้อความบนรูปสไลด์',
-    'boats' => 'Section ประเภทเรือ (#boats)',
-    'programs' => 'Section โปรแกรมยอดนิยม',
+    'boats' => 'Section แพ็กเกจไปเช้าเย็นกลับ (#boats)',
+    'programs' => 'Section แพ็กเกจ 2 วัน 1 คืน (#home-section-programs)',
+    'packages3d2n' => 'Section แพ็กเกจ 3 วัน 2 คืน (#home-section-packages3d2n)',
     'booking' => 'Section ขั้นตอนจอง (4 ขั้นตอน)',
     'reviews' => 'Section รีวิวลูกค้า',
     'videos' => 'Section TikTok / วิดีโอ',
@@ -58,7 +59,7 @@ if ($flash): ?>
 
 <div class="card">
   <h2>หัวข้อ Section หน้าแรก</h2>
-  <p class="field-hint">แก้เฉพาะ <strong>หัวข้อใหญ่</strong> ของแต่ละ Section บน index.html (Eyebrow / H2 / คำอธิบาย) — ไม่รวมการ์ดรายการ การ์ดเรือ/โปรแกรม/รีวิว แก้ที่เมนู <a href="boats.php">ประเภทเรือ</a>, <a href="programs.php">โปรแกรมทัวร์</a>, <a href="reviews.php">รีวิว</a></p>
+  <p class="field-hint">แก้เฉพาะ <strong>หัวข้อใหญ่</strong> ของแต่ละ Section บน index.html (Eyebrow / H2 / คำอธิบาย) — ไม่รวมการ์ดรายการ การ์ดแพ็กเกจไปเช้าเย็นกลับ/โปรแกรม/รีวิว แก้ที่เมนู <a href="programs.php">โปรแกรมทัวร์</a> (รหัส # บนการ์ด), <a href="boats.php">ประเภทเรือ</a>, <a href="reviews.php">รีวิว</a></p>
 </div>
 
 <form method="post">

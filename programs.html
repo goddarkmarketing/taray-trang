@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>โปรแกรมเที่ยวทะเลตรัง — 4 เกาะ ถ้ำมรกต เกาะกระดาน | Talay Trang</title>
-  <meta name="description" content="โปรแกรมเช่าเรือเที่ยวทะเลตรังยอดนิยม 4 เกาะ ถ้ำมรกต เกาะกระดาน ดำน้ำดูปะการัง และเหมาลำส่วนตัว ราคาเริ่มต้น 3,200 บาท" />
+  <title>แพ็กเกจเที่ยวทะเลตรัง — ไปเช้าเย็นกลับ & 2 วัน 1 คืน | Talay Trang</title>
+  <meta name="description" content="รวมแพ็กเกจเที่ยวทะเลตรัง ไปเช้าเย็นกลับ และ 2 วัน 1 คืน ค้นหาและกรองแพ็กเกจได้ง่าย ราคาเริ่มต้น 750 บาท" />
   <meta name="theme-color" content="#0277bd" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,17 +17,71 @@
   <div id="site-header"></div>
 
   <section class="hero-sub">
-    <div class="hero-media"><img id="hero-img" alt="โปรแกรมเที่ยวทะเลตรัง หมู่เกาะหลายจุดสวยงาม" /></div>
+    <div class="hero-media"><img id="hero-img" alt="แพ็กเกจเที่ยวทะเลตรัง" /></div>
     <div class="container hero-inner" data-reveal>
-      <span class="crumb">โปรแกรมเที่ยว</span>
-      <h1>โปรแกรมเที่ยวทะเลตรัง</h1>
-      <p class="lead">เก็บไฮไลต์ 4 เกาะ ลอดถ้ำมรกต พักผ่อนเกาะกระดาน ดำน้ำดูปะการัง หรือเหมาลำส่วนตัวออกแบบเส้นทางเอง — เลือกสไตล์ที่ใช่สำหรับทริปคุณ</p>
+      <span class="crumb">แพ็กเกจทัวร์</span>
+      <h1>รวมแพ็กเกจเที่ยวทะเลตรัง</h1>
+      <p class="lead">ไปเช้าเย็นกลับ และ 2 วัน 1 คืน — เลือกแพ็กเกจที่ใช่ ดูรายละเอียด และจองได้ทันที</p>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section programs-catalog-wrap" id="programs-catalog">
     <div class="container">
-      <div class="grid grid-auto" id="programs-list"></div>
+      <div class="programs-toolbar" data-reveal>
+        <div class="programs-search-wrap">
+          <label class="sr-only" for="programs-search">ค้นหาแพ็กเกจ</label>
+          <span class="programs-search-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>
+          </span>
+          <input type="search" id="programs-search" class="programs-search-input" placeholder="ค้นหาแพ็กเกจ เส้นทาง รหัส…" autocomplete="off"/>
+        </div>
+        <div class="programs-filters">
+          <div class="programs-filter">
+            <label for="programs-filter-category">ประเภท</label>
+            <select id="programs-filter-category" class="programs-select">
+              <option value="all">ทุกประเภท</option>
+              <option value="daytrip">ไปเช้าเย็นกลับ</option>
+              <option value="overnight">2 วัน 1 คืน</option>
+              <option value="packages3d2n">3 วัน 2 คืน</option>
+            </select>
+          </div>
+          <div class="programs-filter">
+            <label for="programs-filter-price">ราคา</label>
+            <select id="programs-filter-price" class="programs-select">
+              <option value="all">ทุกช่วงราคา</option>
+              <option value="under1000">ต่ำกว่า 1,000 บาท</option>
+              <option value="1000-2000">1,000 – 2,000 บาท</option>
+              <option value="over2000">มากกว่า 2,000 บาท</option>
+            </select>
+          </div>
+          <div class="programs-filter">
+            <label for="programs-filter-boat">เรือ</label>
+            <select id="programs-filter-boat" class="programs-select">
+              <option value="all">เรือทุกประเภท</option>
+            </select>
+          </div>
+          <div class="programs-filter">
+            <label for="programs-filter-sort">เรียงตาม</label>
+            <select id="programs-filter-sort" class="programs-select">
+              <option value="default">แนะนำ</option>
+              <option value="price-asc">ราคาต่ำ → สูง</option>
+              <option value="price-desc">ราคาสูง → ต่ำ</option>
+              <option value="rating">คะแนนรีวิว</option>
+            </select>
+          </div>
+        </div>
+        <div class="programs-toolbar-foot">
+          <p class="programs-result-count" id="programs-result-count">—</p>
+          <button type="button" class="btn btn-ghost btn-sm" id="programs-clear-filters">ล้างตัวกรอง</button>
+        </div>
+      </div>
+
+      <div id="programs-empty" class="programs-empty" hidden data-reveal>
+        <p>ไม่พบแพ็กเกจที่ตรงกับการค้นหา — ลองเปลี่ยนคำค้นหาหรือตัวกรอง</p>
+        <button type="button" class="btn btn-outline" id="programs-clear-filters-empty">ล้างตัวกรอง</button>
+      </div>
+
+      <div id="programs-sections" class="programs-sections"></div>
     </div>
   </section>
 
@@ -36,7 +90,7 @@
       <div class="section-head" data-reveal>
         <span class="eyebrow">เพิ่มเติม</span>
         <h2>อยากเที่ยวแบบที่ไม่มีในรายการ?</h2>
-        <p class="lead">ปรับเส้นทาง เปลี่ยนจุดแวะ เพิ่ม Option อาหาร ไกด์ ช่างภาพ ได้ทั้งหมด แค่บอกแอดมินเรามาทาง LINE</p>
+        <p class="lead">ปรับเส้นทาง เพิ่มอาหาร ไกด์ หรือช่างภาพได้ — แจ้งแอดมินทาง LINE</p>
       </div>
       <div class="btn-row center" data-reveal>
         <a class="btn btn-line btn-lg" href="https://line.me/R/ti/p/%40talaytrang" target="_blank" rel="noopener"><span data-icon="line"></span>คุยกับแอดมิน</a>
@@ -51,37 +105,25 @@
   <script>document.write('<script src="assets/js/data-fallback.js?v='+(encodeURIComponent(window.__TT_SCRIPT_V||Date.now()))+'"><\/script>');</script>
   <script>document.write('<script src="assets/js/data.js?v='+(encodeURIComponent(window.__TT_SCRIPT_V||Date.now()))+'"><\/script>');</script>
   <script>document.write('<script src="assets/js/main.js?v='+(encodeURIComponent(window.__TT_SCRIPT_V||Date.now()))+'"><\/script>');</script>
+  <script>document.write('<script src="assets/js/programs-page.js?v='+(encodeURIComponent(window.__TT_SCRIPT_V||Date.now()))+'"><\/script>');</script>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const { PROGRAMS, BOATS, IMAGES, ICONS } = window.TT;
-      const fmt = new Intl.NumberFormat('th-TH');
-      const boatName = (id) => (BOATS.find(b => b.id === id) || {}).name || '';
-      document.getElementById('hero-img').src = IMAGES.heroPrograms;
+    function bootProgramsPage() {
+      const hero = document.getElementById('hero-img');
+      if (hero && window.TT?.IMAGES?.heroPrograms) {
+        hero.src = window.TT.IMAGES.heroPrograms;
+      }
+      if (typeof window.TT?.initProgramsCatalog === 'function') {
+        window.TT.initProgramsCatalog();
+      }
+      window.TT?.bindReveal?.();
+    }
 
-      document.getElementById('programs-list').innerHTML = PROGRAMS.map((p, i) => `
-        <article class="program" style="--rd:${i * .06}s" data-reveal>
-          <div class="program-media">
-            <img src="${p.image}" alt="ภาพประกอบ ${p.name}" loading="lazy"/>
-            ${p.ribbon ? `<span class="ribbon">${p.ribbon}</span>` : ''}
-          </div>
-          <div class="program-body">
-            <h3>${p.name}</h3>
-            <p class="program-route">${p.route}</p>
-            <p class="program-desc">${p.desc}</p>
-            <div class="program-meta">
-              <span>${ICONS.clock} ${p.duration}</span>
-              <span>${ICONS.route} ${p.stops.length} จุดแวะ</span>
-              <span>${ICONS.users} ${p.boats.map(boatName).join(' / ')}</span>
-            </div>
-            <div class="program-foot">
-              <div class="price"><small>เริ่มต้น</small><strong>฿${fmt.format(p.basePrice)}</strong></div>
-              <a class="btn btn-primary btn-sm" href="booking.html?program=${p.id}">เลือกโปรแกรมนี้</a>
-            </div>
-          </div>
-        </article>
-      `).join('');
-      window.TT.injectIcons();
-      window.TT.bindReveal();
+    document.addEventListener('DOMContentLoaded', () => {
+      bootProgramsPage();
+      document.addEventListener('tt:data-updated', bootProgramsPage);
+      document.getElementById('programs-clear-filters-empty')?.addEventListener('click', () => {
+        document.getElementById('programs-clear-filters')?.click();
+      });
     });
   </script>
 </body>

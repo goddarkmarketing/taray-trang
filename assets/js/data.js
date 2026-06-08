@@ -24,7 +24,9 @@
     if (!d || typeof d !== 'object' || Array.isArray(d)) {
       return false;
     }
-    window.TT = {
+    // Merge — อย่า replace ทั้ง object เพราะ main.js / programs-page.js แนบ ICONS, init* ไว้แล้ว
+    if (!window.TT) window.TT = {};
+    Object.assign(window.TT, {
       SITE: d.site || {},
       IMAGES: d.images || {},
       PX,
@@ -32,6 +34,8 @@
       BOATS: d.boats || [],
       OPTIONS: d.options || [],
       PROGRAMS: d.programs || [],
+      PACKAGES_2D1N: d.packages2d1n || [],
+      PACKAGES_3D2N: d.packages3d2n || [],
       REVIEWS: d.reviews || [],
       VIDEOS: d.videos || [],
       WHY_US: d.whyUs || [],
@@ -43,7 +47,7 @@
       SEO: d.seo || {},
       HOME_DEALS: d.homeDeals || {},
       HOME_SECTIONS: d.homeSections || {},
-    };
+    });
     return true;
   }
 
@@ -54,6 +58,8 @@
     boats: [],
     options: [],
     programs: [],
+    packages2d1n: [],
+    packages3d2n: [],
     reviews: [],
     videos: [],
     whyUs: [],

@@ -108,15 +108,30 @@
                   <input class="input" type="date" name="date"/>
                   <div class="field-error"></div>
                 </div>
-                <div class="field" data-field="people">
-                  <label>จำนวนผู้เดินทาง <span class="req">*</span></label>
+              </div>
+
+              <div class="field-row two">
+                <div class="field" data-field="adults">
+                  <label>ผู้ใหญ่ <span class="req">*</span> <span class="field-hint">12 ปีขึ้นไป</span></label>
                   <div class="qty-stepper">
-                    <button type="button" class="qty-btn" data-qty="-" aria-label="ลดจำนวน">−</button>
+                    <button type="button" class="qty-btn" data-qty="-" aria-label="ลดจำนวนผู้ใหญ่">−</button>
                     <span class="qty-value">
-                      <input class="qty-input" type="number" name="people" value="2" min="1" max="80" inputmode="numeric" aria-label="จำนวนผู้เดินทาง"/>
+                      <input class="qty-input" type="number" name="adults" value="2" min="1" max="80" inputmode="numeric" aria-label="จำนวนผู้ใหญ่"/>
                       <span class="qty-unit">ท่าน</span>
                     </span>
-                    <button type="button" class="qty-btn" data-qty="+" aria-label="เพิ่มจำนวน">+</button>
+                    <button type="button" class="qty-btn" data-qty="+" aria-label="เพิ่มจำนวนผู้ใหญ่">+</button>
+                  </div>
+                  <div class="field-error"></div>
+                </div>
+                <div class="field" data-field="children">
+                  <label>เด็ก <span class="field-hint">3–11 ปี</span></label>
+                  <div class="qty-stepper">
+                    <button type="button" class="qty-btn" data-qty="-" aria-label="ลดจำนวนเด็ก">−</button>
+                    <span class="qty-value">
+                      <input class="qty-input" type="number" name="children" value="0" min="0" max="80" inputmode="numeric" aria-label="จำนวนเด็ก"/>
+                      <span class="qty-unit">ท่าน</span>
+                    </span>
+                    <button type="button" class="qty-btn" data-qty="+" aria-label="เพิ่มจำนวนเด็ก">+</button>
                   </div>
                   <div class="field-error"></div>
                 </div>
