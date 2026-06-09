@@ -1,7 +1,7 @@
 {
     "meta": {
         "version": 1,
-        "updated": "2026-06-09T04:35:33.900Z",
+        "updated": "2026-06-09T11:31:31.701Z",
         "tiktokRssSynced": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/rss/talaytrang.xml"
     },
     "images": {
@@ -2398,6 +2398,14 @@
     ],
     "videos": [
         {
+            "id": "7649257238644739336",
+            "platform": "tiktok",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_ocqAEnKEADEJfgAAynQCfFvj7BcCyIRmR5Jh2A~tplv-tiktokx-origin.image.jpg",
+            "title": "จะเที่ยวแบบไหน ก็มีแพ็กเกจให้เลือกครบ 💙 ☀️ ทริปไปเช้าเย็นกลับ เริ่มต้นเพียง 950.-/ท่าน 🌙 แพ็กเกจ 2วัน1คืน เริ่มต้นเพียง 1,275.-/ท่าน 🏝 แพ็กเกจ 3วัน2คืน เริ่มต้นเพียง 1,600.-/ท่าน ครบทั้งเรือ ที่พัก อาหาร และทีมงานดูแลตลอดทริป เที่ยวง่าย ไม่ต้องวางแผนเอง แ",
+            "views": "",
+            "url": "https://www.tiktok.com/@talaytrang/video/7649257238644739336"
+        },
+        {
             "id": "7649201122246266119",
             "platform": "tiktok",
             "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_oUeX1aVwnJGLr58IAQDAQAApyufAeoOfGRGOIB~tplv-tiktokx-origin.image.jpg",
@@ -2484,14 +2492,6 @@
             "title": "🌊 ทะเลตรังหน้าร้อนนี้ ต้องมีชื่อเราอยู่ในทริป! ☀️ แพ็คเกจเที่ยวทะเลตรัง แบบไปเช้า-เย็นกลับ 💙 ราคาเพียงท่านละ 950 บาท ⛵ เดินทางโดยเรือใหญ่ 🍽️ รวมอาหารเช้า + อาหารเที่ยงแบบบุฟเฟ่ต์ 📸 เที่ยวครบ เล่นน้ำ ถ่ายรูป ฟินทั้งทริป#FootballTikTok #ทะเลตรัง #ทะเลตรังดอ",
             "views": "",
             "url": "https://www.tiktok.com/@talaytrang/video/7647046709838679304"
-        },
-        {
-            "id": "7646989143523740935",
-            "platform": "tiktok",
-            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_oQUA4XfzFEcIyALjJD8QhCLAAPIfA8eAJBkGI2~tplv-tiktokx-origin.image.jpg",
-            "title": "🏝️ เกาะกระดาน เปิดรับนักท่องเที่ยว 1 ตุลาคมนี้! 🌊 ✨ เตรียมตัวออกไปสัมผัสทะเลใส หาดทรายขาว และความสวยงามของธรรมชาติอีกครั้ง เปิดฤดูกาลท่องเที่ยว: 1 ตุลาคม 69 📍 เกาะกระดาน จังหวัดตรัง 💙 ฟ้าสวย น้ำใส พร้อมต้อนรับทุกการเดินทาง 📸 เก็บภาพความประทับใจบนหนึ่งในชา",
-            "views": "",
-            "url": "https://www.tiktok.com/@talaytrang/video/7646989143523740935"
         }
     ],
     "whyUs": [
