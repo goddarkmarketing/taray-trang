@@ -20,7 +20,23 @@ function tt_package_collections(): array
             'label' => '3 วัน 2 คืน',
             'listHref' => 'programs.php#packages3d2n',
         ],
+        'packages4d3n' => [
+            'key' => 'packages4d3n',
+            'label' => '4 วัน 3 คืน',
+            'listHref' => 'programs.php#packages4d3n',
+        ],
     ];
+}
+
+function tt_package_section_hash(string $collection): string
+{
+    $map = [
+        'programs' => 'daytrip',
+        'packages2d1n' => 'overnight',
+        'packages3d2n' => 'packages3d2n',
+        'packages4d3n' => 'packages4d3n',
+    ];
+    return $map[$collection] ?? 'daytrip';
 }
 
 function tt_package_collection_key(?string $raw): string

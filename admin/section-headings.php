@@ -7,13 +7,14 @@ tt_require_admin();
 
 $data = tt_read_data();
 $sections = tt_home_sections($data);
-$keys = ['hero', 'boats', 'programs', 'packages3d2n', 'booking', 'reviews', 'videos', 'office', 'cta'];
+$keys = ['hero', 'boats', 'programs', 'packages3d2n', 'packages4d3n', 'booking', 'reviews', 'videos', 'office', 'cta'];
 
 $labels = [
     'hero' => 'แบนเนอร์ — ข้อความบนรูปสไลด์',
     'boats' => 'Section แพ็กเกจไปเช้าเย็นกลับ (#boats)',
     'programs' => 'Section แพ็กเกจ 2 วัน 1 คืน (#home-section-programs)',
     'packages3d2n' => 'Section แพ็กเกจ 3 วัน 2 คืน (#home-section-packages3d2n)',
+    'packages4d3n' => 'Section แพ็กเกจ 4 วัน 3 คืน (#home-section-packages4d3n)',
     'booking' => 'Section ขั้นตอนจอง (4 ขั้นตอน)',
     'reviews' => 'Section รีวิวลูกค้า',
     'videos' => 'Section TikTok / วิดีโอ',

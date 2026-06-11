@@ -36,6 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $itinerary = tt_parse_itinerary($_POST['itinerary'] ?? '');
     $inclusions = tt_parse_lines($_POST['inclusions'] ?? '');
     $priceNotes = tt_parse_lines($_POST['priceNotes'] ?? '');
+    $hotels = tt_parse_hotels($_POST['hotels'] ?? '');
     $childPriceRaw = trim($_POST['childPrice'] ?? '');
 
     $item = [
@@ -60,6 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'itinerary' => $itinerary,
         'season' => trim($_POST['season'] ?? ''),
         'inclusions' => $inclusions,
+        'hotels' => $hotels,
         'childPrice' => $childPriceRaw === '' ? null : (int)$childPriceRaw,
         'priceMeetingNote' => trim($_POST['priceMeetingNote'] ?? ''),
         'pickupSurcharge' => trim($_POST['pickupSurcharge'] ?? '') === '' ? null : (int)($_POST['pickupSurcharge'] ?? 0),
@@ -69,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($item['ribbon'] === null) {
         unset($item['ribbon']);
     }
-    foreach (['gallery', 'galleryCaption', 'licenseNo', 'itinerary', 'season', 'inclusions', 'priceMeetingNote', 'priceNotes', 'warning', 'boats', 'stops'] as $k) {
+    foreach (['gallery', 'galleryCaption', 'licenseNo', 'itinerary', 'season', 'inclusions', 'hotels', 'priceMeetingNote', 'priceNotes', 'warning', 'boats', 'stops'] as $k) {
         if ($item[$k] === '' || $item[$k] === [] || $item[$k] === null) {
             unset($item[$k]);
         }
@@ -121,6 +123,7 @@ $itinLines = array_map(function ($row) {
     }
     return $time . '|' . $text;
 }, $program['itinerary'] ?? []);
+$hotelsText = tt_hotels_to_text($program['hotels'] ?? []);
 
 $pageTitle = $isNew ? 'เพิ่มแพ็กเกจ' : 'แก้ไขหน้ารายละเอียด';
 tt_admin_header($pageTitle, 'programs');
@@ -215,6 +218,11 @@ if ($flash): ?><div class="alert alert-success"><?= htmlspecialchars($flash, ENT
       <div class="field" style="grid-column:1/-1"><label>หมายเหตุราคา / จุดนัดพบ</label><input name="priceMeetingNote" value="<?= htmlspecialchars($program['priceMeetingNote'] ?? '', ENT_QUOTES, 'UTF-8') ?>" placeholder="เจอกันที่ท่าเรือปากเมง · ผู้ใหญ่ 650 บาท · เด็ก 550 บาท"/></div>
       <div class="field" style="grid-column:1/-1"><label>ช่วงเวลาเปิดทัวร์</label><input name="season" value="<?= htmlspecialchars($program['season'] ?? '', ENT_QUOTES, 'UTF-8') ?>" placeholder="1 ต.ค. – 31 พ.ค. · ออกเดินทางทุกวัน"/></div>
       <div class="field" style="grid-column:1/-1"><label>สิ่งที่รวมในแพ็กเกจ (บรรทัดละข้อ)</label><textarea name="inclusions" rows="6"><?= htmlspecialchars(implode("\n", $program['inclusions'] ?? []), ENT_QUOTES, 'UTF-8') ?></textarea></div>
+      <div class="field" style="grid-column:1/-1">
+        <label>โรงแรม &amp; ประเภทห้อง (แพ็กหลายวัน)</label>
+        <textarea name="hotels" rows="12" placeholder="โรงแรมชมตรัง&#10;ห้องดีลักซ์|2150&#10;ห้องสุพีเรีย|2250&#10;&#10;โรงแรมเมซอง&#10;ห้องสุพีเรีย|2250&#10;ห้องดีลักซ์|จอง"><?= htmlspecialchars($hotelsText, ENT_QUOTES, 'UTF-8') ?></textarea>
+        <p class="field-hint">บรรทัดแรกของแต่ละโรงแรม = ชื่อโรงแรม · บรรทัดถัดไป = ชื่อห้อง|ราคาต่อท่าน (ตัวเลข) หรือ จอง · สูงสุด 5 ห้อง/โรงแรม · เว้นบรรทัดว่างคั่นแต่ละโรงแรม</p>
+      </div>
       <div class="field" style="grid-column:1/-1"><label>หมายเหตุอายุ / เงื่อนไขราคา (บรรทัดละข้อ)</label><textarea name="priceNotes" rows="4"><?= htmlspecialchars(implode("\n", $program['priceNotes'] ?? []), ENT_QUOTES, 'UTF-8') ?></textarea></div>
       <div class="field" style="grid-column:1/-1"><label>ข้อความเตือน/เงื่อนไข (แถบล่างสุด)</label><textarea name="warning" rows="3"><?= htmlspecialchars($program['warning'] ?? '', ENT_QUOTES, 'UTF-8') ?></textarea></div>
     </div>
@@ -225,7 +233,7 @@ if ($flash): ?><div class="alert alert-success"><?= htmlspecialchars($flash, ENT
     <a class="btn btn-ghost" href="<?= htmlspecialchars($collectionMeta['listHref'], ENT_QUOTES, 'UTF-8') ?>">กลับรายการ</a>
     <?php if (!$isNew): ?>
       <a class="btn btn-ghost" href="../program.html?id=<?= urlencode($program['id'] ?? '') ?>" target="_blank" rel="noopener">ดูหน้ารายละเอียด</a>
-      <a class="btn btn-ghost" href="../booking.html?program=<?= urlencode($program['id'] ?? '') ?>" target="_blank" rel="noopener">ทดสอบจอง</a>
+      <a class="btn btn-ghost" href="../program.html?id=<?= urlencode($program['id'] ?? '') ?>#pkg-book" target="_blank" rel="noopener">ทดสอบจอง</a>
     <?php endif; ?>
   </div>
 </form>

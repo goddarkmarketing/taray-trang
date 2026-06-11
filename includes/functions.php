@@ -100,6 +100,11 @@ function tt_home_sections_defaults(): array
             'title' => 'แพ็กเกจ 3 วัน 2 คืน',
             'lead' => 'เที่ยวทะเลตรังแบบสบาย ๆ 3 วัน 2 คืน ครบเรือ ที่พัก อาหาร กิจกรรมทะเล — ราคาเริ่มต้น 1,300 บาทต่อท่าน',
         ],
+        'packages4d3n' => [
+            'eyebrow' => 'ทริปยาวพิเศษ',
+            'title' => 'แพ็กเกจ 4 วัน 3 คืน',
+            'lead' => 'เที่ยวทะเลตรังครบจบ 4 วัน 3 คืน รวมทริปทะเล ที่พัก ทัวร์เมือง — ราคาเริ่มต้น 1,850 บาทต่อท่าน',
+        ],
         'booking' => [
             'eyebrow' => 'จองง่ายใน 4 ขั้นตอน',
             'title' => 'จองเรือเที่ยวทะเลตรังใช้เวลาไม่ถึง 2 นาที',
@@ -278,6 +283,60 @@ function tt_parse_itinerary(string $text): array
         $out[] = ['time' => $time, 'title' => '', 'text' => $body];
     }
     return $out;
+}
+
+/** @return list<array{name: string, rooms: list<array{name: string, price?: int, book?: bool}>}> */
+function tt_parse_hotels(string $text): array
+{
+    $hotels = [];
+    $current = null;
+    foreach (tt_parse_lines($text) as $line) {
+        if (str_contains($line, '|')) {
+            $parts = array_map('trim', explode('|', $line, 2));
+            $roomName = $parts[0] ?? '';
+            $priceRaw = $parts[1] ?? 'จอง';
+            if ($roomName === '') {
+                continue;
+            }
+            if ($current === null) {
+                $current = ['name' => 'ที่พัก', 'rooms' => []];
+                $hotels[] = $current;
+            }
+            $idx = count($hotels) - 1;
+            if (count($hotels[$idx]['rooms']) >= 5) {
+                continue;
+            }
+            $room = ['name' => $roomName];
+            if (preg_match('/^(\d+)/', $priceRaw, $m)) {
+                $room['price'] = (int) $m[1];
+            } else {
+                $room['book'] = true;
+            }
+            $hotels[$idx]['rooms'][] = $room;
+            $current = $hotels[$idx];
+            continue;
+        }
+        $current = ['name' => $line, 'rooms' => []];
+        $hotels[] = $current;
+    }
+    return array_values(array_filter($hotels, static function ($h) {
+        return ($h['name'] ?? '') !== '' && !empty($h['rooms']);
+    }));
+}
+
+/** @param list<array{name: string, rooms: list<array{name: string, price?: int, book?: bool}>}> $hotels */
+function tt_hotels_to_text(array $hotels): string
+{
+    $blocks = [];
+    foreach ($hotels as $hotel) {
+        $lines = [$hotel['name'] ?? ''];
+        foreach ($hotel['rooms'] ?? [] as $room) {
+            $price = isset($room['price']) ? (string) $room['price'] : 'จอง';
+            $lines[] = ($room['name'] ?? '') . '|' . $price;
+        }
+        $blocks[] = implode("\n", $lines);
+    }
+    return implode("\n\n", $blocks);
 }
 
 /** @return list<string> */

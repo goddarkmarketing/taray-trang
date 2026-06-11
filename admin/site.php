@@ -29,6 +29,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'address' => trim($_POST['address'] ?? ''),
         'addressFull' => trim($_POST['addressFull'] ?? ''),
         'hours' => trim($_POST['hours'] ?? ''),
+        'popupEnabled' => isset($_POST['popupEnabled']),
+        'popupHoursWeekday' => trim($_POST['popupHoursWeekday'] ?? ''),
+        'popupHoursSunday' => trim($_POST['popupHoursSunday'] ?? ''),
+        'lineQrImage' => trim($_POST['lineQrImage'] ?? ''),
         'mapEmbed' => trim($_POST['mapEmbed'] ?? ''),
     ]);
 
@@ -69,6 +73,12 @@ if ($flash): ?><div class="alert alert-<?= $flashType === 'error' ? 'error' : 's
     <div class="field"><label>ที่อยู่สั้น</label><input name="address" value="<?= htmlspecialchars($site['address'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
     <div class="field"><label>ที่อยู่เต็ม</label><input name="addressFull" value="<?= htmlspecialchars($site['addressFull'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
     <div class="field"><label>เวลาเปิด</label><input name="hours" value="<?= htmlspecialchars($site['hours'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
+    <div class="field" style="grid-column:1/-1">
+      <label><input type="checkbox" name="popupEnabled" value="1"<?= ($site['popupEnabled'] ?? true) ? ' checked' : '' ?>/> แสดงป๊อปอัพติดต่อเมื่อเข้าเว็บ</label>
+    </div>
+    <div class="field"><label>เวลาเปิด (ป๊อปอัพ — จ-ส)</label><input name="popupHoursWeekday" value="<?= htmlspecialchars($site['popupHoursWeekday'] ?? '', ENT_QUOTES, 'UTF-8') ?>" placeholder="จันทร์ - เสาร์ 07:00-21:00 น."/></div>
+    <div class="field"><label>เวลาเปิด (ป๊อปอัพ — อาทิตย์)</label><input name="popupHoursSunday" value="<?= htmlspecialchars($site['popupHoursSunday'] ?? '', ENT_QUOTES, 'UTF-8') ?>" placeholder="อาทิตย์ 07:00-21:00 น."/></div>
+    <div class="field" style="grid-column:1/-1"><label>รูป QR LINE (URL)</label><input name="lineQrImage" value="<?= htmlspecialchars($site['lineQrImage'] ?? '', ENT_QUOTES, 'UTF-8') ?>" placeholder="assets/uploads/line-qr.png — ว่างแล้วระบบสร้าง QR จาก LINE URL อัตโนมัติ"/></div>
     <div class="field" style="grid-column:1/-1"><label>Google Maps Embed URL</label><input name="mapEmbed" value="<?= htmlspecialchars($site['mapEmbed'] ?? '', ENT_QUOTES, 'UTF-8') ?>"/></div>
   </div>
   <div class="form-actions"><button type="submit" class="btn btn-primary">บันทึก</button></div>

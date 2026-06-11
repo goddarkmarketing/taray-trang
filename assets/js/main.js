@@ -28,6 +28,9 @@
     star: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>',
     map: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7Zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Z"/></svg>',
     clock: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm.5 11H7v-2h4.5V6h2v7Z"/></svg>',
+    sun: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>',
+    moon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 14.5A8.5 8.5 0 0 1 10.5 4 9 9 0 0 0 21 14.5Z"/></svg>',
+    calendar: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>',
     fb: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12Z"/></svg>',
     tt: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.6 6.32a4.83 4.83 0 0 1-3.77-2.16h-2.99v13.05a2.83 2.83 0 1 1-2.83-2.83c.21 0 .42.03.62.07v-3.05a5.94 5.94 0 1 0 5.21 5.9V9.43a7.96 7.96 0 0 0 4.45 1.37V7.81a4.86 4.86 0 0 1-.69-1.49Z"/></svg>',
     shield: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>',
@@ -38,6 +41,7 @@
     route: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg>',
     /* Service pill icons */
     info: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>',
+    alert: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01"/><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg>',
     calculator: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h2M12 10h2M16 10h0M8 14h2M12 14h2M16 14h0M8 18h2M12 18h6"/></svg>',
     anchor: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><path d="M12 7v15"/><path d="M5 12H3a9 9 0 0 0 18 0h-2"/><path d="M8 12h8"/></svg>',
     bigBoat: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18c2 1 3 1 4.5 1s2.5 0 4.5-1 3-1 4.5-1 2.5 0 4.5 1"/><path d="M5 16V9a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v7"/><path d="M9 8V5h6v3"/><path d="M12 11v3"/></svg>',
@@ -56,6 +60,7 @@
     carPick: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 15h2l1-5a2 2 0 0 1 2-1.6h8.7a2 2 0 0 1 1.7 1l2 3.6h1.6a1 1 0 0 1 1 1v2H18"/><circle cx="7" cy="17" r="2"/><circle cx="15" cy="17" r="2"/><path d="M9 15h-2"/><path d="M11 9V5"/><path d="M9 7l2-2 2 2"/></svg>',
     chatBubble: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.5 7.2L4 21l1.7-5.4A8 8 0 1 1 21 12Z"/><path d="M12 11v.01M12 14h0M11 9a1 1 0 1 1 1.5.9c-.4.2-.5.4-.5.8"/></svg>',
     check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>',
+    copy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>',
     minus: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/></svg>',
     plus: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>',
   };
@@ -346,6 +351,81 @@
   }
   window.TT.refreshSiteShell = refreshSiteShell;
 
+  /* ---------- Welcome popup (contact on entry) ---------- */
+  function initWelcomePopup() {
+    if (window.__TT_POPUP_DONE) return;
+    if (/\/admin(\/|$)/.test(location.pathname)) return;
+
+    const s = site();
+    if (s.popupEnabled === false) return;
+    if (sessionStorage.getItem('tt-welcome-popup')) return;
+
+    const phoneTel = (s.phone || '').replace(/[^\d+]/g, '');
+    const phoneDisplay = s.phoneDisplay || s.phone || '';
+    const lineId = s.lineId || '@talaytrang';
+    const lineUrl = s.lineUrl || '#';
+    const hoursWeekday = s.popupHoursWeekday || s.hours || 'จันทร์ - เสาร์ 07:00-21:00 น.';
+    const hoursSunday = s.popupHoursSunday || '';
+    const qrSrc = s.lineQrImage
+      || `https://api.qrserver.com/v1/create-qr-code/?size=112x112&data=${encodeURIComponent(lineUrl)}`;
+
+    document.getElementById('welcome-popup')?.remove();
+
+    const el = document.createElement('div');
+    el.className = 'welcome-popup';
+    el.id = 'welcome-popup';
+    el.setAttribute('role', 'dialog');
+    el.setAttribute('aria-label', 'ติดต่อเรา');
+    el.innerHTML = `
+      <div class="welcome-popup-head">
+        <span class="welcome-popup-label">ติดต่อเรา</span>
+        <button type="button" class="welcome-popup-close" aria-label="ปิด">${ICONS.close}</button>
+      </div>
+      <div class="welcome-popup-body">
+        <a class="welcome-popup-call" href="tel:${phoneTel}">
+          <span class="welcome-popup-call-icon">${ICONS.phone}</span>
+          <span class="welcome-popup-call-num">${esc(phoneDisplay)}</span>
+        </a>
+        <a class="welcome-popup-line" href="${esc(lineUrl)}" target="_blank" rel="noopener">
+          <span class="welcome-popup-line-icon">${ICONS.line}</span>
+          <span class="welcome-popup-line-text">
+            <span class="welcome-popup-line-title">แชท LINE</span>
+            <span class="welcome-popup-line-id">${esc(lineId)}</span>
+          </span>
+        </a>
+        <div class="welcome-popup-qr">
+          <p class="welcome-popup-qr-hint">สแกนเพิ่มเพื่อน</p>
+          <div class="welcome-popup-qr-frame">
+            <img src="${esc(qrSrc)}" width="100" height="100" alt="QR Code ${esc(lineId)}" loading="lazy"/>
+          </div>
+        </div>
+        <div class="welcome-popup-hours-block">
+          <span>${esc(hoursWeekday)}</span>
+          ${hoursSunday ? `<span>${esc(hoursSunday)}</span>` : ''}
+        </div>
+      </div>`;
+
+    const close = () => {
+      el.classList.remove('is-visible');
+      sessionStorage.setItem('tt-welcome-popup', '1');
+      window.__TT_POPUP_DONE = true;
+      setTimeout(() => el.remove(), 320);
+    };
+
+    el.querySelector('.welcome-popup-close')?.addEventListener('click', close);
+    document.addEventListener('keydown', function onKey(e) {
+      if (e.key === 'Escape' && el.isConnected) {
+        close();
+        document.removeEventListener('keydown', onKey);
+      }
+    });
+
+    document.body.appendChild(el);
+    window.__TT_POPUP_DONE = true;
+    setTimeout(() => el.classList.add('is-visible'), 700);
+  }
+  window.TT.initWelcomePopup = initWelcomePopup;
+
   /* ---------- Sticky bottom CTA (mobile only) ---------- */
   function renderStickyCta() {
     if (document.body.dataset.sticky === 'off') return;
@@ -617,6 +697,7 @@
     refreshSiteShell();
     bindReveal();
     initBannerSlider();
+    initWelcomePopup();
   });
 
   document.addEventListener('tt:data-updated', () => {

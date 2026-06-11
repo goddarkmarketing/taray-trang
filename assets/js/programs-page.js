@@ -108,6 +108,7 @@
           title: hs.boats?.title || 'แพ็กเกจไปเช้า เย็นกลับ',
           lead: hs.boats?.lead || '',
           items: window.TT?.PROGRAMS || [],
+          navLabel: 'ไปเช้าเย็นกลับ',
         },
         {
           id: 'overnight',
@@ -115,6 +116,7 @@
           title: hs.programs?.title || 'แพ็กเกจ 2 วัน 1 คืน',
           lead: hs.programs?.lead || '',
           items: window.TT?.PACKAGES_2D1N || [],
+          navLabel: '2 วัน 1 คืน',
         },
         {
           id: 'packages3d2n',
@@ -122,6 +124,15 @@
           title: hs.packages3d2n?.title || 'แพ็กเกจ 3 วัน 2 คืน',
           lead: hs.packages3d2n?.lead || '',
           items: window.TT?.PACKAGES_3D2N || [],
+          navLabel: '3 วัน 2 คืน',
+        },
+        {
+          id: 'packages4d3n',
+          eyebrow: hs.packages4d3n?.eyebrow || 'ทริปยาวพิเศษ',
+          title: hs.packages4d3n?.title || 'แพ็กเกจ 4 วัน 3 คืน',
+          lead: hs.packages4d3n?.lead || 'เที่ยวทะเลตรังครบจบ 4 วัน 3 คืน รวมทริปทะเล ที่พัก ทัวร์เมือง — ราคาเริ่มต้น 1,850 บาทต่อท่าน',
+          items: window.TT?.PACKAGES_4D3N || [],
+          navLabel: '4 วัน 3 คืน',
         },
       ];
     }
@@ -143,6 +154,35 @@
 
     function resetVisible() {
       catalogSections().forEach((s) => { visible[s.id] = PAGE_SIZE; });
+    }
+
+    function renderCategoryNav() {
+      const nav = document.getElementById('programs-category-nav');
+      if (!nav) return;
+      const sections = catalogSections().filter((s) => s.items.length > 0);
+      if (!sections.length) {
+        nav.hidden = true;
+        return;
+      }
+      nav.hidden = false;
+      nav.innerHTML = sections.map((s) => `
+        <a class="programs-category-nav-link" href="#${esc(s.id)}" data-category-jump="${esc(s.id)}">
+          ${esc(s.navLabel || s.title)}
+          <span class="programs-category-nav-count">${s.items.length}</span>
+        </a>`).join('');
+      nav.querySelectorAll('[data-category-jump]').forEach((link) => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const id = link.dataset.categoryJump;
+          const cat = document.getElementById('programs-filter-category');
+          if (cat) cat.value = 'all';
+          const target = document.getElementById(`programs-${id}`);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            history.replaceState(null, '', `#${id}`);
+          }
+        });
+      });
     }
 
     function render() {
@@ -203,6 +243,7 @@
       });
 
       window.TT.bindReveal?.(sectionsHost);
+      renderCategoryNav();
     }
 
     function populateBoatFilter() {
@@ -257,7 +298,7 @@
     // Hash deep-link: programs.html#overnight
     if (!root.dataset.hashApplied) {
       const hash = location.hash.replace('#', '');
-      if (hash === 'overnight' || hash === 'daytrip' || hash === 'packages3d2n') {
+      if (hash === 'overnight' || hash === 'daytrip' || hash === 'packages3d2n' || hash === 'packages4d3n') {
         const cat = document.getElementById('programs-filter-category');
         if (cat) cat.value = hash;
       }

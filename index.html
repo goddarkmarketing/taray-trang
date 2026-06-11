@@ -89,6 +89,21 @@
     </div>
   </section>
 
+  <!-- =================== 4D3N PACKAGES =================== -->
+  <section class="section section-soft" id="home-section-packages4d3n">
+    <div class="container">
+      <div class="section-head section-head-wide" data-reveal data-tt-home-section="packages4d3n">
+        <span class="eyebrow">ทริปยาวพิเศษ</span>
+        <h2>แพ็กเกจ 4 วัน 3 คืน</h2>
+        <p class="lead">เที่ยวทะเลตรังครบจบ 4 วัน 3 คืน รวมทริปทะเล ที่พัก ทัวร์เมือง — ราคาเริ่มต้น 1,850 บาทต่อท่าน</p>
+      </div>
+      <div class="grid grid-4 programs-category-grid" id="home-packages-4d3n"></div>
+      <div class="btn-row center mt-4" data-reveal>
+        <a class="btn btn-primary" href="programs.html#packages4d3n">ดูแพ็กเกจ 4 วัน 3 คืนทั้งหมด</a>
+      </div>
+    </div>
+  </section>
+
   <!-- =================== HOW TO BOOK =================== -->
   <section class="section">
     <div class="container">
@@ -226,7 +241,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      const { BOATS, PROGRAMS, PACKAGES_2D1N, PACKAGES_3D2N, REVIEWS, VIDEOS, STEPS, SERVICES, ICONS, IMAGES, HOME_DEALS, HOME_SECTIONS, SITE } = window.TT;
+      const { BOATS, PROGRAMS, PACKAGES_2D1N, PACKAGES_3D2N, PACKAGES_4D3N, REVIEWS, VIDEOS, STEPS, SERVICES, ICONS, IMAGES, HOME_DEALS, HOME_SECTIONS, SITE } = window.TT;
       applyHomeSections(HOME_SECTIONS, SITE);
       const fmt = new Intl.NumberFormat('th-TH');
 
@@ -289,6 +304,7 @@
         { hostId: 'home-boats', items: PROGRAMS || [] },
         { hostId: 'home-programs', items: PACKAGES_2D1N || [] },
         { hostId: 'home-packages-3d2n', items: PACKAGES_3D2N || [] },
+        { hostId: 'home-packages-4d3n', items: PACKAGES_4D3N || [] },
       ];
       homePackageSections.forEach(({ hostId, items }) => {
         const host = document.getElementById(hostId);

@@ -17,4 +17,12 @@ const js =
   ';\n';
 
 fs.writeFileSync(fallbackPath, js, 'utf8');
+const updated = data.meta?.updated || new Date().toISOString();
+const versionPath = path.join(root, 'assets/js/tt-cache-version.js');
+fs.writeFileSync(
+  versionPath,
+  '/* Auto-generated */ window.__TT_SCRIPT_V = ' + JSON.stringify(updated) + ';\n',
+  'utf8'
+);
 console.log('Written', path.relative(root, fallbackPath));
+console.log('Written', path.relative(root, versionPath));

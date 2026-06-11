@@ -16,7 +16,7 @@ if (isset($_GET['delete'], $_GET['collection'])) {
         tt_package_delete($collection, $id, $data);
         tt_set_flash('ลบแพ็กเกจแล้ว');
     }
-    header('Location: programs.php#' . ($collection === 'programs' ? 'daytrip' : ($collection === 'packages2d1n' ? 'overnight' : 'packages3d2n')));
+    header('Location: programs.php#' . tt_package_section_hash($collection));
     exit;
 }
 
@@ -77,6 +77,7 @@ function tt_render_package_table(string $collection, array $items, string $secti
 tt_render_package_table('programs', $data['programs'] ?? [], 'daytrip', 'เพิ่มไปเช้าเย็นกลับ');
 tt_render_package_table('packages2d1n', $data['packages2d1n'] ?? [], 'overnight', 'เพิ่ม 2 วัน 1 คืน');
 tt_render_package_table('packages3d2n', $data['packages3d2n'] ?? [], 'packages3d2n', 'เพิ่ม 3 วัน 2 คืน');
+tt_render_package_table('packages4d3n', $data['packages4d3n'] ?? [], 'packages4d3n', 'เพิ่ม 4 วัน 3 คืน');
 ?>
 
 <?php tt_admin_footer(); ?>
