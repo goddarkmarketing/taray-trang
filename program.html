@@ -952,18 +952,20 @@
 
         function calcPkgTotal(state) {
           const sel = getSelectedRoomInfo();
-          const isBookOnly = sel?.room?.book || !(sel?.room?.price > 0);
           const adultPrice = adultUnitPrice();
           const childPriceUnit = childUnitPrice();
           const adultTotal = state.adults * adultPrice;
           const childTotal = state.children * childPriceUnit;
+          const room = sel?.room;
+          const roomQuoted = !!(room && (room.book || !(room.price > 0)));
           return {
             adultTotal,
             childTotal,
             total: adultTotal + childTotal,
             adultPrice,
             childPriceUnit,
-            isBookOnly,
+            isBookOnly: adultPrice <= 0,
+            roomQuoted,
             selection: sel,
           };
         }
@@ -988,8 +990,15 @@
           }
           if (calc.selection?.hotelName) {
             const rp = roomPriceParts(calc.selection.room);
-            const priceText = rp.book ? 'จอง' : `${rp.amount}${rp.unit ? ` ${rp.unit}` : ''}`;
-            lines.push(`<div class="pkg-book-price-line is-meta"><span>${esc(calc.selection.hotelName)} · ${esc(calc.selection.roomName)}</span><span>${esc(priceText)}</span></div>`);
+            let priceText;
+            if (rp.book) {
+              priceText = calc.adultPrice > 0
+                ? `~${esc(`฿${fmt.format(calc.adultPrice)}`)}/ท่าน`
+                : 'จอง';
+            } else {
+              priceText = `${rp.amount}${rp.unit ? ` ${rp.unit}` : ''}`;
+            }
+            lines.push(`<div class="pkg-book-price-line is-meta"><span>${esc(calc.selection.hotelName)} · ${esc(calc.selection.roomName)}</span><span>${priceText}</span></div>`);
           }
           const linesEl = document.getElementById('pkg-book-lines');
           const totalEl = document.getElementById('pkg-book-total');
@@ -1047,7 +1056,12 @@
             L.push('— ที่พัก —');
             L.push(`โรงแรม: ${calc.selection.hotelName}`);
             L.push(`ห้อง: ${calc.selection.roomName}`);
-            L.push(`ราคา: ${roomPriceParts(calc.selection.room).amount}${roomPriceParts(calc.selection.room).unit ? ' ' + roomPriceParts(calc.selection.room).unit : ''}`);
+            const rp = roomPriceParts(calc.selection.room);
+            if (rp.book && calc.adultPrice > 0) {
+              L.push(`ราคา: ~฿${fmt.format(calc.adultPrice)}/ท่าน (เริ่มต้น · แอดมินยืนยันตามโรงแรม)`);
+            } else {
+              L.push(`ราคา: ${rp.amount}${rp.unit ? ' ' + rp.unit : ''}`);
+            }
           }
           L.push('');
           L.push('— สรุปราคา —');
@@ -1057,6 +1071,7 @@
             if (state.adults > 0) L.push(`ผู้ใหญ่: ฿${fmt.format(calc.adultPrice)} × ${state.adults} = ฿${fmt.format(calc.adultTotal)}`);
             if (state.children > 0) L.push(`เด็ก: ฿${fmt.format(calc.childPriceUnit)} × ${state.children} = ฿${fmt.format(calc.childTotal)}`);
             L.push(`>>> รวมโดยประมาณ: ฿${fmt.format(calc.total)} <<<`);
+            if (calc.roomQuoted) L.push('(ราคาโรงแรมที่เลือกอาจปรับตามช่วง · แอดมินยืนยันทาง LINE)');
           }
           if (state.note) {
             L.push('');
