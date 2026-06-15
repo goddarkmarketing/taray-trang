@@ -354,8 +354,10 @@
                     <strong>${a.label}</strong>
                     <span>${a.desc || ''}</span>
                   </span>
-                  <span class="bb-addon-price">${a.priceLabel || fmt.format(a.price) + ' บาท'}</span>
-                  <span class="bb-addon-check"><span class="bb-addon-check-txt">เพิ่ม</span>${checkSvg}</span>
+                  <span class="bb-addon-meta">
+                    <span class="bb-addon-price">${a.priceLabel || fmt.format(a.price) + ' บาท'}</span>
+                    <span class="bb-addon-check"><span class="bb-addon-check-txt">เพิ่ม</span>${checkSvg}</span>
+                  </span>
                 </label>`).join('')}
             </div>
           </div>
