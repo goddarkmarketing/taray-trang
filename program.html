@@ -407,43 +407,59 @@
         return HOTEL_IMAGE_FALLBACK;
       }
 
+      function hotelFromPrice(hotel) {
+        const prices = (hotel.rooms || []).map((r) => r.price).filter((p) => p != null && p > 0);
+        if (!prices.length) return null;
+        return Math.min(...prices);
+      }
+
       function renderHotelSection(hotels) {
         if (!hotels || !hotels.length) return '';
         const firstHotel = hotels[0];
         const firstRoom = firstHotel?.rooms?.[0];
         const firstParts = roomPriceParts(firstRoom);
-        const tabs = hotels.map((hotel, hi) => {
-          const roomCount = (hotel.rooms || []).length;
+        const cards = hotels.map((hotel, hi) => {
           const img = resolveHotelImage(hotel);
-          return `
-            <button type="button" class="pkg-hotel-tab${hi === 0 ? ' is-active' : ''}" data-hotel="${hi}" role="tab" aria-selected="${hi === 0 ? 'true' : 'false'}" title="${esc(hotel.name)}">
-              <span class="pkg-hotel-card-media">
-                <img src="${esc(img)}" alt="" loading="lazy"/>
-              </span>
-              <span class="pkg-hotel-card-body">
-                <span class="pkg-hotel-tab-name">${esc(hotel.name)}</span>
-                <span class="pkg-hotel-tab-count">${roomCount} ประเภทห้อง</span>
-              </span>
-            </button>`;
-        }).join('');
-        const panels = hotels.map((hotel, hi) => {
+          const fromPrice = hotelFromPrice(hotel);
           const rooms = (hotel.rooms || []).slice(0, 5);
           const roomRows = rooms.map((room, ri) => {
             const parts = roomPriceParts(room);
             return `
-              <label class="pkg-hotel-room${hi === 0 && ri === 0 ? ' is-selected' : ''}">
-                <input type="radio" name="pkg-hotel-room" value="${hi}-${ri}" data-hotel="${hi}" data-room="${ri}"${hi === 0 && ri === 0 ? ' checked' : ''}/>
-                <span class="pkg-hotel-room-check" aria-hidden="true">${ICONS.check}</span>
-                <span class="pkg-hotel-room-name">${esc(room.name)}</span>
-                <span class="pkg-hotel-room-price${parts.book ? ' is-book' : ''}">
-                  <strong>${esc(parts.amount)}</strong>${parts.unit ? `<small>${esc(parts.unit)}</small>` : ''}
-                </span>
-              </label>`;
+                <label class="pkg-hotel-room${hi === 0 && ri === 0 ? ' is-selected' : ''}">
+                  <input type="radio" name="pkg-hotel-room" value="${hi}-${ri}" data-hotel="${hi}" data-room="${ri}"${hi === 0 && ri === 0 ? ' checked' : ''}/>
+                  <span class="pkg-hotel-room-radio" aria-hidden="true">
+                    <span class="pkg-hotel-room-radio-mark">${ICONS.check}</span>
+                  </span>
+                  <span class="pkg-hotel-room-body">
+                    <span class="pkg-hotel-room-name">${esc(room.name)}</span>
+                    <span class="pkg-hotel-room-price${parts.book ? ' is-book' : ''}">
+                      <strong>${esc(parts.amount)}</strong>${parts.unit ? `<small>${esc(parts.unit)}</small>` : ''}
+                    </span>
+                  </span>
+                </label>`;
           }).join('');
+          const fromHtml = fromPrice != null
+            ? `<span class="pkg-hotel-card-from">เริ่ม <strong>฿${fmt.format(fromPrice)}</strong><span>/ ท่าน</span></span>`
+            : `<span class="pkg-hotel-card-from is-book">สอบถามราคา</span>`;
           return `
-            <div class="pkg-hotel-panel${hi === 0 ? ' is-active' : ''}" data-hotel="${hi}" role="tabpanel"${hi === 0 ? '' : ' hidden'}>
-              <div class="pkg-hotel-rooms">${roomRows}</div>
-            </div>`;
+            <article class="pkg-hotel-item${hi === 0 ? ' is-selected' : ''}" data-hotel="${hi}">
+              <div class="pkg-hotel-card${hi === 0 ? ' is-selected' : ''}" role="button" tabindex="0" aria-expanded="${hi === 0 ? 'true' : 'false'}">
+                <span class="pkg-hotel-card-media">
+                  <img src="${esc(img)}" alt="" loading="lazy"/>
+                </span>
+                <span class="pkg-hotel-card-inner">
+                  <span class="pkg-hotel-card-head">
+                    <span class="pkg-hotel-card-name">${esc(hotel.name)}</span>
+                    ${fromHtml}
+                  </span>
+                  <button type="button" class="pkg-hotel-card-pick${hi === 0 ? ' is-active' : ''}">เลือกห้อง</button>
+                </span>
+              </div>
+              <div class="pkg-hotel-detail"${hi === 0 ? '' : ' hidden'}>
+                <p class="pkg-hotel-detail-label">เลือกประเภทห้อง</p>
+                <div class="pkg-hotel-rooms">${roomRows}</div>
+              </div>
+            </article>`;
         }).join('');
         return `
           <section class="pkg-purchase pkg-hotel-section" id="pkg-hotel-block">
@@ -451,7 +467,6 @@
               <span class="pkg-info-eyebrow">ที่พัก</span>
               <h3>เลือกโรงแรม &amp; ห้อง</h3>
             </header>
-            <p class="pkg-hotel-lead">เลือกโรงแรม แล้วแตะประเภทห้องที่ต้องการ — ราคาอัปเดตในฟอร์มจองด้านล่าง</p>
             <div class="pkg-hotel-summary" id="pkg-hotel-summary">
               <span class="pkg-hotel-summary-icon">${ICONS.bed}</span>
               <span class="pkg-hotel-summary-text">
@@ -460,26 +475,7 @@
               </span>
               <span class="pkg-hotel-summary-price${firstParts.book ? ' is-book' : ''}" id="pkg-hotel-summary-price">${esc(firstParts.amount)}${firstParts.unit ? ` <small>${esc(firstParts.unit)}</small>` : ''}</span>
             </div>
-            <div class="pkg-hotel-switcher" id="pkg-hotel-switcher">
-              <div class="pkg-hotel-cards-wrap">
-                <button type="button" class="pkg-hotel-scroll-btn pkg-hotel-scroll-btn--prev" id="pkg-hotel-scroll-prev" aria-label="เลื่อนดูโรงแรมก่อนหน้า" disabled>
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
-                </button>
-                <div class="pkg-hotel-tabs" id="pkg-hotel-tabs" role="tablist" aria-label="เลือกโรงแรม">${tabs}</div>
-                <button type="button" class="pkg-hotel-scroll-btn pkg-hotel-scroll-btn--next" id="pkg-hotel-scroll-next" aria-label="เลื่อนดูโรงแรมถัดไป">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
-                </button>
-              </div>
-              <div class="pkg-hotel-detail">
-                <div class="pkg-hotel-detail-body">
-                  <div class="pkg-hotel-panel-head">
-                    <span class="pkg-hotel-panel-label">ประเภทห้อง</span>
-                    <span class="pkg-hotel-panel-count" id="pkg-hotel-room-count">${(firstHotel?.rooms || []).length} แบบ</span>
-                  </div>
-                  <div class="pkg-hotel-panels">${panels}</div>
-                </div>
-              </div>
-            </div>
+            <div class="pkg-hotel-grid" id="pkg-hotel-switcher">${cards}</div>
           </section>`;
       }
 
@@ -506,8 +502,7 @@
         const root = document.getElementById('pkg-hotel-switcher');
         if (!root || !hotels?.length) return null;
 
-        const tabs = [...root.querySelectorAll('.pkg-hotel-tab')];
-        const panels = [...root.querySelectorAll('.pkg-hotel-panel')];
+        const items = [...root.querySelectorAll('.pkg-hotel-item')];
         const radios = [...root.querySelectorAll('input[name="pkg-hotel-room"]')];
 
         function getSelection() {
@@ -527,10 +522,42 @@
           if (roomInput) roomInput.value = String(sel.roomIdx);
         }
 
+        function selectHotel(hotelIdx, roomIdx) {
+          const ri = roomIdx != null ? roomIdx : 0;
+          const radio = root.querySelector(
+            `input[name="pkg-hotel-room"][data-hotel="${hotelIdx}"][data-room="${ri}"]`
+          );
+          if (radio) {
+            radio.checked = true;
+            refreshHotelUi();
+          }
+        }
+
         function updateRoomStyles() {
+          const sel = getSelection();
           radios.forEach((radio) => {
             radio.closest('.pkg-hotel-room')?.classList.toggle('is-selected', radio.checked);
           });
+          items.forEach((item) => {
+            const hi = Number(item.dataset.hotel);
+            const isSel = hi === sel.hotelIdx;
+            item.classList.toggle('is-selected', isSel);
+            const card = item.querySelector('.pkg-hotel-card');
+            const detail = item.querySelector('.pkg-hotel-detail');
+            if (card) {
+              card.classList.toggle('is-selected', isSel);
+              card.setAttribute('aria-expanded', isSel ? 'true' : 'false');
+            }
+            if (detail) detail.hidden = !isSel;
+            const pickBtn = item.querySelector('.pkg-hotel-card-pick');
+            if (pickBtn) pickBtn.classList.toggle('is-active', isSel);
+          });
+        }
+
+        function activateHotel(item) {
+          const hi = Number(item.dataset.hotel);
+          const sel = getSelection();
+          selectHotel(hi, sel.hotelIdx === hi ? sel.roomIdx : 0);
         }
 
         function refreshHotelUi() {
@@ -541,67 +568,28 @@
           onChange?.();
         }
 
-        tabs.forEach((tab) => {
-          tab.addEventListener('click', () => {
-            const hi = tab.dataset.hotel;
-            tabs.forEach((t) => {
-              const on = t.dataset.hotel === hi;
-              t.classList.toggle('is-active', on);
-              t.setAttribute('aria-selected', on ? 'true' : 'false');
-            });
-            panels.forEach((panel) => {
-              const on = panel.dataset.hotel === hi;
-              panel.classList.toggle('is-active', on);
-              panel.hidden = !on;
-            });
-            tab.scrollIntoView({ behavior: 'smooth', inline: 'nearest', block: 'nearest' });
-            const panel = root.querySelector(`.pkg-hotel-panel[data-hotel="${hi}"]`);
-            const checked = panel?.querySelector('input[name="pkg-hotel-room"]:checked');
-            const firstRoom = panel?.querySelector('input[name="pkg-hotel-room"]');
-            if (!checked && firstRoom) firstRoom.checked = true;
-            refreshHotelUi();
+        items.forEach((item) => {
+          const card = item.querySelector('.pkg-hotel-card');
+          const pickBtn = item.querySelector('.pkg-hotel-card-pick');
+          pickBtn?.addEventListener('click', (e) => {
+            e.stopPropagation();
+            activateHotel(item);
+          });
+          card?.addEventListener('click', (e) => {
+            if (e.target.closest('.pkg-hotel-card-pick')) return;
+            activateHotel(item);
+          });
+          card?.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              activateHotel(item);
+            }
           });
         });
 
         radios.forEach((radio) => {
           radio.addEventListener('change', refreshHotelUi);
         });
-
-        (function initHotelCarouselScroll() {
-          const strip = root.querySelector('.pkg-hotel-tabs');
-          const prevBtn = root.querySelector('.pkg-hotel-scroll-btn--prev');
-          const nextBtn = root.querySelector('.pkg-hotel-scroll-btn--next');
-          if (!strip || !prevBtn || !nextBtn) return;
-
-          const scrollStep = () => {
-            const card = strip.querySelector('.pkg-hotel-tab');
-            return ((card && card.offsetWidth) || 132) + 10;
-          };
-
-          function updateNav() {
-            const maxScroll = Math.max(0, strip.scrollWidth - strip.clientWidth);
-            const atStart = strip.scrollLeft <= 2;
-            const atEnd = strip.scrollLeft >= maxScroll - 2;
-            const canScroll = maxScroll > 2;
-            prevBtn.disabled = !canScroll || atStart;
-            nextBtn.disabled = !canScroll || atEnd;
-            prevBtn.hidden = !canScroll;
-            nextBtn.hidden = !canScroll;
-          }
-
-          prevBtn.addEventListener('click', () => {
-            strip.scrollBy({ left: -scrollStep() * 2, behavior: 'smooth' });
-          });
-          nextBtn.addEventListener('click', () => {
-            strip.scrollBy({ left: scrollStep() * 2, behavior: 'smooth' });
-          });
-          strip.addEventListener('scroll', updateNav, { passive: true });
-          window.addEventListener('resize', updateNav);
-          if (typeof ResizeObserver !== 'undefined') {
-            new ResizeObserver(updateNav).observe(strip);
-          }
-          updateNav();
-        })();
 
         refreshHotelUi();
 
@@ -650,37 +638,62 @@
         <span class="pkg-code">${esc(code)}</span>`;
 
       (function renderItinerary() {
-        const parts = [];
-        let lastLayer = null;
-        itineraryLayers.forEach((item, i) => {
-          if (item.layer !== lastLayer) {
-            parts.push(`
-        <li class="pkg-day-band pkg-day-band--${item.layer}" aria-label="${esc(item.bandLabel)}">
-          <span class="pkg-day-band-icon">${bandIcon(item.layer, item.isMultiDay)}</span>
-          <span class="pkg-day-band-label">${esc(item.bandLabel)}</span>
-        </li>`);
-            lastLayer = item.layer;
-          }
+        const root = document.getElementById('pkg-itinerary');
+        if (!root) return;
+
+        function renderStep(item, stepIndex, showLine) {
           const displayTitle = item.isMultiDay ? stripDayPrefix(item.title) : item.title;
-          const nextLayer = i < itineraryLayers.length - 1 ? itineraryLayers[i + 1].layer : null;
-          const showLine = i < itineraryLayers.length - 1 && nextLayer === item.layer;
-          parts.push(`
+          return `
         <li class="pkg-step pkg-step--layer-${item.layer}">
           <div class="pkg-step-rail" aria-hidden="true">
-            <span class="pkg-step-dot"></span>
+            <span class="pkg-step-dot">${String(stepIndex + 1).padStart(2, '0')}</span>
             ${showLine ? '<span class="pkg-step-line"></span>' : ''}
           </div>
           <article class="pkg-step-card">
             <div class="pkg-step-meta">
-              <span class="pkg-step-num">${String(i + 1).padStart(2, '0')}</span>
               <time class="pkg-step-time">${esc(item.time)}</time>
             </div>
             <h4 class="pkg-step-title">${esc(displayTitle)}</h4>
             <p class="pkg-step-desc">${esc(item.text)}</p>
           </article>
-        </li>`);
+        </li>`;
+        }
+
+        const isMultiDay = itineraryLayers.some((item) => item.isMultiDay);
+        if (!isMultiDay) {
+          const parts = itineraryLayers.map((item, i) => {
+            const showLine = i < itineraryLayers.length - 1;
+            return renderStep(item, i, showLine);
+          });
+          root.innerHTML = parts.join('');
+          return;
+        }
+
+        const byDay = new Map();
+        itineraryLayers.forEach((item) => {
+          if (!byDay.has(item.layer)) {
+            byDay.set(item.layer, { label: item.bandLabel, items: [] });
+          }
+          byDay.get(item.layer).items.push(item);
         });
-        document.getElementById('pkg-itinerary').innerHTML = parts.join('');
+
+        const parts = [...byDay.entries()]
+          .sort((a, b) => a[0] - b[0])
+          .map(([layer, group]) => {
+            const stepsHtml = group.items.map((item, idx) =>
+              renderStep(item, idx, idx < group.items.length - 1)
+            ).join('');
+            return `
+        <li class="pkg-day-card pkg-day-card--${layer}">
+          <header class="pkg-day-card-head">
+            <span class="pkg-day-card-icon">${bandIcon(layer, true)}</span>
+            <span class="pkg-day-card-label">${esc(group.label)}</span>
+          </header>
+          <ol class="pkg-day-steps">${stepsHtml}</ol>
+        </li>`;
+          });
+
+        root.innerHTML = parts.join('');
       })();
 
       const childRate = childPrice;
@@ -692,32 +705,22 @@
         <section class="pkg-purchase" id="pkg-book">
           <header class="pkg-info-head">
             <span class="pkg-info-eyebrow">พร้อมจองแล้ว</span>
-            <h3>เลือกซื้อแพ็กเกจนี้</h3>
+            <h3>กรอกรายละเอียด</h3>
           </header>
-          <div class="pkg-purchase-prices">
-            <div class="pkg-purchase-price-row is-adult">
-              <span class="pkg-purchase-price-label">ผู้ใหญ่</span>
-              <div class="pkg-purchase-price-value">
-                <strong>฿${fmt.format(p.basePrice)}</strong>
-                <span>/ ท่าน</span>
-              </div>
-            </div>
-            <div class="pkg-purchase-price-row is-child">
-              <span class="pkg-purchase-price-label">เด็ก (3–11 ปี)</span>
-              <div class="pkg-purchase-price-value">
-                <strong>฿${fmt.format(childRate)}</strong>
-                <span>/ ท่าน</span>
-              </div>
-            </div>
-          </div>
 
           <form id="pkg-book-form" class="pkg-book-form" novalidate>
             <input type="hidden" name="hotel_idx" id="pkg-hotel-idx" value="0"/>
             <input type="hidden" name="room_idx" id="pkg-room-idx" value="0"/>
-            <div class="field" data-pkg-field="date">
-              <label for="pkg-book-date">วันที่เดินทาง <span class="req">*</span></label>
-              <input class="input" type="date" id="pkg-book-date" name="date" required/>
-              <div class="field-error"></div>
+            <div class="pkg-book-date-row">
+              <div class="field" data-pkg-field="date">
+                <label for="pkg-book-date">วันที่เริ่มเดินทาง <span class="req">*</span></label>
+                <input class="input" type="date" id="pkg-book-date" name="date" required/>
+                <div class="field-error"></div>
+              </div>
+              <div class="field">
+                <label for="pkg-book-date-end">วันสิ้นสุด</label>
+                <input class="input input-readonly" type="date" id="pkg-book-date-end" name="date_end" readonly tabindex="-1" aria-readonly="true"/>
+              </div>
             </div>
             <div class="pkg-book-qty-row">
               <div class="field" data-pkg-field="adults">
@@ -824,38 +827,6 @@
             <h3>หมายเหตุ</h3>
           </header>
           <ul class="pkg-note-list">${noteHtml}</ul>
-        </section>
-
-        <section class="pkg-info-block pkg-info-block--price">
-          <header class="pkg-info-head">
-            <span class="pkg-info-eyebrow">ราคาเริ่มต้น</span>
-            <h3>ค่าบริการต่อท่าน</h3>
-          </header>
-          <div class="pkg-price-card">
-            <div class="pkg-price-row">
-              <div class="pkg-price-item is-adult">
-                <span class="pkg-price-tag">ผู้ใหญ่</span>
-                <div class="pkg-price-amount">
-                  <strong>${fmt.format(p.basePrice)}</strong>
-                  <span>บาท</span>
-                </div>
-              </div>
-              <div class="pkg-price-sep" aria-hidden="true"></div>
-              <div class="pkg-price-item is-child">
-                <span class="pkg-price-tag">เด็ก</span>
-                <div class="pkg-price-amount">
-                  <strong>${fmt.format(childPrice)}</strong>
-                  <span>บาท</span>
-                </div>
-              </div>
-            </div>
-            <div class="pkg-price-meta">
-              <p class="pkg-price-note">${esc(priceMeeting)}</p>
-              <p class="pkg-price-pickup">
-                <span class="pkg-price-pill">รับในเมือง +${fmt.format(pickupFee)} บาท/ท่าน</span>
-              </p>
-            </div>
-          </div>
         </section>`;
       initPkgIncTabs();
       initPkgBookForm(p, childRate, pkgHotels);
@@ -864,14 +835,43 @@
         <span class="pkg-warning-icon" aria-hidden="true">${alertIcon}</span>
         <p>${esc(warning)}</p>`;
 
+      function getPkgTripDays(pkg) {
+        const d = String(pkg.duration || '');
+        const m = d.match(/(\d+)\s*วัน/);
+        if (m) return Math.max(1, parseInt(m[1], 10));
+        const id = pkg.id;
+        if ((PACKAGES_4D3N || []).some((x) => x.id === id)) return 4;
+        if ((PACKAGES_3D2N || []).some((x) => x.id === id)) return 3;
+        if ((PACKAGES_2D1N || []).some((x) => x.id === id)) return 2;
+        return 1;
+      }
+
+      function calcPkgEndDate(startDateStr, tripDays) {
+        if (!startDateStr || !tripDays) return '';
+        const start = new Date(startDateStr + 'T12:00:00');
+        if (Number.isNaN(start.getTime())) return '';
+        start.setDate(start.getDate() + tripDays - 1);
+        return start.toISOString().split('T')[0];
+      }
+
       function initPkgBookForm(pkg, childRate, hotels) {
         const form = document.getElementById('pkg-book-form');
         if (!form) return;
         const lineUrl = (window.TT?.SITE?.lineUrl) || 'https://line.me/R/ti/p/%40talaytrang';
+        const tripDays = getPkgTripDays(pkg);
         const dateInput = form.querySelector('input[name="date"]');
+        const endDateInput = form.querySelector('#pkg-book-date-end');
         if (dateInput) {
           dateInput.min = new Date().toISOString().split('T')[0];
         }
+
+        function updateEndDate() {
+          if (!endDateInput) return;
+          endDateInput.value = calcPkgEndDate(dateInput?.value || '', tripDays);
+        }
+        dateInput?.addEventListener('change', updateEndDate);
+        dateInput?.addEventListener('input', updateEndDate);
+        updateEndDate();
 
         let hotelPicker = null;
         let renderPkgTotalFn = () => ({ state: getPkgState(), calc: calcPkgTotal(getPkgState()) });
@@ -913,6 +913,7 @@
             name: String(fd.get('name') || '').trim(),
             phone: String(fd.get('phone') || '').trim(),
             date: String(fd.get('date') || ''),
+            dateEnd: String(fd.get('date_end') || ''),
             adults,
             children,
             people: adults + children,
@@ -1046,7 +1047,8 @@
             '— ข้อมูลผู้จอง —',
             `ชื่อ: ${state.name}`,
             `เบอร์โทร: ${state.phone}`,
-            `วันที่เดินทาง: ${formatThaiDate(state.date)}`,
+            `วันเริ่มเดินทาง: ${formatThaiDate(state.date)}`,
+            state.dateEnd ? `วันสิ้นสุด: ${formatThaiDate(state.dateEnd)}` : '',
             `ผู้ใหญ่: ${state.adults} ท่าน`,
           ];
           if (state.children > 0) L.push(`เด็ก: ${state.children} ท่าน`);

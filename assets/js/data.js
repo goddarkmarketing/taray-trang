@@ -33,6 +33,7 @@
       NAV_ITEMS: d.navItems || [],
       BOATS: d.boats || [],
       OPTIONS: d.options || [],
+      BOAT_BOOKING: d.boatBooking || {},
       PROGRAMS: d.programs || [],
       PACKAGES_2D1N: d.packages2d1n || [],
       PACKAGES_3D2N: d.packages3d2n || [],

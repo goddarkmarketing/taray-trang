@@ -160,7 +160,7 @@
         },
         {
             "id": "bigboat",
-            "name": "เรือใหญ่",
+            "name": "เรือทัวร์",
             "tag": "Premium Group",
             "image": "assets/uploads/20260602-181740-ef2b0dd3.png",
             "capacity": "30–120 ท่าน",
@@ -230,6 +230,109 @@
             "priceLabel": "+1,000 บาท/ทริป"
         }
     ],
+    "boatBooking": {
+        "insurancePerPerson": 40,
+        "routes": [
+            { "id": "r1", "name": "เส้นทางที่ 1", "subtitle": "ถ้ำมรกต · เกาะกระดาน", "image": "https://images.pexels.com/photos/1647064/pexels-photo-1647064.jpeg?auto=compress&cs=tinysrgb&w=600" },
+            { "id": "r2", "name": "เส้นทางที่ 2", "subtitle": "เกาะกระดาน · เกาะเชือก", "image": "https://images.pexels.com/photos/1450363/pexels-photo-1450363.jpeg?auto=compress&cs=tinysrgb&w=600" },
+            { "id": "r3", "name": "เส้นทางที่ 3", "subtitle": "เกาะแหวน · เกาะเชือก", "image": "https://images.pexels.com/photos/15763636/pexels-photo-15763636.jpeg?auto=compress&cs=tinysrgb&w=600" },
+            { "id": "r4", "name": "เส้นทางที่ 4", "subtitle": "4 เกาะครบชุด", "image": "https://images.pexels.com/photos/14573822/pexels-photo-14573822.jpeg?auto=compress&cs=tinysrgb&w=600" },
+            { "id": "r5", "name": "เส้นทางที่ 5", "subtitle": "เกาะมุก · ถ้ำมรกต", "image": "https://images.pexels.com/photos/17942107/pexels-photo-17942107.jpeg?auto=compress&cs=tinysrgb&w=600" },
+            { "id": "r6", "name": "เส้นทางที่ 6", "subtitle": "เหมาลำตามใจคุณ", "image": "https://images.pexels.com/photos/13419316/pexels-photo-13419316.jpeg?auto=compress&cs=tinysrgb&w=600" }
+        ],
+        "peopleTiers": [
+            { "id": "p1", "min": 1, "max": 4, "label": "1-4 คน" },
+            { "id": "p2", "min": 5, "max": 8, "label": "5-8 คน" },
+            { "id": "p3", "min": 9, "max": 12, "label": "9-12 คน" },
+            { "id": "p4", "min": 13, "max": 15, "label": "13-15 คน" }
+        ],
+        "charterPrices": {
+            "longtail": {
+                "r1": { "p1": 2800, "p2": 3500, "p3": 4200, "p4": 5000 },
+                "r2": { "p1": 3000, "p2": 3700, "p3": 4400, "p4": 5200 },
+                "r3": { "p1": 3100, "p2": 3800, "p3": 4500, "p4": 5300 },
+                "r4": { "p1": 3200, "p2": 3900, "p3": 4600, "p4": 5400 },
+                "r5": { "p1": 2900, "p2": 3600, "p3": 4300, "p4": 5100 },
+                "r6": { "p1": 3500, "p2": 4200, "p3": 4900, "p4": 5800 }
+            },
+            "speedboat": {
+                "r1": { "p1": 8500, "p2": 10500, "p3": 12500, "p4": 14800 },
+                "r2": { "p1": 9000, "p2": 11000, "p3": 13000, "p4": 15400 },
+                "r3": { "p1": 9200, "p2": 11200, "p3": 13200, "p4": 15600 },
+                "r4": { "p1": 9500, "p2": 11500, "p3": 13500, "p4": 16000 },
+                "r5": { "p1": 8800, "p2": 10800, "p3": 12800, "p4": 15200 },
+                "r6": { "p1": 10000, "p2": 12000, "p3": 14000, "p4": 16500 }
+            },
+            "bigboat": {
+                "r1": { "p1": 12000, "p2": 14500, "p3": 17000, "p4": 20000 },
+                "r2": { "p1": 12500, "p2": 15000, "p3": 17500, "p4": 20800 },
+                "r3": { "p1": 12800, "p2": 15300, "p3": 17800, "p4": 21200 },
+                "r4": { "p1": 13200, "p2": 15700, "p3": 18200, "p4": 21600 },
+                "r5": { "p1": 12200, "p2": 14700, "p3": 17200, "p4": 20400 },
+                "r6": { "p1": 14000, "p2": 16500, "p3": 19000, "p4": 22500 }
+            }
+        },
+        "addons": [
+            { "id": "menu-food", "icon": "cutlery", "label": "เมนูอาหาร", "desc": "อาหารกลางวันบนเรือ", "price": 800, "unit": "flat", "priceLabel": "800 บาท" },
+            { "id": "menu-photo", "icon": "camera", "label": "เมนูช่างภาพ", "desc": "ช่างภาพมืออาชีพ ส่งภาพภายใน 1 วัน", "price": 1200, "unit": "flat", "priceLabel": "1,200 บาท" },
+            { "id": "menu-guide", "icon": "users", "label": "เมนูไกด์", "desc": "ไกด์ท้องถิ่นพูดไทย/อังกฤษ", "price": 1000, "unit": "flat", "priceLabel": "1,000 บาท" },
+            { "id": "menu-shuttle", "icon": "carPick", "label": "เมนูรถรับส่ง", "desc": "รับส่งจากที่พักในตัวเมือง", "price": 800, "unit": "flat", "priceLabel": "800 บาท" }
+        ],
+        "profiles": {
+            "speedboat": {
+                "selectionMode": "size",
+                "tierProgressLabel": "ขนาดเรือ",
+                "tierStepTitle": "เลือกขนาดเรือ",
+                "tierStepDesc": "เมื่อเลือกเส้นทางเสร็จแล้ว ลูกค้าจะต้องเลือกขนาดเรือ",
+                "charterLabel": "ราคาค่าเรือสปีดโบ๊ท",
+                "insurancePerPerson": 50,
+                "guideFee": 1500,
+                "includedBoxTitle": "ราคาของเรือสปีดโบ๊ท รวมสิ่งที่บังคับในราคาแล้ว",
+                "footerNote": "หมายเหตุ: ราคาของเรือสปีดโบ๊ทรวม ค่ามัคคุเทศก์ 1,500 บาท และประกันอุบัติเหตุคนละ 50 บาท แล้วทุกขนาดเรือ",
+                "sizes": [
+                    { "id": "s1", "label": "1 เครื่องยนต์", "capacity": 12, "capacityLabel": "จุ 12 คน" },
+                    { "id": "s2", "label": "2 เครื่องยนต์", "capacity": 30, "capacityLabel": "จุ 30 คน" },
+                    { "id": "s3", "label": "3 เครื่องยนต์", "capacity": 45, "capacityLabel": "จุ 45 คน" }
+                ],
+                "charterPrices": {
+                    "r1": { "s1": 6900, "s2": 9800, "s3": 12800 },
+                    "r2": { "s1": 7200, "s2": 10200, "s3": 13200 },
+                    "r3": { "s1": 7500, "s2": 10500, "s3": 13600 },
+                    "r4": { "s1": 7800, "s2": 10800, "s3": 14000 },
+                    "r5": { "s1": 7100, "s2": 10000, "s3": 13000 },
+                    "r6": { "s1": 8200, "s2": 11500, "s3": 15000 }
+                }
+            },
+            "bigboat": {
+                "selectionMode": "size",
+                "tierProgressLabel": "ขนาดเรือ",
+                "tierStepTitle": "เลือกขนาดเรือ",
+                "tierStepDesc": "เมื่อเลือกเส้นทางเสร็จแล้ว ลูกค้าจะต้องเลือกขนาดเรือ",
+                "charterLabel": "ราคาค่าเรือทัวร์",
+                "charterSummaryPrefix": "ค่าเรือทัวร์",
+                "insurancePerPerson": 50,
+                "guideFee": 1500,
+                "safetyStaffRate": 800,
+                "safetyStaffRatio": 20,
+                "includedBoxTitle": "ราคาของเรือทัวร์ รวมสิ่งที่บังคับในราคาแล้ว",
+                "footerNote": "หมายเหตุ: ราคาของเรือทัวร์รวม ค่ามัคคุเทศก์, สต๊าฟดูแลความปลอดภัย และประกันอุบัติเหตุคนละ 50 บาท แล้วทุกขนาดเรือ",
+                "sizes": [
+                    { "id": "t1", "label": "ขนาดที่ 1", "capacity": 30, "capacityLabel": "จุ 30 คน" },
+                    { "id": "t2", "label": "ขนาดที่ 2", "capacity": 60, "capacityLabel": "จุ 60 คน" },
+                    { "id": "t3", "label": "ขนาดที่ 3", "capacity": 100, "capacityLabel": "จุ 100 คน" },
+                    { "id": "t4", "label": "ขนาดที่ 4", "capacity": 120, "capacityLabel": "จุ 120 คน" }
+                ],
+                "charterPrices": {
+                    "r1": { "t1": 9000, "t2": 15000, "t3": 20000, "t4": 24000 },
+                    "r2": { "t1": 9400, "t2": 15500, "t3": 20800, "t4": 25000 },
+                    "r3": { "t1": 9600, "t2": 15800, "t3": 21200, "t4": 25400 },
+                    "r4": { "t1": 9800, "t2": 16200, "t3": 21800, "t4": 26000 },
+                    "r5": { "t1": 9200, "t2": 15200, "t3": 20500, "t4": 24600 },
+                    "r6": { "t1": 10500, "t2": 17000, "t3": 23000, "t4": 27500 }
+                }
+            }
+        }
+    },
     "programs": [
         {
             "id": "dl001",
