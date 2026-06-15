@@ -1,62 +1,62 @@
 {
     "meta": {
         "version": 1,
-        "updated": "2026-06-15T17:30:51+07:00",
-        "tiktokRssSynced": "https:\/\/raw.githubusercontent.com\/goddarkmarketing\/tiktok-rss-flat\/main\/rss\/talaytrang.xml"
+        "updated": "2026-06-15T10:44:02.483Z",
+        "tiktokRssSynced": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/rss/talaytrang.xml"
     },
     "images": {
-        "heroHome": "https:\/\/images.pexels.com\/photos\/14573822\/pexels-photo-14573822.jpeg?auto=compress&cs=tinysrgb&w=1920",
-        "heroBoats": "https:\/\/images.pexels.com\/photos\/1591376\/pexels-photo-1591376.jpeg?auto=compress&cs=tinysrgb&w=1920",
-        "heroPrograms": "https:\/\/images.pexels.com\/photos\/1647064\/pexels-photo-1647064.jpeg?auto=compress&cs=tinysrgb&w=1920",
-        "heroBooking": "https:\/\/images.pexels.com\/photos\/31200075\/pexels-photo-31200075.jpeg?auto=compress&cs=tinysrgb&w=1920",
-        "heroArticles": "https:\/\/images.pexels.com\/photos\/9164423\/pexels-photo-9164423.jpeg?auto=compress&cs=tinysrgb&w=1920",
-        "heroVideos": "https:\/\/images.pexels.com\/photos\/28581876\/pexels-photo-28581876.jpeg?auto=compress&cs=tinysrgb&w=1920",
-        "heroAbout": "https:\/\/images.pexels.com\/photos\/13419316\/pexels-photo-13419316.jpeg?auto=compress&cs=tinysrgb&w=1920",
-        "heroContact": "https:\/\/images.pexels.com\/photos\/457881\/pexels-photo-457881.jpeg?auto=compress&cs=tinysrgb&w=1920",
-        "boatLongtail": "https:\/\/images.pexels.com\/photos\/237741\/pexels-photo-237741.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        "boatSpeedboat": "https:\/\/images.pexels.com\/photos\/90427\/pexels-photo-90427.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        "boatLarge": "https:\/\/images.pexels.com\/photos\/13680386\/pexels-photo-13680386.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        "programFourIslands": "https:\/\/images.pexels.com\/photos\/14573822\/pexels-photo-14573822.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        "programKradan": "https:\/\/images.pexels.com\/photos\/1450363\/pexels-photo-1450363.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        "programDiving": "https:\/\/images.pexels.com\/photos\/15763636\/pexels-photo-15763636.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        "programEmerald": "https:\/\/images.pexels.com\/photos\/1647064\/pexels-photo-1647064.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        "programPrivate": "https:\/\/images.pexels.com\/photos\/17942107\/pexels-photo-17942107.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "heroHome": "https://images.pexels.com/photos/14573822/pexels-photo-14573822.jpeg?auto=compress&cs=tinysrgb&w=1920",
+        "heroBoats": "https://images.pexels.com/photos/1591376/pexels-photo-1591376.jpeg?auto=compress&cs=tinysrgb&w=1920",
+        "heroPrograms": "https://images.pexels.com/photos/1647064/pexels-photo-1647064.jpeg?auto=compress&cs=tinysrgb&w=1920",
+        "heroBooking": "https://images.pexels.com/photos/31200075/pexels-photo-31200075.jpeg?auto=compress&cs=tinysrgb&w=1920",
+        "heroArticles": "https://images.pexels.com/photos/9164423/pexels-photo-9164423.jpeg?auto=compress&cs=tinysrgb&w=1920",
+        "heroVideos": "https://images.pexels.com/photos/28581876/pexels-photo-28581876.jpeg?auto=compress&cs=tinysrgb&w=1920",
+        "heroAbout": "https://images.pexels.com/photos/13419316/pexels-photo-13419316.jpeg?auto=compress&cs=tinysrgb&w=1920",
+        "heroContact": "https://images.pexels.com/photos/457881/pexels-photo-457881.jpeg?auto=compress&cs=tinysrgb&w=1920",
+        "boatLongtail": "https://images.pexels.com/photos/237741/pexels-photo-237741.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "boatSpeedboat": "https://images.pexels.com/photos/90427/pexels-photo-90427.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "boatLarge": "https://images.pexels.com/photos/13680386/pexels-photo-13680386.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "programFourIslands": "https://images.pexels.com/photos/14573822/pexels-photo-14573822.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "programKradan": "https://images.pexels.com/photos/1450363/pexels-photo-1450363.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "programDiving": "https://images.pexels.com/photos/15763636/pexels-photo-15763636.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "programEmerald": "https://images.pexels.com/photos/1647064/pexels-photo-1647064.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "programPrivate": "https://images.pexels.com/photos/17942107/pexels-photo-17942107.jpeg?auto=compress&cs=tinysrgb&w=1200",
         "videoThumbs": [
-            "https:\/\/images.pexels.com\/photos\/14573822\/pexels-photo-14573822.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https:\/\/images.pexels.com\/photos\/15763636\/pexels-photo-15763636.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https:\/\/images.pexels.com\/photos\/90427\/pexels-photo-90427.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https:\/\/images.pexels.com\/photos\/13419316\/pexels-photo-13419316.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https:\/\/images.pexels.com\/photos\/1647064\/pexels-photo-1647064.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https:\/\/images.pexels.com\/photos\/1450363\/pexels-photo-1450363.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https:\/\/images.pexels.com\/photos\/6698714\/pexels-photo-6698714.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https:\/\/images.pexels.com\/photos\/28581876\/pexels-photo-28581876.jpeg?auto=compress&cs=tinysrgb&w=800"
+            "https://images.pexels.com/photos/14573822/pexels-photo-14573822.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/15763636/pexels-photo-15763636.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/90427/pexels-photo-90427.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/13419316/pexels-photo-13419316.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/1647064/pexels-photo-1647064.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/1450363/pexels-photo-1450363.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/6698714/pexels-photo-6698714.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/28581876/pexels-photo-28581876.jpeg?auto=compress&cs=tinysrgb&w=800"
         ],
-        "about1": "https:\/\/images.pexels.com\/photos\/1591376\/pexels-photo-1591376.jpeg?auto=compress&cs=tinysrgb&w=1000",
-        "about2": "https:\/\/images.pexels.com\/photos\/237741\/pexels-photo-237741.jpeg?auto=compress&cs=tinysrgb&w=1000",
-        "about3": "https:\/\/images.pexels.com\/photos\/31029704\/pexels-photo-31029704.jpeg?auto=compress&cs=tinysrgb&w=1000",
-        "svcBigBoat": "https:\/\/images.pexels.com\/photos\/13680386\/pexels-photo-13680386.jpeg?auto=compress&cs=tinysrgb&w=900",
-        "svcLongtail": "https:\/\/images.pexels.com\/photos\/1591376\/pexels-photo-1591376.jpeg?auto=compress&cs=tinysrgb&w=900",
-        "svcSpeedboat": "https:\/\/images.pexels.com\/photos\/90427\/pexels-photo-90427.jpeg?auto=compress&cs=tinysrgb&w=900",
-        "svcHotel": "https:\/\/images.pexels.com\/photos\/5740342\/pexels-photo-5740342.jpeg?auto=compress&cs=tinysrgb&w=900",
-        "svcFerry": "https:\/\/images.pexels.com\/photos\/14573822\/pexels-photo-14573822.jpeg?auto=compress&cs=tinysrgb&w=900",
-        "svcCar": "https:\/\/images.pexels.com\/photos\/15804640\/pexels-photo-15804640.jpeg?auto=compress&cs=tinysrgb&w=900",
-        "svcSeminar": "https:\/\/images.pexels.com\/photos\/3184292\/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=900",
-        "svcScuba": "https:\/\/images.pexels.com\/photos\/6173672\/pexels-photo-6173672.jpeg?auto=compress&cs=tinysrgb&w=900",
-        "svcFood": "https:\/\/images.pexels.com\/photos\/769289\/pexels-photo-769289.jpeg?auto=compress&cs=tinysrgb&w=900",
-        "svcPlan": "https:\/\/images.pexels.com\/photos\/7235811\/pexels-photo-7235811.jpeg?auto=compress&cs=tinysrgb&w=900",
-        "svcFilm": "https:\/\/images.pexels.com\/photos\/17051407\/pexels-photo-17051407.jpeg?auto=compress&cs=tinysrgb&w=900",
+        "about1": "https://images.pexels.com/photos/1591376/pexels-photo-1591376.jpeg?auto=compress&cs=tinysrgb&w=1000",
+        "about2": "https://images.pexels.com/photos/237741/pexels-photo-237741.jpeg?auto=compress&cs=tinysrgb&w=1000",
+        "about3": "https://images.pexels.com/photos/31029704/pexels-photo-31029704.jpeg?auto=compress&cs=tinysrgb&w=1000",
+        "svcBigBoat": "https://images.pexels.com/photos/13680386/pexels-photo-13680386.jpeg?auto=compress&cs=tinysrgb&w=900",
+        "svcLongtail": "https://images.pexels.com/photos/1591376/pexels-photo-1591376.jpeg?auto=compress&cs=tinysrgb&w=900",
+        "svcSpeedboat": "https://images.pexels.com/photos/90427/pexels-photo-90427.jpeg?auto=compress&cs=tinysrgb&w=900",
+        "svcHotel": "https://images.pexels.com/photos/5740342/pexels-photo-5740342.jpeg?auto=compress&cs=tinysrgb&w=900",
+        "svcFerry": "https://images.pexels.com/photos/14573822/pexels-photo-14573822.jpeg?auto=compress&cs=tinysrgb&w=900",
+        "svcCar": "https://images.pexels.com/photos/15804640/pexels-photo-15804640.jpeg?auto=compress&cs=tinysrgb&w=900",
+        "svcSeminar": "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=900",
+        "svcScuba": "https://images.pexels.com/photos/6173672/pexels-photo-6173672.jpeg?auto=compress&cs=tinysrgb&w=900",
+        "svcFood": "https://images.pexels.com/photos/769289/pexels-photo-769289.jpeg?auto=compress&cs=tinysrgb&w=900",
+        "svcPlan": "https://images.pexels.com/photos/7235811/pexels-photo-7235811.jpeg?auto=compress&cs=tinysrgb&w=900",
+        "svcFilm": "https://images.pexels.com/photos/17051407/pexels-photo-17051407.jpeg?auto=compress&cs=tinysrgb&w=900",
         "local": [
-            "assets\/images\/img-01.webp",
-            "assets\/images\/img-02.webp",
-            "assets\/images\/img-03.webp",
-            "assets\/images\/img-04.webp",
-            "assets\/images\/img-05.webp",
-            "assets\/images\/img-06.webp",
-            "assets\/images\/img-07.webp",
-            "assets\/images\/img-08.webp",
-            "assets\/images\/img-09.webp",
-            "assets\/images\/img-10.webp",
-            "assets\/images\/img-11.webp"
+            "assets/images/img-01.webp",
+            "assets/images/img-02.webp",
+            "assets/images/img-03.webp",
+            "assets/images/img-04.webp",
+            "assets/images/img-05.webp",
+            "assets/images/img-06.webp",
+            "assets/images/img-07.webp",
+            "assets/images/img-08.webp",
+            "assets/images/img-09.webp",
+            "assets/images/img-10.webp",
+            "assets/images/img-11.webp"
         ]
     },
     "site": {
@@ -66,18 +66,18 @@
         "phone": "091-0401234",
         "phoneDisplay": "091-0401234",
         "lineId": "@talaytrang",
-        "lineUrl": "https:\/\/line.me\/R\/ti\/p\/%40talaytrang",
-        "facebookUrl": "https:\/\/www.facebook.com\/gototrang",
-        "facebookPageUrl": "https:\/\/www.facebook.com\/gototrang",
-        "tiktokUrl": "https:\/\/www.tiktok.com\/@talaytrang",
+        "lineUrl": "https://line.me/R/ti/p/%40talaytrang",
+        "facebookUrl": "https://www.facebook.com/gototrang",
+        "facebookPageUrl": "https://www.facebook.com/gototrang",
+        "tiktokUrl": "https://www.tiktok.com/@talaytrang",
         "address": "ท่าเรือปากเมง อำเภอสิเกา",
-        "addressFull": "ทะเลตรัง ดอท คอม 54\/43 หมู่ 4 ตำบลไม้ฝาด อำเภอสิเกา จังหวัดตรัง 92150",
+        "addressFull": "ทะเลตรัง ดอท คอม 54/43 หมู่ 4 ตำบลไม้ฝาด อำเภอสิเกา จังหวัดตรัง 92150",
         "hours": "เปิดบริการทุกวัน 07:00 – 21:00 น.",
         "popupEnabled": true,
         "popupHoursWeekday": "จันทร์ - เสาร์ 07:00-21:00 น.",
         "popupHoursSunday": "อาทิตย์ 07:00-21:00 น.",
         "lineQrImage": "",
-        "mapEmbed": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d3955.623652707721!2d99.3106074764121!3d7.506732292505827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3052730017ef3733%3A0x91700d5b69ab25b!2z4LiX4Liw4LmA4Lil4LiV4Lij4Lix4LiHIOC4lOC4reC4lyDguITguK3guKEg4Liq4Liy4LiC4Liy4LiX4LmI4Liy4LmA4Lij4Li34Lit4Lib4Liy4LiB4LmA4Lih4LiH!5e0!3m2!1sth!2sth!4v1780455350204!5m2!1sth!2sth"
+        "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.623652707721!2d99.3106074764121!3d7.506732292505827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3052730017ef3733%3A0x91700d5b69ab25b!2z4LiX4Liw4LmA4Lil4LiV4Lij4Lix4LiHIOC4lOC4reC4lyDguITguK3guKEg4Liq4Liy4LiC4Liy4LiX4LmI4Liy4LmA4Lij4Li34Lit4Lib4Liy4LiB4LmA4Lih4LiH!5e0!3m2!1sth!2sth!4v1780455350204!5m2!1sth!2sth"
     },
     "navItems": [
         {
@@ -114,7 +114,7 @@
             "id": "longtail",
             "name": "เรือหางยาว",
             "tag": "ประหยัด ปลอดภัย เที่ยวเต็มอิ่ม",
-            "image": "assets\/uploads\/20260602-181538-54158826.png",
+            "image": "assets/uploads/20260602-181538-54158826.png",
             "capacity": "1–18 ท่าน",
             "capacityMax": 10,
             "basePrice": 4000,
@@ -138,7 +138,7 @@
             "id": "speedboat",
             "name": "Speed Boat",
             "tag": "รวดเร็ว เต็มอิ่มมาก",
-            "image": "assets\/uploads\/20260602-181649-b834b3a1.png",
+            "image": "assets/uploads/20260602-181649-b834b3a1.png",
             "capacity": "12–45 ท่าน",
             "capacityMax": 25,
             "basePrice": 10000,
@@ -162,7 +162,7 @@
             "id": "bigboat",
             "name": "เรือใหญ่",
             "tag": "Premium Group",
-            "image": "assets\/uploads\/20260602-181740-ef2b0dd3.png",
+            "image": "assets/uploads/20260602-181740-ef2b0dd3.png",
             "capacity": "30–120 ท่าน",
             "capacityMax": 60,
             "basePrice": 12000,
@@ -191,16 +191,16 @@
             "desc": "อาหารกล่อง อาหารจานเดียว",
             "price": 100,
             "unit": "per_person",
-            "priceLabel": "+100 บาท\/กล่อง"
+            "priceLabel": "+100 บาท/กล่อง"
         },
         {
             "id": "guide",
             "icon": "users",
             "label": "ไกด์นำเที่ยว",
-            "desc": "ไกด์ท้องถิ่นพูดไทย\/อังกฤษ",
+            "desc": "ไกด์ท้องถิ่นพูดไทย/อังกฤษ",
             "price": 1500,
             "unit": "flat",
-            "priceLabel": "+1,500 บาท\/ทริป"
+            "priceLabel": "+1,500 บาท/ทริป"
         },
         {
             "id": "photo",
@@ -209,7 +209,7 @@
             "desc": "ส่งภาพภายใน 1 วัน ผ่าน Google Drive ใช้กล้องใหญ่+Gopro",
             "price": 1000,
             "unit": "flat",
-            "priceLabel": "+1000 บาท\/ทริป"
+            "priceLabel": "+1000 บาท/ทริป"
         },
         {
             "id": "National Park Fee",
@@ -218,7 +218,7 @@
             "desc": "ค่าธรรมเนียมอุทยานคนไทย",
             "price": 40,
             "unit": "per_person",
-            "priceLabel": "+40 บาท\/คน"
+            "priceLabel": "+40 บาท/คน"
         },
         {
             "id": "shuttle",
@@ -227,14 +227,14 @@
             "desc": "รับส่งจากที่พักในตัวเมือง",
             "price": 1000,
             "unit": "flat",
-            "priceLabel": "+1,000 บาท\/ทริป"
+            "priceLabel": "+1,000 บาท/ทริป"
         }
     ],
     "programs": [
         {
             "id": "dl001",
             "name": "4 เกาะทะเลตรัง : เรือหางยาว",
-            "image": "assets\/uploads\/20260612-141642-be55380f.png",
+            "image": "assets/uploads/20260612-141642-be55380f.png",
             "route": "ถ้ำมรกต เกาะกระดาน เกาะแหวน เกาะเชือก",
             "stops": [
                 "ถ้ำมรกต",
@@ -255,15 +255,15 @@
             "stars": 5,
             "packageCode": "DL001",
             "gallery": [
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/Oneday3.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/Oneday2.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ27.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ12.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ15.jpg"
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/Oneday3.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/Oneday2.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ27.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ12.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ15.jpg"
             ],
             "galleryCaption": "ถ้ำมรกต เกาะกระดาน เกาะแหวน เกาะเชือก",
-            "licenseNo": "43\/00540",
+            "licenseNo": "43/00540",
             "itinerary": [
                 {
                     "time": "07:30",
@@ -300,7 +300,7 @@
             "inclusions": [
                 "เรือหางยาวนำเที่ยวทะเลตรัง",
                 "อาหารเที่ยง (อาหารกล่อง)",
-                "สตาฟดูแล \/ ไกด์",
+                "สตาฟดูแล / ไกด์",
                 "อุปกรณ์ดำน้ำ หน้ากาก เสื้อชูชีพ",
                 "ค่าธรรมเนียมอุทยาน (คนไทย)",
                 "น้ำดื่ม · น้ำแข็ง",
@@ -311,7 +311,7 @@
             "priceNotes": [
                 "เด็กเล็ก 1–2.99 ปี ฟรี",
                 "เด็ก 3–11.99 ปี 650 บาท · ผู้ใหญ่ 12 ปีขึ้นไป 750 บาท",
-                "ไม่รวม: รถรับจากเมือง\/สนามบิน",
+                "ไม่รวม: รถรับจากเมือง/สนามบิน",
                 "ไม่รวม: ค่าธรรมเนียมชาวต่างชาติ 200 บาท"
             ],
             "warning": "โปรแกรมอาจเปลี่ยนแปลงตามสภาพอากาศ ระดับน้ำขึ้นลง และคลื่นลม แจ้งเลื่อนวันเที่ยวล่วงหน้า 7 วัน ไม่คืนเงินทุกกรณี"
@@ -319,7 +319,7 @@
         {
             "id": "dt001",
             "name": "4 เกาะทะเลตรัง : เรือทัวร์",
-            "image": "assets\/uploads\/20260612-143741-9af064af.png",
+            "image": "assets/uploads/20260612-143741-9af064af.png",
             "route": "ถ้ำมรกต เกาะกระดาน เกาะแหวน เกาะเชือก",
             "stops": [
                 "ถ้ำมรกต",
@@ -340,15 +340,15 @@
             "stars": 5,
             "packageCode": "DT001",
             "gallery": [
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2022\/11\/264629958_10159283950075219_1058486100921441363_n.jpeg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2022\/11\/264439900_10159283950040219_2792428098228166804_n.jpeg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2022\/11\/264234652_10159283949915219_4383131015909971884_n.jpeg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2022\/11\/263912644_10159283950000219_7697501730679810260_n.jpeg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2024\/10\/DJI_0173-scaled.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2024\/10\/IMG_7798-scaled.jpg"
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2022/11/264629958_10159283950075219_1058486100921441363_n.jpeg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2022/11/264439900_10159283950040219_2792428098228166804_n.jpeg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2022/11/264234652_10159283949915219_4383131015909971884_n.jpeg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2022/11/263912644_10159283950000219_7697501730679810260_n.jpeg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2024/10/DJI_0173-scaled.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2024/10/IMG_7798-scaled.jpg"
             ],
             "galleryCaption": "ถ้ำมรกต เกาะกระดาน เกาะแหวน เกาะเชือก",
-            "licenseNo": "43\/00540",
+            "licenseNo": "43/00540",
             "itinerary": [
                 {
                     "time": "07:30",
@@ -385,19 +385,19 @@
             "inclusions": [
                 "เรือทัวร์นำเที่ยวทะเลตรัง",
                 "อาหารเที่ยงบุฟเฟ่ต์บนเรือ",
-                "สตาฟดูแล \/ ไกด์",
+                "สตาฟดูแล / ไกด์",
                 "อุปกรณ์ดำน้ำ หน้ากาก เสื้อชูชีพ",
                 "ค่าธรรมเนียมอุทยาน (คนไทย)",
                 "กาแฟ · ของว่าง",
                 "ค่าประกันอุบัติเหตุ 1,000,000 บาท"
             ],
             "childPrice": 700,
-            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง · รับในเมือง +300 บาท\/ท่าน",
+            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง · รับในเมือง +300 บาท/ท่าน",
             "pickupSurcharge": 300,
             "priceNotes": [
                 "เด็กเล็ก 1–2.99 ปี ฟรี",
                 "เด็ก 3–11.99 ปี 700 บาท · ผู้ใหญ่ 950 บาท",
-                "รับในเมืองตรัง +300 บาท\/ท่าน",
+                "รับในเมืองตรัง +300 บาท/ท่าน",
                 "ไม่รวม: ค่าธรรมเนียมชาวต่างชาติ 200 บาท"
             ],
             "warning": "โปรแกรมอาจเปลี่ยนแปลงตามสภาพอากาศ ระดับน้ำขึ้นลง และคลื่นลม แจ้งเลื่อนวันเที่ยวล่วงหน้า 7 วัน ไม่คืนเงินทุกกรณี"
@@ -405,7 +405,7 @@
         {
             "id": "ds001",
             "name": "4 เกาะทะเลตรัง : เรือสปีดโบ๊ต",
-            "image": "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2024\/10\/1.jpg",
+            "image": "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2024/10/1.jpg",
             "route": "ถ้ำมรกต เกาะกระดาน เกาะแหวน เกาะเชือก",
             "stops": [
                 "ถ้ำมรกต",
@@ -426,15 +426,15 @@
             "stars": 5,
             "packageCode": "DS001",
             "gallery": [
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2024\/10\/1.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2024\/10\/2-copy.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2024\/10\/3-copy-1.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2024\/10\/20.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2024\/10\/21.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2024\/10\/41.jpg"
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2024/10/1.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2024/10/2-copy.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2024/10/3-copy-1.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2024/10/20.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2024/10/21.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2024/10/41.jpg"
             ],
             "galleryCaption": "ถ้ำมรกต เกาะกระดาน เกาะแหวน เกาะเชือก",
-            "licenseNo": "43\/00540",
+            "licenseNo": "43/00540",
             "itinerary": [
                 {
                     "time": "07:30",
@@ -471,19 +471,19 @@
             "inclusions": [
                 "สปีดโบตนำเที่ยวทะเลตรัง",
                 "อาหารเที่ยงบุฟเฟ่ต์",
-                "สตาฟดูแล \/ ไกด์",
+                "สตาฟดูแล / ไกด์",
                 "อุปกรณ์ดำน้ำ หน้ากาก เสื้อชูชีพ",
                 "ค่าธรรมเนียมอุทยาน (คนไทย)",
                 "น้ำดื่ม · น้ำแข็ง",
                 "ค่าประกันอุบัติเหตุ 1,000,000 บาท"
             ],
             "childPrice": 1050,
-            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง · รับในเมือง +300 บาท\/ท่าน",
+            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง · รับในเมือง +300 บาท/ท่าน",
             "pickupSurcharge": 300,
             "priceNotes": [
                 "เด็กเล็ก 1–2.99 ปี ฟรี",
                 "เด็ก 3–11.99 ปี 1,050 บาท · ผู้ใหญ่ 1,350 บาท",
-                "รับในเมืองตรัง +300 บาท\/ท่าน",
+                "รับในเมืองตรัง +300 บาท/ท่าน",
                 "ไม่รวม: ค่าธรรมเนียมชาวต่างชาติ 200 บาท"
             ],
             "warning": "โปรแกรมอาจเปลี่ยนแปลงตามสภาพอากาศ ระดับน้ำขึ้นลง และคลื่นลม แจ้งเลื่อนวันเที่ยวล่วงหน้า 7 วัน ไม่คืนเงินทุกกรณี"
@@ -491,7 +491,7 @@
         {
             "id": "ds002",
             "name": "เกาะรอก เกาะม้า : สปีดโบ๊ท",
-            "image": "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2024\/10\/2.jpg",
+            "image": "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2024/10/2.jpg",
             "route": "เกาะรอกใน → เกาะรอกนอก → เกาะม้า",
             "stops": [
                 "เกาะรอกนอก",
@@ -511,15 +511,15 @@
             "stars": 5,
             "packageCode": "DS002",
             "gallery": [
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2024\/10\/2.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2024\/10\/376680839_843059277512051_3308103829684356049_n.jpeg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2024\/10\/376687826_843059324178713_3684249815761429152_n.jpeg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2024\/10\/3-copy-1.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2024\/10\/02.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2024\/10\/05.jpg"
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2024/10/2.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2024/10/376680839_843059277512051_3308103829684356049_n.jpeg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2024/10/376687826_843059324178713_3684249815761429152_n.jpeg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2024/10/3-copy-1.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2024/10/02.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2024/10/05.jpg"
             ],
             "galleryCaption": "เกาะรอก เกาะม้า",
-            "licenseNo": "43\/00540",
+            "licenseNo": "43/00540",
             "itinerary": [
                 {
                     "time": "07:30",
@@ -561,19 +561,19 @@
             "inclusions": [
                 "สปีดโบตนำเที่ยว",
                 "อาหารเที่ยง",
-                "สตาฟดูแล \/ ไกด์",
+                "สตาฟดูแล / ไกด์",
                 "อุปกรณ์ดำน้ำ หน้ากาก เสื้อชูชีพ",
                 "ค่าธรรมเนียมอุทยาน (คนไทย)",
                 "น้ำดื่ม · น้ำแข็ง",
                 "ค่าประกันอุบัติเหตุ 1,000,000 บาท"
             ],
             "childPrice": 1650,
-            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง · รับในเมือง +300 บาท\/ท่าน",
+            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง · รับในเมือง +300 บาท/ท่าน",
             "pickupSurcharge": 300,
             "priceNotes": [
                 "เด็กเล็ก 1–2.99 ปี ฟรี",
                 "เด็ก 3–11.99 ปี 1,350 บาท · ผู้ใหญ่ 1,650 บาท",
-                "รับในเมืองตรัง +300 บาท\/ท่าน",
+                "รับในเมืองตรัง +300 บาท/ท่าน",
                 "ไม่รวม: ค่าธรรมเนียมชาวต่างชาติ 200 บาท"
             ],
             "warning": "ไม่เหมาะสำหรับสตรีมีครรภ์ หากมีโรคประจำตัวโปรดแจ้งไกค์ประจำเรือ · โปรแกรมอาจเปลี่ยนแปลงตามสภาพอากาศและคลื่นลม"
@@ -600,7 +600,7 @@
             "stars": 5,
             "galleryCaption": "เกาะเหลาเหลียง",
             "season": "1 ต.ค. – 31 พ.ค. · ออกเดินทางทุกวัน",
-            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง · รับในเมือง +200 บาท\/ท่าน",
+            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง · รับในเมือง +200 บาท/ท่าน",
             "pickupSurcharge": 200,
             "inclusions": [
                 "ค่าเรือ เรือSpeedboat ท่องทะเล",
@@ -617,16 +617,16 @@
                 "ไม่รวม: ภาษีมูลค่าเพิ่ม 7%  (กรณีต้องการเอกสารรับเงิน)"
             ],
             "warning": "โปรแกรมอาจเปลี่ยนแปลงตามสภาพอากาศ ระดับน้ำขึ้นลง และคลื่นลม แจ้งเลื่อนวันเที่ยวล่วงหน้า 7 วัน ไม่คืนเงินทุกกรณี",
-            "image": "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2025\/08\/Untitled-design.png",
+            "image": "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2025/08/Untitled-design.png",
             "gallery": [
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวเกาะเหลาเหลียงวันเดย์1.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวเกาะเหลาเหลียงวันเดย์2.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวเกาะเหลาเหลียงวันเดย์3.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวเกาะเหลาเหลียงวันเดย์25.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวเกาะเหลาเหลียงวันเดย์20.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2025\/08\/Untitled-design.png"
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวเกาะเหลาเหลียงวันเดย์1.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวเกาะเหลาเหลียงวันเดย์2.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวเกาะเหลาเหลียงวันเดย์3.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวเกาะเหลาเหลียงวันเดย์25.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวเกาะเหลาเหลียงวันเดย์20.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2025/08/Untitled-design.png"
             ],
-            "licenseNo": "43\/00540"
+            "licenseNo": "43/00540"
         },
         {
             "id": "d007",
@@ -650,7 +650,7 @@
             "stars": 5,
             "galleryCaption": "เจาะลึกเหลาเหลียง",
             "season": "1 ต.ค. – 31 พ.ค. · ออกเดินทางทุกวัน",
-            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง · รับในเมือง +200 บาท\/ท่าน",
+            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง · รับในเมือง +200 บาท/ท่าน",
             "pickupSurcharge": 200,
             "inclusions": [
                 "อาหารเที่ยง( มินิเซ็ต )",
@@ -667,21 +667,21 @@
                 "ไม่รวม: ภาษีมูลค่าเพิ่ม 7% (ในกรณีลูกค้าร้องขอ)"
             ],
             "warning": "โปรแกรมอาจเปลี่ยนแปลงตามสภาพอากาศ ระดับน้ำขึ้นลง และคลื่นลม แจ้งเลื่อนวันเที่ยวล่วงหน้า 7 วัน ไม่คืนเงินทุกกรณี",
-            "image": "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวเกาะเหลาเหลียงวันเดย์25.jpg",
+            "image": "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวเกาะเหลาเหลียงวันเดย์25.jpg",
             "gallery": [
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวเกาะเหลาเหลียงวันเดย์16.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวเกาะเหลาเหลียงวันเดย์25.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวเกาะเหลาเหลียงวันเดย์20.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวเกาะเหลาเหลียงวันเดย์1.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ1.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/Oneday3.jpg"
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวเกาะเหลาเหลียงวันเดย์16.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวเกาะเหลาเหลียงวันเดย์25.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวเกาะเหลาเหลียงวันเดย์20.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวเกาะเหลาเหลียงวันเดย์1.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ1.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/Oneday3.jpg"
             ],
-            "licenseNo": "43\/00540"
+            "licenseNo": "43/00540"
         },
         {
             "id": "d008",
             "name": "เจาะลึกเกาะมุกต์",
-            "image": "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/ถ้ำมรกต-1.jpg",
+            "image": "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/ถ้ำมรกต-1.jpg",
             "route": "เจาะลึกเกาะมุกต์",
             "stops": [
                 "ส้มผัสวิถีชุมชนเกาะมุกต์ เข้าถ้ำมรกต ชมหมู่บ้านปลาดาว ดำน้ำหินก้อนเดียว หาดสบาย"
@@ -699,15 +699,15 @@
             "stars": 5,
             "packageCode": "D-008",
             "gallery": [
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/ถ้ำมรกต-1.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/Oneday3.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/Oneday2.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ27.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ12.jpg"
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/ถ้ำมรกต-1.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/Oneday3.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/Oneday2.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ27.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ12.jpg"
             ],
             "galleryCaption": "เจาะลึกเกาะมุกต์",
-            "licenseNo": "43\/00540",
+            "licenseNo": "43/00540",
             "season": "1 ต.ค. – 31 พ.ค. · ออกเดินทางทุกวัน",
             "inclusions": [
                 "ค่าเรือหางยาว ท่องทะเล",
@@ -719,7 +719,7 @@
                 "สตาฟดูแล นำเที่ยวตลอดโปรแกรม"
             ],
             "childPrice": 600,
-            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง · รับในเมืองรถตู้ส่วนตัว 10 ที่นั่ง  +1000 บาท\/เที่ยว",
+            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง · รับในเมืองรถตู้ส่วนตัว 10 ที่นั่ง  +1000 บาท/เที่ยว",
             "priceNotes": [
                 "ไม่รวม: ค่าธรรมเนียมสำหรับชาวต่างชาติ 200 บาท",
                 "ไม่รวม: ภาษีมูลค่าเพิ่ม 7% หรือ ภาษีหัก ณ ที่จ่าย 3% (กรณีต้องการเอกสารรับเงิน)"
@@ -729,7 +729,7 @@
         {
             "id": "d009",
             "name": "เจาะลึกเกาะไหง",
-            "image": "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2024\/10\/Untitled-design-2-1.png",
+            "image": "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2024/10/Untitled-design-2-1.png",
             "route": "เจาะลึกเกาะไหง",
             "stops": [
                 "เกาะไหง เกาะที่ถูกลืม พบกับหาดที่สวยงาม ปะการัง ไหว้ขอพรหินเจ้าแม่กวนอิม ดูนกเงือก"
@@ -747,15 +747,15 @@
             "stars": 5,
             "packageCode": "D-009",
             "gallery": [
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ2.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ1.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ3.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ18.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ27.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2024\/10\/Untitled-design-2-1.png"
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ2.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ1.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ3.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ18.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ27.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2024/10/Untitled-design-2-1.png"
             ],
             "galleryCaption": "เจาะลึกเกาะไหง",
-            "licenseNo": "43\/00540",
+            "licenseNo": "43/00540",
             "season": "1 ต.ค. – 31 พ.ค. · ออกเดินทางทุกวัน",
             "inclusions": [
                 "ค่าเรือทัวร์ท่องทะเล",
@@ -768,7 +768,7 @@
                 "ค่ามัคคุเทศน์นำเที่ยวตลอดโปรแกรม"
             ],
             "childPrice": 510,
-            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง · รับในเมือง +200 บาท\/ท่าน",
+            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง · รับในเมือง +200 บาท/ท่าน",
             "pickupSurcharge": 200,
             "priceNotes": [
                 "ไม่รวม: ค่าธรรมเนียมสำหรับชาวต่างชาติ 400 บาท",
@@ -781,7 +781,7 @@
         {
             "id": "p1-001",
             "name": "ไปเช้าเย็นกลับ 4 เกาะ (เรือหางยาว)",
-            "image": "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/Oneday3.jpg",
+            "image": "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/Oneday3.jpg",
             "route": "ถ้ำมรกต → เกาะกระดาน → เกาะแหวน → เกาะเชือก",
             "stops": [
                 "วัน 1: ทะเลตรัง 4 เกาะ (ถ้ำมรกต · เกาะกระดาน · เกาะแหวน · เกาะเชือก)",
@@ -800,15 +800,15 @@
             "stars": 5,
             "packageCode": "P1-L001",
             "gallery": [
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/Oneday3.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/Oneday2.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ27.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ12.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ15.jpg"
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/Oneday3.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/Oneday2.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ27.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ12.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ15.jpg"
             ],
             "galleryCaption": "ถ้ำมรกต เกาะกระดาน เกาะแหวน เกาะเชือก",
-            "licenseNo": "43\/00540",
+            "licenseNo": "43/00540",
             "itinerary": [
                 {
                     "time": "09:00",
@@ -856,12 +856,12 @@
                     "text": "เก็บสัมภาระ จบโปรแกรม"
                 }
             ],
-            "season": "เริ่ม 1 ตุลาคม – 31 พฤษภาคม ออกเดินทางทุกวัน ตั้งแต่ 6 ท่านขึ้นไป · ช่วงเทศกาล +300 บาท\/ท่าน · สลับวันเที่ยวได้",
+            "season": "เริ่ม 1 ตุลาคม – 31 พฤษภาคม ออกเดินทางทุกวัน ตั้งแต่ 6 ท่านขึ้นไป · ช่วงเทศกาล +300 บาท/ท่าน · สลับวันเที่ยวได้",
             "inclusions": [
                 "เรือหางยาวนำเที่ยวทะเลตรัง",
                 "อาหารเที่ยง",
                 "ห้องพัก 1 คืน",
-                "สตาฟดูแล \/ ไกด์",
+                "สตาฟดูแล / ไกด์",
                 "อุปกรณ์ดำน้ำ หน้ากาก เสื้อชูชีพ",
                 "ค่าธรรมเนียมอุทยาน (คนไทย)",
                 "ค่าประกันอุบัติเหตุ 1,000,000 บาท"
@@ -951,11 +951,11 @@
                     ]
                 }
             ],
-            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง · ราคาเริ่มต้น 975 บาท\/ท่าน (เลือกโรงแรมได้)",
+            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง · ราคาเริ่มต้น 975 บาท/ท่าน (เลือกโรงแรมได้)",
             "priceNotes": [
                 "ไม่รวม: อาหารเย็น",
                 "ไม่รวม: อาหารเช้า (ยกเว้นแพ็กเกจเกาะไหงที่ระบุรวม)",
-                "ไม่รวม: รถส่งกลับสนามบิน \/ บขส.",
+                "ไม่รวม: รถส่งกลับสนามบิน / บขส.",
                 "ไม่รวม: ค่าธรรมเนียมชาวต่างชาติ 200 บาท",
                 "ไม่รวม: ภาษีมูลค่าเพิ่ม 7% หรือหัก ณ ที่จ่าย 3% (กรณีขอใบเสร็จ)"
             ],
@@ -964,7 +964,7 @@
         {
             "id": "p1-002",
             "name": "ทะเลตรัง 4 เกาะ นอนเกาะไหง",
-            "image": "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/08\/Kohrok-22259_9033-min.jpg",
+            "image": "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/08/Kohrok-22259_9033-min.jpg",
             "route": "ถ้ำมรกต → เกาะกระดาน → เกาะแหวน → เกาะเชือก (พักเกาะไหง)",
             "stops": [
                 "วัน 1: ทะเลตรัง 4 เกาะ (ถ้ำมรกต · เกาะกระดาน · เกาะแหวน · เกาะเชือก)",
@@ -983,16 +983,16 @@
             "stars": 5,
             "packageCode": "P1-L003",
             "gallery": [
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/08\/Kohrok-22259_9033-min.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/08\/Kohrok-22259_1744-min.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/08\/Kohrok-22259_7011-min.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/08\/Kohrok-22259_4603-min.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/08\/Kohrok-22259_1337-min.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/08\/Kohrok-22259_674-min.jpg"
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/08/Kohrok-22259_9033-min.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/08/Kohrok-22259_1744-min.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/08/Kohrok-22259_7011-min.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/08/Kohrok-22259_4603-min.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/08/Kohrok-22259_1337-min.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/08/Kohrok-22259_674-min.jpg"
             ],
             "galleryCaption": "ถ้ำมรกต เกาะกระดาน เกาะแหวน เกาะเชือก",
-            "licenseNo": "43\/00540",
-            "season": "เริ่ม 1 ตุลาคม – 31 พฤษภาคม · ราคานี้เริ่มตั้งแต่ 6 ท่านขึ้นไป · ช่วงเทศกาล +300 บาท\/ท่าน",
+            "licenseNo": "43/00540",
+            "season": "เริ่ม 1 ตุลาคม – 31 พฤษภาคม · ราคานี้เริ่มตั้งแต่ 6 ท่านขึ้นไป · ช่วงเทศกาล +300 บาท/ท่าน",
             "inclusions": [
                 "เรือหางยาวท่องเที่ยวทะเลตรัง 4 เกาะ",
                 "อาหารเที่ยง 1 มื้อ · อาหารเช้า 1 มื้อ",
@@ -1003,11 +1003,11 @@
                 "อุปกรณ์ดำน้ำ · เสื้อชูชีพ · น้ำดื่ม",
                 "เรือหางยาวกลับฝั่ง"
             ],
-            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง · ราคาเริ่มต้น 1,500 บาท\/ท่าน",
+            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง · ราคาเริ่มต้น 1,500 บาท/ท่าน",
             "priceNotes": [
                 "ไม่รวม: อาหารเย็น",
                 "ไม่รวม: ค่าธรรมเนียมชาวต่างชาติ 200 บาท",
-                "ไม่รวม: ภาษีมูลค่าเพิ่ม \/ หัก ณ ที่จ่าย (กรณีขอใบเสร็จ)"
+                "ไม่รวม: ภาษีมูลค่าเพิ่ม / หัก ณ ที่จ่าย (กรณีขอใบเสร็จ)"
             ],
             "itinerary": [
                 {
@@ -1058,7 +1058,7 @@
                     "rooms": [
                         {
                             "name": "ห้องมาตรฐาน",
-                            "book": true
+                            "price": 1500
                         }
                     ]
                 },
@@ -1067,7 +1067,7 @@
                     "rooms": [
                         {
                             "name": "ห้องมาตรฐาน",
-                            "book": true
+                            "price": 1700
                         }
                     ]
                 },
@@ -1076,7 +1076,7 @@
                     "rooms": [
                         {
                             "name": "ห้องมาตรฐาน",
-                            "book": true
+                            "price": 1900
                         }
                     ]
                 },
@@ -1085,7 +1085,7 @@
                     "rooms": [
                         {
                             "name": "ห้องมาตรฐาน",
-                            "book": true
+                            "price": 2100
                         }
                     ]
                 }
@@ -1094,7 +1094,7 @@
         {
             "id": "p1-003",
             "name": "ทะเลตรัง 4 เกาะ นอนในเมืองตรัง",
-            "image": "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/Oneday2.jpg",
+            "image": "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/Oneday2.jpg",
             "route": "ถ้ำมรกต → เกาะกระดาน → เกาะแหวน → เกาะเชือก",
             "stops": [
                 "วัน 1: ทะเลตรัง 4 เกาะ (ถ้ำมรกต · เกาะกระดาน · เกาะแหวน · เกาะเชือก)",
@@ -1113,22 +1113,22 @@
             "stars": 5,
             "packageCode": "P1-L002",
             "gallery": [
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/Oneday3.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/Oneday2.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ27.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ12.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ15.jpg"
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/Oneday3.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/Oneday2.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ27.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ12.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ15.jpg"
             ],
             "galleryCaption": "ถ้ำมรกต เกาะกระดาน เกาะแหวน เกาะเชือก",
-            "licenseNo": "43\/00540",
-            "season": "เริ่ม 1 ตุลาคม – 31 พฤษภาคม ออกเดินทางทุกวัน ตั้งแต่ 6 ท่านขึ้นไป · ช่วงเทศกาล +300 บาท\/ท่าน · สลับวันเที่ยวได้",
+            "licenseNo": "43/00540",
+            "season": "เริ่ม 1 ตุลาคม – 31 พฤษภาคม ออกเดินทางทุกวัน ตั้งแต่ 6 ท่านขึ้นไป · ช่วงเทศกาล +300 บาท/ท่าน · สลับวันเที่ยวได้",
             "inclusions": [
                 "เรือหางยาวนำเที่ยวทะเลตรัง",
                 "อาหารเที่ยง",
                 "ห้องพัก 1 คืน ในเมืองตรัง",
                 "รถรับส่งในเมือง (ตามเงื่อนไข)",
-                "สตาฟดูแล \/ ไกด์",
+                "สตาฟดูแล / ไกด์",
                 "อุปกรณ์ดำน้ำ หน้ากาก เสื้อชูชีพ",
                 "ค่าธรรมเนียมอุทยาน (คนไทย)",
                 "ค่าประกันอุบัติเหตุ 1,000,000 บาท"
@@ -1137,7 +1137,7 @@
             "priceNotes": [
                 "ไม่รวม: อาหารเย็น",
                 "ไม่รวม: อาหารเช้า (ยกเว้นแพ็กเกจเกาะไหงที่ระบุรวม)",
-                "ไม่รวม: รถส่งกลับสนามบิน \/ บขส.",
+                "ไม่รวม: รถส่งกลับสนามบิน / บขส.",
                 "ไม่รวม: ค่าธรรมเนียมชาวต่างชาติ 200 บาท",
                 "ไม่รวม: ภาษีมูลค่าเพิ่ม 7% หรือหัก ณ ที่จ่าย 3% (กรณีขอใบเสร็จ)"
             ],
@@ -1279,7 +1279,7 @@
         {
             "id": "p1-004",
             "name": "ทะเลตรัง 4 เกาะ นอนหาดปากเมง",
-            "image": "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
+            "image": "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
             "route": "ถ้ำมรกต → เกาะกระดาน → เกาะแหวน → เกาะเชือก",
             "stops": [
                 "วัน 1: ทะเลตรัง 4 เกาะ (ถ้ำมรกต · เกาะกระดาน · เกาะแหวน · เกาะเชือก)",
@@ -1298,31 +1298,31 @@
             "stars": 5,
             "packageCode": "P1-B001",
             "gallery": [
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/Oneday3.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/Oneday2.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ27.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ12.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ15.jpg"
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/Oneday3.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/Oneday2.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ27.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ12.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ15.jpg"
             ],
             "galleryCaption": "ถ้ำมรกต เกาะกระดาน เกาะแหวน เกาะเชือก",
-            "licenseNo": "43\/00540",
-            "season": "เริ่ม 1 ตุลาคม – 31 พฤษภาคม ออกเดินทางทุกวัน ตั้งแต่ 2 ท่านขึ้นไป · ช่วงเทศกาล +300 บาท\/ท่าน · สลับวันเที่ยวได้",
+            "licenseNo": "43/00540",
+            "season": "เริ่ม 1 ตุลาคม – 31 พฤษภาคม ออกเดินทางทุกวัน ตั้งแต่ 2 ท่านขึ้นไป · ช่วงเทศกาล +300 บาท/ท่าน · สลับวันเที่ยวได้",
             "inclusions": [
                 "เรือทัวร์นำเที่ยวทะเลตรัง",
                 "อาหารเที่ยงบุฟเฟ่ต์บนเรือ",
                 "ห้องพัก 1 คืน",
-                "สตาฟดูแล \/ ไกด์",
+                "สตาฟดูแล / ไกด์",
                 "อุปกรณ์ดำน้ำ หน้ากาก เสื้อชูชีพ",
                 "ค่าธรรมเนียมอุทยาน (คนไทย)",
                 "กาแฟ · อาหารว่าง · น้ำดื่ม",
                 "ค่าประกันอุบัติเหตุ 1,000,000 บาท"
             ],
-            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง · ราคาเริ่มต้น 1,275 บาท\/ท่าน",
+            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง · ราคาเริ่มต้น 1,275 บาท/ท่าน",
             "priceNotes": [
                 "ไม่รวม: อาหารเย็น",
                 "ไม่รวม: อาหารเช้า (ยกเว้นแพ็กเกจเกาะไหงที่ระบุรวม)",
-                "ไม่รวม: รถส่งกลับสนามบิน \/ บขส.",
+                "ไม่รวม: รถส่งกลับสนามบิน / บขส.",
                 "ไม่รวม: ค่าธรรมเนียมชาวต่างชาติ 200 บาท",
                 "ไม่รวม: ภาษีมูลค่าเพิ่ม 7% หรือหัก ณ ที่จ่าย 3% (กรณีขอใบเสร็จ)"
             ],
@@ -1463,7 +1463,7 @@
         {
             "id": "p1-005",
             "name": "ทะเลตรัง 4 เกาะ นอนเกาะไหง",
-            "image": "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ27.jpg",
+            "image": "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ27.jpg",
             "route": "ถ้ำมรกต → เกาะกระดาน → เกาะแหวน → เกาะเชือก (พักเกาะไหง)",
             "stops": [
                 "วัน 1: ทะเลตรัง 4 เกาะ (ถ้ำมรกต · เกาะกระดาน · เกาะแหวน · เกาะเชือก)",
@@ -1482,16 +1482,16 @@
             "stars": 5,
             "packageCode": "P1-B003",
             "gallery": [
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/Oneday3.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/Oneday2.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ27.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ12.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ15.jpg"
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/Oneday3.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/Oneday2.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ27.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ12.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ15.jpg"
             ],
             "galleryCaption": "ถ้ำมรกต เกาะกระดาน เกาะแหวน เกาะเชือก",
-            "licenseNo": "43\/00540",
-            "season": "เริ่ม 16 ตุลาคม – 31 พฤษภาคม · ออกเดินทางตั้งแต่ 2 ท่านขึ้นไป · ช่วงเทศกาล +300 บาท\/ท่าน",
+            "licenseNo": "43/00540",
+            "season": "เริ่ม 16 ตุลาคม – 31 พฤษภาคม · ออกเดินทางตั้งแต่ 2 ท่านขึ้นไป · ช่วงเทศกาล +300 บาท/ท่าน",
             "inclusions": [
                 "เรือทัวร์ทะเลตรัง 4 เกาะ",
                 "อาหารเที่ยง 1 มื้อ · อาหารเช้า 1 มื้อ",
@@ -1502,11 +1502,11 @@
                 "อุปกรณ์ดำน้ำ · เสื้อชูชีพ · น้ำดื่ม · น้ำแข็ง",
                 "เรือกลับฝั่ง"
             ],
-            "priceMeetingNote": "รับลูกค้าในเมืองตรัง · ราคาเริ่มต้น 2,800 บาท\/ท่าน",
+            "priceMeetingNote": "รับลูกค้าในเมืองตรัง · ราคาเริ่มต้น 2,800 บาท/ท่าน",
             "priceNotes": [
                 "ไม่รวม: อาหารเย็น",
                 "ไม่รวม: ค่าธรรมเนียมชาวต่างชาติ 200 บาท",
-                "หมายเหตุ: หากเรือใหญ่เข้าหน้าที่พักไม่ได้ อาจต้องชำระเรือหางยาวเพิ่ม 100 บาท\/ท่าน\/เที่ยว"
+                "หมายเหตุ: หากเรือใหญ่เข้าหน้าที่พักไม่ได้ อาจต้องชำระเรือหางยาวเพิ่ม 100 บาท/ท่าน/เที่ยว"
             ],
             "pickupSurcharge": 0,
             "itinerary": [
@@ -1558,7 +1558,7 @@
                     "rooms": [
                         {
                             "name": "ห้องมาตรฐาน",
-                            "book": true
+                            "price": 2800
                         }
                     ]
                 },
@@ -1567,7 +1567,7 @@
                     "rooms": [
                         {
                             "name": "ห้องมาตรฐาน",
-                            "book": true
+                            "price": 3173
                         }
                     ]
                 },
@@ -1576,7 +1576,7 @@
                     "rooms": [
                         {
                             "name": "ห้องมาตรฐาน",
-                            "book": true
+                            "price": 3547
                         }
                     ]
                 },
@@ -1585,7 +1585,7 @@
                     "rooms": [
                         {
                             "name": "ห้องมาตรฐาน",
-                            "book": true
+                            "price": 3920
                         }
                     ]
                 }
@@ -1594,7 +1594,7 @@
         {
             "id": "p1-006",
             "name": "ทะเลตรัง 4 เกาะ นอนในเมืองตรัง",
-            "image": "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ12.jpg",
+            "image": "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ12.jpg",
             "route": "ถ้ำมรกต → เกาะกระดาน → เกาะแหวน → เกาะเชือก",
             "stops": [
                 "วัน 1: ทะเลตรัง 4 เกาะ (ถ้ำมรกต · เกาะกระดาน · เกาะแหวน · เกาะเชือก)",
@@ -1613,22 +1613,22 @@
             "stars": 5,
             "packageCode": "P1-B002",
             "gallery": [
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/Oneday3.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/Oneday2.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ27.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ12.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ15.jpg"
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/Oneday3.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/Oneday2.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ27.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ12.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ15.jpg"
             ],
             "galleryCaption": "ถ้ำมรกต เกาะกระดาน เกาะแหวน เกาะเชือก",
-            "licenseNo": "43\/00540",
-            "season": "เริ่ม 1 ตุลาคม – 31 พฤษภาคม ออกเดินทางทุกวัน ตั้งแต่ 2 ท่านขึ้นไป · ช่วงเทศกาล +300 บาท\/ท่าน · สลับวันเที่ยวได้",
+            "licenseNo": "43/00540",
+            "season": "เริ่ม 1 ตุลาคม – 31 พฤษภาคม ออกเดินทางทุกวัน ตั้งแต่ 2 ท่านขึ้นไป · ช่วงเทศกาล +300 บาท/ท่าน · สลับวันเที่ยวได้",
             "inclusions": [
                 "เรือทัวร์นำเที่ยวทะเลตรัง",
                 "อาหารเที่ยงบุฟเฟ่ต์บนเรือ",
                 "ห้องพัก 1 คืน ในเมืองตรัง",
                 "รถรับส่งในเมือง (ตามเงื่อนไข)",
-                "สตาฟดูแล \/ ไกด์",
+                "สตาฟดูแล / ไกด์",
                 "อุปกรณ์ดำน้ำ หน้ากาก เสื้อชูชีพ",
                 "ค่าธรรมเนียมอุทยาน (คนไทย)",
                 "กาแฟ · อาหารว่าง · น้ำดื่ม",
@@ -1638,7 +1638,7 @@
             "priceNotes": [
                 "ไม่รวม: อาหารเย็น",
                 "ไม่รวม: อาหารเช้า (ยกเว้นแพ็กเกจเกาะไหงที่ระบุรวม)",
-                "ไม่รวม: รถส่งกลับสนามบิน \/ บขส.",
+                "ไม่รวม: รถส่งกลับสนามบิน / บขส.",
                 "ไม่รวม: ค่าธรรมเนียมชาวต่างชาติ 200 บาท",
                 "ไม่รวม: ภาษีมูลค่าเพิ่ม 7% หรือหัก ณ ที่จ่าย 3% (กรณีขอใบเสร็จ)"
             ],
@@ -1779,7 +1779,7 @@
         {
             "id": "p1-007",
             "name": "เที่ยวเกาะเหลาเหลียง นอนเกาะลิบง",
-            "image": "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวเกาะเหลาเหลียงวันเดย์25.jpg",
+            "image": "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวเกาะเหลาเหลียงวันเดย์25.jpg",
             "route": "เกาะเหลาเหลียง → เกาะลิบง (พักค้างคืน)",
             "stops": [
                 "วัน 1: เที่ยวเกาะเหลาเหลียง + พักโฮมสเตย์เกาะลิบง",
@@ -1798,15 +1798,15 @@
             "stars": 5,
             "packageCode": "P1-007",
             "gallery": [
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวเกาะเหลาเหลียงวันเดย์25.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวเกาะเหลาเหลียงวันเดย์20.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/Oneday3.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/Oneday2.jpg",
-                "https:\/\/images.pexels.com\/photos\/3601425\/pexels-photo-3601425.jpeg?auto=compress&cs=tinysrgb&w=1200",
-                "https:\/\/images.pexels.com\/photos\/417074\/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวเกาะเหลาเหลียงวันเดย์25.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวเกาะเหลาเหลียงวันเดย์20.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/Oneday3.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/Oneday2.jpg",
+                "https://images.pexels.com/photos/3601425/pexels-photo-3601425.jpeg?auto=compress&cs=tinysrgb&w=1200",
+                "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1200"
             ],
             "galleryCaption": "เกาะเหลาเหลียง เกาะลิบง",
-            "licenseNo": "43\/00540",
+            "licenseNo": "43/00540",
             "season": "ตั้งแต่วันที่ 1 ตุลาคม – 31 พฤษภาคม ทุกปี ออกเดินทางทุกวัน",
             "inclusions": [
                 "ค่าที่พัก 1 คืน",
@@ -1816,7 +1816,7 @@
                 "ค่าธรรมเนียมอุทยานคนไทย",
                 "ค่ามัคคุเทศก์นำเที่ยวตลอดโปรแกรม",
                 "ค่าประกันอุบัติเหตุ ทุนประกัน 1,000,000 บาท",
-                "อาหารเช้า ณ ที่พัก (ตามโรงแรม\/โฮมสเตย์)"
+                "อาหารเช้า ณ ที่พัก (ตามโรงแรม/โฮมสเตย์)"
             ],
             "priceMeetingNote": "ราคาประหยัด — สอบถามราคาตามช่วงและที่พักผ่าน LINE @talaytrang",
             "priceNotes": [
@@ -1832,7 +1832,7 @@
                     "rooms": [
                         {
                             "name": "ห้องมาตรฐาน",
-                            "book": true
+                            "price": 1800
                         }
                     ]
                 }
@@ -1841,7 +1841,7 @@
         {
             "id": "p1-008",
             "name": "ทะเลตรัง + เกาะรอก นอนในเมืองตรัง",
-            "image": "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวเกาะรอกวันเดียว6.jpg",
+            "image": "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวเกาะรอกวันเดียว6.jpg",
             "route": "ทะเลตรัง 4 เกาะ → เกาะรอก + เกาะม้า (พักเมืองตรัง)",
             "stops": [
                 "วัน 1: ทะเลตรัง 4 เกาะ (เรือทัวร์) + พักในเมืองตรัง",
@@ -1861,15 +1861,15 @@
             "stars": 5,
             "packageCode": "P1-008",
             "gallery": [
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวเกาะรอกวันเดียว6.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวเกาะรอกวันเดียว3.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/Oneday3.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/Oneday2.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ18.jpg",
-                "https:\/\/images.pexels.com\/photos\/1001682\/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวเกาะรอกวันเดียว6.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวเกาะรอกวันเดียว3.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/Oneday3.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/Oneday2.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ18.jpg",
+                "https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1200"
             ],
             "galleryCaption": "ทะเลตรัง เกาะรอก เกาะม้า",
-            "licenseNo": "43\/00540",
+            "licenseNo": "43/00540",
             "season": "ตั้งแต่วันที่ 1 ตุลาคม – 31 พฤษภาคม ทุกปี ออกเดินทางทุกวัน",
             "inclusions": [
                 "ค่าที่พัก 1 คืน ในเมืองตรัง",
@@ -1980,7 +1980,7 @@
         {
             "id": "p2-001",
             "name": "ท่องทะเลตรัง 4 เกาะ เรือหางยาว นอนหาดปากเมง",
-            "image": "assets\/uploads\/20260611-165033-13eb5a00.jpg",
+            "image": "assets/uploads/20260611-165033-13eb5a00.jpg",
             "route": "ถ้ำมรกต → เกาะกระดาน → เกาะแหวน → เกาะเชือก",
             "stops": [
                 "วัน 1: เช็กอินที่พักหาดปากเมง",
@@ -2000,15 +2000,15 @@
             "stars": 5,
             "packageCode": "P2-L001",
             "gallery": [
-                "assets\/uploads\/20260611-164552-a424d99e.jpg",
-                "assets\/uploads\/20260611-164515-8763f60c.jpg",
-                "assets\/uploads\/20260611-165210-c5e055c9.jpg",
-                "assets\/uploads\/20260611-165541-350dd99e.jpg",
-                "assets\/uploads\/20260611-165319-2c9e79fe.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ15.jpg"
+                "assets/uploads/20260611-164552-a424d99e.jpg",
+                "assets/uploads/20260611-164515-8763f60c.jpg",
+                "assets/uploads/20260611-165210-c5e055c9.jpg",
+                "assets/uploads/20260611-165541-350dd99e.jpg",
+                "assets/uploads/20260611-165319-2c9e79fe.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ15.jpg"
             ],
             "galleryCaption": "ถ้ำมรกต เกาะกระดาน เกาะแหวน เกาะเชือก",
-            "licenseNo": "43\/00540",
+            "licenseNo": "43/00540",
             "itinerary": [
                 {
                     "time": "12:00",
@@ -2061,12 +2061,12 @@
                     "text": "เก็บสัมภาระ จบโปรแกรม"
                 }
             ],
-            "season": "เริ่ม 1 ตุลาคม – 31 พฤษภาคม · ออกเดินทางทุกวัน ตั้งแต่ 6 ท่านขึ้นไป · ช่วงเทศกาล +300 บาท\/ท่าน · สลับวันเที่ยวได้",
+            "season": "เริ่ม 1 ตุลาคม – 31 พฤษภาคม · ออกเดินทางทุกวัน ตั้งแต่ 6 ท่านขึ้นไป · ช่วงเทศกาล +300 บาท/ท่าน · สลับวันเที่ยวได้",
             "inclusions": [
                 "เรือหางยาวนำเที่ยวทะเลตรัง",
                 "อาหารเที่ยง",
                 "ห้องพัก 2 คืน",
-                "สตาฟดูแล \/ ไกด์",
+                "สตาฟดูแล / ไกด์",
                 "อุปกรณ์ดำน้ำ หน้ากาก เสื้อชูชีพ",
                 "ค่าธรรมเนียมอุทยาน (คนไทย)",
                 "ค่าประกันอุบัติเหตุ 1,000,000 บาท"
@@ -2156,11 +2156,11 @@
                     ]
                 }
             ],
-            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง · ราคาเริ่มต้น 1,300 บาท\/ท่าน (เลือกโรงแรมได้)",
+            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง · ราคาเริ่มต้น 1,300 บาท/ท่าน (เลือกโรงแรมได้)",
             "priceNotes": [
                 "ไม่รวม: อาหารเย็น",
                 "ไม่รวม: อาหารเช้า (ยกเว้นแพ็กเกจเกาะไหงที่ระบุรวม)",
-                "ไม่รวม: รถส่งกลับสนามบิน \/ บขส.",
+                "ไม่รวม: รถส่งกลับสนามบิน / บขส.",
                 "ไม่รวม: ค่าธรรมเนียมชาวต่างชาติ 200 บาท",
                 "ไม่รวม: ภาษีมูลค่าเพิ่ม 7% หรือหัก ณ ที่จ่าย 3% (กรณีขอใบเสร็จ)"
             ],
@@ -2169,7 +2169,7 @@
         {
             "id": "p2-002",
             "name": "ทริปทะเลตรัง 4 เกาะ เรือหางยาว นอนเกาะไหง",
-            "image": "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ14.jpg",
+            "image": "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ14.jpg",
             "route": "ถ้ำมรกต → เกาะกระดาน → เกาะแหวน → เกาะเชือก (พักเกาะไหง 2 คืน)",
             "stops": [
                 "วัน 1: ทะเลตรัง 4 เกาะ + เข้าที่พักเกาะไหง",
@@ -2189,15 +2189,15 @@
             "stars": 5,
             "packageCode": "P2-L003",
             "gallery": [
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ14.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/Oneday2.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ13.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/1352.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เกาะเชือก.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/GOPR1932.jpg"
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ14.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/Oneday2.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ13.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/1352.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เกาะเชือก.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/GOPR1932.jpg"
             ],
             "galleryCaption": "ถ้ำมรกต เกาะกระดาน เกาะแหวน เกาะเชือก",
-            "licenseNo": "43\/00540",
+            "licenseNo": "43/00540",
             "itinerary": [
                 {
                     "time": "09:00",
@@ -2250,7 +2250,7 @@
                     "text": "เดินทางกลับท่าเรือปากเมง จบโปรแกรม"
                 }
             ],
-            "season": "เริ่ม 1 ตุลาคม – 31 พฤษภาคม · ราคาเริ่มตั้งแต่ 6 ท่านขึ้นไป · ช่วงเทศกาล +300 บาท\/ท่าน",
+            "season": "เริ่ม 1 ตุลาคม – 31 พฤษภาคม · ราคาเริ่มตั้งแต่ 6 ท่านขึ้นไป · ช่วงเทศกาล +300 บาท/ท่าน",
             "inclusions": [
                 "เรือหางยาวท่องเที่ยวทะเลตรัง 4 เกาะ",
                 "อาหารเที่ยง 1 มื้อ · อาหารเช้า 2 มื้อ",
@@ -2266,7 +2266,7 @@
                     "rooms": [
                         {
                             "name": "ห้องมาตรฐาน",
-                            "book": true
+                            "price": 1999
                         }
                     ]
                 },
@@ -2275,7 +2275,7 @@
                     "rooms": [
                         {
                             "name": "ห้องมาตรฐาน",
-                            "book": true
+                            "price": 2266
                         }
                     ]
                 },
@@ -2284,7 +2284,7 @@
                     "rooms": [
                         {
                             "name": "ห้องมาตรฐาน",
-                            "book": true
+                            "price": 2532
                         }
                     ]
                 },
@@ -2293,23 +2293,23 @@
                     "rooms": [
                         {
                             "name": "ห้องมาตรฐาน",
-                            "book": true
+                            "price": 2799
                         }
                     ]
                 }
             ],
-            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง · ราคาเริ่มต้น 1,999 บาท\/ท่าน",
+            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง · ราคาเริ่มต้น 1,999 บาท/ท่าน",
             "priceNotes": [
                 "ไม่รวม: อาหารเย็น",
                 "ไม่รวม: ค่าธรรมเนียมชาวต่างชาติ 200 บาท",
-                "ไม่รวม: ภาษีมูลค่าเพิ่ม \/ หัก ณ ที่จ่าย (กรณีขอใบเสร็จ)"
+                "ไม่รวม: ภาษีมูลค่าเพิ่ม / หัก ณ ที่จ่าย (กรณีขอใบเสร็จ)"
             ],
             "warning": "โปรแกรมอาจเปลี่ยนแปลงตามสภาพอากาศ ระดับน้ำขึ้นลง และคลื่นลม ไม่คืนเงินทุกกรณี ลูกค้าสามารถสลับวันเที่ยวล่วงหน้าได้"
         },
         {
             "id": "p2-003",
             "name": "เเพ็คเกจเที่ยวตรัง 4 เกาะ เรือหางยาว นอนในเมืองตรัง",
-            "image": "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
+            "image": "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
             "route": "ถ้ำมรกต → เกาะกระดาน → เกาะแหวน → เกาะเชือก",
             "stops": [
                 "วัน 1: เช็กอินที่พักในเมืองตรัง",
@@ -2329,15 +2329,15 @@
             "stars": 5,
             "packageCode": "P2-L002",
             "gallery": [
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/GOPR0493.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ14.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ16.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ30.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ24.jpg"
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/GOPR0493.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ14.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ16.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ30.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ24.jpg"
             ],
             "galleryCaption": "ถ้ำมรกต เกาะกระดาน เกาะแหวน เกาะเชือก",
-            "licenseNo": "43\/00540",
+            "licenseNo": "43/00540",
             "itinerary": [
                 {
                     "time": "12:00",
@@ -2390,12 +2390,12 @@
                     "text": "เก็บสัมภาระ จบโปรแกรม"
                 }
             ],
-            "season": "เริ่ม 1 ตุลาคม – 31 พฤษภาคม · ออกเดินทางทุกวัน ตั้งแต่ 6 ท่านขึ้นไป · ช่วงเทศกาล +300 บาท\/ท่าน · สลับวันเที่ยวได้",
+            "season": "เริ่ม 1 ตุลาคม – 31 พฤษภาคม · ออกเดินทางทุกวัน ตั้งแต่ 6 ท่านขึ้นไป · ช่วงเทศกาล +300 บาท/ท่าน · สลับวันเที่ยวได้",
             "inclusions": [
                 "เรือหางยาวนำเที่ยวทะเลตรัง",
                 "อาหารเที่ยง",
                 "ห้องพัก 2 คืน ในเมืองตรัง",
-                "สตาฟดูแล \/ ไกด์",
+                "สตาฟดูแล / ไกด์",
                 "อุปกรณ์ดำน้ำ หน้ากาก เสื้อชูชีพ",
                 "ค่าธรรมเนียมอุทยาน (คนไทย)",
                 "ค่าประกันอุบัติเหตุ 1,000,000 บาท"
@@ -2485,11 +2485,11 @@
                     ]
                 }
             ],
-            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง (วันเที่ยวทะเล) · ราคาเริ่มต้น 1,300 บาท\/ท่าน",
+            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง (วันเที่ยวทะเล) · ราคาเริ่มต้น 1,300 บาท/ท่าน",
             "priceNotes": [
                 "ไม่รวม: อาหารเย็น",
                 "ไม่รวม: อาหารเช้า (ยกเว้นแพ็กเกจเกาะไหงที่ระบุรวม)",
-                "ไม่รวม: รถส่งกลับสนามบิน \/ บขส.",
+                "ไม่รวม: รถส่งกลับสนามบิน / บขส.",
                 "ไม่รวม: ค่าธรรมเนียมชาวต่างชาติ 200 บาท",
                 "ไม่รวม: ภาษีมูลค่าเพิ่ม 7% หรือหัก ณ ที่จ่าย 3% (กรณีขอใบเสร็จ)"
             ],
@@ -2498,7 +2498,7 @@
         {
             "id": "p2-004",
             "name": "เที่ยวทะเลตรัง 4 เกาะ เรือใหญ่ นอนหาดปากเมง",
-            "image": "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/1352.jpg",
+            "image": "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/1352.jpg",
             "route": "ถ้ำมรกต → เกาะกระดาน → เกาะแหวน → เกาะเชือก",
             "stops": [
                 "วัน 1: เช็กอินที่พักหาดปากเมง",
@@ -2518,15 +2518,15 @@
             "stars": 5,
             "packageCode": "P2-B001",
             "gallery": [
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ14.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/Oneday2.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ13.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/1352.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เกาะเชือก.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/GOPR1932.jpg"
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ14.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/Oneday2.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ13.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/1352.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เกาะเชือก.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/GOPR1932.jpg"
             ],
             "galleryCaption": "ถ้ำมรกต เกาะกระดาน เกาะแหวน เกาะเชือก",
-            "licenseNo": "43\/00540",
+            "licenseNo": "43/00540",
             "itinerary": [
                 {
                     "time": "12:00",
@@ -2584,12 +2584,12 @@
                     "text": "เก็บสัมภาระ จบโปรแกรม"
                 }
             ],
-            "season": "เริ่ม 1 ตุลาคม – 31 พฤษภาคม · ออกเดินทางทุกวัน ตั้งแต่ 2 ท่านขึ้นไป · ช่วงเทศกาล +300 บาท\/ท่าน · สลับวันเที่ยวได้",
+            "season": "เริ่ม 1 ตุลาคม – 31 พฤษภาคม · ออกเดินทางทุกวัน ตั้งแต่ 2 ท่านขึ้นไป · ช่วงเทศกาล +300 บาท/ท่าน · สลับวันเที่ยวได้",
             "inclusions": [
                 "เรือทัวร์นำเที่ยวทะเลตรัง",
                 "อาหารเที่ยงบุฟเฟ่ต์บนเรือ",
                 "ห้องพัก 2 คืน",
-                "สตาฟดูแล \/ ไกด์",
+                "สตาฟดูแล / ไกด์",
                 "อุปกรณ์ดำน้ำ หน้ากาก เสื้อชูชีพ",
                 "ค่าธรรมเนียมอุทยาน (คนไทย)",
                 "กาแฟ · อาหารว่าง · น้ำดื่ม",
@@ -2680,11 +2680,11 @@
                     ]
                 }
             ],
-            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง · ราคาเริ่มต้น 1,600 บาท\/ท่าน",
+            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง · ราคาเริ่มต้น 1,600 บาท/ท่าน",
             "priceNotes": [
                 "ไม่รวม: อาหารเย็น",
                 "ไม่รวม: อาหารเช้า (ยกเว้นแพ็กเกจเกาะไหงที่ระบุรวม)",
-                "ไม่รวม: รถส่งกลับสนามบิน \/ บขส.",
+                "ไม่รวม: รถส่งกลับสนามบิน / บขส.",
                 "ไม่รวม: ค่าธรรมเนียมชาวต่างชาติ 200 บาท",
                 "ไม่รวม: ภาษีมูลค่าเพิ่ม 7% หรือหัก ณ ที่จ่าย 3% (กรณีขอใบเสร็จ)"
             ],
@@ -2693,7 +2693,7 @@
         {
             "id": "p2-005",
             "name": "ท่องทะเลตรัง 4 เกาะ เรือใหญ่ นอนเกาะไหง",
-            "image": "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/GOPR0493.jpg",
+            "image": "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/GOPR0493.jpg",
             "route": "ถ้ำมรกต → เกาะกระดาน → เกาะแหวน → เกาะเชือก (พักเกาะไหง 2 คืน)",
             "stops": [
                 "วัน 1: รับในเมือง · ทะเล 4 เกาะ · เข้าที่พักเกาะไหง",
@@ -2713,15 +2713,15 @@
             "stars": 5,
             "packageCode": "P2-B003",
             "gallery": [
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/GOPR0493.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ14.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ16.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ30.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ24.jpg"
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/GOPR0493.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ14.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ16.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ30.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ24.jpg"
             ],
             "galleryCaption": "ถ้ำมรกต เกาะกระดาน เกาะแหวน เกาะเชือก",
-            "licenseNo": "43\/00540",
+            "licenseNo": "43/00540",
             "itinerary": [
                 {
                     "time": "07:30",
@@ -2769,7 +2769,7 @@
                     "text": "เช็กเอาท์ เก็บสัมภาระ เดินทางกลับ จบโปรแกรม"
                 }
             ],
-            "season": "เริ่ม 1 ตุลาคม – 31 พฤษภาคม · ออกเดินทางตั้งแต่ 2 ท่านขึ้นไป · ช่วงเทศกาล +300 บาท\/ท่าน",
+            "season": "เริ่ม 1 ตุลาคม – 31 พฤษภาคม · ออกเดินทางตั้งแต่ 2 ท่านขึ้นไป · ช่วงเทศกาล +300 บาท/ท่าน",
             "inclusions": [
                 "เรือทัวร์ทะเลตรัง 4 เกาะ",
                 "อาหารเที่ยง 1 มื้อ · อาหารเช้า 2 มื้อ",
@@ -2786,7 +2786,7 @@
                     "rooms": [
                         {
                             "name": "ห้องมาตรฐาน",
-                            "book": true
+                            "price": 3300
                         }
                     ]
                 },
@@ -2795,7 +2795,7 @@
                     "rooms": [
                         {
                             "name": "ห้องมาตรฐาน",
-                            "book": true
+                            "price": 3740
                         }
                     ]
                 },
@@ -2804,7 +2804,7 @@
                     "rooms": [
                         {
                             "name": "ห้องมาตรฐาน",
-                            "book": true
+                            "price": 4180
                         }
                     ]
                 },
@@ -2813,24 +2813,24 @@
                     "rooms": [
                         {
                             "name": "ห้องมาตรฐาน",
-                            "book": true
+                            "price": 4620
                         }
                     ]
                 }
             ],
-            "priceMeetingNote": "รับลูกค้าในเมืองตรัง · ราคาเริ่มต้น 3,300 บาท\/ท่าน",
+            "priceMeetingNote": "รับลูกค้าในเมืองตรัง · ราคาเริ่มต้น 3,300 บาท/ท่าน",
             "pickupSurcharge": 0,
             "priceNotes": [
                 "ไม่รวม: อาหารเย็น",
                 "ไม่รวม: ค่าธรรมเนียมชาวต่างชาติ 200 บาท",
-                "หมายเหตุ: หากเรือใหญ่เข้าหน้าที่พักไม่ได้ อาจต้องชำระเรือหางยาวเพิ่ม 100 บาท\/ท่าน\/เที่ยว"
+                "หมายเหตุ: หากเรือใหญ่เข้าหน้าที่พักไม่ได้ อาจต้องชำระเรือหางยาวเพิ่ม 100 บาท/ท่าน/เที่ยว"
             ],
             "warning": "โปรแกรมอาจเปลี่ยนแปลงตามสภาพอากาศ ระดับน้ำขึ้นลง และคลื่นลม ไม่คืนเงินทุกกรณี ลูกค้าสามารถสลับวันเที่ยวล่วงหน้าได้"
         },
         {
             "id": "p2-006",
             "name": "ท่องทะเลตรัง 4 เกาะ เรือใหญ่ นอนในเมืองตรัง",
-            "image": "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/08\/P3110070-min.jpg",
+            "image": "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/08/P3110070-min.jpg",
             "route": "ถ้ำมรกต → เกาะกระดาน → เกาะแหวน → เกาะเชือก",
             "stops": [
                 "วัน 1: เช็กอินที่พักในเมืองตรัง",
@@ -2850,15 +2850,15 @@
             "stars": 5,
             "packageCode": "P2-B002",
             "gallery": [
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/08\/P3110070-min.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ28.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ30.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ24.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ20.jpg"
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/08/P3110070-min.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ28.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ30.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ24.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ20.jpg"
             ],
             "galleryCaption": "ถ้ำมรกต เกาะกระดาน เกาะแหวน เกาะเชือก",
-            "licenseNo": "43\/00540",
+            "licenseNo": "43/00540",
             "itinerary": [
                 {
                     "time": "12:00",
@@ -2911,12 +2911,12 @@
                     "text": "เก็บสัมภาระ จบโปรแกรม"
                 }
             ],
-            "season": "เริ่ม 1 ตุลาคม – 31 พฤษภาคม · ออกเดินทางทุกวัน ตั้งแต่ 2 ท่านขึ้นไป · ช่วงเทศกาล +300 บาท\/ท่าน · สลับวันเที่ยวได้",
+            "season": "เริ่ม 1 ตุลาคม – 31 พฤษภาคม · ออกเดินทางทุกวัน ตั้งแต่ 2 ท่านขึ้นไป · ช่วงเทศกาล +300 บาท/ท่าน · สลับวันเที่ยวได้",
             "inclusions": [
                 "เรือทัวร์นำเที่ยวทะเลตรัง",
                 "อาหารเที่ยงบุฟเฟ่ต์บนเรือ",
                 "ห้องพัก 2 คืน ในเมืองตรัง",
-                "สตาฟดูแล \/ ไกด์",
+                "สตาฟดูแล / ไกด์",
                 "อุปกรณ์ดำน้ำ หน้ากาก เสื้อชูชีพ",
                 "ค่าธรรมเนียมอุทยาน (คนไทย)",
                 "กาแฟ · ขนม · น้ำดื่ม · น้ำแข็ง",
@@ -3007,17 +3007,17 @@
                     ]
                 }
             ],
-            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง (วันเที่ยวทะเล) · ราคาเริ่มต้น 1,800 บาท\/ท่าน",
+            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง (วันเที่ยวทะเล) · ราคาเริ่มต้น 1,800 บาท/ท่าน",
             "priceNotes": [
                 "ไม่รวม: อาหารเย็น",
                 "ไม่รวม: อาหารเช้า (ยกเว้นแพ็กเกจเกาะไหงที่ระบุรวม)",
-                "ไม่รวม: รถส่งกลับสนามบิน \/ บขส.",
+                "ไม่รวม: รถส่งกลับสนามบิน / บขส.",
                 "ไม่รวม: ค่าธรรมเนียมชาวต่างชาติ 200 บาท",
                 "ไม่รวม: ภาษีมูลค่าเพิ่ม 7% หรือหัก ณ ที่จ่าย 3% (กรณีขอใบเสร็จ)",
                 "ซื้อเพิ่ม: รับจากสนามบิน–ที่พัก 100 บาท",
                 "ซื้อเพิ่ม: ส่งจากที่พัก–สนามบิน 100 บาท",
-                "ซื้อเพิ่ม: ตุ๊กตุ๊กเที่ยวเมือง 350 บาท\/ชม.",
-                "ซื้อเพิ่ม: รถตู้เที่ยวเมือง 2,800 บาท\/วัน"
+                "ซื้อเพิ่ม: ตุ๊กตุ๊กเที่ยวเมือง 350 บาท/ชม.",
+                "ซื้อเพิ่ม: รถตู้เที่ยวเมือง 2,800 บาท/วัน"
             ],
             "warning": "โปรแกรมอาจเปลี่ยนแปลงตามสภาพอากาศ ระดับน้ำขึ้นลง และคลื่นลม ไม่คืนเงินทุกกรณี ลูกค้าสามารถสลับวันเที่ยวล่วงหน้าได้"
         },
@@ -3025,14 +3025,14 @@
             "id": "p2-007",
             "packageCode": "P2-007",
             "name": "นั่งตุ๊กตุ๊ก เที่ยวเมืองตรัง ท่องทะเล City Tour",
-            "image": "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ27.jpg",
+            "image": "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ27.jpg",
             "gallery": [
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/Oneday3.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/Oneday2.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ27.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ12.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ15.jpg"
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/Oneday3.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/Oneday2.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ27.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ12.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ15.jpg"
             ],
             "route": "เมืองตรัง → ทะเล 4 เกาะ → City Tour",
             "stops": [
@@ -3052,9 +3052,9 @@
             "oldPrice": 0,
             "stars": 5,
             "galleryCaption": "เมืองตรัง · ถ้ำมรกต · เกาะกระดาน",
-            "licenseNo": "43\/00540",
+            "licenseNo": "43/00540",
             "season": "เริ่ม 1 ตุลาคม – 31 พฤษภาคม · ออกเดินทางทุกวัน",
-            "priceMeetingNote": "รับจากสนามบิน \/ ในเมืองตรัง · ราคาเริ่มต้น 4,000 บาท\/ท่าน",
+            "priceMeetingNote": "รับจากสนามบิน / ในเมืองตรัง · ราคาเริ่มต้น 4,000 บาท/ท่าน",
             "itinerary": [
                 {
                     "time": "09:00",
@@ -3136,7 +3136,7 @@
             "priceNotes": [
                 "ไม่รวม: อาหารเช้า · อาหารเย็น",
                 "ไม่รวม: ค่าธรรมเนียมชาวต่างชาติ 200 บาท",
-                "ไม่รวม: ภาษีมูลค่าเพิ่ม \/ หัก ณ ที่จ่าย (กรณีขอใบเสร็จ)"
+                "ไม่รวม: ภาษีมูลค่าเพิ่ม / หัก ณ ที่จ่าย (กรณีขอใบเสร็จ)"
             ],
             "warning": "ไม่เหมาะสำหรับสตรีมีครรภ์ หากมีโรคประจำตัวโปรดแจ้งไกค์ประจำเรือ · โปรแกรมอาจเปลี่ยนแปลงตามสภาพอากาศและคลื่นลม",
             "hotels": [
@@ -3229,14 +3229,14 @@
             "id": "p2-008",
             "packageCode": "P2-008",
             "name": "ทะเลตรัง + เกาะรอก นอนในเมืองตรัง",
-            "image": "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวเกาะรอกวันเดียว5.jpg",
+            "image": "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวเกาะรอกวันเดียว5.jpg",
             "gallery": [
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวเกาะรอกวันเดียว6.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวเกาะรอกวันเดียว5.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/Oneday3.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/Oneday2.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ18.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ29.jpg"
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวเกาะรอกวันเดียว6.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวเกาะรอกวันเดียว5.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/Oneday3.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/Oneday2.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ18.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ29.jpg"
             ],
             "route": "ทะเลตรัง 4 เกาะ → เกาะรอก + เกาะม้า (พักเมืองตรัง 2 คืน)",
             "stops": [
@@ -3258,9 +3258,9 @@
             "oldPrice": 0,
             "stars": 5,
             "galleryCaption": "ทะเลตรัง · เกาะรอก · เกาะม้า",
-            "licenseNo": "43\/00540",
+            "licenseNo": "43/00540",
             "season": "ตั้งแต่วันที่ 1 ตุลาคม – 31 พฤษภาคม ทุกปี ออกเดินทางทุกวัน",
-            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง · รับในเมือง +200 บาท\/ท่าน",
+            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง · รับในเมือง +200 บาท/ท่าน",
             "pickupSurcharge": 200,
             "itinerary": [
                 {
@@ -3411,20 +3411,20 @@
             "id": "p3-001",
             "packageCode": "P3-L001",
             "name": "ทะเลตรัง 4 เกาะ นอนหาดปากเมง 4 วัน 3 คืน",
-            "image": "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/Oneday3.jpg",
+            "image": "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/Oneday3.jpg",
             "gallery": [
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/Oneday3.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/Oneday2.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ27.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ12.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ15.jpg"
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/Oneday3.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/Oneday2.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ27.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ12.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ15.jpg"
             ],
             "route": "ถ้ำมรกต → เกาะกระดาน → เกาะแหวน → เกาะเชือก",
             "stops": [
                 "วัน 1: เช็กอินที่พักหาดปากเมง",
                 "วัน 2: ทะเลตรัง 4 เกาะ (ถ้ำมรกต · เกาะกระดาน · เกาะแหวน · เกาะเชือก)",
-                "วัน 3: พักผ่อน \/ ทัวร์เมืองตรัง",
+                "วัน 3: พักผ่อน / ทัวร์เมืองตรัง",
                 "วัน 4: เช็กเอาท์และเดินทางกลับ"
             ],
             "duration": "4 วัน 3 คืน",
@@ -3439,9 +3439,9 @@
             "oldPrice": 0,
             "stars": 5,
             "galleryCaption": "ถ้ำมรกต เกาะกระดาน เกาะแหวน เกาะเชือก",
-            "licenseNo": "43\/00540",
-            "season": "เริ่ม 1 ตุลาคม – 31 พฤษภาคม · ออกเดินทางทุกวัน ตั้งแต่ 6 ท่านขึ้นไป · ช่วงเทศกาล +300 บาท\/ท่าน · สลับวันเที่ยวได้",
-            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง · ราคาเริ่มต้น 1,850 บาท\/ท่าน (เลือกโรงแรมได้)",
+            "licenseNo": "43/00540",
+            "season": "เริ่ม 1 ตุลาคม – 31 พฤษภาคม · ออกเดินทางทุกวัน ตั้งแต่ 6 ท่านขึ้นไป · ช่วงเทศกาล +300 บาท/ท่าน · สลับวันเที่ยวได้",
+            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง · ราคาเริ่มต้น 1,850 บาท/ท่าน (เลือกโรงแรมได้)",
             "itinerary": [
                 {
                     "time": "12:00",
@@ -3503,7 +3503,7 @@
                 "เรือหางยาวนำเที่ยวทะเลตรัง",
                 "อาหารเที่ยง",
                 "ห้องพัก 3 คืน",
-                "สตาฟดูแล \/ ไกด์",
+                "สตาฟดูแล / ไกด์",
                 "อุปกรณ์ดำน้ำ หน้ากาก เสื้อชูชีพ",
                 "ค่าธรรมเนียมอุทยาน (คนไทย)",
                 "ค่าประกันอุบัติเหตุ 1,000,000 บาท"
@@ -3511,7 +3511,7 @@
             "priceNotes": [
                 "ไม่รวม: อาหารเย็น",
                 "ไม่รวม: อาหารเช้า (ยกเว้นแพ็กเกจเกาะไหงที่ระบุรวม)",
-                "ไม่รวม: รถส่งกลับสนามบิน \/ บขส.",
+                "ไม่รวม: รถส่งกลับสนามบิน / บขส.",
                 "ไม่รวม: ค่าธรรมเนียมชาวต่างชาติ 200 บาท",
                 "ไม่รวม: ภาษีมูลค่าเพิ่ม 7% หรือหัก ณ ที่จ่าย 3% (กรณีขอใบเสร็จ)"
             ],
@@ -3541,7 +3541,7 @@
                     "day": 3,
                     "label": "วันที่ 3",
                     "items": [
-                        "พักผ่อน \/ ทัวร์เมืองตรัง (ตามสะดวก)"
+                        "พักผ่อน / ทัวร์เมืองตรัง (ตามสะดวก)"
                     ]
                 },
                 {
@@ -3642,20 +3642,20 @@
             "id": "p3-002",
             "packageCode": "P3-L003",
             "name": "ทะเลตรัง 4 เกาะ นอนเกาะไหง 4 วัน 3 คืน",
-            "image": "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ14.jpg",
+            "image": "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ14.jpg",
             "gallery": [
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ14.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/Oneday2.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ13.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/1352.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เกาะเชือก.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/GOPR1932.jpg"
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ14.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/Oneday2.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ13.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/1352.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เกาะเชือก.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/GOPR1932.jpg"
             ],
             "route": "ถ้ำมรกต → เกาะกระดาน → เกาะแหวน → เกาะเชือก (พักเกาะไหง 2 คืน)",
             "stops": [
                 "วัน 1: ทะเลตรัง 4 เกาะ + เข้าที่พักเกาะไหง",
                 "วัน 2: พักผ่อนบนเกาะไหง",
-                "วัน 3: พักผ่อน \/ ทัวร์เมืองตรัง",
+                "วัน 3: พักผ่อน / ทัวร์เมืองตรัง",
                 "วัน 4: เช็กเอาท์และเดินทางกลับ"
             ],
             "duration": "4 วัน 3 คืน",
@@ -3670,9 +3670,9 @@
             "oldPrice": 0,
             "stars": 5,
             "galleryCaption": "ถ้ำมรกต เกาะกระดาน เกาะแหวน เกาะเชือก",
-            "licenseNo": "43\/00540",
-            "season": "เริ่ม 1 ตุลาคม – 31 พฤษภาคม · ราคาเริ่มตั้งแต่ 6 ท่านขึ้นไป · ช่วงเทศกาล +300 บาท\/ท่าน",
-            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง · ราคาเริ่มต้น 2,649 บาท\/ท่าน",
+            "licenseNo": "43/00540",
+            "season": "เริ่ม 1 ตุลาคม – 31 พฤษภาคม · ราคาเริ่มตั้งแต่ 6 ท่านขึ้นไป · ช่วงเทศกาล +300 บาท/ท่าน",
+            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง · ราคาเริ่มต้น 2,649 บาท/ท่าน",
             "itinerary": [
                 {
                     "time": "09:00",
@@ -3742,7 +3742,7 @@
             "priceNotes": [
                 "ไม่รวม: อาหารเย็น",
                 "ไม่รวม: ค่าธรรมเนียมชาวต่างชาติ 200 บาท",
-                "ไม่รวม: ภาษีมูลค่าเพิ่ม \/ หัก ณ ที่จ่าย (กรณีขอใบเสร็จ)"
+                "ไม่รวม: ภาษีมูลค่าเพิ่ม / หัก ณ ที่จ่าย (กรณีขอใบเสร็จ)"
             ],
             "warning": "โปรแกรมอาจเปลี่ยนแปลงตามสภาพอากาศ ระดับน้ำขึ้นลง และคลื่นลม ไม่คืนเงินทุกกรณี ลูกค้าสามารถสลับวันเที่ยวล่วงหน้าได้",
             "inclusionsByDay": [
@@ -3770,7 +3770,7 @@
                     "day": 3,
                     "label": "วันที่ 3",
                     "items": [
-                        "พักผ่อน \/ ทัวร์เมืองตรัง (ตามสะดวก)"
+                        "พักผ่อน / ทัวร์เมืองตรัง (ตามสะดวก)"
                     ]
                 },
                 {
@@ -3787,7 +3787,7 @@
                     "rooms": [
                         {
                             "name": "ห้องมาตรฐาน",
-                            "book": true
+                            "price": 2649
                         }
                     ]
                 },
@@ -3796,7 +3796,7 @@
                     "rooms": [
                         {
                             "name": "ห้องมาตรฐาน",
-                            "book": true
+                            "price": 3002
                         }
                     ]
                 },
@@ -3805,7 +3805,7 @@
                     "rooms": [
                         {
                             "name": "ห้องมาตรฐาน",
-                            "book": true
+                            "price": 3355
                         }
                     ]
                 },
@@ -3814,7 +3814,7 @@
                     "rooms": [
                         {
                             "name": "ห้องมาตรฐาน",
-                            "book": true
+                            "price": 3709
                         }
                     ]
                 }
@@ -3824,20 +3824,20 @@
             "id": "p3-003",
             "packageCode": "P3-L002",
             "name": "ทะเลตรัง 4 เกาะ นอนในเมืองตรัง 4 วัน 3 คืน",
-            "image": "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
+            "image": "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
             "gallery": [
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/GOPR0493.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ14.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ16.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ30.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ24.jpg"
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/GOPR0493.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ14.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ16.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ30.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ24.jpg"
             ],
             "route": "ถ้ำมรกต → เกาะกระดาน → เกาะแหวน → เกาะเชือก",
             "stops": [
                 "วัน 1: เช็กอินที่พักในเมืองตรัง",
                 "วัน 2: ทะเลตรัง 4 เกาะ (เรือหางยาว)",
-                "วัน 3: พักผ่อน \/ ทัวร์เมืองตรัง",
+                "วัน 3: พักผ่อน / ทัวร์เมืองตรัง",
                 "วัน 4: เช็กเอาท์และเดินทางกลับ"
             ],
             "duration": "4 วัน 3 คืน",
@@ -3852,9 +3852,9 @@
             "oldPrice": 0,
             "stars": 5,
             "galleryCaption": "ถ้ำมรกต เกาะกระดาน เกาะแหวน เกาะเชือก",
-            "licenseNo": "43\/00540",
-            "season": "เริ่ม 1 ตุลาคม – 31 พฤษภาคม · ออกเดินทางทุกวัน ตั้งแต่ 6 ท่านขึ้นไป · ช่วงเทศกาล +300 บาท\/ท่าน · สลับวันเที่ยวได้",
-            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง (วันเที่ยวทะเล) · ราคาเริ่มต้น 1,850 บาท\/ท่าน",
+            "licenseNo": "43/00540",
+            "season": "เริ่ม 1 ตุลาคม – 31 พฤษภาคม · ออกเดินทางทุกวัน ตั้งแต่ 6 ท่านขึ้นไป · ช่วงเทศกาล +300 บาท/ท่าน · สลับวันเที่ยวได้",
+            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง (วันเที่ยวทะเล) · ราคาเริ่มต้น 1,850 บาท/ท่าน",
             "itinerary": [
                 {
                     "time": "12:00",
@@ -3916,7 +3916,7 @@
                 "เรือหางยาวนำเที่ยวทะเลตรัง",
                 "อาหารเที่ยง",
                 "ห้องพัก 3 คืน ในเมืองตรัง",
-                "สตาฟดูแล \/ ไกด์",
+                "สตาฟดูแล / ไกด์",
                 "อุปกรณ์ดำน้ำ หน้ากาก เสื้อชูชีพ",
                 "ค่าธรรมเนียมอุทยาน (คนไทย)",
                 "ค่าประกันอุบัติเหตุ 1,000,000 บาท"
@@ -3924,7 +3924,7 @@
             "priceNotes": [
                 "ไม่รวม: อาหารเย็น",
                 "ไม่รวม: อาหารเช้า (ยกเว้นแพ็กเกจเกาะไหงที่ระบุรวม)",
-                "ไม่รวม: รถส่งกลับสนามบิน \/ บขส.",
+                "ไม่รวม: รถส่งกลับสนามบิน / บขส.",
                 "ไม่รวม: ค่าธรรมเนียมชาวต่างชาติ 200 บาท",
                 "ไม่รวม: ภาษีมูลค่าเพิ่ม 7% หรือหัก ณ ที่จ่าย 3% (กรณีขอใบเสร็จ)"
             ],
@@ -4055,20 +4055,20 @@
             "id": "p3-004",
             "packageCode": "P3-B001",
             "name": "ทะเลตรัง 4 เกาะ นอนหาดปากเมง 4 วัน 3 คืน",
-            "image": "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/1352.jpg",
+            "image": "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/1352.jpg",
             "gallery": [
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ14.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/Oneday2.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ13.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/1352.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เกาะเชือก.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/GOPR1932.jpg"
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ14.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/Oneday2.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ13.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/1352.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เกาะเชือก.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/GOPR1932.jpg"
             ],
             "route": "ถ้ำมรกต → เกาะกระดาน → เกาะแหวน → เกาะเชือก",
             "stops": [
                 "วัน 1: เช็กอินที่พักหาดปากเมง",
                 "วัน 2: ทะเลตรัง 4 เกาะ (เรือทัวร์)",
-                "วัน 3: พักผ่อน \/ ทัวร์เมืองตรัง",
+                "วัน 3: พักผ่อน / ทัวร์เมืองตรัง",
                 "วัน 4: เช็กเอาท์และเดินทางกลับ"
             ],
             "duration": "4 วัน 3 คืน",
@@ -4083,9 +4083,9 @@
             "oldPrice": 0,
             "stars": 5,
             "galleryCaption": "ถ้ำมรกต เกาะกระดาน เกาะแหวน เกาะเชือก",
-            "licenseNo": "43\/00540",
-            "season": "เริ่ม 1 ตุลาคม – 31 พฤษภาคม · ออกเดินทางทุกวัน ตั้งแต่ 2 ท่านขึ้นไป · ช่วงเทศกาล +300 บาท\/ท่าน · สลับวันเที่ยวได้",
-            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง · ราคาเริ่มต้น 2,150 บาท\/ท่าน",
+            "licenseNo": "43/00540",
+            "season": "เริ่ม 1 ตุลาคม – 31 พฤษภาคม · ออกเดินทางทุกวัน ตั้งแต่ 2 ท่านขึ้นไป · ช่วงเทศกาล +300 บาท/ท่าน · สลับวันเที่ยวได้",
+            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง · ราคาเริ่มต้น 2,150 บาท/ท่าน",
             "itinerary": [
                 {
                     "time": "12:00",
@@ -4152,7 +4152,7 @@
                 "เรือทัวร์นำเที่ยวทะเลตรัง",
                 "อาหารเที่ยงบุฟเฟ่ต์บนเรือ",
                 "ห้องพัก 3 คืน",
-                "สตาฟดูแล \/ ไกด์",
+                "สตาฟดูแล / ไกด์",
                 "อุปกรณ์ดำน้ำ หน้ากาก เสื้อชูชีพ",
                 "ค่าธรรมเนียมอุทยาน (คนไทย)",
                 "กาแฟ · อาหารว่าง · น้ำดื่ม",
@@ -4161,7 +4161,7 @@
             "priceNotes": [
                 "ไม่รวม: อาหารเย็น",
                 "ไม่รวม: อาหารเช้า (ยกเว้นแพ็กเกจเกาะไหงที่ระบุรวม)",
-                "ไม่รวม: รถส่งกลับสนามบิน \/ บขส.",
+                "ไม่รวม: รถส่งกลับสนามบิน / บขส.",
                 "ไม่รวม: ค่าธรรมเนียมชาวต่างชาติ 200 บาท",
                 "ไม่รวม: ภาษีมูลค่าเพิ่ม 7% หรือหัก ณ ที่จ่าย 3% (กรณีขอใบเสร็จ)"
             ],
@@ -4191,7 +4191,7 @@
                     "day": 3,
                     "label": "วันที่ 3",
                     "items": [
-                        "พักผ่อน \/ ทัวร์เมืองตรัง (ตามสะดวก)"
+                        "พักผ่อน / ทัวร์เมืองตรัง (ตามสะดวก)"
                     ]
                 },
                 {
@@ -4292,20 +4292,20 @@
             "id": "p3-005",
             "packageCode": "P3-B003",
             "name": "ทะเลตรัง 4 เกาะ นอนเกาะไหง 4 วัน 3 คืน",
-            "image": "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/GOPR0493.jpg",
+            "image": "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/GOPR0493.jpg",
             "gallery": [
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/GOPR0493.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ14.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ16.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ30.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ24.jpg"
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/GOPR0493.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ14.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ16.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ30.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ24.jpg"
             ],
             "route": "ถ้ำมรกต → เกาะกระดาน → เกาะแหวน → เกาะเชือก (พักเกาะไหง 2 คืน)",
             "stops": [
                 "วัน 1: รับในเมือง · ทะเล 4 เกาะ · เข้าที่พักเกาะไหง",
                 "วัน 2: พักผ่อนบนเกาะไหง",
-                "วัน 3: พักผ่อน \/ ทัวร์เมืองตรัง",
+                "วัน 3: พักผ่อน / ทัวร์เมืองตรัง",
                 "วัน 4: เช็กเอาท์และเดินทางกลับ"
             ],
             "duration": "4 วัน 3 คืน",
@@ -4320,9 +4320,9 @@
             "oldPrice": 0,
             "stars": 5,
             "galleryCaption": "ถ้ำมรกต เกาะกระดาน เกาะแหวน เกาะเชือก",
-            "licenseNo": "43\/00540",
-            "season": "เริ่ม 1 ตุลาคม – 31 พฤษภาคม · ออกเดินทางตั้งแต่ 2 ท่านขึ้นไป · ช่วงเทศกาล +300 บาท\/ท่าน",
-            "priceMeetingNote": "รับลูกค้าในเมืองตรัง · ราคาเริ่มต้น 4,050 บาท\/ท่าน",
+            "licenseNo": "43/00540",
+            "season": "เริ่ม 1 ตุลาคม – 31 พฤษภาคม · ออกเดินทางตั้งแต่ 2 ท่านขึ้นไป · ช่วงเทศกาล +300 บาท/ท่าน",
+            "priceMeetingNote": "รับลูกค้าในเมืองตรัง · ราคาเริ่มต้น 4,050 บาท/ท่าน",
             "pickupSurcharge": 0,
             "itinerary": [
                 {
@@ -4389,7 +4389,7 @@
             "priceNotes": [
                 "ไม่รวม: อาหารเย็น",
                 "ไม่รวม: ค่าธรรมเนียมชาวต่างชาติ 200 บาท",
-                "หมายเหตุ: หากเรือใหญ่เข้าหน้าที่พักไม่ได้ อาจต้องชำระเรือหางยาวเพิ่ม 100 บาท\/ท่าน\/เที่ยว"
+                "หมายเหตุ: หากเรือใหญ่เข้าหน้าที่พักไม่ได้ อาจต้องชำระเรือหางยาวเพิ่ม 100 บาท/ท่าน/เที่ยว"
             ],
             "warning": "โปรแกรมอาจเปลี่ยนแปลงตามสภาพอากาศ ระดับน้ำขึ้นลง และคลื่นลม ไม่คืนเงินทุกกรณี ลูกค้าสามารถสลับวันเที่ยวล่วงหน้าได้",
             "inclusionsByDay": [
@@ -4434,7 +4434,7 @@
                     "rooms": [
                         {
                             "name": "ห้องมาตรฐาน",
-                            "book": true
+                            "price": 4050
                         }
                     ]
                 },
@@ -4443,7 +4443,7 @@
                     "rooms": [
                         {
                             "name": "ห้องมาตรฐาน",
-                            "book": true
+                            "price": 4590
                         }
                     ]
                 },
@@ -4452,7 +4452,7 @@
                     "rooms": [
                         {
                             "name": "ห้องมาตรฐาน",
-                            "book": true
+                            "price": 5130
                         }
                     ]
                 },
@@ -4461,7 +4461,7 @@
                     "rooms": [
                         {
                             "name": "ห้องมาตรฐาน",
-                            "book": true
+                            "price": 5670
                         }
                     ]
                 }
@@ -4471,20 +4471,20 @@
             "id": "p3-006",
             "packageCode": "P3-B002",
             "name": "ทะเลตรัง 4 เกาะ นอนในเมืองตรัง 4 วัน 3 คืน",
-            "image": "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/08\/P3110070-min.jpg",
+            "image": "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/08/P3110070-min.jpg",
             "gallery": [
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/08\/P3110070-min.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ28.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ30.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ24.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ20.jpg"
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/08/P3110070-min.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ28.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ30.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ24.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ20.jpg"
             ],
             "route": "ถ้ำมรกต → เกาะกระดาน → เกาะแหวน → เกาะเชือก",
             "stops": [
                 "วัน 1: เช็กอินที่พักในเมืองตรัง",
                 "วัน 2: ทะเลตรัง 4 เกาะ (เรือทัวร์)",
-                "วัน 3: พักผ่อน \/ ทัวร์เมืองตรัง",
+                "วัน 3: พักผ่อน / ทัวร์เมืองตรัง",
                 "วัน 4: เช็กเอาท์และเดินทางกลับ"
             ],
             "duration": "4 วัน 3 คืน",
@@ -4499,9 +4499,9 @@
             "oldPrice": 0,
             "stars": 5,
             "galleryCaption": "ถ้ำมรกต เกาะกระดาน เกาะแหวน เกาะเชือก",
-            "licenseNo": "43\/00540",
-            "season": "เริ่ม 1 ตุลาคม – 31 พฤษภาคม · ออกเดินทางทุกวัน ตั้งแต่ 2 ท่านขึ้นไป · ช่วงเทศกาล +300 บาท\/ท่าน · สลับวันเที่ยวได้",
-            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง (วันเที่ยวทะเล) · ราคาเริ่มต้น 2,450 บาท\/ท่าน",
+            "licenseNo": "43/00540",
+            "season": "เริ่ม 1 ตุลาคม – 31 พฤษภาคม · ออกเดินทางทุกวัน ตั้งแต่ 2 ท่านขึ้นไป · ช่วงเทศกาล +300 บาท/ท่าน · สลับวันเที่ยวได้",
+            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง (วันเที่ยวทะเล) · ราคาเริ่มต้น 2,450 บาท/ท่าน",
             "itinerary": [
                 {
                     "time": "12:00",
@@ -4563,7 +4563,7 @@
                 "เรือทัวร์นำเที่ยวทะเลตรัง",
                 "อาหารเที่ยงบุฟเฟ่ต์บนเรือ",
                 "ห้องพัก 3 คืน ในเมืองตรัง",
-                "สตาฟดูแล \/ ไกด์",
+                "สตาฟดูแล / ไกด์",
                 "อุปกรณ์ดำน้ำ หน้ากาก เสื้อชูชีพ",
                 "ค่าธรรมเนียมอุทยาน (คนไทย)",
                 "กาแฟ · ขนม · น้ำดื่ม · น้ำแข็ง",
@@ -4572,13 +4572,13 @@
             "priceNotes": [
                 "ไม่รวม: อาหารเย็น",
                 "ไม่รวม: อาหารเช้า (ยกเว้นแพ็กเกจเกาะไหงที่ระบุรวม)",
-                "ไม่รวม: รถส่งกลับสนามบิน \/ บขส.",
+                "ไม่รวม: รถส่งกลับสนามบิน / บขส.",
                 "ไม่รวม: ค่าธรรมเนียมชาวต่างชาติ 200 บาท",
                 "ไม่รวม: ภาษีมูลค่าเพิ่ม 7% หรือหัก ณ ที่จ่าย 3% (กรณีขอใบเสร็จ)",
                 "ซื้อเพิ่ม: รับจากสนามบิน–ที่พัก 100 บาท",
                 "ซื้อเพิ่ม: ส่งจากที่พัก–สนามบิน 100 บาท",
-                "ซื้อเพิ่ม: ตุ๊กตุ๊กเที่ยวเมือง 350 บาท\/ชม.",
-                "ซื้อเพิ่ม: รถตู้เที่ยวเมือง 2,800 บาท\/วัน"
+                "ซื้อเพิ่ม: ตุ๊กตุ๊กเที่ยวเมือง 350 บาท/ชม.",
+                "ซื้อเพิ่ม: รถตู้เที่ยวเมือง 2,800 บาท/วัน"
             ],
             "warning": "โปรแกรมอาจเปลี่ยนแปลงตามสภาพอากาศ ระดับน้ำขึ้นลง และคลื่นลม ไม่คืนเงินทุกกรณี ลูกค้าสามารถสลับวันเที่ยวล่วงหน้าได้",
             "inclusionsByDay": [
@@ -4707,20 +4707,20 @@
             "id": "p3-007",
             "packageCode": "P3-007",
             "name": "นั่งตุ๊กตุ๊ก เที่ยวเมืองตรัง ท่องทะเล City Tour 4 วัน 3 คืน",
-            "image": "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ27.jpg",
+            "image": "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ27.jpg",
             "gallery": [
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/Oneday3.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/Oneday2.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ27.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ12.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ15.jpg"
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/Oneday3.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/Oneday2.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ29.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ27.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ12.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ15.jpg"
             ],
             "route": "เมืองตรัง → ทะเล 4 เกาะ → City Tour",
             "stops": [
                 "วัน 1: รับสนามบิน · ตุ๊กตุ๊กเที่ยวเมืองเก่า",
                 "วัน 2: ทะเลตรัง 4 เกาะ (เรือทัวร์)",
-                "วัน 3: City Tour รถตู้ · พักผ่อน \/ ทัวร์เมืองตรัง",
+                "วัน 3: City Tour รถตู้ · พักผ่อน / ทัวร์เมืองตรัง",
                 "วัน 4: เช็กเอาท์และเดินทางกลับ"
             ],
             "duration": "4 วัน 3 คืน",
@@ -4735,9 +4735,9 @@
             "oldPrice": 0,
             "stars": 5,
             "galleryCaption": "เมืองตรัง · ถ้ำมรกต · เกาะกระดาน",
-            "licenseNo": "43\/00540",
+            "licenseNo": "43/00540",
             "season": "เริ่ม 1 ตุลาคม – 31 พฤษภาคม · ออกเดินทางทุกวัน",
-            "priceMeetingNote": "รับจากสนามบิน \/ ในเมืองตรัง · ราคาเริ่มต้น 4,900 บาท\/ท่าน",
+            "priceMeetingNote": "รับจากสนามบิน / ในเมืองตรัง · ราคาเริ่มต้น 4,900 บาท/ท่าน",
             "itinerary": [
                 {
                     "time": "09:00",
@@ -4819,7 +4819,7 @@
             "priceNotes": [
                 "ไม่รวม: อาหารเช้า · อาหารเย็น",
                 "ไม่รวม: ค่าธรรมเนียมชาวต่างชาติ 200 บาท",
-                "ไม่รวม: ภาษีมูลค่าเพิ่ม \/ หัก ณ ที่จ่าย (กรณีขอใบเสร็จ)"
+                "ไม่รวม: ภาษีมูลค่าเพิ่ม / หัก ณ ที่จ่าย (กรณีขอใบเสร็จ)"
             ],
             "warning": "ไม่เหมาะสำหรับสตรีมีครรภ์ หากมีโรคประจำตัวโปรดแจ้งไกค์ประจำเรือ · โปรแกรมอาจเปลี่ยนแปลงตามสภาพอากาศและคลื่นลม",
             "inclusionsByDay": [
@@ -4951,20 +4951,20 @@
             "id": "p3-008",
             "packageCode": "P3-008",
             "name": "ทะเลตรัง + เกาะรอก นอนในเมืองตรัง 4 วัน 3 คืน",
-            "image": "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวเกาะรอกวันเดียว5.jpg",
+            "image": "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวเกาะรอกวันเดียว5.jpg",
             "gallery": [
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวเกาะรอกวันเดียว6.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวเกาะรอกวันเดียว5.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/Oneday3.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/Oneday2.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ18.jpg",
-                "https:\/\/www.xn--72c1af3ci9dk0j.com\/wp-content\/uploads\/2019\/06\/เที่ยวตรังไปเช้าเย็นกลับ29.jpg"
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวเกาะรอกวันเดียว6.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวเกาะรอกวันเดียว5.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/Oneday3.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/Oneday2.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ18.jpg",
+                "https://www.xn--72c1af3ci9dk0j.com/wp-content/uploads/2019/06/เที่ยวตรังไปเช้าเย็นกลับ29.jpg"
             ],
             "route": "ทะเลตรัง 4 เกาะ → เกาะรอก + เกาะม้า (พักเมืองตรัง 2 คืน)",
             "stops": [
                 "วัน 1: เช็กอิน · ทะเลตรัง 4 เกาะ (เรือทัวร์)",
                 "วัน 2: เที่ยวเกาะรอกเต็มวัน (สปีดโบต)",
-                "วัน 3: พักผ่อน \/ ทัวร์เมืองตรัง",
+                "วัน 3: พักผ่อน / ทัวร์เมืองตรัง",
                 "วัน 4: เช็กเอาท์และเดินทางกลับ"
             ],
             "duration": "4 วัน 3 คืน",
@@ -4981,9 +4981,9 @@
             "oldPrice": 0,
             "stars": 5,
             "galleryCaption": "ทะเลตรัง · เกาะรอก · เกาะม้า",
-            "licenseNo": "43\/00540",
+            "licenseNo": "43/00540",
             "season": "ตั้งแต่วันที่ 1 ตุลาคม – 31 พฤษภาคม ทุกปี ออกเดินทางทุกวัน",
-            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง · รับในเมือง +4,400 บาท\/ท่าน",
+            "priceMeetingNote": "เจอกันที่ท่าเรือปากเมง · รับในเมือง +4,400 บาท/ท่าน",
             "pickupSurcharge": 200,
             "itinerary": [
                 {
@@ -5248,98 +5248,98 @@
         {
             "id": "7649721532968717576",
             "platform": "tiktok",
-            "thumb": "https:\/\/raw.githubusercontent.com\/goddarkmarketing\/tiktok-rss-flat\/main\/thumbnails\/talaytrang\/screenshot_oYfcAHTAK1XAEwinRkMikCwBB1AUFIIpK8OAAA~tplv-tiktokx-origin.image.jpg",
-            "title": "🌊 เปิดฤดูกาลท่องเที่ยวทะเลตรัง 1 ตุลาคม เป็นต้นไป 🏝️ พร้อมออกไปสัมผัสน้ำทะเลใส หาดทรายขาว และบรรยากาศสุดฟิน 🚢 ทริปไปเช้า-เย็นกลับ ✨ เรือหางยาว เพียง 750 บาท\/ท่าน พร้อมอาหารกล่อง ✨ เรือใหญ่ เพียง 950 บาท\/ท่าน พร้อมอาหารบุฟเฟ่ต์ 📍จองล่วงหน้าได้แล้ววันนี้ เท",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_oYfcAHTAK1XAEwinRkMikCwBB1AUFIIpK8OAAA~tplv-tiktokx-origin.image.jpg",
+            "title": "🌊 เปิดฤดูกาลท่องเที่ยวทะเลตรัง 1 ตุลาคม เป็นต้นไป 🏝️ พร้อมออกไปสัมผัสน้ำทะเลใส หาดทรายขาว และบรรยากาศสุดฟิน 🚢 ทริปไปเช้า-เย็นกลับ ✨ เรือหางยาว เพียง 750 บาท/ท่าน พร้อมอาหารกล่อง ✨ เรือใหญ่ เพียง 950 บาท/ท่าน พร้อมอาหารบุฟเฟ่ต์ 📍จองล่วงหน้าได้แล้ววันนี้ เท",
             "views": "",
-            "url": "https:\/\/www.tiktok.com\/@talaytrang\/video\/7649721532968717576"
+            "url": "https://www.tiktok.com/@talaytrang/video/7649721532968717576"
         },
         {
             "id": "7649625125926489351",
             "platform": "tiktok",
-            "thumb": "https:\/\/raw.githubusercontent.com\/goddarkmarketing\/tiktok-rss-flat\/main\/thumbnails\/talaytrang\/screenshot_owlYoAwKHOAkJiI1AFifABwbH7qAbBE0IABzCE~tplv-tiktokx-origin.image.jpg",
-            "title": "🌊 เหมาลำเรือหางยาวส่วนตัว เที่ยวทะเลตรังสุดคุ้ม! 🛶 ✨ เที่ยวแบบเป็นส่วนตัว ไม่ต้องรอใคร 💙 ราคาเพียง ลำละ 4,000 บาท ชวนแก๊งเพื่อน ชวนครอบครัว ไปสร้างความทรงจำดีๆ กับทะเลตรัง 📩 📌 จองวันนี้ มัดจำวันนี้ \/ เริ่มเที่ยว 1 ตุลาคม 2569 เป็นต้นไป #FootballTikTok #ti",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_owlYoAwKHOAkJiI1AFifABwbH7qAbBE0IABzCE~tplv-tiktokx-origin.image.jpg",
+            "title": "🌊 เหมาลำเรือหางยาวส่วนตัว เที่ยวทะเลตรังสุดคุ้ม! 🛶 ✨ เที่ยวแบบเป็นส่วนตัว ไม่ต้องรอใคร 💙 ราคาเพียง ลำละ 4,000 บาท ชวนแก๊งเพื่อน ชวนครอบครัว ไปสร้างความทรงจำดีๆ กับทะเลตรัง 📩 📌 จองวันนี้ มัดจำวันนี้ / เริ่มเที่ยว 1 ตุลาคม 2569 เป็นต้นไป #FootballTikTok #ti",
             "views": "",
-            "url": "https:\/\/www.tiktok.com\/@talaytrang\/video\/7649625125926489351"
+            "url": "https://www.tiktok.com/@talaytrang/video/7649625125926489351"
         },
         {
             "id": "7649372513432063250",
             "platform": "tiktok",
-            "thumb": "https:\/\/raw.githubusercontent.com\/goddarkmarketing\/tiktok-rss-flat\/main\/thumbnails\/talaytrang\/screenshot_oUsNnHuB1AB1Fr1iiY1AcAIDCACofFGwwII9M6~tplv-tiktokx-origin.image.jpg",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_oUsNnHuB1AB1Fr1iiY1AcAIDCACofFGwwII9M6~tplv-tiktokx-origin.image.jpg",
             "title": "🌊 พักผ่อนแบบเต็มอิ่มกับแพ็กเกจเที่ยวทะเลตรังแบบค้างคืน นอนชิลริมทะเล เที่ยวเกาะสวย น้ำใส ดำน้ำดูปะการัง จองง่าย เที่ยวสบาย พร้อมเก็บทุกช่วงเวลาความสุขไปด้วยกัน 🏝️💙✨ #FootballTikTok #tiktokพาเที่ยว #ทะเลตรัง #ทะเลตรังดอทคอม #tiktok",
             "views": "",
-            "url": "https:\/\/www.tiktok.com\/@talaytrang\/video\/7649372513432063250"
+            "url": "https://www.tiktok.com/@talaytrang/video/7649372513432063250"
         },
         {
             "id": "7649257238644739336",
             "platform": "tiktok",
-            "thumb": "https:\/\/raw.githubusercontent.com\/goddarkmarketing\/tiktok-rss-flat\/main\/thumbnails\/talaytrang\/screenshot_ocqAEnKEADEJfgAAynQCfFvj7BcCyIRmR5Jh2A~tplv-tiktokx-origin.image.jpg",
-            "title": "จะเที่ยวแบบไหน ก็มีแพ็กเกจให้เลือกครบ 💙 ☀️ ทริปไปเช้าเย็นกลับ เริ่มต้นเพียง 950.-\/ท่าน 🌙 แพ็กเกจ 2วัน1คืน เริ่มต้นเพียง 1,275.-\/ท่าน 🏝 แพ็กเกจ 3วัน2คืน เริ่มต้นเพียง 1,600.-\/ท่าน ครบทั้งเรือ ที่พัก อาหาร และทีมงานดูแลตลอดทริป เที่ยวง่าย ไม่ต้องวางแผนเอง แ",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_ocqAEnKEADEJfgAAynQCfFvj7BcCyIRmR5Jh2A~tplv-tiktokx-origin.image.jpg",
+            "title": "จะเที่ยวแบบไหน ก็มีแพ็กเกจให้เลือกครบ 💙 ☀️ ทริปไปเช้าเย็นกลับ เริ่มต้นเพียง 950.-/ท่าน 🌙 แพ็กเกจ 2วัน1คืน เริ่มต้นเพียง 1,275.-/ท่าน 🏝 แพ็กเกจ 3วัน2คืน เริ่มต้นเพียง 1,600.-/ท่าน ครบทั้งเรือ ที่พัก อาหาร และทีมงานดูแลตลอดทริป เที่ยวง่าย ไม่ต้องวางแผนเอง แ",
             "views": "",
-            "url": "https:\/\/www.tiktok.com\/@talaytrang\/video\/7649257238644739336"
+            "url": "https://www.tiktok.com/@talaytrang/video/7649257238644739336"
         },
         {
             "id": "7649201122246266119",
             "platform": "tiktok",
-            "thumb": "https:\/\/raw.githubusercontent.com\/goddarkmarketing\/tiktok-rss-flat\/main\/thumbnails\/talaytrang\/screenshot_oUeX1aVwnJGLr58IAQDAQAApyufAeoOfGRGOIB~tplv-tiktokx-origin.image.jpg",
-            "title": "🔥 เหมาลำเรือหางยาวส่วนตัว เที่ยวทะเลตรัง 4 เกาะ แบบไพรเวทสุดๆ 💙 ไม่ต้องหาร ไม่ต้องแชร์ ใครมาก็ลำเดียวไปเลย! 💸 ราคาเริ่มต้นเพียง 4,000 บาท\/ลำ 📌 จองวันนี้ มัดจำวันนี้ \/ เริ่มเที่ยว 1 ตุลาคม 2569 เป็นต้นไป ✅📍💌 วิดีโอนี้สร้างขึ้นเพื่อให้ลูกค้าชมสำหรับการตัดสิ",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_oUeX1aVwnJGLr58IAQDAQAApyufAeoOfGRGOIB~tplv-tiktokx-origin.image.jpg",
+            "title": "🔥 เหมาลำเรือหางยาวส่วนตัว เที่ยวทะเลตรัง 4 เกาะ แบบไพรเวทสุดๆ 💙 ไม่ต้องหาร ไม่ต้องแชร์ ใครมาก็ลำเดียวไปเลย! 💸 ราคาเริ่มต้นเพียง 4,000 บาท/ลำ 📌 จองวันนี้ มัดจำวันนี้ / เริ่มเที่ยว 1 ตุลาคม 2569 เป็นต้นไป ✅📍💌 วิดีโอนี้สร้างขึ้นเพื่อให้ลูกค้าชมสำหรับการตัดสิ",
             "views": "",
-            "url": "https:\/\/www.tiktok.com\/@talaytrang\/video\/7649201122246266119"
+            "url": "https://www.tiktok.com/@talaytrang/video/7649201122246266119"
         },
         {
             "id": "7648604793430166792",
             "platform": "tiktok",
-            "thumb": "https:\/\/raw.githubusercontent.com\/goddarkmarketing\/tiktok-rss-flat\/main\/thumbnails\/talaytrang\/screenshot_oU2JDflPEE2cQxmlmAqgFChKIeRUAA30BB8Asa~tplv-tiktokx-origin.image.jpg",
-            "title": "เเพ็คเกจ 2 วัน 1 คืน มีให้เลือกหลายที่พัก 💙 🌙 แพ็กเกจ 2วัน1คืน เริ่มต้นเพียง 1,275.-\/ท่าน ครบทั้งเรือ ที่พัก อาหาร และทีมงานดูแลตลอดทริป เที่ยวง่าย ไม่ต้องวางแผนเอง แค่เก็บกระเป๋าแล้วออกเดินทาง ✨ 📍งบน้อยก็เที่ยวทะเลสวย ๆ ได้ 📩 จองก่อน เต็มก่อนนะคะ #Footba",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_oU2JDflPEE2cQxmlmAqgFChKIeRUAA30BB8Asa~tplv-tiktokx-origin.image.jpg",
+            "title": "เเพ็คเกจ 2 วัน 1 คืน มีให้เลือกหลายที่พัก 💙 🌙 แพ็กเกจ 2วัน1คืน เริ่มต้นเพียง 1,275.-/ท่าน ครบทั้งเรือ ที่พัก อาหาร และทีมงานดูแลตลอดทริป เที่ยวง่าย ไม่ต้องวางแผนเอง แค่เก็บกระเป๋าแล้วออกเดินทาง ✨ 📍งบน้อยก็เที่ยวทะเลสวย ๆ ได้ 📩 จองก่อน เต็มก่อนนะคะ #Footba",
             "views": "",
-            "url": "https:\/\/www.tiktok.com\/@talaytrang\/video\/7648604793430166792"
+            "url": "https://www.tiktok.com/@talaytrang/video/7648604793430166792"
         },
         {
             "id": "7648487043193916690",
             "platform": "tiktok",
-            "thumb": "https:\/\/raw.githubusercontent.com\/goddarkmarketing\/tiktok-rss-flat\/main\/thumbnails\/talaytrang\/screenshot_o4nEZAiJpEB7e6AAJcAgfRiHqkI2Ra0BcAnO4C~tplv-tiktokx-origin.image.jpg",
-            "title": "✨ เเพ็คเกจขายดี✨ เที่ยวทะเลตรังสุดคุ้ม เริ่มต้นเพียง 950 บาท\/ท่าน ⛴️ เรือใหญ่ 🍽️ อาหารบุฟเฟ่ต์ 🏝️ เที่ยวครบ สนุกตลอดทริป จองง่าย เที่ยวสบาย ให้เราดูแลทุกการเดินทาง 💙 #FootballTikTok #tiktokพาเที่ยว #ทะเลตรัง #ทะเลตรังดอทคอม #เที่ยวไปเรื่อย",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_o4nEZAiJpEB7e6AAJcAgfRiHqkI2Ra0BcAnO4C~tplv-tiktokx-origin.image.jpg",
+            "title": "✨ เเพ็คเกจขายดี✨ เที่ยวทะเลตรังสุดคุ้ม เริ่มต้นเพียง 950 บาท/ท่าน ⛴️ เรือใหญ่ 🍽️ อาหารบุฟเฟ่ต์ 🏝️ เที่ยวครบ สนุกตลอดทริป จองง่าย เที่ยวสบาย ให้เราดูแลทุกการเดินทาง 💙 #FootballTikTok #tiktokพาเที่ยว #ทะเลตรัง #ทะเลตรังดอทคอม #เที่ยวไปเรื่อย",
             "views": "",
-            "url": "https:\/\/www.tiktok.com\/@talaytrang\/video\/7648487043193916690"
+            "url": "https://www.tiktok.com/@talaytrang/video/7648487043193916690"
         },
         {
             "id": "7648240175557905682",
             "platform": "tiktok",
-            "thumb": "https:\/\/raw.githubusercontent.com\/goddarkmarketing\/tiktok-rss-flat\/main\/thumbnails\/talaytrang\/screenshot_ogIEIFq6ACAzBWD0QfG8AcAgEXAiqJktqBHARe~tplv-tiktokx-origin.image.jpg",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_ogIEIFq6ACAzBWD0QfG8AcAgEXAiqJktqBHARe~tplv-tiktokx-origin.image.jpg",
             "title": "เที่ยวครบ จบในที่เดียว ราคาสบายกระเป๋า 💙 🏨 2วัน1คืน เริ่มต้นเพียงท่านละ 1,375.- มีทั้งเรือใหญ่ อาหาร ที่พัก และสตาฟดูแลตลอดทริป จองกับเรา ที่เหลือปล่อยให้ทะเลเยียวยา 🌤️🌊 📌 ราคาหลักร้อย วิวหลักล้าน 📥 จองวันนี้เริ่มเที่ยวได้ 1 ตุลาคม 69 เป็นต้นไป #FootballT",
             "views": "",
-            "url": "https:\/\/www.tiktok.com\/@talaytrang\/video\/7648240175557905682"
+            "url": "https://www.tiktok.com/@talaytrang/video/7648240175557905682"
         },
         {
             "id": "7648165195684039954",
             "platform": "tiktok",
-            "thumb": "https:\/\/raw.githubusercontent.com\/goddarkmarketing\/tiktok-rss-flat\/main\/thumbnails\/talaytrang\/screenshot_ooQjVSgOWCT6AfM7EA8gXfA4AtQw3Av7D3RUeI~tplv-tiktokx-origin.image.jpg",
-            "title": "เที่ยวทะเลตรังแบบสบาย ๆ เริ่มต้นเพียง 950 บาท\/ท่าน ⛴️ เดินทางด้วยเรือใหญ่ 🍽️ อิ่มอร่อยกับอาหารบุฟเฟ่ต์ 🏖️ เที่ยวเกาะสวย น้ำใส เก็บภาพความประทับใจได้ตลอดทริป เที่ยวง่าย ราคาคุ้มค่า เหมาะสำหรับทุกวัย จองครั้งเดียว ที่เหลือให้เราดูแล ✨ จองวันนี้เริ่มเที่ยว 1",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_ooQjVSgOWCT6AfM7EA8gXfA4AtQw3Av7D3RUeI~tplv-tiktokx-origin.image.jpg",
+            "title": "เที่ยวทะเลตรังแบบสบาย ๆ เริ่มต้นเพียง 950 บาท/ท่าน ⛴️ เดินทางด้วยเรือใหญ่ 🍽️ อิ่มอร่อยกับอาหารบุฟเฟ่ต์ 🏖️ เที่ยวเกาะสวย น้ำใส เก็บภาพความประทับใจได้ตลอดทริป เที่ยวง่าย ราคาคุ้มค่า เหมาะสำหรับทุกวัย จองครั้งเดียว ที่เหลือให้เราดูแล ✨ จองวันนี้เริ่มเที่ยว 1",
             "views": "",
-            "url": "https:\/\/www.tiktok.com\/@talaytrang\/video\/7648165195684039954"
+            "url": "https://www.tiktok.com/@talaytrang/video/7648165195684039954"
         },
         {
             "id": "7647861434105203986",
             "platform": "tiktok",
-            "thumb": "https:\/\/raw.githubusercontent.com\/goddarkmarketing\/tiktok-rss-flat\/main\/thumbnails\/talaytrang\/screenshot_oMAIUE4IDhjlqCqcgEfXAjAAHFeTAqBEs7gRmi~tplv-tiktokx-origin.image.jpg",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_oMAIUE4IDhjlqCqcgEfXAjAAHFeTAqBEs7gRmi~tplv-tiktokx-origin.image.jpg",
             "title": "🌊 เที่ยวตรังครบ จบในที่เดียว ทะเลตรัง ดอท คอม  มีหลายแพ็กเกจให้เลือก  🏝️ ✨ แพ็คเกจ ค้างคืน และไปเก็บไปเช้าเย็นกลับ แพ็กเกจขายดี มาแนะนำ✅💙 จองวันนี้ เที่ยวได้ 1 ตุลาคมเป็นต้นไป #FootballTikTok #tiktokพาเที่ยว #ทะเลตรัง #ทะเลตรังดอทคอม #tiktok",
             "views": "",
-            "url": "https:\/\/www.tiktok.com\/@talaytrang\/video\/7647861434105203986"
+            "url": "https://www.tiktok.com/@talaytrang/video/7647861434105203986"
         },
         {
             "id": "7647745461956168978",
             "platform": "tiktok",
-            "thumb": "https:\/\/raw.githubusercontent.com\/goddarkmarketing\/tiktok-rss-flat\/main\/thumbnails\/talaytrang\/screenshot_oABhAQvEjiAAWCSAE1iB0Hf2IAWIwAk3AKi6WI~tplv-tiktokx-origin.image.jpg",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_oABhAQvEjiAAWCSAE1iB0Hf2IAWIwAk3AKi6WI~tplv-tiktokx-origin.image.jpg",
             "title": "🌊✨ แพ็กเกจสุดคุ้ม 2 วัน 1 คืน ✨🌊 ที่พักพร้อมทริปเที่ยวทะเลสุดฟิน 🌴☀️ 💙 ราคาเริ่มต้นเพียง ท่านละ 975 บาท (ราคาสำหรับ 6 ท่านขึ้นไป) 📅 จองใด้ตั้งเเต่วันนี้ เที่ยวได้ตั้งแต่ 1 ตุลาคม เป็นต้นไป ครบทั้งที่พักและทริปทะเลในราคาเบา ๆ ให้คุณได้พักผ่อนแบบคุ้มค่า 💦🏝️",
             "views": "",
-            "url": "https:\/\/www.tiktok.com\/@talaytrang\/video\/7647745461956168978"
+            "url": "https://www.tiktok.com/@talaytrang/video/7647745461956168978"
         },
         {
             "id": "7647489080007216392",
             "platform": "tiktok",
-            "thumb": "https:\/\/raw.githubusercontent.com\/goddarkmarketing\/tiktok-rss-flat\/main\/thumbnails\/talaytrang\/screenshot_ocXIFU4YItAIBiEWRi1CEEPinV7ABqaAAhAEA~tplv-tiktokx-origin.image.jpg",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_ocXIFU4YItAIBiEWRi1CEEPinV7ABqaAAhAEA~tplv-tiktokx-origin.image.jpg",
             "title": "🌊 หนีความวุ่นวาย แล้วไปให้ทะเลฮีลใจ 💙     เที่ยวทะเลตรังแบบไปเช้าเย็นกลับ เพียงท่านละ 950.-     นั่งเรือใหญ่สบาย ๆ พร้อมอาหารบุฟเฟ่ต์อิ่มครบทั้งทริป 🍽️✨ ❤️📍จองใด้ตั้งเเค่วันนี้ เริ่มเที่ยว 1 ตุลาคม เป้นต้นไป 📍💌 #tiktokพาเที่ยว #ทะเลตรัง #ทะเลตรังดอทคอม #t",
             "views": "",
-            "url": "https:\/\/www.tiktok.com\/@talaytrang\/video\/7647489080007216392"
+            "url": "https://www.tiktok.com/@talaytrang/video/7647489080007216392"
         }
     ],
     "whyUs": [
@@ -5369,7 +5369,7 @@
             "n": 1,
             "icon": "anchor",
             "title": "เลือกประเภทเรือ",
-            "desc": "เรือหางยาว \/ Speed Boat \/ เรือใหญ่ ตามจำนวนคนและงบประมาณ"
+            "desc": "เรือหางยาว / Speed Boat / เรือใหญ่ ตามจำนวนคนและงบประมาณ"
         },
         {
             "n": 2,
@@ -5411,25 +5411,25 @@
         {
             "icon": "bed",
             "title": "จองห้องพัก",
-            "href": "https:\/\/line.me\/R\/ti\/p\/%40talaytrang",
+            "href": "https://line.me/R/ti/p/%40talaytrang",
             "external": true
         },
         {
             "icon": "ticket",
             "title": "รับจองตั๋วเรือเข้าเกาะ",
-            "href": "https:\/\/line.me\/R\/ti\/p\/%40talaytrang",
+            "href": "https://line.me/R/ti/p/%40talaytrang",
             "external": true
         },
         {
             "icon": "car",
             "title": "บริการเช่ารถ",
-            "href": "https:\/\/line.me\/R\/ti\/p\/%40talaytrang",
+            "href": "https://line.me/R/ti/p/%40talaytrang",
             "external": true
         },
         {
             "icon": "briefcase",
             "title": "จัดประชุมสัมมนา",
-            "href": "https:\/\/line.me\/R\/ti\/p\/%40talaytrang",
+            "href": "https://line.me/R/ti/p/%40talaytrang",
             "external": true
         },
         {
@@ -5440,7 +5440,7 @@
         {
             "icon": "cutlery",
             "title": "รับจัดทำอาหาร",
-            "href": "https:\/\/line.me\/R\/ti\/p\/%40talaytrang",
+            "href": "https://line.me/R/ti/p/%40talaytrang",
             "external": true
         },
         {
@@ -5451,25 +5451,25 @@
         {
             "icon": "camera",
             "title": "สถานที่ถ่ายหนัง",
-            "href": "https:\/\/line.me\/R\/ti\/p\/%40talaytrang",
+            "href": "https://line.me/R/ti/p/%40talaytrang",
             "external": true
         }
     ],
     "heroSlides": [
         {
-            "src": "assets\/uploads\/20260602-131052-5ab9ec8c.png",
+            "src": "assets/uploads/20260602-131052-5ab9ec8c.png",
             "alt": "เช่าเรือเที่ยวทะเลตรัง — ทัวร์ตรัง"
         },
         {
-            "src": "assets\/uploads\/20260602-131107-bcb7fc4b.png",
+            "src": "assets/uploads/20260602-131107-bcb7fc4b.png",
             "alt": "โปรแกรมเที่ยวทะเลตรัง — ทัวร์ตรัง"
         },
         {
-            "src": "assets\/uploads\/20260602-131058-7e606846.png",
+            "src": "assets/uploads/20260602-131058-7e606846.png",
             "alt": "เช่าเรือหางยาว Speedboat เรือทัวร์ เที่ยวทะเลตรัง"
         },
         {
-            "src": "assets\/uploads\/20260602-131052-5ab9ec8c.png",
+            "src": "assets/uploads/20260602-131052-5ab9ec8c.png",
             "alt": "แพ็คเกจทัวร์ตรัง เที่ยว 4 เกาะทะเลตรัง ถ้ำมรกต เกาะกระดาน ทัวร์ตรังส่วนตัว"
         }
     ],
@@ -5479,8 +5479,8 @@
             "category": "แนะนำเส้นทาง",
             "title": "5 เกาะห้ามพลาดเมื่อมาเที่ยวทะเลตรัง",
             "excerpt": "รวมไฮไลต์เกาะสวยของจังหวัดตรัง ตั้งแต่ถ้ำมรกตอันลึกลับ ไปจนถึงหาดทรายขาวของเกาะกระดาน คู่มือฉบับเดียวจบ",
-            "cover": "https:\/\/images.pexels.com\/photos\/14573822\/pexels-photo-14573822.jpeg?auto=compress&cs=tinysrgb&w=1600",
-            "thumb": "https:\/\/images.pexels.com\/photos\/14573822\/pexels-photo-14573822.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "cover": "https://images.pexels.com/photos/14573822/pexels-photo-14573822.jpeg?auto=compress&cs=tinysrgb&w=1600",
+            "thumb": "https://images.pexels.com/photos/14573822/pexels-photo-14573822.jpeg?auto=compress&cs=tinysrgb&w=800",
             "author": "ทีมงาน Talay Trang",
             "date": "15 พ.ค. 2026",
             "readTime": "6 นาที",
@@ -5499,7 +5499,7 @@
                 },
                 {
                     "type": "img",
-                    "src": "https:\/\/images.pexels.com\/photos\/1450363\/pexels-photo-1450363.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    "src": "https://images.pexels.com/photos/1450363/pexels-photo-1450363.jpeg?auto=compress&cs=tinysrgb&w=1600",
                     "alt": "หาดทรายขาวที่เกาะกระดาน ทะเลตรัง"
                 },
                 {
@@ -5532,7 +5532,7 @@
                 },
                 {
                     "type": "img",
-                    "src": "https:\/\/images.pexels.com\/photos\/1647064\/pexels-photo-1647064.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    "src": "https://images.pexels.com/photos/1647064/pexels-photo-1647064.jpeg?auto=compress&cs=tinysrgb&w=1600",
                     "alt": "มุมมองจากเรือ มองเห็นเกาะหินปูน"
                 },
                 {
@@ -5567,8 +5567,8 @@
             "category": "คู่มือเลือกเรือ",
             "title": "เลือกเรืออะไรดี? หางยาว vs Speed Boat vs เรือใหญ่",
             "excerpt": "เปรียบเทียบเรือทั้ง 3 ประเภทแบบหมดเปลือก ราคาเริ่มต้น จำนวนคนที่รับได้ และเหมาะกับใคร — อ่านก่อนตัดสินใจจอง",
-            "cover": "https:\/\/images.pexels.com\/photos\/1591376\/pexels-photo-1591376.jpeg?auto=compress&cs=tinysrgb&w=1600",
-            "thumb": "https:\/\/images.pexels.com\/photos\/1591376\/pexels-photo-1591376.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "cover": "https://images.pexels.com/photos/1591376/pexels-photo-1591376.jpeg?auto=compress&cs=tinysrgb&w=1600",
+            "thumb": "https://images.pexels.com/photos/1591376/pexels-photo-1591376.jpeg?auto=compress&cs=tinysrgb&w=800",
             "author": "ทีมงาน Talay Trang",
             "date": "8 พ.ค. 2026",
             "readTime": "5 นาที",
@@ -5583,11 +5583,11 @@
                 },
                 {
                     "type": "p",
-                    "text": "เรือหางยาวคือสัญลักษณ์ของทะเลใต้ ราคาเริ่มต้นต่ำที่สุด ประมาณ 1,800 – 2,500 บาท\/วัน รับได้ 8–12 คน เหมาะกับครอบครัวเล็ก คู่รัก หรือกลุ่มเพื่อน 4–8 คนที่ไม่รีบ ความเร็วประมาณ 15–20 กม.\/ชม. ทำให้สนุกกับวิวระหว่างทาง ไม่กระแทกคลื่น เหมาะกับเด็กและผู้สูงอายุ"
+                    "text": "เรือหางยาวคือสัญลักษณ์ของทะเลใต้ ราคาเริ่มต้นต่ำที่สุด ประมาณ 1,800 – 2,500 บาท/วัน รับได้ 8–12 คน เหมาะกับครอบครัวเล็ก คู่รัก หรือกลุ่มเพื่อน 4–8 คนที่ไม่รีบ ความเร็วประมาณ 15–20 กม./ชม. ทำให้สนุกกับวิวระหว่างทาง ไม่กระแทกคลื่น เหมาะกับเด็กและผู้สูงอายุ"
                 },
                 {
                     "type": "img",
-                    "src": "https:\/\/images.pexels.com\/photos\/237741\/pexels-photo-237741.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    "src": "https://images.pexels.com/photos/237741/pexels-photo-237741.jpeg?auto=compress&cs=tinysrgb&w=1600",
                     "alt": "เรือหางยาวจอดที่ชายฝั่งกระบี่"
                 },
                 {
@@ -5596,7 +5596,7 @@
                 },
                 {
                     "type": "p",
-                    "text": "Speed Boat คือทางเลือกที่นิยมที่สุดสำหรับทริปวันเดียว 4 เกาะ + ถ้ำมรกต ราคาเริ่ม 9,000 – 12,000 บาท\/วัน รับได้ 15–35 คน เครื่องยนต์ 2-3 เครื่อง ทำความเร็วได้ 35–45 กม.\/ชม. เดินทางถึงเกาะปลายทางเร็วขึ้นมาก หมายความว่าได้เวลาเล่นน้ำเต็มที่ในแต่ละจุด"
+                    "text": "Speed Boat คือทางเลือกที่นิยมที่สุดสำหรับทริปวันเดียว 4 เกาะ + ถ้ำมรกต ราคาเริ่ม 9,000 – 12,000 บาท/วัน รับได้ 15–35 คน เครื่องยนต์ 2-3 เครื่อง ทำความเร็วได้ 35–45 กม./ชม. เดินทางถึงเกาะปลายทางเร็วขึ้นมาก หมายความว่าได้เวลาเล่นน้ำเต็มที่ในแต่ละจุด"
                 },
                 {
                     "type": "quote",
@@ -5608,11 +5608,11 @@
                 },
                 {
                     "type": "p",
-                    "text": "เรือใหญ่รับได้ตั้งแต่ 30 ถึง 130 คน ราคาเริ่มต้น 12,000 บาท\/วัน ขึ้นไปตามขนาดและสิ่งอำนวยความสะดวก เหมาะกับกรุ๊ปบริษัท ทริปแต่งงาน หรือกรุ๊ปนักเรียน-นักศึกษา มีห้องโดยสารปรับอากาศ ห้องน้ำ และพื้นที่กิจกรรมบนเรือ"
+                    "text": "เรือใหญ่รับได้ตั้งแต่ 30 ถึง 130 คน ราคาเริ่มต้น 12,000 บาท/วัน ขึ้นไปตามขนาดและสิ่งอำนวยความสะดวก เหมาะกับกรุ๊ปบริษัท ทริปแต่งงาน หรือกรุ๊ปนักเรียน-นักศึกษา มีห้องโดยสารปรับอากาศ ห้องน้ำ และพื้นที่กิจกรรมบนเรือ"
                 },
                 {
                     "type": "img",
-                    "src": "https:\/\/images.pexels.com\/photos\/13680386\/pexels-photo-13680386.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    "src": "https://images.pexels.com/photos/13680386/pexels-photo-13680386.jpeg?auto=compress&cs=tinysrgb&w=1600",
                     "alt": "เรือยอชต์ขนาดใหญ่บนน้ำสีคราม"
                 },
                 {
@@ -5622,9 +5622,9 @@
                 {
                     "type": "list",
                     "items": [
-                        "เรือหางยาว — รับ 8–12 คน · เริ่ม 1,800 บ. · เหมาะกับครอบครัว\/คู่รัก",
+                        "เรือหางยาว — รับ 8–12 คน · เริ่ม 1,800 บ. · เหมาะกับครอบครัว/คู่รัก",
                         "Speed Boat — รับ 15–35 คน · เริ่ม 9,000 บ. · เหมาะกับทริปวันเดียวหลายเกาะ",
-                        "เรือใหญ่ — รับ 30–130 คน · เริ่ม 12,000 บ. · เหมาะกับกรุ๊ปบริษัท\/สัมมนา"
+                        "เรือใหญ่ — รับ 30–130 คน · เริ่ม 12,000 บ. · เหมาะกับกรุ๊ปบริษัท/สัมมนา"
                     ]
                 },
                 {
@@ -5642,8 +5642,8 @@
             "category": "วางแผนการเดินทาง",
             "title": "ฤดูที่เหมาะกับการเที่ยวทะเลตรัง — เดือนไหนน้ำใสที่สุด?",
             "excerpt": "รู้จัก 3 ช่วงเวลาของทะเลตรัง ทั้งช่วงไฮซีซั่นน้ำใส ช่วงฝนพระอาทิตย์ตกสวย และช่วงเปลี่ยนผ่านที่น่าจอง",
-            "cover": "https:\/\/images.pexels.com\/photos\/31200075\/pexels-photo-31200075.jpeg?auto=compress&cs=tinysrgb&w=1600",
-            "thumb": "https:\/\/images.pexels.com\/photos\/31200075\/pexels-photo-31200075.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "cover": "https://images.pexels.com/photos/31200075/pexels-photo-31200075.jpeg?auto=compress&cs=tinysrgb&w=1600",
+            "thumb": "https://images.pexels.com/photos/31200075/pexels-photo-31200075.jpeg?auto=compress&cs=tinysrgb&w=800",
             "author": "ทีมงาน Talay Trang",
             "date": "1 พ.ค. 2026",
             "readTime": "4 นาที",
@@ -5662,7 +5662,7 @@
                 },
                 {
                     "type": "img",
-                    "src": "https:\/\/images.pexels.com\/photos\/28581876\/pexels-photo-28581876.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    "src": "https://images.pexels.com/photos/28581876/pexels-photo-28581876.jpeg?auto=compress&cs=tinysrgb&w=1600",
                     "alt": "น้ำทะเลใสในช่วงไฮซีซั่นที่ตรัง"
                 },
                 {
@@ -5724,8 +5724,8 @@
             "category": "เตรียมตัวก่อนเที่ยว",
             "title": "Pack อะไรไปทะเลตรังบ้าง? Checklist ฉบับครบจบ",
             "excerpt": "รายการของที่ต้องเตรียม + ของที่ลืมแล้วเสียดาย รวม 20 รายการพร้อมเหตุผล สำหรับทริปทะเลตรัง 1-3 วัน",
-            "cover": "https:\/\/images.pexels.com\/photos\/457881\/pexels-photo-457881.jpeg?auto=compress&cs=tinysrgb&w=1600",
-            "thumb": "https:\/\/images.pexels.com\/photos\/457881\/pexels-photo-457881.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "cover": "https://images.pexels.com/photos/457881/pexels-photo-457881.jpeg?auto=compress&cs=tinysrgb&w=1600",
+            "thumb": "https://images.pexels.com/photos/457881/pexels-photo-457881.jpeg?auto=compress&cs=tinysrgb&w=800",
             "author": "ทีมงาน Talay Trang",
             "date": "23 เม.ย. 2026",
             "readTime": "5 นาที",
@@ -5751,7 +5751,7 @@
                 },
                 {
                     "type": "img",
-                    "src": "https:\/\/images.pexels.com\/photos\/9164423\/pexels-photo-9164423.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                    "src": "https://images.pexels.com/photos/9164423/pexels-photo-9164423.jpeg?auto=compress&cs=tinysrgb&w=1600",
                     "alt": "อุปกรณ์เตรียมไปทะเล"
                 },
                 {
@@ -5799,7 +5799,7 @@
                         "เสื้อผ้าเตรียมเปลี่ยน 2-3 ชุด — ผ้าบางแห้งเร็ว",
                         "รองเท้าแตะ + รองเท้าปิดหน้าเดินเกาะ",
                         "ยาประจำตัวและชุดปฐมพยาบาลเล็กๆ",
-                        "หูฟัง \/ หนังสือ — ช่วงพักผ่อนบนรีสอร์ท"
+                        "หูฟัง / หนังสือ — ช่วงพักผ่อนบนรีสอร์ท"
                     ]
                 },
                 {
@@ -5813,7 +5813,7 @@
         "customTrip": {
             "enabled": true,
             "href": "booking.html",
-            "image": "https:\/\/images.pexels.com\/photos\/17942107\/pexels-photo-17942107.jpeg?auto=compress&cs=tinysrgb&w=1200",
+            "image": "https://images.pexels.com/photos/17942107/pexels-photo-17942107.jpeg?auto=compress&cs=tinysrgb&w=1200",
             "name": "เหมาลำพิเศษ Custom Trip",
             "sub": "ออกแบบเส้นทาง เลือก Option ได้เอง",
             "rating": 5,
@@ -5888,64 +5888,64 @@
             "title": "Talay Trang — เช่าเรือเที่ยวทะเลตรัง เลือกเรือได้ตามสไตล์คุณ",
             "description": "บริการเช่าเรือเที่ยวทะเลตรัง โดยทีมงานเจ้าถิ่น เลือกได้ทั้งเรือหางยาว Speed Boat และเรือใหญ่ พร้อมโปรแกรม 4 เกาะ ถ้ำมรกต เกาะกระดาน จองง่ายผ่าน LINE @talaytrang",
             "ogTitle": "Talay Trang — เช่าเรือเที่ยวทะเลตรัง",
-            "ogDescription": "เช่าเรือทะเลตรัง 3 ประเภท หางยาว \/ Speed Boat \/ เรือใหญ่ พร้อมโปรแกรมเที่ยวยอดนิยม",
-            "ogImage": "https:\/\/images.pexels.com\/photos\/14573822\/pexels-photo-14573822.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            "ogDescription": "เช่าเรือทะเลตรัง 3 ประเภท หางยาว / Speed Boat / เรือใหญ่ พร้อมโปรแกรมเที่ยวยอดนิยม",
+            "ogImage": "https://images.pexels.com/photos/14573822/pexels-photo-14573822.jpeg?auto=compress&cs=tinysrgb&w=1920"
         },
         "about": {
             "title": "เกี่ยวกับเรา — Talay Trang เช่าเรือตรัง โดยเจ้าถิ่นกันตัง",
             "description": "Talay Trang ทีมงานเจ้าถิ่นกันตัง บริการเช่าเรือเที่ยวทะเลตรัง มีออฟฟิศจริง รู้เส้นทาง ดูแลตั้งแต่ก่อนเดินทางจนจบทริป",
             "ogTitle": "เกี่ยวกับ Talay Trang — เช่าเรือตรัง",
             "ogDescription": "ทีมงานเจ้าถิ่นกันตัง บริการเช่าเรือเที่ยวทะเลตรัง มีออฟฟิศจริง",
-            "ogImage": "https:\/\/images.pexels.com\/photos\/13419316\/pexels-photo-13419316.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            "ogImage": "https://images.pexels.com/photos/13419316/pexels-photo-13419316.jpeg?auto=compress&cs=tinysrgb&w=1920"
         },
         "boats": {
             "title": "ประเภทเรือ — เรือหางยาว Speed Boat เรือใหญ่ | Talay Trang",
             "description": "เลือกเช่าเรือเที่ยวทะเลตรังให้เหมาะกับทริปคุณ มี 3 ประเภท: เรือหางยาว Speed Boat และเรือใหญ่ พร้อมราคาและจำนวนคนรองรับชัดเจน",
             "ogTitle": "ประเภทเรือ — Talay Trang",
             "ogDescription": "เรือหางยาว Speed Boat และเรือใหญ่ เลือกได้ตามสไตล์ทริป",
-            "ogImage": "https:\/\/images.pexels.com\/photos\/1591376\/pexels-photo-1591376.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            "ogImage": "https://images.pexels.com/photos/1591376/pexels-photo-1591376.jpeg?auto=compress&cs=tinysrgb&w=1920"
         },
         "programs": {
             "title": "แพ็กเกจเที่ยวทะเลตรัง — ไปเช้าเย็นกลับ ถึง 4 วัน 3 คืน | Talay Trang",
             "description": "รวมแพ็กเกจเที่ยวทะเลตรัง ไปเช้าเย็นกลับ 2 วัน 1 คืน 3 วัน 2 คืน และ 4 วัน 3 คืน ค้นหา กรอง และดูรายละเอียดได้ครบ",
             "ogTitle": "แพ็กเกจเที่ยวทะเลตรัง — Talay Trang",
             "ogDescription": "แพ็กเกจไปเช้าเย็นกลับ 2 วัน 1 คืน 3 วัน 2 คืน และ 4 วัน 3 คืน",
-            "ogImage": "https:\/\/images.pexels.com\/photos\/1647064\/pexels-photo-1647064.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            "ogImage": "https://images.pexels.com/photos/1647064/pexels-photo-1647064.jpeg?auto=compress&cs=tinysrgb&w=1920"
         },
         "booking": {
             "title": "จองเรือเที่ยวทะเลตรัง — คำนวณราคาก่อนจอง | Talay Trang",
             "description": "เลือกเรือ เลือกโปรแกรม กรอกข้อมูล ระบบคำนวณราคาทันที พร้อมส่งจองผ่าน LINE — ใช้เวลาไม่ถึง 2 นาที",
             "ogTitle": "จองเรือเที่ยวทะเลตรัง — Talay Trang",
             "ogDescription": "คำนวณราคาและส่งจองผ่าน LINE ได้ทันที",
-            "ogImage": "https:\/\/images.pexels.com\/photos\/31200075\/pexels-photo-31200075.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            "ogImage": "https://images.pexels.com/photos/31200075/pexels-photo-31200075.jpeg?auto=compress&cs=tinysrgb&w=1920"
         },
         "articles": {
             "title": "บทความ — เคล็ดลับเที่ยวทะเลตรัง | Talay Trang",
             "description": "รวมบทความและคู่มือเที่ยวทะเลตรัง — แนะนำเกาะยอดนิยม การเลือกเรือ ฤดูที่เหมาะสม และ Checklist เตรียมตัวก่อนออกเดินทาง",
             "ogTitle": "บทความเที่ยวทะเลตรัง — Talay Trang",
             "ogDescription": "คู่มือและเคล็ดลับเที่ยวทะเลตรังจากทีมงาน Talay Trang",
-            "ogImage": "https:\/\/images.pexels.com\/photos\/9164423\/pexels-photo-9164423.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            "ogImage": "https://images.pexels.com/photos/9164423/pexels-photo-9164423.jpeg?auto=compress&cs=tinysrgb&w=1920"
         },
         "article": {
             "title": "บทความ | Talay Trang",
             "description": "บทความเที่ยวทะเลตรัง จาก Talay Trang",
             "ogTitle": "บทความ — Talay Trang",
             "ogDescription": "บทความและคู่มือเที่ยวทะเลตรัง",
-            "ogImage": "https:\/\/images.pexels.com\/photos\/9164423\/pexels-photo-9164423.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            "ogImage": "https://images.pexels.com/photos/9164423/pexels-photo-9164423.jpeg?auto=compress&cs=tinysrgb&w=1920"
         },
         "videos": {
             "title": "วิดีโอ TikTok ทะเลตรัง — ทริปจริงจาก @talaytrang | Talay Trang",
             "description": "รวมวิดีโอ TikTok ทะเลตรังจากช่อง @talaytrang ดูบรรยากาศจริงก่อนตัดสินใจจอง อัปเดตล่าสุดทุกสัปดาห์",
             "ogTitle": "วิดีโอ TikTok — Talay Trang",
             "ogDescription": "ทริปจริงจากช่อง @talaytrang",
-            "ogImage": "https:\/\/images.pexels.com\/photos\/28581876\/pexels-photo-28581876.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            "ogImage": "https://images.pexels.com/photos/28581876/pexels-photo-28581876.jpeg?auto=compress&cs=tinysrgb&w=1920"
         },
         "contact": {
-            "title": "ติดต่อ Talay Trang — โทร \/ LINE \/ แผนที่ออฟฟิศกันตัง",
+            "title": "ติดต่อ Talay Trang — โทร / LINE / แผนที่ออฟฟิศกันตัง",
             "description": "ติดต่อ Talay Trang เช่าเรือเที่ยวทะเลตรัง โทร 081-234-5678 LINE @talaytrang ออฟฟิศตั้งอยู่ที่อำเภอกันตัง จังหวัดตรัง",
             "ogTitle": "ติดต่อ Talay Trang",
             "ogDescription": "โทร LINE แผนที่ออฟฟิศกันตัง",
-            "ogImage": "https:\/\/images.pexels.com\/photos\/457881\/pexels-photo-457881.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            "ogImage": "https://images.pexels.com/photos/457881/pexels-photo-457881.jpeg?auto=compress&cs=tinysrgb&w=1920"
         }
     },
     "homeSections": {
@@ -6000,6 +6000,370 @@
             "eyebrow": "พร้อมออกทะเลแล้วใช่ไหม",
             "title": "เลือกเรือ คำนวณราคา และจองผ่าน LINE ได้เลย",
             "lead": "ทีมงานแอดมินตอบกลับใน LINE รวดเร็ว ดูแลคุณตั้งแต่ก่อนเที่ยวจนจบทริป"
+        }
+    },
+    "boatBooking": {
+        "insurancePerPerson": 40,
+        "routes": [
+            {
+                "id": "r1",
+                "name": "เส้นทางที่ 1",
+                "subtitle": "ถ้ำมรกต · เกาะกระดาน",
+                "image": "https://images.pexels.com/photos/1647064/pexels-photo-1647064.jpeg?auto=compress&cs=tinysrgb&w=600"
+            },
+            {
+                "id": "r2",
+                "name": "เส้นทางที่ 2",
+                "subtitle": "เกาะกระดาน · เกาะเชือก",
+                "image": "https://images.pexels.com/photos/1450363/pexels-photo-1450363.jpeg?auto=compress&cs=tinysrgb&w=600"
+            },
+            {
+                "id": "r3",
+                "name": "เส้นทางที่ 3",
+                "subtitle": "เกาะแหวน · เกาะเชือก",
+                "image": "https://images.pexels.com/photos/15763636/pexels-photo-15763636.jpeg?auto=compress&cs=tinysrgb&w=600"
+            },
+            {
+                "id": "r4",
+                "name": "เส้นทางที่ 4",
+                "subtitle": "4 เกาะครบชุด",
+                "image": "https://images.pexels.com/photos/14573822/pexels-photo-14573822.jpeg?auto=compress&cs=tinysrgb&w=600"
+            },
+            {
+                "id": "r5",
+                "name": "เส้นทางที่ 5",
+                "subtitle": "เกาะมุก · ถ้ำมรกต",
+                "image": "https://images.pexels.com/photos/17942107/pexels-photo-17942107.jpeg?auto=compress&cs=tinysrgb&w=600"
+            },
+            {
+                "id": "r6",
+                "name": "เส้นทางที่ 6",
+                "subtitle": "เหมาลำตามใจคุณ",
+                "image": "https://images.pexels.com/photos/13419316/pexels-photo-13419316.jpeg?auto=compress&cs=tinysrgb&w=600"
+            }
+        ],
+        "peopleTiers": [
+            {
+                "id": "p1",
+                "min": 1,
+                "max": 4,
+                "label": "1-4 คน"
+            },
+            {
+                "id": "p2",
+                "min": 5,
+                "max": 8,
+                "label": "5-8 คน"
+            },
+            {
+                "id": "p3",
+                "min": 9,
+                "max": 12,
+                "label": "9-12 คน"
+            },
+            {
+                "id": "p4",
+                "min": 13,
+                "max": 15,
+                "label": "13-15 คน"
+            }
+        ],
+        "charterPrices": {
+            "longtail": {
+                "r1": {
+                    "p1": 2800,
+                    "p2": 3500,
+                    "p3": 4200,
+                    "p4": 5000
+                },
+                "r2": {
+                    "p1": 3000,
+                    "p2": 3700,
+                    "p3": 4400,
+                    "p4": 5200
+                },
+                "r3": {
+                    "p1": 3100,
+                    "p2": 3800,
+                    "p3": 4500,
+                    "p4": 5300
+                },
+                "r4": {
+                    "p1": 3200,
+                    "p2": 3900,
+                    "p3": 4600,
+                    "p4": 5400
+                },
+                "r5": {
+                    "p1": 2900,
+                    "p2": 3600,
+                    "p3": 4300,
+                    "p4": 5100
+                },
+                "r6": {
+                    "p1": 3500,
+                    "p2": 4200,
+                    "p3": 4900,
+                    "p4": 5800
+                }
+            },
+            "speedboat": {
+                "r1": {
+                    "p1": 8500,
+                    "p2": 10500,
+                    "p3": 12500,
+                    "p4": 14800
+                },
+                "r2": {
+                    "p1": 9000,
+                    "p2": 11000,
+                    "p3": 13000,
+                    "p4": 15400
+                },
+                "r3": {
+                    "p1": 9200,
+                    "p2": 11200,
+                    "p3": 13200,
+                    "p4": 15600
+                },
+                "r4": {
+                    "p1": 9500,
+                    "p2": 11500,
+                    "p3": 13500,
+                    "p4": 16000
+                },
+                "r5": {
+                    "p1": 8800,
+                    "p2": 10800,
+                    "p3": 12800,
+                    "p4": 15200
+                },
+                "r6": {
+                    "p1": 10000,
+                    "p2": 12000,
+                    "p3": 14000,
+                    "p4": 16500
+                }
+            },
+            "bigboat": {
+                "r1": {
+                    "p1": 12000,
+                    "p2": 14500,
+                    "p3": 17000,
+                    "p4": 20000
+                },
+                "r2": {
+                    "p1": 12500,
+                    "p2": 15000,
+                    "p3": 17500,
+                    "p4": 20800
+                },
+                "r3": {
+                    "p1": 12800,
+                    "p2": 15300,
+                    "p3": 17800,
+                    "p4": 21200
+                },
+                "r4": {
+                    "p1": 13200,
+                    "p2": 15700,
+                    "p3": 18200,
+                    "p4": 21600
+                },
+                "r5": {
+                    "p1": 12200,
+                    "p2": 14700,
+                    "p3": 17200,
+                    "p4": 20400
+                },
+                "r6": {
+                    "p1": 14000,
+                    "p2": 16500,
+                    "p3": 19000,
+                    "p4": 22500
+                }
+            }
+        },
+        "addons": [
+            {
+                "id": "menu-food",
+                "icon": "cutlery",
+                "label": "เมนูอาหาร",
+                "desc": "อาหารกลางวันบนเรือ",
+                "price": 800,
+                "unit": "flat",
+                "priceLabel": "800 บาท"
+            },
+            {
+                "id": "menu-photo",
+                "icon": "camera",
+                "label": "เมนูช่างภาพ",
+                "desc": "ช่างภาพมืออาชีพ ส่งภาพภายใน 1 วัน",
+                "price": 1200,
+                "unit": "flat",
+                "priceLabel": "1,200 บาท"
+            },
+            {
+                "id": "menu-guide",
+                "icon": "users",
+                "label": "เมนูไกด์",
+                "desc": "ไกด์ท้องถิ่นพูดไทย/อังกฤษ",
+                "price": 1000,
+                "unit": "flat",
+                "priceLabel": "1,000 บาท"
+            },
+            {
+                "id": "menu-shuttle",
+                "icon": "carPick",
+                "label": "เมนูรถรับส่ง",
+                "desc": "รับส่งจากที่พักในตัวเมือง",
+                "price": 800,
+                "unit": "flat",
+                "priceLabel": "800 บาท"
+            }
+        ],
+        "profiles": {
+            "speedboat": {
+                "selectionMode": "size",
+                "tierProgressLabel": "ขนาดเรือ",
+                "tierStepTitle": "เลือกขนาดเรือ",
+                "tierStepDesc": "เมื่อเลือกเส้นทางเสร็จแล้ว ลูกค้าจะต้องเลือกขนาดเรือ",
+                "charterLabel": "ราคาค่าเรือสปีดโบ๊ท",
+                "insurancePerPerson": 50,
+                "guideFee": 1500,
+                "includedBoxTitle": "ราคาของเรือสปีดโบ๊ท รวมสิ่งที่บังคับในราคาแล้ว",
+                "footerNote": "หมายเหตุ: ราคาของเรือสปีดโบ๊ทรวม ค่ามัคคุเทศก์ 1,500 บาท และประกันอุบัติเหตุคนละ 50 บาท แล้วทุกขนาดเรือ",
+                "sizes": [
+                    {
+                        "id": "s1",
+                        "label": "1 เครื่องยนต์",
+                        "capacity": 12,
+                        "capacityLabel": "จุ 12 คน"
+                    },
+                    {
+                        "id": "s2",
+                        "label": "2 เครื่องยนต์",
+                        "capacity": 30,
+                        "capacityLabel": "จุ 30 คน"
+                    },
+                    {
+                        "id": "s3",
+                        "label": "3 เครื่องยนต์",
+                        "capacity": 45,
+                        "capacityLabel": "จุ 45 คน"
+                    }
+                ],
+                "charterPrices": {
+                    "r1": {
+                        "s1": 6900,
+                        "s2": 9800,
+                        "s3": 12800
+                    },
+                    "r2": {
+                        "s1": 7200,
+                        "s2": 10200,
+                        "s3": 13200
+                    },
+                    "r3": {
+                        "s1": 7500,
+                        "s2": 10500,
+                        "s3": 13600
+                    },
+                    "r4": {
+                        "s1": 7800,
+                        "s2": 10800,
+                        "s3": 14000
+                    },
+                    "r5": {
+                        "s1": 7100,
+                        "s2": 10000,
+                        "s3": 13000
+                    },
+                    "r6": {
+                        "s1": 8200,
+                        "s2": 11500,
+                        "s3": 15000
+                    }
+                }
+            },
+            "bigboat": {
+                "selectionMode": "size",
+                "tierProgressLabel": "ขนาดเรือ",
+                "tierStepTitle": "เลือกขนาดเรือ",
+                "tierStepDesc": "เมื่อเลือกเส้นทางเสร็จแล้ว ลูกค้าจะต้องเลือกขนาดเรือ",
+                "charterLabel": "ราคาค่าเรือทัวร์",
+                "charterSummaryPrefix": "ค่าเรือทัวร์",
+                "insurancePerPerson": 50,
+                "guideFee": 1500,
+                "safetyStaffRate": 800,
+                "safetyStaffRatio": 20,
+                "includedBoxTitle": "ราคาของเรือทัวร์ รวมสิ่งที่บังคับในราคาแล้ว",
+                "footerNote": "หมายเหตุ: ราคาของเรือทัวร์รวม ค่ามัคคุเทศก์, สต๊าฟดูแลความปลอดภัย และประกันอุบัติเหตุคนละ 50 บาท แล้วทุกขนาดเรือ",
+                "sizes": [
+                    {
+                        "id": "t1",
+                        "label": "ขนาดที่ 1",
+                        "capacity": 30,
+                        "capacityLabel": "จุ 30 คน"
+                    },
+                    {
+                        "id": "t2",
+                        "label": "ขนาดที่ 2",
+                        "capacity": 60,
+                        "capacityLabel": "จุ 60 คน"
+                    },
+                    {
+                        "id": "t3",
+                        "label": "ขนาดที่ 3",
+                        "capacity": 100,
+                        "capacityLabel": "จุ 100 คน"
+                    },
+                    {
+                        "id": "t4",
+                        "label": "ขนาดที่ 4",
+                        "capacity": 120,
+                        "capacityLabel": "จุ 120 คน"
+                    }
+                ],
+                "charterPrices": {
+                    "r1": {
+                        "t1": 9000,
+                        "t2": 15000,
+                        "t3": 20000,
+                        "t4": 24000
+                    },
+                    "r2": {
+                        "t1": 9400,
+                        "t2": 15500,
+                        "t3": 20800,
+                        "t4": 25000
+                    },
+                    "r3": {
+                        "t1": 9600,
+                        "t2": 15800,
+                        "t3": 21200,
+                        "t4": 25400
+                    },
+                    "r4": {
+                        "t1": 9800,
+                        "t2": 16200,
+                        "t3": 21800,
+                        "t4": 26000
+                    },
+                    "r5": {
+                        "t1": 9200,
+                        "t2": 15200,
+                        "t3": 20500,
+                        "t4": 24600
+                    },
+                    "r6": {
+                        "t1": 10500,
+                        "t2": 17000,
+                        "t3": 23000,
+                        "t4": 27500
+                    }
+                }
+            }
         }
     }
 }

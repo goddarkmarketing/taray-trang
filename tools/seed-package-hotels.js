@@ -14,15 +14,17 @@ const CITY_BASE = 975;
 const p1_001 = (site.packages2d1n || []).find((p) => p.id === 'p1-001');
 const CITY_HOTELS_TEMPLATE = JSON.parse(JSON.stringify(p1_001?.hotels || []));
 
+const KOH_NGAI_BASE = 1500;
 const KOH_NGAI_HOTELS = [
-  { name: 'เกาะไหง แคมปิ้ง', rooms: [{ name: 'ห้องมาตรฐาน', book: true }] },
-  { name: 'เกาะไหง รีสอร์ท', rooms: [{ name: 'ห้องมาตรฐาน', book: true }] },
-  { name: 'เกาะไหง แฟนตาซี รีสอร์ท', rooms: [{ name: 'ห้องมาตรฐาน', book: true }] },
-  { name: 'เกาะไหง ทับวารินทร์ รีสอร์ท', rooms: [{ name: 'ห้องมาตรฐาน', book: true }] },
+  { name: 'เกาะไหง แคมปิ้ง', rooms: [{ name: 'ห้องมาตรฐาน', price: 1500 }] },
+  { name: 'เกาะไหง รีสอร์ท', rooms: [{ name: 'ห้องมาตรฐาน', price: 1700 }] },
+  { name: 'เกาะไหง แฟนตาซี รีสอร์ท', rooms: [{ name: 'ห้องมาตรฐาน', price: 1900 }] },
+  { name: 'เกาะไหง ทับวารินทร์ รีสอร์ท', rooms: [{ name: 'ห้องมาตรฐาน', price: 2100 }] },
 ];
 
+const LIBONG_BASE = 1800;
 const LIBONG_HOTELS = [
-  { name: 'โฮมสเตย์เกาะลิบง', rooms: [{ name: 'ห้องมาตรฐาน', book: true }] },
+  { name: 'โฮมสเตย์เกาะลิบง', rooms: [{ name: 'ห้องมาตรฐาน', price: 1800 }] },
 ];
 
 function clone(obj) {
@@ -47,10 +49,32 @@ function hotelType(pkg) {
   return 'city';
 }
 
+function scaleNgaiHotels(hotels, basePrice) {
+  const factor = Math.max(1, Number(basePrice || KOH_NGAI_BASE) / KOH_NGAI_BASE);
+  return hotels.map((hotel) => ({
+    name: hotel.name,
+    rooms: (hotel.rooms || []).map((room) => ({
+      name: room.name,
+      price: Math.round((room.price || 0) * factor),
+    })),
+  }));
+}
+
+function scaleLibongHotels(hotels, basePrice) {
+  const factor = Math.max(1, Number(basePrice || LIBONG_BASE) / LIBONG_BASE);
+  return hotels.map((hotel) => ({
+    name: hotel.name,
+    rooms: (hotel.rooms || []).map((room) => ({
+      name: room.name,
+      price: Math.round((room.price || 0) * factor),
+    })),
+  }));
+}
+
 function hotelsFor(pkg) {
   const type = hotelType(pkg);
-  if (type === 'ngai') return clone(KOH_NGAI_HOTELS);
-  if (type === 'libong') return clone(LIBONG_HOTELS);
+  if (type === 'ngai') return scaleNgaiHotels(KOH_NGAI_HOTELS, pkg.basePrice);
+  if (type === 'libong') return scaleLibongHotels(LIBONG_HOTELS, pkg.basePrice);
   return scaleCityHotels(CITY_HOTELS_TEMPLATE, pkg.basePrice);
 }
 

@@ -173,6 +173,11 @@
           }));
       const itinerary = rawItinerary.map((item, i) => enrichItineraryItem(item, i, rawItinerary.length));
 
+      const isPkg2d1n = (PACKAGES_2D1N || []).some((x) => x.id === p.id);
+      const isPkg3d2n = (PACKAGES_3D2N || []).some((x) => x.id === p.id);
+      const isPkg4d3n = (PACKAGES_4D3N || []).some((x) => x.id === p.id);
+      const isMultiNightPkg = isPkg2d1n || isPkg3d2n || isPkg4d3n;
+
       function parseItineraryDay(title) {
         const m = (title || '').match(/วันที่\s*(\d+)/);
         return m ? parseInt(m[1], 10) : null;
@@ -195,7 +200,7 @@
         if (h < 15) return 3;
         return 4;
       }
-      function assignItineraryLayers(items) {
+      function assignItineraryLayers(items, forceMultiDay = false) {
         let currentDay = 1;
         const hasDayLabels = items.some((item) => /วันที่\s*\d+/.test(item.title));
         const daySet = new Set();
@@ -203,7 +208,32 @@
           const parsed = parseItineraryDay(item.title);
           if (parsed != null) daySet.add(parsed);
         });
-        const isMultiDay = hasDayLabels && daySet.size > 1;
+        const maxDay = daySet.size ? Math.max(...daySet) : 1;
+        const isMultiDay = forceMultiDay
+          || (hasDayLabels && (daySet.size > 1 || maxDay > 1));
+
+        if (forceMultiDay && !hasDayLabels) {
+          let lastMinutes = -1;
+          let day = 1;
+          return items.map((item) => {
+            const parsed = parseItineraryDay(item.title);
+            if (parsed != null) {
+              day = parsed;
+            } else {
+              const [h, m] = String(item.time || '12:00').split(':').map(Number);
+              const mins = (h || 0) * 60 + (m || 0);
+              if (lastMinutes >= 0 && mins < lastMinutes - 90) day += 1;
+              lastMinutes = mins;
+            }
+            return {
+              ...item,
+              layer: day,
+              bandLabel: `วันที่ ${day}`,
+              isMultiDay: true,
+            };
+          });
+        }
+
         return items.map((item) => {
           const parsed = parseItineraryDay(item.title);
           if (parsed != null) currentDay = parsed;
@@ -212,7 +242,7 @@
           return { ...item, layer, bandLabel, isMultiDay };
         });
       }
-      const itineraryLayers = assignItineraryLayers(itinerary);
+      const itineraryLayers = assignItineraryLayers(itinerary, isMultiNightPkg);
       const BAND_ICONS = {
         time: { 1: 'sun', 2: 'clock', 3: 'compass', 4: 'moon' },
       };
@@ -221,10 +251,6 @@
         const key = BAND_ICONS.time[layer] || 'clock';
         return ICONS[key] || ICONS.clock;
       }
-
-      const isPkg2d1n = (PACKAGES_2D1N || []).some((x) => x.id === p.id);
-      const isPkg3d2n = (PACKAGES_3D2N || []).some((x) => x.id === p.id);
-      const isPkg4d3n = (PACKAGES_4D3N || []).some((x) => x.id === p.id);
 
       function splitMealCombo(text) {
         const s = String(text).trim();
