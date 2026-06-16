@@ -148,7 +148,7 @@
       return { min: option.min ?? 1, max: tierMaxPeople(profile, routeId, option) || option.max || 1 };
     }
 
-    function clampPaxInput({ toast = false } = {}) {
+    function clampPaxInput({ toast = false, finalize = false } = {}) {
       const paxInput = form.querySelector('#bb-pax');
       if (!paxInput) return;
       const state = getState();
@@ -157,21 +157,21 @@
       if (!option || profile.askPax === false) return;
 
       const { min, max } = paxBounds(option, profile, state.routeId);
-      paxInput.min = String(min);
-      paxInput.max = String(max);
+      paxInput.dataset.min = String(min);
+      paxInput.dataset.max = String(max);
 
       const raw = String(paxInput.value ?? '').trim();
       if (!raw) return;
 
       const val = parseInt(raw, 10);
       if (Number.isNaN(val)) {
-        paxInput.value = String(min);
+        if (finalize) paxInput.value = String(min);
         return;
       }
       if (val > max) {
         paxInput.value = String(max);
         if (toast) window.TT?.toast?.(`จำนวนผู้โดยสารสูงสุด ${max} คน (ตามช่วงที่เลือก)`);
-      } else if (val < min) {
+      } else if (finalize && val < min) {
         paxInput.value = String(min);
         if (toast) window.TT?.toast?.(`จำนวนผู้โดยสารขั้นต่ำ ${min} คน (ตามช่วงที่เลือก)`);
       }
@@ -389,7 +389,7 @@
         <div class="bb-pax-field" id="bb-pax-wrap">
           <label class="bb-field-label" for="bb-pax">จำนวนผู้โดยสารจริง <span class="req">*</span></label>
           <p class="field-hint">กรอกจำนวนคนที่มาจริง (${min}–${max} คน) — ใช้คำนวณประกันอุบัติเหตุ (${fmt.format(profile.insurancePerPerson)} × จำนวนคน) และบริการต่อท่าน</p>
-          <input class="input bb-pax-input" type="number" id="bb-pax" name="pax" min="${min}" max="${max}" value="${val}" inputmode="numeric" required/>
+          <input class="input bb-pax-input" type="text" id="bb-pax" name="pax" inputmode="numeric" pattern="[0-9]*" autocomplete="off" value="${val}" data-min="${min}" data-max="${max}" required/>
         </div>`;
     }
 
@@ -708,11 +708,11 @@
       if (syncKey !== lastTierSyncKey) {
         tierStep.innerHTML = tierStepBody(profile, cur.routeId, cur.tierId, pax, cur.boatId);
         lastTierSyncKey = syncKey;
-        clampPaxInput();
+        clampPaxInput({ finalize: true });
       } else if (paxInput && option && profile.askPax !== false) {
-        paxInput.min = String(bounds.min);
-        paxInput.max = String(bounds.max);
-        clampPaxInput();
+        const { min, max } = bounds;
+        paxInput.dataset.min = String(min);
+        paxInput.dataset.max = String(max);
       }
     }
 
@@ -817,6 +817,8 @@
         window.TT?.toast?.(p.selectionMode === 'size' ? 'กรุณาเลือกขนาดเรือ' : 'กรุณาเลือกจำนวนคน');
         ok = false;
       } else if (stepKey === 'tier' && getProfile(state.boatId).askPax !== false) {
+        clampPaxInput({ toast: true, finalize: true });
+        state = getState();
         const profile = getProfile(state.boatId);
         const option = getSelectedOption(state);
         const { min, max } = paxBounds(option, profile, state.routeId);
@@ -914,7 +916,9 @@
         if (e.target.matches('input[name="route"], input[name="tier"], input[name="addon"]')) render();
       });
       form.addEventListener('input', (e) => {
-        if (e.target.matches('#bb-pax')) clampPaxInput({ toast: true });
+        if (e.target.matches('#bb-pax')) {
+          e.target.value = String(e.target.value ?? '').replace(/\D/g, '');
+        }
         render();
       });
       form.addEventListener('blur', (e) => {
@@ -926,7 +930,7 @@
         if (!option || profile.askPax === false) return;
         const { min } = paxBounds(option, profile, state.routeId);
         if (!String(paxInput.value ?? '').trim()) paxInput.value = String(min);
-        clampPaxInput();
+        clampPaxInput({ finalize: true });
         render();
       }, true);
 

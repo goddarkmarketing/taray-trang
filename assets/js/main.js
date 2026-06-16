@@ -377,52 +377,84 @@
     el.setAttribute('role', 'dialog');
     el.setAttribute('aria-label', 'ติดต่อเรา');
     el.innerHTML = `
-      <div class="welcome-popup-head">
-        <span class="welcome-popup-label">ติดต่อเรา</span>
-        <button type="button" class="welcome-popup-close" aria-label="ปิด">${ICONS.close}</button>
-      </div>
-      <div class="welcome-popup-body">
-        <a class="welcome-popup-call" href="tel:${phoneTel}">
-          <span class="welcome-popup-call-icon">${ICONS.phone}</span>
-          <span class="welcome-popup-call-num">${esc(phoneDisplay)}</span>
-        </a>
-        <a class="welcome-popup-line" href="${esc(lineUrl)}" target="_blank" rel="noopener">
-          <span class="welcome-popup-line-icon">${ICONS.line}</span>
-          <span class="welcome-popup-line-text">
-            <span class="welcome-popup-line-title">แชท LINE</span>
-            <span class="welcome-popup-line-id">${esc(lineId)}</span>
-          </span>
-        </a>
-        <div class="welcome-popup-qr">
-          <p class="welcome-popup-qr-hint">สแกนเพิ่มเพื่อน</p>
-          <div class="welcome-popup-qr-frame">
-            <img src="${esc(qrSrc)}" width="100" height="100" alt="QR Code ${esc(lineId)}" loading="lazy"/>
-          </div>
+      <div class="welcome-popup-backdrop" aria-hidden="true"></div>
+      <button type="button" class="welcome-popup-fab" aria-label="เปิดติดต่อเรา" aria-expanded="false">${ICONS.chat}</button>
+      <div class="welcome-popup-panel">
+        <div class="welcome-popup-head">
+          <span class="welcome-popup-label">ติดต่อเรา</span>
+          <button type="button" class="welcome-popup-close" aria-label="ปิด">${ICONS.close}</button>
         </div>
-        <div class="welcome-popup-hours-block">
-          <span>${esc(hoursWeekday)}</span>
-          ${hoursSunday ? `<span>${esc(hoursSunday)}</span>` : ''}
+        <div class="welcome-popup-body">
+          <a class="welcome-popup-call" href="tel:${phoneTel}">
+            <span class="welcome-popup-call-icon">${ICONS.phone}</span>
+            <span class="welcome-popup-call-num">${esc(phoneDisplay)}</span>
+          </a>
+          <a class="welcome-popup-line" href="${esc(lineUrl)}" target="_blank" rel="noopener">
+            <span class="welcome-popup-line-icon">${ICONS.line}</span>
+            <span class="welcome-popup-line-text">
+              <span class="welcome-popup-line-title">แชท LINE</span>
+              <span class="welcome-popup-line-id">${esc(lineId)}</span>
+            </span>
+          </a>
+          <div class="welcome-popup-qr">
+            <p class="welcome-popup-qr-hint">สแกนเพิ่มเพื่อน</p>
+            <div class="welcome-popup-qr-frame">
+              <img src="${esc(qrSrc)}" width="100" height="100" alt="QR Code ${esc(lineId)}" loading="lazy"/>
+            </div>
+          </div>
+          <div class="welcome-popup-hours-block">
+            <span>${esc(hoursWeekday)}</span>
+            ${hoursSunday ? `<span>${esc(hoursSunday)}</span>` : ''}
+          </div>
         </div>
       </div>`;
 
+    const fab = el.querySelector('.welcome-popup-fab');
+    const mqMobile = window.matchMedia('(max-width: 767px)');
+
+    const setExpanded = (open) => {
+      el.classList.toggle('is-expanded', open);
+      if (fab) fab.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+
     const close = () => {
-      el.classList.remove('is-visible');
+      el.classList.remove('is-visible', 'is-expanded');
+      if (fab) fab.setAttribute('aria-expanded', 'false');
       sessionStorage.setItem('tt-welcome-popup', '1');
       window.__TT_POPUP_DONE = true;
       setTimeout(() => el.remove(), 320);
     };
 
+    fab?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setExpanded(!el.classList.contains('is-expanded'));
+    });
+
+    el.querySelector('.welcome-popup-backdrop')?.addEventListener('click', () => setExpanded(false));
     el.querySelector('.welcome-popup-close')?.addEventListener('click', close);
+    document.addEventListener('click', (e) => {
+      if (!el.isConnected || !el.classList.contains('is-expanded')) return;
+      if (el.contains(e.target)) return;
+      setExpanded(false);
+    });
     document.addEventListener('keydown', function onKey(e) {
-      if (e.key === 'Escape' && el.isConnected) {
-        close();
-        document.removeEventListener('keydown', onKey);
+      if (!el.isConnected) return;
+      if (e.key === 'Escape') {
+        if (mqMobile.matches && el.classList.contains('is-expanded')) {
+          setExpanded(false);
+        } else if (el.classList.contains('is-visible')) {
+          close();
+          document.removeEventListener('keydown', onKey);
+        }
       }
     });
 
     document.body.appendChild(el);
     window.__TT_POPUP_DONE = true;
-    setTimeout(() => el.classList.add('is-visible'), 700);
+    setTimeout(() => {
+      el.classList.add('is-visible');
+      if (!mqMobile.matches) el.classList.add('is-expanded');
+    }, 700);
   }
   window.TT.initWelcomePopup = initWelcomePopup;
 
