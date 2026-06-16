@@ -226,13 +226,21 @@
       return price > 0 ? `฿${fmt.format(price)}` : '';
     }
 
+    function readPaxValue() {
+      const paxInput = form.querySelector('#bb-pax');
+      if (!paxInput) return Number(new FormData(form).get('pax')) || 0;
+      const raw = String(paxInput.value ?? '').trim();
+      const val = parseInt(raw, 10);
+      return Number.isNaN(val) ? 0 : val;
+    }
+
     function getState() {
       const fd = new FormData(form);
       return {
         boatId: fd.get('boat')?.toString() || defaultBoatId,
         routeId: fd.get('route')?.toString() || '',
         tierId: fd.get('tier')?.toString() || '',
-        pax: Number(fd.get('pax')) || 0,
+        pax: readPaxValue(),
         addonIds: fd.getAll('addon').map(String),
         date: fd.get('date')?.toString() || '',
         name: fd.get('name')?.toString().trim() || '',
@@ -806,24 +814,31 @@
     }
 
     function validateStep(stepKey) {
-      const state = getState();
+      let state = getState();
       let ok = true;
+      let showedToast = false;
+      const toastOnce = (msg) => {
+        window.TT?.toast?.(msg);
+        showedToast = true;
+      };
       if (stepKey === 'boat' && !state.boatId) {
-        window.TT?.toast?.('กรุณาเลือกประเภทเรือ'); ok = false;
+        toastOnce('กรุณาเลือกประเภทเรือ'); ok = false;
       } else if (stepKey === 'route' && !state.routeId) {
-        window.TT?.toast?.('กรุณาเลือกเส้นทาง'); ok = false;
+        toastOnce('กรุณาเลือกเส้นทาง'); ok = false;
       } else if (stepKey === 'tier' && !state.tierId) {
         const p = getProfile(state.boatId);
-        window.TT?.toast?.(p.selectionMode === 'size' ? 'กรุณาเลือกขนาดเรือ' : 'กรุณาเลือกจำนวนคน');
+        toastOnce(p.selectionMode === 'size' ? 'กรุณาเลือกขนาดเรือ' : 'กรุณาเลือกจำนวนคน');
         ok = false;
       } else if (stepKey === 'tier' && getProfile(state.boatId).askPax !== false) {
+        form.querySelector('#bb-pax')?.blur();
         clampPaxInput({ toast: true, finalize: true });
         state = getState();
         const profile = getProfile(state.boatId);
         const option = getSelectedOption(state);
         const { min, max } = paxBounds(option, profile, state.routeId);
-        if (!state.pax || state.pax < min || state.pax > max) {
-          window.TT?.toast?.(`กรุณากรอกจำนวนผู้โดยสารจริง ${min}–${max} คน`);
+        const pax = readPaxValue();
+        if (!pax || pax < min || pax > max) {
+          toastOnce(`กรุณากรอกจำนวนผู้โดยสารจริง ${min}–${max} คน`);
           ok = false;
         }
       } else if (stepKey === 'contact') {
@@ -837,7 +852,7 @@
           ok = false;
         } else setError('phone', '');
       }
-      if (!ok && stepKey !== 'contact') window.TT?.toast?.('กรุณาเลือกข้อมูลให้ครบ');
+      if (!ok && stepKey !== 'contact' && !showedToast) toastOnce('กรุณาเลือกข้อมูลให้ครบ');
       return ok;
     }
 
@@ -874,6 +889,7 @@
       form.querySelectorAll('.wizard-next[data-next]').forEach((btn) => {
         btn.addEventListener('click', (e) => {
           e.preventDefault();
+          if (currentStep === 'tier') form.querySelector('#bb-pax')?.blur();
           if (!validateStep(currentStep)) return;
           gotoStep(btn.dataset.next);
         });
