@@ -6061,6 +6061,13 @@ body[data-tt-page="boat-book"] .hero-sub-compact .hero-inner { padding-bottom: 2
   min-width: 0;
 }
 .bb-tier-main .bb-field-label { margin-bottom: 14px; }
+.bb-pax-field {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border, #e8ecf0);
+}
+.bb-pax-field .field-hint { margin: 6px 0 10px; }
+.bb-pax-input { max-width: 140px; }
 .bb-tier-aside {
   display: flex;
   flex-direction: column;
@@ -6079,7 +6086,7 @@ body[data-tt-page="boat-book"] .hero-sub-compact .hero-inner { padding-bottom: 2
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 88px;
+  min-height: 96px;
   height: 100%;
   padding: 14px 8px;
   border: 2px solid #e2e9ef;
@@ -6127,6 +6134,20 @@ body[data-tt-page="boat-book"] .hero-sub-compact .hero-inner { padding-bottom: 2
   font-weight: 600;
   color: var(--c-muted);
   line-height: 1;
+}
+.bb-tier-price {
+  margin-top: 4px;
+  font-family: var(--font-display);
+  font-size: .82rem;
+  font-weight: 700;
+  color: var(--c-ocean);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.bb-tier-card.is-selected .bb-tier-price { color: var(--c-ocean-dark); }
+.bb-size-card .bb-tier-price {
+  margin-top: 2px;
+  font-size: .8rem;
 }
 .bb-tier-card.is-selected .bb-tier-unit { color: var(--c-ocean); }
 .bb-tier-step .bb-charter-price {

@@ -58,6 +58,22 @@ function tt_render_image_url_field(
 <?php
 }
 
+/** ช่อง URL รูป + ปุ่มอัปโหลด (ใช้ในตาราง — init ผ่าน .image-url-row ใน admin.js) */
+function tt_render_image_url_row(string $name, string $value = '', string $placeholder = 'https://... หรือ assets/uploads/...'): void
+{
+    ?>
+<div class="image-url-row image-url-row--table">
+  <input type="text"
+         name="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?>"
+         class="image-url-input"
+         value="<?= htmlspecialchars($value, ENT_QUOTES, 'UTF-8') ?>"
+         placeholder="<?= htmlspecialchars($placeholder, ENT_QUOTES, 'UTF-8') ?>"/>
+  <button type="button" class="btn btn-ghost image-upload-btn">อัปโหลด</button>
+  <input type="file" class="image-upload-file" accept="image/*" hidden/>
+</div>
+<?php
+}
+
 /**
  * แกลเลอรี 6 ช่อง — ตรง layout หน้า program.html (3 บน + 3 ล่าง)
  *

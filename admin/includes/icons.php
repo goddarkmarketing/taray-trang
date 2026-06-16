@@ -11,6 +11,7 @@ function tt_admin_icon(string $id): string
         'hero' => '<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="m21 16-5.5-5.5L5 21"/>',
         'services' => '<path d="M12 3 2 8l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/>',
         'boats' => '<circle cx="12" cy="5" r="2"/><path d="M12 7v12"/><path d="M5 19c2-1 4.5-1 7-1s5 0 7 1"/><path d="M8 15H6a2 2 0 0 0-2 2v1M16 15h2a2 2 0 0 1 2 2v1"/>',
+        'boat-booking' => '<path d="M3 18h18"/><path d="M5 18l1-8h12l1 8"/><path d="M8 10V6l4-3 4 3v4"/>',
         'programs' => '<circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H16"/>',
         'options' => '<path d="M12 5v14M5 12h14"/>',
         'reviews' => '<path d="m12 2 3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2Z"/>',

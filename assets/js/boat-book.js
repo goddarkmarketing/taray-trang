@@ -28,7 +28,33 @@
     const cfg = BOAT_BOOKING || {};
     const routes = cfg.routes || [];
     const peopleTiers = cfg.peopleTiers || [];
-    const addons = cfg.addons || [];
+    const defaultAddons = cfg.addons || [];
+
+    function getAddonsForBoat(boatId) {
+      return getProfile(boatId).addons?.length
+        ? getProfile(boatId).addons
+        : defaultAddons;
+    }
+
+    function getRoutesForProfile(profile) {
+      if (!profile.routeIds?.length) return routes;
+      return routes.filter((r) => profile.routeIds.includes(r.id));
+    }
+
+    function getRouteTierRules(profile, routeId) {
+      return profile.tierRules?.[routeId] || {};
+    }
+
+    function isTierAvailable(profile, routeId, tierId) {
+      const rules = getRouteTierRules(profile, routeId);
+      return !(rules.hideTiers || []).includes(tierId);
+    }
+
+    function tierMaxPeople(profile, routeId, option) {
+      if (!option) return 0;
+      const cap = getRouteTierRules(profile, routeId).tierCaps?.[option.id];
+      return cap != null ? cap : (option.max ?? option.capacity ?? 0);
+    }
     const fmt = new Intl.NumberFormat('th-TH');
     const lineUrl = SITE?.lineUrl || 'https://line.me/R/ti/p/%40talaytrang';
 
@@ -40,6 +66,7 @@
     let steps = [];
     let pips = [];
     let pipLines = [];
+    let lastTierSyncKey = '';
 
     document.getElementById('hero-img').src = window.TT?.IMAGES?.heroBooking || '';
     document.getElementById('bb-page-title').textContent = 'จองเรือเหมาลำ';
@@ -61,13 +88,19 @@
           tierStepTitle: custom.tierStepTitle || 'เลือกจำนวนคน',
           tierStepDesc: custom.tierStepDesc || '',
           charterLabel: custom.charterLabel || 'ราคาค่าเรือ (เหมาลำ)',
-          insurancePerPerson: Number(custom.insurancePerPerson ?? cfg.insurancePerPerson) || 40,
+          insurancePerPerson: Number(custom.insurancePerPerson ?? cfg.insurancePerPerson) || 50,
           guideFee: Number(custom.guideFee) || 0,
+          guideCountByTier: custom.guideCountByTier || {},
           safetyStaffRate: Number(custom.safetyStaffRate) || 0,
           safetyStaffRatio: Number(custom.safetyStaffRatio) || 20,
           charterSummaryPrefix: custom.charterSummaryPrefix || '',
           includedBoxTitle: custom.includedBoxTitle || '',
+          includedItems: custom.includedItems || [],
           footerNote: custom.footerNote || '',
+          askPax: custom.askPax !== false,
+          routeIds: custom.routeIds || [],
+          tierRules: custom.tierRules || {},
+          addons: custom.addons || [],
           options,
           charterPrices: custom.charterPrices || cfg.charterPrices?.[boatId] || {},
         };
@@ -76,15 +109,21 @@
         selectionMode: 'people',
         tierProgressLabel: 'จำนวนคน',
         tierStepTitle: 'เลือกจำนวนคน',
-        tierStepDesc: 'เมื่อเลือกเส้นทางเสร็จแล้ว เลือกจำนวนคน ราคาค่าเรือจะแสดงทันที',
+        tierStepDesc: 'เลือกช่วงจำนวนคน แล้วกรอกจำนวนผู้โดยสารจริง (ใช้คำนวณประกันและบริการต่อท่าน)',
         charterLabel: 'ราคาค่าเรือ (เหมาลำ)',
-        insurancePerPerson: Number(cfg.insurancePerPerson) || 40,
+        insurancePerPerson: Number(cfg.insurancePerPerson) || 50,
         guideFee: 0,
+        guideCountByTier: {},
         safetyStaffRate: 0,
         safetyStaffRatio: 20,
         charterSummaryPrefix: '',
         includedBoxTitle: '',
+        includedItems: [],
         footerNote: '',
+        askPax: true,
+        routeIds: [],
+        tierRules: {},
+        addons: [],
         options: peopleTiers,
         charterPrices: cfg.charterPrices?.[boatId] || {},
       };
@@ -95,25 +134,96 @@
       return profile.options.find((o) => o.id === state.tierId) || null;
     }
 
-    function optionPeople(option) {
+    function optionPeople(option, profile, routeId) {
       if (!option) return 0;
-      return option.capacity ?? option.max ?? 0;
+      if (profile?.selectionMode === 'size') return option.capacity ?? option.max ?? 0;
+      return tierMaxPeople(profile, routeId, option) || option.max || 0;
+    }
+
+    function paxBounds(option, profile, routeId) {
+      if (!option) return { min: 1, max: 1 };
+      if (profile.selectionMode === 'size') {
+        return { min: 1, max: option.capacity ?? option.max ?? 1 };
+      }
+      return { min: option.min ?? 1, max: tierMaxPeople(profile, routeId, option) || option.max || 1 };
+    }
+
+    function clampPaxInput({ toast = false } = {}) {
+      const paxInput = form.querySelector('#bb-pax');
+      if (!paxInput) return;
+      const state = getState();
+      const profile = getProfile(state.boatId);
+      const option = getSelectedOption(state);
+      if (!option || profile.askPax === false) return;
+
+      const { min, max } = paxBounds(option, profile, state.routeId);
+      paxInput.min = String(min);
+      paxInput.max = String(max);
+
+      const raw = String(paxInput.value ?? '').trim();
+      if (!raw) return;
+
+      const val = parseInt(raw, 10);
+      if (Number.isNaN(val)) {
+        paxInput.value = String(min);
+        return;
+      }
+      if (val > max) {
+        paxInput.value = String(max);
+        if (toast) window.TT?.toast?.(`จำนวนผู้โดยสารสูงสุด ${max} คน (ตามช่วงที่เลือก)`);
+      } else if (val < min) {
+        paxInput.value = String(min);
+        if (toast) window.TT?.toast?.(`จำนวนผู้โดยสารขั้นต่ำ ${min} คน (ตามช่วงที่เลือก)`);
+      }
+    }
+
+    function resolvePeople(state, option, profile) {
+      if (!option) return 0;
+      if (profile.askPax === false) {
+        return optionPeople(option, profile, state.routeId);
+      }
+      const { min, max } = paxBounds(option, profile, state.routeId);
+      const raw = state.pax > 0 ? state.pax : min;
+      return Math.min(max, Math.max(min, raw));
+    }
+
+    function addonLineTotal(addon, people) {
+      const base = Number(addon.price) || 0;
+      return addon.unit === 'perPerson' ? base * Math.max(people, 0) : base;
+    }
+
+    function addonSummaryLabel(addon, people) {
+      const base = Number(addon.price) || 0;
+      if (addon.unit === 'perPerson' && people > 0) {
+        return `${addon.label} (${fmt.format(base)} × ${people} คน)`;
+      }
+      return addon.label;
+    }
+
+    function lookupCharterPrice(boatId, profile, routeId, tierId) {
+      if (!routeId || !tierId) return 0;
+      const matrix = profile.charterPrices?.[routeId]?.[tierId]
+        ?? cfg.charterPrices?.[boatId]?.[routeId]?.[tierId];
+      if (matrix != null) return matrix;
+      const boat = getBoat(boatId);
+      const routeIdx = routes.findIndex((r) => r.id === routeId);
+      const routeMul = 1 + Math.max(routeIdx, 0) * 0.08;
+      if (profile.selectionMode === 'size') {
+        const sizeMul = { s1: 1, s2: 1.42, s3: 1.85, t1: 1, t2: 1.67, t3: 2.22, t4: 2.67 }[tierId] || 1;
+        return Math.round((boat?.basePrice || 10000) * sizeMul * routeMul);
+      }
+      const tierMul = { p1: 1, p2: 1.25, p3: 1.5, p4: 1.8 }[tierId] || 1;
+      return Math.round((boat?.basePrice || 4000) * tierMul * routeMul);
     }
 
     function charterPrice(state) {
       const profile = getProfile(state.boatId);
-      const matrix = profile.charterPrices?.[state.routeId]?.[state.tierId]
-        ?? cfg.charterPrices?.[state.boatId]?.[state.routeId]?.[state.tierId];
-      if (matrix != null) return matrix;
-      const boat = getBoat(state.boatId);
-      const routeIdx = routes.findIndex((r) => r.id === state.routeId);
-      const routeMul = 1 + Math.max(routeIdx, 0) * 0.08;
-      if (profile.selectionMode === 'size') {
-        const sizeMul = { s1: 1, s2: 1.42, s3: 1.85 }[state.tierId] || 1;
-        return Math.round((boat?.basePrice || 10000) * sizeMul * routeMul);
-      }
-      const tierMul = { p1: 1, p2: 1.25, p3: 1.5, p4: 1.8 }[state.tierId] || 1;
-      return Math.round((boat?.basePrice || 4000) * tierMul * routeMul);
+      return lookupCharterPrice(state.boatId, profile, state.routeId, state.tierId);
+    }
+
+    function tierPriceLabel(boatId, profile, routeId, tierId) {
+      const price = lookupCharterPrice(boatId, profile, routeId, tierId);
+      return price > 0 ? `฿${fmt.format(price)}` : '';
     }
 
     function getState() {
@@ -122,6 +232,7 @@
         boatId: fd.get('boat')?.toString() || defaultBoatId,
         routeId: fd.get('route')?.toString() || '',
         tierId: fd.get('tier')?.toString() || '',
+        pax: Number(fd.get('pax')) || 0,
         addonIds: fd.getAll('addon').map(String),
         date: fd.get('date')?.toString() || '',
         name: fd.get('name')?.toString().trim() || '',
@@ -130,23 +241,39 @@
       };
     }
 
+    function resolveGuideFee(profile, option) {
+      const rate = Number(profile.guideFee) || 0;
+      if (!rate) return { count: 0, rate: 0, total: 0 };
+      let count = 1;
+      if (option?.id && profile.guideCountByTier?.[option.id] != null) {
+        count = Number(profile.guideCountByTier[option.id]) || 1;
+      }
+      return { count, rate, total: rate * count };
+    }
+
     function calculate(state) {
       const profile = getProfile(state.boatId);
       const boat = getBoat(state.boatId);
       const route = routes.find((r) => r.id === state.routeId);
       const option = getSelectedOption(state);
-      const people = optionPeople(option);
+      const people = resolvePeople(state, option, profile);
       const charter = state.routeId && state.tierId ? charterPrice(state) : 0;
-      const guideFee = profile.guideFee || 0;
+      const guide = resolveGuideFee(profile, option);
+      const guideFee = guide.total;
       const insurance = people > 0 ? profile.insurancePerPerson * people : 0;
       const safetyStaffCount = profile.safetyStaffRate && people > 0
         ? Math.ceil(people / (profile.safetyStaffRatio || 20))
         : 0;
       const safetyStaffTotal = safetyStaffCount * (profile.safetyStaffRate || 0);
-      const selectedAddons = addons.filter((a) => state.addonIds.includes(a.id));
-      const addonTotal = selectedAddons.reduce((s, a) => s + (Number(a.price) || 0), 0);
+      const boatAddons = getAddonsForBoat(state.boatId);
+      const selectedAddons = boatAddons
+        .filter((a) => state.addonIds.includes(a.id))
+        .map((a) => ({ ...a, lineTotal: addonLineTotal(a, people) }));
+      const addonTotal = selectedAddons.reduce((s, a) => s + a.lineTotal, 0);
       return {
-        profile, boat, route, option, people, charter, guideFee, insurance,
+        profile, boat, route, option, people, charter,
+        guideFee, guideCount: guide.count, guideRate: guide.rate,
+        insurance,
         insuranceRate: profile.insurancePerPerson,
         safetyStaffCount, safetyStaffTotal,
         safetyStaffRate: profile.safetyStaffRate || 0,
@@ -184,61 +311,97 @@
         </div>`;
     }
 
-    function tierRangeText(option) {
-      if (option.min != null && option.max != null) return `${option.min}–${option.max}`;
+    function tierRangeText(option, profile, routeId) {
+      if (option.min != null && option.max != null) {
+        const max = tierMaxPeople(profile, routeId, option);
+        if (max !== option.max) return `${option.min}–${max}`;
+        return `${option.min}–${option.max}`;
+      }
       return (option.label || '').replace(/\s*คน\s*$/, '').trim();
     }
 
-    function tierOptionsHtml(profile, selectedId) {
-      const opts = profile.options;
+    function tierOptionsHtml(profile, selectedId, routeId, boatId) {
+      const opts = profile.options.filter((o) => isTierAvailable(profile, routeId, o.id));
       const firstId = opts[0]?.id || '';
-      const sel = selectedId || firstId;
+      const sel = opts.some((o) => o.id === selectedId) ? selectedId : firstId;
       if (profile.selectionMode === 'size') {
         return `
           <div class="bb-size-grid">
-            ${opts.map((s) => `
+            ${opts.map((s) => {
+              const priceTxt = tierPriceLabel(boatId, profile, routeId, s.id);
+              return `
               <label class="bb-size-card${s.id === sel ? ' is-selected' : ''}">
                 <input type="radio" name="tier" value="${s.id}"${s.id === sel ? ' checked' : ''}/>
                 <span class="bb-size-icon">${ICONS?.users || '👥'}</span>
                 <strong>${s.label}</strong>
                 <span>${s.capacityLabel || `จุ ${s.capacity} คน`}</span>
-              </label>`).join('')}
+                ${priceTxt ? `<span class="bb-tier-price">${priceTxt}</span>` : ''}
+              </label>`;
+            }).join('')}
           </div>`;
       }
       return `
         <div class="bb-tier-grid bb-tier-grid--people">
-          ${opts.map((t) => `
+          ${opts.map((t) => {
+            const priceTxt = tierPriceLabel(boatId, profile, routeId, t.id);
+            return `
             <label class="bb-tier-card${t.id === sel ? ' is-selected' : ''}">
               <input type="radio" name="tier" value="${t.id}"${t.id === sel ? ' checked' : ''}/>
               <span class="bb-tier-card-body">
-                <span class="bb-tier-range">${tierRangeText(t)}</span>
+                <span class="bb-tier-range">${tierRangeText(t, profile, routeId)}</span>
                 <span class="bb-tier-unit">คน</span>
+                ${priceTxt ? `<span class="bb-tier-price">${priceTxt}</span>` : ''}
               </span>
-            </label>`).join('')}
+            </label>`;
+          }).join('')}
         </div>`;
     }
 
     function includedBoxHtml(profile) {
       if (!profile.includedBoxTitle) return '';
+      const fixedItems = [
+        profile.guideFee && Object.keys(profile.guideCountByTier || {}).length
+          ? `<li>ค่ามัคคุเทศก์ <strong>฿${fmt.format(profile.guideFee)}/คน</strong> (ขนาดที่ 1 = 1 คน · ขนาดที่ 2–4 = 2–4 คน)</li>`
+          : profile.guideFee
+            ? `<li>ค่ามัคคุเทศก์ <strong>฿${fmt.format(profile.guideFee)}</strong></li>`
+            : '',
+        profile.safetyStaffRate ? `<li>สต๊าฟดูแลความปลอดภัย คนละ <strong>฿${fmt.format(profile.safetyStaffRate)}</strong> (คำนวณจากลูกค้า ${profile.safetyStaffRatio || 20} คน ต่อสต๊าฟ 1 คน)</li>` : '',
+        `<li>ประกันอุบัติเหตุ คนละ <strong>฿${fmt.format(profile.insurancePerPerson)}</strong></li>`,
+      ].filter(Boolean);
+      const customItems = (profile.includedItems || []).map((item) => `<li>${item}</li>`);
+      const items = customItems.length ? customItems : fixedItems;
+      const footnote = customItems.length || profile.askPax !== false
+        ? '<p class="muted-sm">(ประกันอุบัติเหตุและบริการต่อท่าน คำนวณจากจำนวนผู้โดยสารจริง)</p>'
+        : '<p class="muted-sm">(คำนวณอัตโนมัติตามจำนวนคน)</p>';
       return `
         <div class="bb-included-box">
           <strong>${profile.includedBoxTitle}</strong>
-          <ul>
-            ${profile.guideFee ? `<li>ค่ามัคคุเทศก์ <strong>฿${fmt.format(profile.guideFee)}</strong></li>` : ''}
-            ${profile.safetyStaffRate ? `<li>สต๊าฟดูแลความปลอดภัย คนละ <strong>฿${fmt.format(profile.safetyStaffRate)}</strong> (คำนวณจากลูกค้า ${profile.safetyStaffRatio || 20} คน ต่อสต๊าฟ 1 คน)</li>` : ''}
-            <li>ประกันอุบัติเหตุ คนละ <strong>฿${fmt.format(profile.insurancePerPerson)}</strong></li>
-          </ul>
-          <p class="muted-sm">(คำนวณอัตโนมัติตามจำนวนคน)</p>
+          <ul>${items.join('')}</ul>
+          ${footnote}
         </div>`;
     }
 
-    function tierStepBody(profile) {
+    function paxFieldHtml(profile, option, routeId, paxValue) {
+      if (profile.askPax === false || !option) return '';
+      const { min, max } = paxBounds(option, profile, routeId);
+      const val = Math.min(max, Math.max(min, Number(paxValue) || min));
+      return `
+        <div class="bb-pax-field" id="bb-pax-wrap">
+          <label class="bb-field-label" for="bb-pax">จำนวนผู้โดยสารจริง <span class="req">*</span></label>
+          <p class="field-hint">กรอกจำนวนคนที่มาจริง (${min}–${max} คน) — ใช้คำนวณประกันอุบัติเหตุ (${fmt.format(profile.insurancePerPerson)} × จำนวนคน) และบริการต่อท่าน</p>
+          <input class="input bb-pax-input" type="number" id="bb-pax" name="pax" min="${min}" max="${max}" value="${val}" inputmode="numeric" required/>
+        </div>`;
+    }
+
+    function tierStepBody(profile, routeId, tierId, pax, boatId) {
+      const option = profile.options.find((o) => o.id === tierId) || profile.options.find((o) => isTierAvailable(profile, routeId, o.id));
       const fieldLabel = profile.selectionMode === 'size' ? 'เลือกขนาดเรือ' : 'เลือกจำนวนคน';
       return `
         <div class="bb-tier-step">
           <div class="bb-tier-main">
             <p class="bb-field-label">${fieldLabel} <span class="req">*</span></p>
-            <div id="bb-tier-options">${tierOptionsHtml(profile)}</div>
+            <div id="bb-tier-options">${tierOptionsHtml(profile, tierId, routeId, boatId)}</div>
+            ${paxFieldHtml(profile, option, routeId, pax)}
           </div>
           <aside class="bb-tier-aside">
             <div class="bb-charter-price" aria-live="polite">
@@ -253,7 +416,10 @@
     function insuranceStepBody(profile) {
       const guideBlock = profile.guideFee ? `
         <div class="bb-guide-fee">
-          <span>ค่ามัคคุเทศก์ (บังคับ)</span>
+          <div class="bb-safety-staff-text">
+            <span>ค่ามัคคุเทศก์ (บังคับ)</span>
+            <small id="bb-guide-formula" class="muted-sm">${Object.keys(profile.guideCountByTier || {}).length ? `${fmt.format(profile.guideFee)} บาท × จำนวนมัคคุเทศก์` : `${fmt.format(profile.guideFee)} บาท`}</small>
+          </div>
           <strong id="bb-guide-amount">฿${fmt.format(profile.guideFee)}</strong>
         </div>` : '';
       const safetyBlock = profile.safetyStaffRate ? `
@@ -279,6 +445,10 @@
 
     function buildWizard(activeBoatId) {
       const profile = getProfile(activeBoatId);
+      const routeList = getRoutesForProfile(profile);
+      const defaultRouteId = routeList[0]?.id || routes[0]?.id || '';
+      const defaultTierId = profile.options.find((o) => isTierAvailable(profile, defaultRouteId, o.id))?.id || '';
+      const boatAddons = getAddonsForBoat(activeBoatId);
       const tierNextLabel = profile.selectionMode === 'size'
         ? 'ถัดไป<span class="wizard-next-detail">: ค่าบังคับ</span>'
         : 'ถัดไป<span class="wizard-next-detail">: ค่าประกัน</span>';
@@ -311,7 +481,7 @@
             ${stepHead(2, 'เลือกเส้นทาง', 'ลูกค้าจะต้องเลือกเส้นทาง ซึ่งมี 6 เส้นทางให้เลือก')}
             <p class="bb-field-label">เลือกเส้นทาง <span class="req">*</span> <span class="field-hint">(เลือก 1 เส้นทาง)</span></p>
             <div class="bb-route-grid">
-              ${routes.map((r, i) => `
+              ${routeList.map((r, i) => `
                 <label class="bb-route${i === 0 ? ' is-selected' : ''}">
                   <input type="radio" name="route" value="${r.id}"${i === 0 ? ' checked' : ''}/>
                   <span class="bb-route-img"><img src="${r.image}" alt="${r.name}" loading="lazy"/></span>
@@ -329,7 +499,7 @@
         <div class="wizard-step" data-step="tier">
           <div class="form-card bb-form-card">
             ${stepHead(3, profile.tierStepTitle, profile.tierStepDesc)}
-            <div id="bb-tier-step">${tierStepBody(profile)}</div>
+            <div id="bb-tier-step">${tierStepBody(profile, defaultRouteId, defaultTierId, profile.options.find((o) => o.id === defaultTierId)?.min || 1, activeBoatId)}</div>
           </div>
           ${wizardNav('route', 'insurance', tierNextLabel)}
         </div>
@@ -346,7 +516,7 @@
           <div class="form-card bb-form-card">
             ${stepHead(5, 'เลือกเมนูเพิ่มเติม', 'ลูกค้าจะต้องเลือกเมนูเพิ่มเติมที่มีให้ (สามารถเลือกเพิ่มได้มากกว่า 1 เมนู)')}
             <div class="bb-addon-grid">
-              ${addons.map((a) => `
+              ${boatAddons.map((a) => `
                 <label class="bb-addon">
                   <input type="checkbox" name="addon" value="${a.id}"/>
                   <span class="bb-addon-icon">${ICONS?.[a.icon] || ICONS?.plus || '+'}</span>
@@ -424,6 +594,7 @@
       steps = [...form.querySelectorAll('.wizard-step')];
       bindWizardEvents();
       updateProgressLabels(profile);
+      lastTierSyncKey = '';
       gotoStep(currentStep, { skipScroll: true });
     }
 
@@ -485,7 +656,7 @@
       if (calc.profile.selectionMode === 'size') {
         return `ค่าเรือสปีดโบ๊ท (${calc.route.name} / ${calc.option.label} / ${calc.people} คน)`;
       }
-      return `ค่าเรือ (${calc.route.name} / ${calc.option.label})`;
+      return `ค่าเรือ (${calc.route.name} / ${calc.option.label}${calc.profile.askPax !== false ? ` / ${calc.people} ท่าน` : ''})`;
     }
 
     function summaryLines(calc) {
@@ -494,7 +665,10 @@
         lines.push(`<div class="bb-summary-row"><span>${charterSummaryLabel(calc)}</span><strong>฿${fmt.format(calc.charter)}</strong></div>`);
       }
       if (calc.guideFee) {
-        lines.push(`<div class="bb-summary-row"><span>ค่ามัคคุเทศก์</span><strong>฿${fmt.format(calc.guideFee)}</strong></div>`);
+        const guideLabel = calc.guideCount > 1
+          ? `ค่ามัคคุเทศก์ (${fmt.format(calc.guideRate)} × ${calc.guideCount} คน)`
+          : 'ค่ามัคคุเทศก์';
+        lines.push(`<div class="bb-summary-row"><span>${guideLabel}</span><strong>฿${fmt.format(calc.guideFee)}</strong></div>`);
       }
       if (calc.safetyStaffTotal) {
         lines.push(`<div class="bb-summary-row"><span>สต๊าฟดูแลความปลอดภัย (${calc.people} คน ÷ ${calc.safetyStaffRatio} = ${calc.safetyStaffCount} คน)</span><strong>฿${fmt.format(calc.safetyStaffTotal)}</strong></div>`);
@@ -503,13 +677,49 @@
         lines.push(`<div class="bb-summary-row"><span>ประกันอุบัติเหตุ (${calc.insuranceRate} × ${calc.people} คน)</span><strong>฿${fmt.format(calc.insurance)}</strong></div>`);
       }
       calc.selectedAddons.forEach((a) => {
-        lines.push(`<div class="bb-summary-row"><span>${a.label}</span><strong>฿${fmt.format(a.price)}</strong></div>`);
+        lines.push(`<div class="bb-summary-row"><span>${addonSummaryLabel(a, calc.people)}</span><strong>฿${fmt.format(a.lineTotal)}</strong></div>`);
       });
       return lines;
     }
 
+    function syncTierStep(state) {
+      const profile = getProfile(state.boatId);
+      const tierStep = document.getElementById('bb-tier-step');
+      if (!tierStep) return;
+
+      let option = profile.options.find((o) => o.id === state.tierId);
+      const validTier = option && isTierAvailable(profile, state.routeId, option.id);
+      if (!validTier) {
+        const first = profile.options.find((o) => isTierAvailable(profile, state.routeId, o.id));
+        if (first) {
+          const radio = form.querySelector(`input[name="tier"][value="${first.id}"]`);
+          if (radio) radio.checked = true;
+          option = first;
+        }
+      }
+
+      const cur = getState();
+      const paxInput = form.querySelector('#bb-pax');
+      const rawPax = paxInput ? Number(paxInput.value) || 0 : (cur.pax || 0);
+      const bounds = option ? paxBounds(option, profile, cur.routeId) : { min: 1, max: 1 };
+      const pax = Math.min(bounds.max, Math.max(bounds.min, rawPax || bounds.min));
+      const syncKey = `${cur.boatId}|${cur.routeId}|${cur.tierId}`;
+
+      if (syncKey !== lastTierSyncKey) {
+        tierStep.innerHTML = tierStepBody(profile, cur.routeId, cur.tierId, pax, cur.boatId);
+        lastTierSyncKey = syncKey;
+        clampPaxInput();
+      } else if (paxInput && option && profile.askPax !== false) {
+        paxInput.min = String(bounds.min);
+        paxInput.max = String(bounds.max);
+        clampPaxInput();
+      }
+    }
+
     function render() {
-      const state = getState();
+      let state = getState();
+      syncTierStep(state);
+      state = getState();
       const calc = calculate(state);
       syncPickStyles();
 
@@ -519,6 +729,19 @@
 
       const charterEl = document.getElementById('bb-charter-amount');
       if (charterEl) charterEl.textContent = calc.charter ? `฿${fmt.format(calc.charter)}` : '—';
+
+      const guideFormula = document.getElementById('bb-guide-formula');
+      const guideAmount = document.getElementById('bb-guide-amount');
+      if (guideFormula) {
+        guideFormula.textContent = calc.guideCount > 1
+          ? `${fmt.format(calc.guideRate)} บาท × ${calc.guideCount} คน`
+          : calc.guideRate
+            ? `${fmt.format(calc.guideRate)} บาท`
+            : '';
+      }
+      if (guideAmount) {
+        guideAmount.textContent = calc.guideFee ? `฿${fmt.format(calc.guideFee)}` : '฿0';
+      }
 
       const insFormula = document.getElementById('bb-insurance-formula');
       const insAmount = document.getElementById('bb-insurance-amount');
@@ -593,6 +816,14 @@
         const p = getProfile(state.boatId);
         window.TT?.toast?.(p.selectionMode === 'size' ? 'กรุณาเลือกขนาดเรือ' : 'กรุณาเลือกจำนวนคน');
         ok = false;
+      } else if (stepKey === 'tier' && getProfile(state.boatId).askPax !== false) {
+        const profile = getProfile(state.boatId);
+        const option = getSelectedOption(state);
+        const { min, max } = paxBounds(option, profile, state.routeId);
+        if (!state.pax || state.pax < min || state.pax > max) {
+          window.TT?.toast?.(`กรุณากรอกจำนวนผู้โดยสารจริง ${min}–${max} คน`);
+          ok = false;
+        }
       } else if (stepKey === 'contact') {
         if (!state.date) { setError('date', 'กรุณาเลือกวันที่'); ok = false; }
         else setError('date', '');
@@ -615,7 +846,7 @@
         '— เรือ —',
         calc.boat?.name || '',
         calc.route ? `เส้นทาง: ${calc.route.name}${calc.route.subtitle ? ' · ' + calc.route.subtitle : ''}` : '',
-        calc.option ? `${calc.profile.selectionMode === 'size' ? 'ขนาดเรือ' : 'จำนวนคน'}: ${calc.option.label} (${calc.people} ท่าน)` : '',
+        calc.option ? `${calc.profile.selectionMode === 'size' ? 'ขนาดเรือ' : 'ช่วงจำนวนคน'}: ${calc.option.label} · ผู้โดยสารจริง ${calc.people} ท่าน` : '',
         '',
         '— ข้อมูลผู้จอง —',
         `ชื่อ: ${state.name}`,
@@ -624,11 +855,13 @@
         '',
         '— สรุปราคา —',
         calc.charter ? `${charterSummaryLabel(calc)}: ฿${fmt.format(calc.charter)}` : '',
-        calc.guideFee ? `ค่ามัคคุเทศก์: ฿${fmt.format(calc.guideFee)}` : '',
+        calc.guideFee
+          ? `ค่ามัคคุเทศก์: ฿${fmt.format(calc.guideFee)}${calc.guideCount > 1 ? ` (${fmt.format(calc.guideRate)}×${calc.guideCount})` : ''}`
+          : '',
         calc.safetyStaffTotal ? `สต๊าฟดูแลความปลอดภัย: ฿${fmt.format(calc.safetyStaffTotal)} (${calc.people}÷${calc.safetyStaffRatio}=${calc.safetyStaffCount} คน)` : '',
         calc.insurance ? `ประกันอุบัติเหตุ: ฿${fmt.format(calc.insurance)} (${calc.insuranceRate}×${calc.people})` : '',
       ];
-      calc.selectedAddons.forEach((a) => L.push(`${a.label}: ฿${fmt.format(a.price)}`));
+      calc.selectedAddons.forEach((a) => L.push(`${addonSummaryLabel(a, calc.people)}: ฿${fmt.format(a.lineTotal)}`));
       L.push('', `>>> ยอดชำระสุทธิ: ฿${fmt.format(calc.total)} <<<`);
       if (state.note) L.push('', `หมายเหตุ: ${state.note}`);
       L.push('', 'รบกวนแอดมินติดต่อกลับเพื่อยืนยันการจองครับ/ค่ะ');
@@ -680,7 +913,22 @@
       form.addEventListener('change', (e) => {
         if (e.target.matches('input[name="route"], input[name="tier"], input[name="addon"]')) render();
       });
-      form.addEventListener('input', render);
+      form.addEventListener('input', (e) => {
+        if (e.target.matches('#bb-pax')) clampPaxInput({ toast: true });
+        render();
+      });
+      form.addEventListener('blur', (e) => {
+        if (!e.target.matches('#bb-pax')) return;
+        const paxInput = e.target;
+        const state = getState();
+        const option = getSelectedOption(state);
+        const profile = getProfile(state.boatId);
+        if (!option || profile.askPax === false) return;
+        const { min } = paxBounds(option, profile, state.routeId);
+        if (!String(paxInput.value ?? '').trim()) paxInput.value = String(min);
+        clampPaxInput();
+        render();
+      }, true);
 
       document.getElementById('bb-submit-line')?.addEventListener('click', onSubmitLine);
     }

@@ -101,7 +101,7 @@ if ($flash): ?><div class="alert alert-success"><?= htmlspecialchars($flash, ENT
       <div class="field"><label>ข้อความราคา</label><input name="priceLabel" value="<?= htmlspecialchars($option['priceLabel'] ?? '', ENT_QUOTES, 'UTF-8') ?>" placeholder="+250 บาท/คน (ว่าง = สร้างอัตโนมัติ)"/></div>
       <div class="field" style="grid-column:1/-1"><label>คำอธิบายสั้น</label><input name="desc" value="<?= htmlspecialchars($option['desc'] ?? '', ENT_QUOTES, 'UTF-8') ?>" placeholder="เซ็ตอาหารทะเลสด"/></div>
     </div>
-    <p class="field-hint">ตัวเลือกนี้จะแสดงในหน้า <strong>จองเรือ</strong> (booking.html) ให้ลูกค้าเลือกเพิ่ม</p>
+    <p class="field-hint">ตัวเลือกนี้จะแสดงในหน้า <strong>booking.html</strong> (จองแบบเก่า) — หน้า <strong>boat-book.html</strong> แก้ที่เมนู <a href="boat-booking-profiles.php">จองเรือเหมาลำ</a></p>
     <div class="form-actions">
       <button type="submit" class="btn btn-primary">บันทึก</button>
       <a class="btn btn-ghost" href="options.php">กลับ</a>

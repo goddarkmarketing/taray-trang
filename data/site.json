@@ -6003,36 +6003,36 @@
         }
     },
     "boatBooking": {
-        "insurancePerPerson": 40,
+        "insurancePerPerson": 50,
         "routes": [
             {
                 "id": "r1",
                 "name": "เส้นทางที่ 1",
-                "subtitle": "ถ้ำมรกต · เกาะกระดาน",
+                "subtitle": "ถ้ำมรกต · หินกองเสียว · หมู่บ้านปลาดาว · อ่าวสบาย · หาดฟาราง · ถ้ำเสือ",
                 "image": "https://images.pexels.com/photos/1647064/pexels-photo-1647064.jpeg?auto=compress&cs=tinysrgb&w=600"
             },
             {
                 "id": "r2",
                 "name": "เส้นทางที่ 2",
-                "subtitle": "เกาะกระดาน · เกาะเชือก",
+                "subtitle": "เกาะไหง · หินเจ้าแม่กวนอิม · อ่าวม่วง · อ่าวอุทยาน · เกาะม้า",
                 "image": "https://images.pexels.com/photos/1450363/pexels-photo-1450363.jpeg?auto=compress&cs=tinysrgb&w=600"
             },
             {
                 "id": "r3",
                 "name": "เส้นทางที่ 3",
-                "subtitle": "เกาะแหวน · เกาะเชือก",
+                "subtitle": "ถ้ำมรกต · เกาะกระดาน · เกาะแหวน · เกาะเชือก",
                 "image": "https://images.pexels.com/photos/15763636/pexels-photo-15763636.jpeg?auto=compress&cs=tinysrgb&w=600"
             },
             {
                 "id": "r4",
                 "name": "เส้นทางที่ 4",
-                "subtitle": "4 เกาะครบชุด",
+                "subtitle": "เกาะรอกนอก · เกาะรอกใน",
                 "image": "https://images.pexels.com/photos/14573822/pexels-photo-14573822.jpeg?auto=compress&cs=tinysrgb&w=600"
             },
             {
                 "id": "r5",
                 "name": "เส้นทางที่ 5",
-                "subtitle": "เกาะมุก · ถ้ำมรกต",
+                "subtitle": "เกาะเหลาเหลียง · เกาะลิบง · ตกปลาหมึก",
                 "image": "https://images.pexels.com/photos/17942107/pexels-photo-17942107.jpeg?auto=compress&cs=tinysrgb&w=600"
             },
             {
@@ -6071,40 +6071,32 @@
         "charterPrices": {
             "longtail": {
                 "r1": {
-                    "p1": 2800,
+                    "p1": 3000,
                     "p2": 3500,
-                    "p3": 4200,
-                    "p4": 5000
+                    "p3": 4000,
+                    "p4": 4500
                 },
                 "r2": {
                     "p1": 3000,
-                    "p2": 3700,
-                    "p3": 4400,
-                    "p4": 5200
+                    "p2": 3500,
+                    "p3": 4000,
+                    "p4": 4500
                 },
                 "r3": {
-                    "p1": 3100,
-                    "p2": 3800,
-                    "p3": 4500,
-                    "p4": 5300
+                    "p1": 3500,
+                    "p2": 4500,
+                    "p3": 5500,
+                    "p4": 6500
                 },
                 "r4": {
-                    "p1": 3200,
-                    "p2": 3900,
-                    "p3": 4600,
-                    "p4": 5400
+                    "p1": 5500,
+                    "p2": 6000,
+                    "p3": 6500
                 },
                 "r5": {
-                    "p1": 2900,
-                    "p2": 3600,
-                    "p3": 4300,
-                    "p4": 5100
-                },
-                "r6": {
-                    "p1": 3500,
-                    "p2": 4200,
-                    "p3": 4900,
-                    "p4": 5800
+                    "p1": 5500,
+                    "p2": 6000,
+                    "p3": 6500
                 }
             },
             "speedboat": {
@@ -6227,7 +6219,7 @@
                 "selectionMode": "size",
                 "tierProgressLabel": "ขนาดเรือ",
                 "tierStepTitle": "เลือกขนาดเรือ",
-                "tierStepDesc": "เมื่อเลือกเส้นทางเสร็จแล้ว ลูกค้าจะต้องเลือกขนาดเรือ",
+                "tierStepDesc": "เลือกขนาดเรือ แล้วกรอกจำนวนผู้โดยสารจริง (ใช้คำนวณประกัน 50 × จำนวนคน)",
                 "charterLabel": "ราคาค่าเรือสปีดโบ๊ท",
                 "insurancePerPerson": 50,
                 "guideFee": 1500,
@@ -6290,15 +6282,21 @@
                 "selectionMode": "size",
                 "tierProgressLabel": "ขนาดเรือ",
                 "tierStepTitle": "เลือกขนาดเรือ",
-                "tierStepDesc": "เมื่อเลือกเส้นทางเสร็จแล้ว ลูกค้าจะต้องเลือกขนาดเรือ",
+                "tierStepDesc": "เลือกขนาดเรือ แล้วกรอกจำนวนผู้โดยสารจริง (ใช้คำนวณประกันและสต๊าฟตามจำนวนคนจริง)",
                 "charterLabel": "ราคาค่าเรือทัวร์",
                 "charterSummaryPrefix": "ค่าเรือทัวร์",
                 "insurancePerPerson": 50,
                 "guideFee": 1500,
+                "guideCountByTier": {
+                    "t1": 1,
+                    "t2": 2,
+                    "t3": 3,
+                    "t4": 4
+                },
                 "safetyStaffRate": 800,
                 "safetyStaffRatio": 20,
                 "includedBoxTitle": "ราคาของเรือทัวร์ รวมสิ่งที่บังคับในราคาแล้ว",
-                "footerNote": "หมายเหตุ: ราคาของเรือทัวร์รวม ค่ามัคคุเทศก์, สต๊าฟดูแลความปลอดภัย และประกันอุบัติเหตุคนละ 50 บาท แล้วทุกขนาดเรือ",
+                "footerNote": "หมายเหตุ: ราคาของเรือทัวร์รวม ค่ามัคคุเทศก์ (1,500 บาท/คน ตามขนาดเรือ), สต๊าฟดูแลความปลอดภัย และประกันอุบัติเหตุคนละ 50 บาท แล้วทุกขนาดเรือ",
                 "sizes": [
                     {
                         "id": "t1",
@@ -6363,6 +6361,82 @@
                         "t4": 27500
                     }
                 }
+            },
+            "longtail": {
+                "insurancePerPerson": 50,
+                "routeIds": [
+                    "r1",
+                    "r2",
+                    "r3",
+                    "r4",
+                    "r5"
+                ],
+                "askPax": true,
+                "tierStepDesc": "เลือกช่วงจำนวนคน แล้วกรอกจำนวนผู้โดยสารจริงเพื่อคำนวณประกันและบริการเสริม",
+                "includedBoxTitle": "ราคาเรือหางยาวรวมแล้ว",
+                "includedItems": [
+                    "อุปกรณ์ดำน้ำ",
+                    "น้ำดื่ม",
+                    "น้ำแข็ง",
+                    "พนักงานประจำเรือ"
+                ],
+                "footerNote": "หมายเหตุ: ราคายังไม่รวมค่าอุทยานฯ ประกันอุบัติเหตุ อาหาร และทิป · ช่วงปีใหม่ (30–31 ธ.ค. และ 1–2 ม.ค.) และสงกรานต์ (11–16 เม.ย.) คิดเพิ่ม 500 บาท/ลำ",
+                "tierRules": {
+                    "r4": {
+                        "hideTiers": [
+                            "p4"
+                        ],
+                        "tierCaps": {
+                            "p3": 10
+                        }
+                    },
+                    "r5": {
+                        "hideTiers": [
+                            "p4"
+                        ],
+                        "tierCaps": {
+                            "p3": 10
+                        }
+                    }
+                },
+                "addons": [
+                    {
+                        "id": "menu-park",
+                        "icon": "compass",
+                        "label": "ค่าอุทยานแห่งชาติ",
+                        "desc": "ค่าเข้าอุทยานแห่งชาติ (ถ้ามี)",
+                        "price": 40,
+                        "unit": "perPerson",
+                        "priceLabel": "40 บาท/ท่าน"
+                    },
+                    {
+                        "id": "menu-food",
+                        "icon": "cutlery",
+                        "label": "อาหารกลางวัน",
+                        "desc": "อาหารกลางวัน 1 ชุด/ท่าน",
+                        "price": 100,
+                        "unit": "perPerson",
+                        "priceLabel": "100 บาท/ท่าน"
+                    },
+                    {
+                        "id": "menu-photo",
+                        "icon": "camera",
+                        "label": "ช่างภาพ",
+                        "desc": "ช่างภาพมืออาชีพ",
+                        "price": 1000,
+                        "unit": "flat",
+                        "priceLabel": "1,000 บาท"
+                    },
+                    {
+                        "id": "menu-guide",
+                        "icon": "users",
+                        "label": "ไกด์",
+                        "desc": "ไกด์ท้องถิ่น",
+                        "price": 1000,
+                        "unit": "flat",
+                        "priceLabel": "1,000 บาท"
+                    }
+                ]
             }
         }
     }

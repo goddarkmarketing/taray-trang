@@ -23,6 +23,7 @@ $allowed = [
     'site', 'navItems', 'images', 'heroSlides', 'services',
     'boats', 'programs', 'options', 'reviews', 'videos',
     'whyUs', 'steps', 'articles', 'about', 'seo', 'homeDeals',
+    'boatBooking', 'packages2d1n', 'packages3d2n', 'packages4d3n', 'homeSections',
 ];
 
 if (!in_array($section, $allowed, true)) {

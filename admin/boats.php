@@ -26,8 +26,9 @@ if ($flash): ?><div class="alert alert-success"><?= htmlspecialchars($flash, ENT
   <p class="field-hint">หัวข้อ Section 「ประเภทเรือ」บนหน้าแรก แก้ที่เมนู <a href="section-headings.php"><strong>หัวข้อ Section</strong></a></p>
 </div>
 
-<div class="form-actions" style="border:0;margin-bottom:16px;padding:0">
+<div class="form-actions" style="border:0;margin-bottom:16px;padding:0;display:flex;flex-wrap:wrap;gap:8px">
   <a class="btn btn-primary" href="boat-edit.php">+ เพิ่มประเภทเรือ</a>
+  <a class="btn btn-ghost" href="boat-booking-profiles.php">จองเรือเหมาลำ (ราคา/เส้นทาง)</a>
 </div>
 
 <div class="card">
@@ -52,6 +53,7 @@ if ($flash): ?><div class="alert alert-success"><?= htmlspecialchars($flash, ENT
             <div class="table-actions-row">
               <a class="btn btn-ghost btn-sm" href="boat-edit.php?id=<?= urlencode($b['id'] ?? '') ?>">แก้ไข</a>
               <a class="btn btn-danger btn-sm" href="boats.php?delete=<?= urlencode($b['id'] ?? '') ?>" onclick="return confirm('ลบประเภทเรือนี้?')">ลบ</a>
+              <a class="btn btn-ghost btn-sm" href="boat-booking-profile-edit.php?boat=<?= urlencode($b['id'] ?? '') ?>">ราคาเหมา</a>
               <a class="btn btn-ghost btn-sm" href="../boats.html#<?= urlencode($b['id'] ?? '') ?>" target="_blank">ดู</a>
             </div>
           </td>

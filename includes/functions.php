@@ -339,6 +339,51 @@ function tt_hotels_to_text(array $hotels): string
     return implode("\n\n", $blocks);
 }
 
+/** @return list<array{day: int, label: string, items: list<string>}> */
+function tt_parse_inclusions_by_day(string $text): array
+{
+    $blocks = [];
+    $current = null;
+    foreach (preg_split('/\r\n|\r|\n/', $text) ?: [] as $line) {
+        $line = trim($line);
+        if ($line === '') {
+            continue;
+        }
+        if (preg_match('/^วันที่\s*(\d+)/u', $line, $m)) {
+            if ($current) {
+                $blocks[] = $current;
+            }
+            $current = [
+                'day' => (int) $m[1],
+                'label' => $line,
+                'items' => [],
+            ];
+            continue;
+        }
+        if ($current) {
+            $current['items'][] = $line;
+        }
+    }
+    if ($current) {
+        $blocks[] = $current;
+    }
+    return $blocks;
+}
+
+/** @param list<array{day?: int, label?: string, items?: list<string>}> $blocks */
+function tt_inclusions_by_day_to_text(array $blocks): string
+{
+    $out = [];
+    foreach ($blocks as $block) {
+        $out[] = $block['label'] ?? ('วันที่ ' . ($block['day'] ?? ''));
+        foreach ($block['items'] ?? [] as $item) {
+            $out[] = $item;
+        }
+        $out[] = '';
+    }
+    return trim(implode("\n", $out));
+}
+
 /** @return list<string> */
 function tt_program_inclusion_options(): array
 {
