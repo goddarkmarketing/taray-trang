@@ -1,7 +1,7 @@
 {
     "meta": {
         "version": 1,
-        "updated": "2026-06-16T22:22:14.510Z",
+        "updated": "2026-06-17T05:16:58.273Z",
         "tiktokRssSynced": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/rss/talaytrang.xml"
     },
     "images": {
@@ -5246,6 +5246,14 @@
     ],
     "videos": [
         {
+            "id": "7652215632598994184",
+            "platform": "tiktok",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_oowGWACAIBuAQzLAoe5ArQIeYZeGJfRykIGAGV~tplv-tiktokx-origin.image.jpg",
+            "title": "📣 เปิดจองแล้ว! 🌊 เที่ยวได้ตั้งแต่ 1 ตุลาคม เป็นต้นไป เที่ยวทะเลตรัง ไปเช้าเย็นกลับ 🚢 เรือใหญ่ 🍽️ อาหารบุฟเฟ่ต์ 💸 เพียง 950 บาท/ท่าน จองก่อน ได้เลือกวันเที่ยวก่อนนะคะ 💙✨ #ทะเลตรัง #เปิดฤดูกาลท่องเที่ยว#ทะเลตรังดอทคอม #tikokพาเที่ยว #การท่องเที่ยวแห่งประเทศ",
+            "views": "",
+            "url": "https://www.tiktok.com/@talaytrang/video/7652215632598994184"
+        },
+        {
             "id": "7651848567186885896",
             "platform": "tiktok",
             "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_oILW8hHUYAdaDebFIBTagj0Co6weIOVYIcfAIG~tplv-tiktokx-origin.image.jpg",
@@ -5332,14 +5340,6 @@
             "title": "🌊 พักผ่อนแบบเต็มอิ่มกับแพ็กเกจเที่ยวทะเลตรังแบบค้างคืน นอนชิลริมทะเล เที่ยวเกาะสวย น้ำใส ดำน้ำดูปะการัง จองง่าย เที่ยวสบาย พร้อมเก็บทุกช่วงเวลาความสุขไปด้วยกัน 🏝️💙✨ #FootballTikTok #tiktokพาเที่ยว #ทะเลตรัง #ทะเลตรังดอทคอม #tiktok",
             "views": "",
             "url": "https://www.tiktok.com/@talaytrang/video/7649372513432063250"
-        },
-        {
-            "id": "7649257238644739336",
-            "platform": "tiktok",
-            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_ocqAEnKEADEJfgAAynQCfFvj7BcCyIRmR5Jh2A~tplv-tiktokx-origin.image.jpg",
-            "title": "จะเที่ยวแบบไหน ก็มีแพ็กเกจให้เลือกครบ 💙 ☀️ ทริปไปเช้าเย็นกลับ เริ่มต้นเพียง 950.-/ท่าน 🌙 แพ็กเกจ 2วัน1คืน เริ่มต้นเพียง 1,275.-/ท่าน 🏝 แพ็กเกจ 3วัน2คืน เริ่มต้นเพียง 1,600.-/ท่าน ครบทั้งเรือ ที่พัก อาหาร และทีมงานดูแลตลอดทริป เที่ยวง่าย ไม่ต้องวางแผนเอง แ",
-            "views": "",
-            "url": "https://www.tiktok.com/@talaytrang/video/7649257238644739336"
         }
     ],
     "whyUs": [
@@ -6227,9 +6227,15 @@
                 "quoteBoatName": "Speedboat",
                 "autoSizeFromPax": true,
                 "addonQtyBySize": {
-                    "s1": { "menu-guide": 1 },
-                    "s2": { "menu-guide": 1 },
-                    "s3": { "menu-guide": 2 }
+                    "s1": {
+                        "menu-guide": 1
+                    },
+                    "s2": {
+                        "menu-guide": 1
+                    },
+                    "s3": {
+                        "menu-guide": 2
+                    }
                 },
                 "includedBoxTitle": "ราคาเหมาลำรวมแล้ว",
                 "includedItems": [
@@ -6368,10 +6374,18 @@
                 "insuranceQuoteLabel": "ประกัน",
                 "autoSizeFromPax": true,
                 "addonQtyBySize": {
-                    "t1": { "menu-guide": 1 },
-                    "t2": { "menu-guide": 1 },
-                    "t3": { "menu-guide": 1 },
-                    "t4": { "menu-guide": 1 }
+                    "t1": {
+                        "menu-guide": 1
+                    },
+                    "t2": {
+                        "menu-guide": 1
+                    },
+                    "t3": {
+                        "menu-guide": 1
+                    },
+                    "t4": {
+                        "menu-guide": 1
+                    }
                 },
                 "includedBoxTitle": "ราคาเหมาลำรวมแล้ว",
                 "includedItems": [
