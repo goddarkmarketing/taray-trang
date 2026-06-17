@@ -17,7 +17,7 @@ tt_bb_page_start('① โปรไฟล์เรือ', 'profiles');
 
 <div class="card">
   <h2><span class="adm-step-badge adm-step-badge--lg">1</span> โปรไฟล์เรือ</h2>
-  <p class="field-hint">ขั้นตอนบนเว็บ: <strong>เลือกประเภทเรือ</strong> — แก้ขนาดเรือ ราคาเหมา (สปีดโบ๊ท/เรือทัวร์) มัคคุเทศก์ สต๊าฟ และบริการเสริมเฉพาะเรือ</p>
+  <p class="field-hint">ขั้นตอนบนเว็บ: <strong>เลือกประเภทเรือ</strong> — แก้ขนาดเรือ ราคาเหมา ใบเสนอ LINE หลายลำ/แยก ผญ-เด็ก และบริการเสริมเฉพาะเรือ</p>
   <table class="table">
     <thead><tr><th>เรือ</th><th>โหมดบนเว็บ</th><th></th></tr></thead>
     <tbody>

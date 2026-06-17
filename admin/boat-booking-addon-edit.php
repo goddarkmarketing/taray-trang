@@ -33,6 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'price' => $_POST['price'] ?? 0,
         'unit' => $_POST['unit'] ?? 'flat',
         'priceLabel' => trim($_POST['priceLabel'] ?? ''),
+        'qtyLabel' => trim($_POST['qtyLabel'] ?? ''),
     ];
     if ($row['id'] === '' && $row['label'] !== '') {
         $row['id'] = 'menu-' . tt_slugify($row['label']);
@@ -119,15 +120,16 @@ tt_bb_page_start($pageTitle, 'addons');
       </div>
       <div class="field">
         <label>หน่วย</label>
-        <select name="unit">
-          <option value="flat"<?= ($addon['unit'] ?? 'flat') === 'flat' ? ' selected' : '' ?>>ต่อลำ</option>
-          <option value="perPerson"<?= ($addon['unit'] ?? '') === 'perPerson' ? ' selected' : '' ?>>ต่อท่าน</option>
-        </select>
+        <?php tt_bb_render_addon_unit_select('unit', (string) ($addon['unit'] ?? 'flat')); ?>
       </div>
       <div class="field">
         <label>ข้อความราคา</label>
         <input name="priceLabel" value="<?= htmlspecialchars((string) ($addon['priceLabel'] ?? ''), ENT_QUOTES, 'UTF-8') ?>" placeholder="100 บาท/ท่าน"/>
         <p class="field-hint">แสดงบนการ์ดจอง — ว่างได้ ระบบจะใช้ตัวเลขราคา</p>
+      </div>
+      <div class="field">
+        <label>ป้ายจำนวน (perQty/perVan)</label>
+        <input name="qtyLabel" value="<?= htmlspecialchars((string) ($addon['qtyLabel'] ?? ''), ENT_QUOTES, 'UTF-8') ?>" placeholder="คน / ชุด"/>
       </div>
       <div class="field" style="grid-column:1/-1">
         <label>คำอธิบาย</label>

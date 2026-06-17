@@ -6086,7 +6086,7 @@
                     "p1": 3500,
                     "p2": 4500,
                     "p3": 5500,
-                    "p4": 6500
+                    "p4": 5000
                 },
                 "r4": {
                     "p1": 5500,
@@ -6219,30 +6219,44 @@
                 "selectionMode": "size",
                 "tierProgressLabel": "ขนาดเรือ",
                 "tierStepTitle": "เลือกขนาดเรือ",
-                "tierStepDesc": "เลือกขนาดเรือ แล้วกรอกจำนวนผู้โดยสารจริง (ใช้คำนวณประกัน 50 × จำนวนคน)",
+                "tierStepDesc": "กรอกจำนวนผู้โดยสารจริง — ระบบเลือกขนาดเรือให้อัตโนมัติตามจำนวนคน · ถ้าเลือก 45 ที่นั่งเอง ระบบจะไม่เปลี่ยนกลับเมื่อกรอกจำนวนคน",
                 "charterLabel": "ราคาค่าเรือสปีดโบ๊ท",
                 "insurancePerPerson": 50,
-                "guideFee": 1500,
-                "includedBoxTitle": "ราคาของเรือสปีดโบ๊ท รวมสิ่งที่บังคับในราคาแล้ว",
-                "footerNote": "หมายเหตุ: ราคาของเรือสปีดโบ๊ทรวม ค่ามัคคุเทศก์ 1,500 บาท และประกันอุบัติเหตุคนละ 50 บาท แล้วทุกขนาดเรือ",
+                "guideFee": 0,
+                "itemizedQuote": true,
+                "quoteBoatName": "Speedboat",
+                "autoSizeFromPax": true,
+                "addonQtyBySize": {
+                    "s1": { "menu-guide": 1 },
+                    "s2": { "menu-guide": 1 },
+                    "s3": { "menu-guide": 2 }
+                },
+                "includedBoxTitle": "ราคาเหมาลำรวมแล้ว",
+                "includedItems": [
+                    "อุปกรณ์ดำน้ำ",
+                    "น้ำดื่ม",
+                    "น้ำแข็ง",
+                    "พนักงานประจำเรือ"
+                ],
+                "footerNote": "หมายเหตุ: ค่าเหมาลำรวมอุปกรณ์บนเรือแล้ว · ประกัน อาหาร อุทยาน รถรับส่ง ไกด์ และช่างภาพคิดเพิ่มตามรายการ · กรอกจุดรับในมหายเหตุ (เช่น รับโรงเรือรัษฏา)",
                 "sizes": [
                     {
                         "id": "s1",
                         "label": "1 เครื่องยนต์",
                         "capacity": 12,
-                        "capacityLabel": "จุ 12 คน"
+                        "capacityLabel": "12 ที่นั่ง"
                     },
                     {
                         "id": "s2",
                         "label": "2 เครื่องยนต์",
                         "capacity": 30,
-                        "capacityLabel": "จุ 30 คน"
+                        "capacityLabel": "30 ที่นั่ง"
                     },
                     {
                         "id": "s3",
                         "label": "3 เครื่องยนต์",
                         "capacity": 45,
-                        "capacityLabel": "จุ 45 คน"
+                        "capacityLabel": "45 ที่นั่ง"
                     }
                 ],
                 "charterPrices": {
@@ -6259,7 +6273,7 @@
                     "r3": {
                         "s1": 7500,
                         "s2": 10500,
-                        "s3": 13600
+                        "s3": 25000
                     },
                     "r4": {
                         "s1": 7800,
@@ -6276,51 +6290,121 @@
                         "s2": 11500,
                         "s3": 15000
                     }
-                }
+                },
+                "addons": [
+                    {
+                        "id": "menu-shuttle-pickup",
+                        "icon": "carPick",
+                        "label": "รถตู้รับ",
+                        "desc": "รับจากที่พัก → ท่าเรือ",
+                        "price": 1000,
+                        "unit": "perVan",
+                        "qtyLabel": "คัน",
+                        "priceLabel": "1,000 บาท/คัน"
+                    },
+                    {
+                        "id": "menu-shuttle-dropoff",
+                        "icon": "carPick",
+                        "label": "รถตู้ส่ง",
+                        "desc": "ท่าเรือ → ที่พัก",
+                        "price": 1000,
+                        "unit": "perVan",
+                        "qtyLabel": "คัน",
+                        "priceLabel": "1,000 บาท/คัน"
+                    },
+                    {
+                        "id": "menu-food",
+                        "icon": "cutlery",
+                        "label": "อาหารเที่ยงบุฟเฟ่",
+                        "desc": "บุฟเฟ่ต์บนเรือ",
+                        "price": 450,
+                        "unit": "perPerson",
+                        "priceLabel": "450 บาท/ท่าน"
+                    },
+                    {
+                        "id": "menu-park",
+                        "icon": "compass",
+                        "label": "ค่าอุทยาน",
+                        "desc": "ค่าเข้าอุทยานแห่งชาติ",
+                        "price": 40,
+                        "unit": "perPerson",
+                        "priceLabel": "40 บาท/ท่าน"
+                    },
+                    {
+                        "id": "menu-guide",
+                        "icon": "users",
+                        "label": "ค่าไกด์",
+                        "desc": "ไกด์ท้องถิ่น",
+                        "price": 1500,
+                        "unit": "perQty",
+                        "qtyLabel": "คน",
+                        "priceLabel": "1,500 บาท/คน"
+                    },
+                    {
+                        "id": "menu-photo",
+                        "icon": "camera",
+                        "label": "ช่างภาพ",
+                        "desc": "ช่างภาพมืออาชีพ",
+                        "price": 1500,
+                        "unit": "perQty",
+                        "qtyLabel": "คน",
+                        "priceLabel": "1,500 บาท/คน"
+                    }
+                ]
             },
             "bigboat": {
                 "selectionMode": "size",
                 "tierProgressLabel": "ขนาดเรือ",
                 "tierStepTitle": "เลือกขนาดเรือ",
-                "tierStepDesc": "เลือกขนาดเรือ แล้วกรอกจำนวนผู้โดยสารจริง (ใช้คำนวณประกันและสต๊าฟตามจำนวนคนจริง)",
+                "tierStepDesc": "กรอกจำนวนผู้โดยสารจริง — ระบบเลือกขนาดเรือให้อัตโนมัติ · เลือกขนาดใหญ่กว่าเองได้ถ้าต้องการ",
                 "charterLabel": "ราคาค่าเรือทัวร์",
                 "charterSummaryPrefix": "ค่าเรือทัวร์",
                 "insurancePerPerson": 50,
-                "guideFee": 1500,
-                "guideCountByTier": {
-                    "t1": 1,
-                    "t2": 2,
-                    "t3": 3,
-                    "t4": 4
+                "guideFee": 0,
+                "safetyStaffRate": 0,
+                "itemizedQuote": true,
+                "quoteTitlePrefix": "เรือทัวร์",
+                "quoteCharterName": "เรือ",
+                "insuranceQuoteLabel": "ประกัน",
+                "autoSizeFromPax": true,
+                "addonQtyBySize": {
+                    "t1": { "menu-guide": 1 },
+                    "t2": { "menu-guide": 1 },
+                    "t3": { "menu-guide": 1 },
+                    "t4": { "menu-guide": 1 }
                 },
-                "safetyStaffRate": 800,
-                "safetyStaffRatio": 20,
-                "includedBoxTitle": "ราคาของเรือทัวร์ รวมสิ่งที่บังคับในราคาแล้ว",
-                "footerNote": "หมายเหตุ: ราคาของเรือทัวร์รวม ค่ามัคคุเทศก์ (1,500 บาท/คน ตามขนาดเรือ), สต๊าฟดูแลความปลอดภัย และประกันอุบัติเหตุคนละ 50 บาท แล้วทุกขนาดเรือ",
+                "includedBoxTitle": "ราคาเหมาลำรวมแล้ว",
+                "includedItems": [
+                    "อุปกรณ์ดำน้ำ",
+                    "น้ำดื่ม",
+                    "น้ำแข็ง",
+                    "พนักงานประจำเรือ"
+                ],
+                "footerNote": "หมายเหตุ: ค่าเหมาลำรวมอุปกรณ์บนเรือแล้ว · ประกัน อาหาร อุทยาน สตาฟ ช่างภาพ และอุปกรณ์เสริมคิดเพิ่มตามรายการ · กรอกจุดนัดพบในมหายเหตุ (เช่น เจอท่าเรือ)",
                 "sizes": [
                     {
                         "id": "t1",
                         "label": "ขนาดที่ 1",
                         "capacity": 30,
-                        "capacityLabel": "จุ 30 คน"
+                        "capacityLabel": "30 ที่นั่ง"
                     },
                     {
                         "id": "t2",
                         "label": "ขนาดที่ 2",
                         "capacity": 60,
-                        "capacityLabel": "จุ 60 คน"
+                        "capacityLabel": "60 ที่นั่ง"
                     },
                     {
                         "id": "t3",
                         "label": "ขนาดที่ 3",
                         "capacity": 100,
-                        "capacityLabel": "จุ 100 คน"
+                        "capacityLabel": "100 ที่นั่ง"
                     },
                     {
                         "id": "t4",
                         "label": "ขนาดที่ 4",
                         "capacity": 120,
-                        "capacityLabel": "จุ 120 คน"
+                        "capacityLabel": "120 ที่นั่ง"
                     }
                 ],
                 "charterPrices": {
@@ -6340,7 +6424,7 @@
                         "t1": 9600,
                         "t2": 15800,
                         "t3": 21200,
-                        "t4": 25400
+                        "t4": 18000
                     },
                     "r4": {
                         "t1": 9800,
@@ -6360,10 +6444,73 @@
                         "t3": 23000,
                         "t4": 27500
                     }
-                }
+                },
+                "addons": [
+                    {
+                        "id": "menu-guide",
+                        "icon": "users",
+                        "label": "มัคคุเทศก์",
+                        "desc": "ไกด์ท้องถิ่น",
+                        "price": 1500,
+                        "unit": "perQty",
+                        "qtyLabel": "คน",
+                        "priceLabel": "1,500 บาท/คน"
+                    },
+                    {
+                        "id": "menu-food",
+                        "icon": "cutlery",
+                        "label": "อาหารเที่ยงบุฟเฟ่",
+                        "desc": "บุฟเฟ่ต์บนเรือ",
+                        "price": 450,
+                        "unit": "perPerson",
+                        "priceLabel": "450 บาท/ท่าน"
+                    },
+                    {
+                        "id": "menu-mask",
+                        "icon": "compass",
+                        "label": "หน้ากากดำน้ำ",
+                        "desc": "เช่าหน้ากากดำน้ำ",
+                        "price": 50,
+                        "unit": "perQty",
+                        "qtyLabel": "ชุด",
+                        "priceLabel": "50 บาท/ชุด"
+                    },
+                    {
+                        "id": "menu-staff",
+                        "icon": "users",
+                        "label": "สตาฟ",
+                        "desc": "สตาฟดูแลเพิ่มเติม",
+                        "price": 1000,
+                        "unit": "perQty",
+                        "qtyLabel": "คน",
+                        "priceLabel": "1,000 บาท/คน"
+                    },
+                    {
+                        "id": "menu-park",
+                        "icon": "compass",
+                        "label": "ค่าอุทยาน",
+                        "desc": "ค่าเข้าอุทยานแห่งชาติ",
+                        "price": 40,
+                        "unit": "perPerson",
+                        "priceLabel": "40 บาท/ท่าน"
+                    },
+                    {
+                        "id": "menu-photo",
+                        "icon": "camera",
+                        "label": "ช่างภาพ",
+                        "desc": "ช่างภาพมืออาชีพ",
+                        "price": 1500,
+                        "unit": "perQty",
+                        "qtyLabel": "คน",
+                        "priceLabel": "1,500 บาท/คน"
+                    }
+                ]
             },
             "longtail": {
                 "insurancePerPerson": 50,
+                "multiBoat": true,
+                "capacityPerBoat": 15,
+                "splitPax": true,
                 "routeIds": [
                     "r1",
                     "r2",
@@ -6372,7 +6519,7 @@
                     "r5"
                 ],
                 "askPax": true,
-                "tierStepDesc": "เลือกช่วงจำนวนคน แล้วกรอกจำนวนผู้โดยสารจริงเพื่อคำนวณประกันและบริการเสริม",
+                "tierStepDesc": "กรอกจำนวนผู้โดยสารจริง — ระบบคำนวณจำนวนเรือและช่วงราคาต่อลำอัตโนมัติ (เช่น 30 ท่าน = 2 ลำ × ช่วง 13–15 คน)",
                 "includedBoxTitle": "ราคาเรือหางยาวรวมแล้ว",
                 "includedItems": [
                     "อุปกรณ์ดำน้ำ",
@@ -6401,40 +6548,53 @@
                 },
                 "addons": [
                     {
-                        "id": "menu-park",
-                        "icon": "compass",
-                        "label": "ค่าอุทยานแห่งชาติ",
-                        "desc": "ค่าเข้าอุทยานแห่งชาติ (ถ้ามี)",
-                        "price": 40,
-                        "unit": "perPerson",
-                        "priceLabel": "40 บาท/ท่าน"
-                    },
-                    {
                         "id": "menu-food",
                         "icon": "cutlery",
-                        "label": "อาหารกลางวัน",
-                        "desc": "อาหารกลางวัน 1 ชุด/ท่าน",
+                        "label": "อาหารกล่อง",
+                        "desc": "อาหารกลางวัน 1 กล่อง/ท่าน",
                         "price": 100,
                         "unit": "perPerson",
                         "priceLabel": "100 บาท/ท่าน"
                     },
                     {
+                        "id": "menu-park",
+                        "icon": "compass",
+                        "label": "ค่าอุทยานแห่งชาติ",
+                        "desc": "ผู้ใหญ่/เด็ก อัตราต่างกัน",
+                        "price": 40,
+                        "adultPrice": 40,
+                        "childPrice": 20,
+                        "unit": "perPersonSplit",
+                        "adultLabel": "ค่าอุทยานผู้ใหญ่",
+                        "childLabel": "ค่าอุทยานเด็ก",
+                        "priceLabel": "40/20 บาท"
+                    },
+                    {
+                        "id": "menu-shuttle-pickup",
+                        "icon": "carPick",
+                        "label": "รถตู้รับ",
+                        "desc": "รับในเมืองตรัง → ท่าเรือ",
+                        "price": 1000,
+                        "unit": "perVan",
+                        "priceLabel": "1,000 บาท/คัน"
+                    },
+                    {
+                        "id": "menu-shuttle-dropoff",
+                        "icon": "carPick",
+                        "label": "รถตู้ส่ง",
+                        "desc": "ท่าเรือ → ในเมืองตรัง",
+                        "price": 1000,
+                        "unit": "perVan",
+                        "priceLabel": "1,000 บาท/คัน"
+                    },
+                    {
                         "id": "menu-photo",
                         "icon": "camera",
                         "label": "ช่างภาพ",
-                        "desc": "ช่างภาพมืออาชีพ",
-                        "price": 1000,
-                        "unit": "flat",
-                        "priceLabel": "1,000 บาท"
-                    },
-                    {
-                        "id": "menu-guide",
-                        "icon": "users",
-                        "label": "ไกด์",
-                        "desc": "ไกด์ท้องถิ่น",
-                        "price": 1000,
-                        "unit": "flat",
-                        "priceLabel": "1,000 บาท"
+                        "desc": "1 ท่าน/ลำ",
+                        "price": 1500,
+                        "unit": "perBoat",
+                        "priceLabel": "1,500 บาท/ลำ"
                     }
                 ]
             }

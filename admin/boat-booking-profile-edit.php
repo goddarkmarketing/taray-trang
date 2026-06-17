@@ -8,7 +8,7 @@ require_once __DIR__ . '/includes/boat-booking-helpers.php';
 require_once __DIR__ . '/includes/boat-booking-layout.php';
 tt_require_admin();
 
-$iconOptions = ['cutlery', 'users', 'camera', 'scuba', 'carPick', 'compass', 'plus', 'anchor', 'chatBubble'];
+$iconOptions = tt_bb_icon_options();
 
 $data = tt_read_data();
 $boatId = trim($_GET['boat'] ?? $_POST['boat'] ?? '');
@@ -30,66 +30,21 @@ $profileAddons = $profile['addons'] ?? [];
 $routeIds = $profile['routeIds'] ?? [];
 $tierRules = $profile['tierRules'] ?? [];
 $guideCounts = $profile['guideCountByTier'] ?? [];
+$addonQtyBySize = $profile['addonQtyBySize'] ?? [];
+$qtyDefaultAddonIds = tt_bb_qty_default_addon_ids(array_values(array_filter($profileAddons, static fn($a) => ($a['id'] ?? '') !== '')));
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = tt_read_data();
     $bb = tt_bb_get($data);
-    $profile = [];
-
-    $profile['selectionMode'] = trim($_POST['selectionMode'] ?? 'people') === 'size' ? 'size' : 'people';
-    foreach (['tierProgressLabel', 'tierStepTitle', 'tierStepDesc', 'charterLabel', 'charterSummaryPrefix', 'includedBoxTitle', 'footerNote'] as $k) {
-        $v = trim($_POST[$k] ?? '');
-        if ($v !== '') {
-            $profile[$k] = $v;
-        }
-    }
-    $profile['insurancePerPerson'] = (int) ($_POST['insurancePerPerson'] ?? ($bb['insurancePerPerson'] ?? 50));
-    $profile['guideFee'] = (int) ($_POST['guideFee'] ?? 0);
-    $profile['safetyStaffRate'] = (int) ($_POST['safetyStaffRate'] ?? 0);
-    $profile['safetyStaffRatio'] = max(1, (int) ($_POST['safetyStaffRatio'] ?? 20));
-    $profile['askPax'] = isset($_POST['askPax']);
-
-    $sizes = tt_bb_parse_sizes_post($_POST['sizes'] ?? []);
-    if ($profile['selectionMode'] === 'size' && $sizes) {
-        $profile['sizes'] = $sizes;
-    }
-
-    $matrix = tt_bb_parse_charter_matrix_post($_POST['charter_prices'] ?? []);
-    if ($matrix) {
-        $profile['charterPrices'] = $matrix;
-    }
-
-    $guideCounts = tt_bb_parse_guide_counts_post($_POST['guideCountByTier'] ?? []);
-    if ($guideCounts) {
-        $profile['guideCountByTier'] = $guideCounts;
-    }
-
-    $addons = tt_bb_parse_addons_post($_POST['addons'] ?? []);
-    if ($addons) {
-        $profile['addons'] = $addons;
-    }
-
-    $included = tt_parse_lines($_POST['includedItems'] ?? '');
-    if ($included) {
-        $profile['includedItems'] = $included;
-    }
-
-    $selectedRoutes = array_values(array_filter(array_map('trim', $_POST['routeIds'] ?? [])));
-    if ($selectedRoutes) {
-        $profile['routeIds'] = $selectedRoutes;
-    }
-
-    $tierRules = tt_bb_parse_tier_rules_post($_POST['tierRules'] ?? []);
-    if ($tierRules) {
-        $profile['tierRules'] = $tierRules;
-    }
+    $existing = $bb['profiles'][$boatId] ?? [];
+    $profile = tt_bb_merge_profile_post($existing, $_POST, $bb, $boatId);
 
     $bb['profiles'] = $bb['profiles'] ?? [];
     $bb['profiles'][$boatId] = $profile;
 
-    if ($profile['selectionMode'] !== 'size' && $matrix) {
+    if (($profile['selectionMode'] ?? '') !== 'size' && !empty($profile['charterPrices'])) {
         $bb['charterPrices'] = $bb['charterPrices'] ?? [];
-        $bb['charterPrices'][$boatId] = $matrix;
+        $bb['charterPrices'][$boatId] = $profile['charterPrices'];
     }
 
     $data['boatBooking'] = $bb;
@@ -113,6 +68,8 @@ $profileAddons[] = ['id' => '', 'icon' => 'plus', 'label' => '', 'desc' => '', '
 $routeIds = $profile['routeIds'] ?? [];
 $tierRules = $profile['tierRules'] ?? [];
 $guideCounts = $profile['guideCountByTier'] ?? [];
+$addonQtyBySize = $profile['addonQtyBySize'] ?? [];
+$qtyDefaultAddonIds = tt_bb_qty_default_addon_ids(array_values(array_filter($profileAddons, static fn($a) => ($a['id'] ?? '') !== '')));
 
 $tierCols = $isSizeMode ? $sizes : $peopleTiers;
 $tierCols = array_values(array_filter($tierCols, static fn($t) => ($t['id'] ?? '') !== ''));
@@ -173,6 +130,67 @@ tt_bb_render_flash();
   </div>
 
   <div class="card">
+    <h2>พฤติกรรมขั้นสูง</h2>
+    <p class="field-hint">ตั้งค่าตามโจทย์จอง — เรือหางยาว (หลายลำ), Speedboat/เรือใหญ่ (ใบเสนอ LINE, เลือกขนาดอัตโนมัติ)</p>
+    <div class="grid-2">
+      <div class="field" style="grid-column:1/-1">
+        <label><input type="checkbox" name="multiBoat" value="1"<?= !empty($profile['multiBoat']) ? ' checked' : '' ?>/> หลายลำ (เรือหางยาว) — คำนวณจำนวนเรือจากจำนวนคน</label>
+      </div>
+      <div class="field">
+        <label>ความจุต่อลำ (คน)</label>
+        <input name="capacityPerBoat" type="number" min="1" value="<?= (int) ($profile['capacityPerBoat'] ?? 0) ?>" placeholder="15"/>
+        <p class="field-hint">ใช้เมื่อเปิดหลายลำ เช่น 30 ท่าน ÷ 15 = 2 ลำ</p>
+      </div>
+      <div class="field">
+        <label><input type="checkbox" name="splitPax" value="1"<?= !empty($profile['splitPax']) ? ' checked' : '' ?>/> แยกกรอกผู้ใหญ่/เด็ก (ค่าอุทยานแยกราคา)</label>
+      </div>
+      <div class="field" style="grid-column:1/-1">
+        <label><input type="checkbox" name="itemizedQuote" value="1"<?= !empty($profile['itemizedQuote']) ? ' checked' : '' ?>/> ใบเสนอ LINE แบบรายบรรทัด (Speedboat / เรือใหญ่)</label>
+      </div>
+      <?php if ($isSizeMode): ?>
+      <div class="field">
+        <label><input type="checkbox" name="autoSizeFromPax" value="1"<?= !empty($profile['autoSizeFromPax']) ? ' checked' : '' ?>/> เลือกขนาดเรืออัตโนมัติจากจำนวนคน</label>
+      </div>
+      <div class="field">
+        <label>ขนาดเริ่มต้น (ไม่บังคับ)</label>
+        <select name="defaultSizeId">
+          <option value="">— อัตโนมัติ —</option>
+          <?php foreach (array_slice($sizes, 0, -1) as $s):
+            $sid = (string) ($s['id'] ?? '');
+            if ($sid === '') continue;
+          ?>
+          <option value="<?= htmlspecialchars($sid, ENT_QUOTES, 'UTF-8') ?>"<?= ($profile['defaultSizeId'] ?? '') === $sid ? ' selected' : '' ?>><?= htmlspecialchars((string) ($s['label'] ?? $sid), ENT_QUOTES, 'UTF-8') ?> (<?= htmlspecialchars($sid, ENT_QUOTES, 'UTF-8') ?>)</option>
+          <?php endforeach; ?>
+        </select>
+      </div>
+      <?php endif; ?>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>ข้อความใบเสนอ LINE</h2>
+    <p class="field-hint">ใช้เมื่อเปิด «ใบเสนอ LINE แบบรายบรรทัด» — ว่างได้ ระบบใช้ค่าเริ่มต้น</p>
+    <div class="grid-2">
+      <div class="field">
+        <label>คำนำหน้าหัวข้อ</label>
+        <input name="quoteTitlePrefix" value="<?= htmlspecialchars((string) ($profile['quoteTitlePrefix'] ?? ''), ENT_QUOTES, 'UTF-8') ?>" placeholder="เรือทัวร์ → จองเรือทัวร์ขนาด 120 ที่นั่ง"/>
+      </div>
+      <div class="field">
+        <label>ชื่อเรือในใบเสนอ</label>
+        <input name="quoteBoatName" value="<?= htmlspecialchars((string) ($profile['quoteBoatName'] ?? ''), ENT_QUOTES, 'UTF-8') ?>" placeholder="Speedboat → จองเรือ Speedboat 45 ที่นั่ง"/>
+      </div>
+      <div class="field">
+        <label>ชื่อบรรทัดค่าเหมาลำ</label>
+        <input name="quoteCharterName" value="<?= htmlspecialchars((string) ($profile['quoteCharterName'] ?? ''), ENT_QUOTES, 'UTF-8') ?>" placeholder="เรือ"/>
+      </div>
+      <div class="field">
+        <label>ป้ายบรรทัดประกัน</label>
+        <input name="insuranceQuoteLabel" value="<?= htmlspecialchars((string) ($profile['insuranceQuoteLabel'] ?? ''), ENT_QUOTES, 'UTF-8') ?>" placeholder="ประกัน"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
     <h2>ค่าบังคับ (มัคคุเทศก์ / สต๊าฟ)</h2>
     <div class="grid-2">
       <div class="field"><label>ค่ามัคคุเทศก์ (บาท/คน)</label><input name="guideFee" type="number" min="0" value="<?= (int) ($profile['guideFee'] ?? 0) ?>"/></div>
@@ -215,6 +233,48 @@ tt_bb_render_flash();
       </tbody>
     </table>
   </div>
+
+  <?php if ($qtyDefaultAddonIds): ?>
+  <div class="card">
+    <h2>ค่าเริ่มต้นจำนวนบริการเสริม (ตามขนาดเรือ)</h2>
+    <p class="field-hint">ตั้งจำนวนเริ่มต้นเมื่อเลือกขนาด — เช่น 45 ที่นั่ง → ไกด์ 2 คน · ว่าง = ไม่ตั้งค่าเริ่มต้น</p>
+    <div class="table-wrap" style="overflow-x:auto">
+      <table class="table table-form">
+        <thead>
+          <tr>
+            <th>ขนาดเรือ</th>
+            <?php foreach ($qtyDefaultAddonIds as $aid):
+              $addonLabel = $aid;
+              foreach ($profileAddons as $a) {
+                  if (($a['id'] ?? '') === $aid) {
+                      $addonLabel = (string) ($a['label'] ?? $aid);
+                      break;
+                  }
+              }
+            ?>
+            <th><?= htmlspecialchars($addonLabel, ENT_QUOTES, 'UTF-8') ?><br><small><?= htmlspecialchars($aid, ENT_QUOTES, 'UTF-8') ?></small></th>
+            <?php endforeach; ?>
+          </tr>
+        </thead>
+        <tbody>
+          <?php foreach (array_slice($sizes, 0, -1) as $s):
+            $sid = (string) ($s['id'] ?? '');
+            if ($sid === '') continue;
+          ?>
+          <tr>
+            <td><strong><?= htmlspecialchars((string) ($s['label'] ?? $sid), ENT_QUOTES, 'UTF-8') ?></strong> <small>(<?= htmlspecialchars($sid, ENT_QUOTES, 'UTF-8') ?>)</small></td>
+            <?php foreach ($qtyDefaultAddonIds as $aid):
+              $val = $addonQtyBySize[$sid][$aid] ?? '';
+            ?>
+            <td><input name="addonQtyBySize[<?= htmlspecialchars($sid, ENT_QUOTES, 'UTF-8') ?>][<?= htmlspecialchars($aid, ENT_QUOTES, 'UTF-8') ?>]" type="number" min="0" value="<?= $val !== '' ? (int) $val : '' ?>" placeholder="—" style="width:80px"/></td>
+            <?php endforeach; ?>
+          </tr>
+          <?php endforeach; ?>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <?php endif; ?>
   <?php endif; ?>
 
   <div class="card">
@@ -322,10 +382,7 @@ tt_bb_render_flash();
           </div>
           <div class="field">
             <label>หน่วย</label>
-            <select name="addons[<?= $i ?>][unit]">
-              <option value="flat"<?= ($a['unit'] ?? 'flat') === 'flat' ? ' selected' : '' ?>>ต่อลำ</option>
-              <option value="perPerson"<?= ($a['unit'] ?? '') === 'perPerson' ? ' selected' : '' ?>>ต่อท่าน</option>
-            </select>
+            <?php tt_bb_render_addon_unit_select("addons[{$i}][unit]", (string) ($a['unit'] ?? 'flat')); ?>
           </div>
           <div class="field span-2">
             <label>ชื่อที่แสดง</label>
@@ -334,6 +391,26 @@ tt_bb_render_flash();
           <div class="field span-2">
             <label>ข้อความราคา</label>
             <input name="addons[<?= $i ?>][priceLabel]" value="<?= htmlspecialchars((string) ($a['priceLabel'] ?? ''), ENT_QUOTES, 'UTF-8') ?>" placeholder="40 บาท/ท่าน"/>
+          </div>
+          <div class="field">
+            <label>ป้ายจำนวน (perQty/perVan)</label>
+            <input name="addons[<?= $i ?>][qtyLabel]" value="<?= htmlspecialchars((string) ($a['qtyLabel'] ?? ''), ENT_QUOTES, 'UTF-8') ?>" placeholder="คน / ชุด / คัน"/>
+          </div>
+          <div class="field">
+            <label>ราคาผู้ใหญ่ (แยก ผญ/เด็ก)</label>
+            <input name="addons[<?= $i ?>][adultPrice]" type="number" min="0" value="<?= isset($a['adultPrice']) ? (int) $a['adultPrice'] : '' ?>" placeholder="—"/>
+          </div>
+          <div class="field">
+            <label>ราคาเด็ก (แยก ผญ/เด็ก)</label>
+            <input name="addons[<?= $i ?>][childPrice]" type="number" min="0" value="<?= isset($a['childPrice']) ? (int) $a['childPrice'] : '' ?>" placeholder="—"/>
+          </div>
+          <div class="field">
+            <label>ป้ายผู้ใหญ่</label>
+            <input name="addons[<?= $i ?>][adultLabel]" value="<?= htmlspecialchars((string) ($a['adultLabel'] ?? ''), ENT_QUOTES, 'UTF-8') ?>" placeholder="ค่าอุทยานผู้ใหญ่"/>
+          </div>
+          <div class="field">
+            <label>ป้ายเด็ก</label>
+            <input name="addons[<?= $i ?>][childLabel]" value="<?= htmlspecialchars((string) ($a['childLabel'] ?? ''), ENT_QUOTES, 'UTF-8') ?>" placeholder="ค่าอุทยานเด็ก"/>
           </div>
           <div class="field span-full">
             <label>คำอธิบาย</label>
