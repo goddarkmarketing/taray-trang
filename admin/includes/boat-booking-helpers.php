@@ -251,8 +251,8 @@ function tt_bb_get(array $data): array
 function tt_bb_addon_unit_label(string $unit): string
 {
     return match ($unit) {
-        'perPerson', 'per_person' => 'ต่อท่าน',
-        'perPersonSplit', 'per_person_split' => 'แยกผู้ใหญ่/เด็ก',
+        'perPerson', 'per_person' => 'ต่อท่าน (กรอกจำนวน)',
+        'perPersonSplit', 'per_person_split' => 'แยกผู้ใหญ่/เด็ก (กรอกจำนวน)',
         'perBoat', 'per_boat' => 'ต่อลำ',
         'perVan', 'per_van' => 'ต่อคัน',
         'perQty', 'per_qty' => 'กรอกจำนวน',
@@ -272,8 +272,8 @@ function tt_bb_render_addon_unit_select(string $name, string $selected): void
     };
     $options = [
         'flat' => 'ต่อลำ (คงที่)',
-        'perPerson' => 'ต่อท่าน',
-        'perPersonSplit' => 'แยกผู้ใหญ่/เด็ก',
+        'perPerson' => 'ต่อท่าน (กรอกจำนวน)',
+        'perPersonSplit' => 'แยกผู้ใหญ่/เด็ก (กรอกจำนวน)',
         'perBoat' => 'ต่อลำ (คูณจำนวนเรือ)',
         'perVan' => 'ต่อคัน (กรอกจำนวน)',
         'perQty' => 'กรอกจำนวน (ไกด์/ช่างภาพ)',

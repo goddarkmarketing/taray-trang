@@ -6245,6 +6245,13 @@ label.bb-addon--pick { cursor: pointer; -webkit-tap-highlight-color: transparent
   gap: 8px;
   margin-top: 4px;
 }
+.bb-addon-qty-split {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+}
+.bb-addon-qty-split .bb-addon-qty-wrap { margin-top: 0; }
 .bb-addon-qty {
   width: 56px;
   min-height: 36px;

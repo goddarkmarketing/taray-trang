@@ -115,6 +115,35 @@
       });
     }
 
+    function syncPaxToAddonQty(state) {
+      const profile = getProfile(state.boatId);
+      if (profile.askPax === false) return;
+      const pax = readPaxState(state.boatId);
+      getAddonsForBoat(state.boatId).forEach((a) => {
+        const unit = a.unit || 'flat';
+        if (unit === 'perPerson') {
+          const key = `${a.id}|pax`;
+          if (addonQtyManual.has(key) || pax.total <= 0) return;
+          const el = form.querySelector(`[name="addon_qty_${a.id}"]`);
+          if (!el) return;
+          const next = String(pax.total);
+          if (el.value !== next) el.value = next;
+        }
+        if (unit === 'perPersonSplit') {
+          const adultEl = form.querySelector(`[name="addon_qty_${a.id}"]`);
+          const childEl = form.querySelector(`[name="addon_qty_${addonQtyChildKey(a.id)}"]`);
+          if (adultEl && !addonQtyManual.has(`${a.id}|pax`) && pax.adults > 0) {
+            const next = String(pax.adults);
+            if (adultEl.value !== next) adultEl.value = next;
+          }
+          if (childEl && !addonQtyManual.has(`${addonQtyChildKey(a.id)}|pax`)) {
+            const next = String(pax.children || 0);
+            if (childEl.value !== next) childEl.value = next;
+          }
+        }
+      });
+    }
+
     function expandItemizedQuoteLines(lines) {
       return lines.flatMap((item) => {
         if (!item.splitLines || item.qty <= 1) return [item];
@@ -253,16 +282,28 @@
     }
 
     function addonUsesQty(unit) {
-      return unit === 'perVan' || unit === 'perQty';
+      return unit === 'perPerson' || unit === 'perPersonSplit' || unit === 'perVan' || unit === 'perQty';
+    }
+
+    function addonQtyChildKey(addonId) {
+      return `${addonId}__child`;
     }
 
     function readAddonQtyFromDom(boatId) {
       const map = {};
       getAddonsForBoat(boatId).forEach((a) => {
-        if (addonUsesQty(a.unit || 'flat')) {
-          const el = form.querySelector(`[name="addon_qty_${a.id}"]`);
-          map[a.id] = Number(el?.value) || 0;
+        const unit = a.unit || 'flat';
+        if (!addonUsesQty(unit)) return;
+        if (unit === 'perPersonSplit') {
+          const adultQty = Number(form.querySelector(`[name="addon_qty_${a.id}"]`)?.value) || 0;
+          const childQty = Number(form.querySelector(`[name="addon_qty_${addonQtyChildKey(a.id)}"]`)?.value) || 0;
+          if (adultQty > 0) map[a.id] = adultQty;
+          if (childQty > 0) map[addonQtyChildKey(a.id)] = childQty;
+          return;
         }
+        const el = form.querySelector(`[name="addon_qty_${a.id}"]`);
+        const qty = Number(el?.value) || 0;
+        if (qty > 0) map[a.id] = qty;
       });
       return map;
     }
@@ -270,9 +311,15 @@
     function getActiveAddonIds(boatId, addonQty) {
       const ids = [...new FormData(form).getAll('addon')].map(String);
       getAddonsForBoat(boatId).forEach((a) => {
-        if (addonUsesQty(a.unit || 'flat') && (addonQty[a.id] || 0) > 0) {
-          ids.push(a.id);
+        const unit = a.unit || 'flat';
+        if (!addonUsesQty(unit)) return;
+        if (unit === 'perPersonSplit') {
+          if ((addonQty[a.id] || 0) > 0 || (addonQty[addonQtyChildKey(a.id)] || 0) > 0) {
+            ids.push(a.id);
+          }
+          return;
         }
+        if ((addonQty[a.id] || 0) > 0) ids.push(a.id);
       });
       return [...new Set(ids)];
     }
@@ -433,8 +480,9 @@
       });
 
       if (unit === 'perPerson') {
-        if (!people) return [];
-        return [qtyLine(addon.label, people, price)];
+        const qty = addonQty[addon.id] || 0;
+        if (!qty) return [];
+        return [qtyLine(addon.label, qty, price)];
       }
       if (unit === 'perPersonSplit') {
         const items = [];
@@ -442,8 +490,10 @@
         const cp = Number(addon.childPrice ?? 0);
         const adultLabel = addon.adultLabel || `${addon.label} (ผู้ใหญ่)`;
         const childLabel = addon.childLabel || `${addon.label} (เด็ก)`;
-        if (adults > 0) items.push(qtyLine(adultLabel, adults, ap));
-        if (children > 0) items.push(qtyLine(childLabel, children, cp));
+        const adultQty = addonQty[addon.id] || 0;
+        const childQty = addonQty[addonQtyChildKey(addon.id)] || 0;
+        if (adultQty > 0) items.push(qtyLine(adultLabel, adultQty, ap));
+        if (childQty > 0) items.push(qtyLine(childLabel, childQty, cp));
         return items;
       }
       if (unit === 'perBoat') {
@@ -728,7 +778,7 @@
       return `
         <div class="bb-pax-field" id="bb-pax-wrap">
           <label class="bb-field-label" for="bb-pax">จำนวนผู้โดยสารจริง <span class="req">*</span></label>
-          <p class="field-hint">กรอกจำนวนคนที่มาจริง (${maxHint}) — ใช้คำนวณประกันอุบัติเหตุ (${fmt.format(profile.insurancePerPerson)} × จำนวนคน) และบริการต่อท่าน</p>
+          <p class="field-hint">กรอกจำนวนคนที่มาจริง (${maxHint}) — ใช้คำนวณประกันอุบัติเหตุ (${fmt.format(profile.insurancePerPerson)} × จำนวนคน) · อาหาร/อุทยานกรอกจำนวนในขั้นบริการเสริม</p>
           <input class="input bb-pax-input" type="text" id="bb-pax" name="pax" inputmode="numeric" pattern="[0-9]*" autocomplete="off" value="${val}" data-min="${min}" data-max="${max}" required/>
         </div>`;
     }
@@ -753,17 +803,29 @@
         </div>`;
     }
 
+    function addonQtyFieldHtml(a, { suffix = '', hint = '' } = {}) {
+      const fieldId = `${a.id}${suffix}`;
+      const hintText = hint
+        || a.qtyLabel
+        || ({ perVan: 'คัน', perQty: 'คน', perPerson: 'ท่าน' }[a.unit || ''] || 'จำนวน');
+      return `
+          <div class="bb-addon-qty-wrap">
+            <label class="sr-only" for="addon_qty_${fieldId}">จำนวน${hintText} ${a.label}</label>
+            <input type="text" class="input bb-addon-qty" id="addon_qty_${fieldId}" name="addon_qty_${fieldId}" inputmode="numeric" pattern="[0-9]*" value="0" autocomplete="off"/>
+            <span class="field-hint">${hintText}</span>
+          </div>`;
+    }
+
     function addonsGridHtml(boatAddons) {
       return boatAddons.map((a) => {
         const unit = a.unit || 'flat';
         const isQty = addonUsesQty(unit);
-        const qtyLabel = a.qtyLabel || (unit === 'perVan' ? 'คัน' : 'คน');
-        const qtyField = `
-          <div class="bb-addon-qty-wrap">
-            <label class="sr-only" for="addon_qty_${a.id}">จำนวน${qtyLabel} ${a.label}</label>
-            <input type="text" class="input bb-addon-qty" id="addon_qty_${a.id}" name="addon_qty_${a.id}" inputmode="numeric" pattern="[0-9]*" value="0" autocomplete="off"/>
-            <span class="field-hint">${qtyLabel}</span>
-          </div>`;
+        let qtyField = '';
+        if (unit === 'perPersonSplit') {
+          qtyField = `<div class="bb-addon-qty-split">${addonQtyFieldHtml(a, { hint: 'ผู้ใหญ่' })}${addonQtyFieldHtml(a, { suffix: '__child', hint: 'เด็ก' })}</div>`;
+        } else if (isQty) {
+          qtyField = addonQtyFieldHtml(a);
+        }
         const body = `
             <span class="bb-addon-icon">${ICONS?.[a.icon] || ICONS?.plus || '+'}</span>
             <span class="bb-addon-body">
@@ -1009,9 +1071,9 @@
 
     function syncPickStyles() {
       form.querySelectorAll('.bb-boat-pick, .bb-route, .bb-tier-card, .bb-size-card, .bb-addon').forEach((el) => {
-        const qtyEl = el.querySelector('.bb-addon-qty');
-        if (qtyEl) {
-          el.classList.toggle('is-selected', Number(qtyEl.value) > 0);
+        const qtyEls = el.querySelectorAll('.bb-addon-qty');
+        if (qtyEls.length) {
+          el.classList.toggle('is-selected', [...qtyEls].some((qtyEl) => Number(qtyEl.value) > 0));
           return;
         }
         el.classList.toggle('is-selected', el.querySelector('input')?.checked);
@@ -1130,6 +1192,7 @@
       syncMultiBoatTier(getState());
       syncSpeedboatSize(getState());
       syncAddonQtyBySize(getState());
+      syncPaxToAddonQty(getState());
       state = getState();
       const calc = calculate(state);
       syncPickStyles();
@@ -1520,7 +1583,9 @@
           e.target.value = String(e.target.value ?? '').replace(/\D/g, '');
         }
         if (e.target.matches('.bb-addon-qty')) {
-          const addonId = e.target.name.replace('addon_qty_', '');
+          const fieldKey = e.target.name.replace('addon_qty_', '');
+          addonQtyManual.add(`${fieldKey}|pax`);
+          const addonId = fieldKey.replace(/__child$/, '');
           const tierId = new FormData(form).get('tier')?.toString() || '';
           addonQtyManual.add(`${tierId}|${addonId}`);
         }
