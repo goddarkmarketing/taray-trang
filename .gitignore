@@ -7,6 +7,9 @@ desktop.ini
 .vscode/
 .idea/
 
+# Node (icon build tooling)
+node_modules/
+
 # Accidental temp files
 -sS
 

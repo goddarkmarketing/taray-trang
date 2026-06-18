@@ -332,7 +332,7 @@
           <div class="stars" aria-label="${r.rating} ดาว">${starsHtml(r.rating)}</div>
           <p class="review-text">“${r.text}”</p>
           <div class="review-foot">
-            <span class="avatar">${r.initial}</span>
+            <span class="avatar" aria-hidden="true">${ICONS.user}</span>
             <div><strong>${r.name}</strong><span>${r.trip}</span></div>
           </div>
         </article>
