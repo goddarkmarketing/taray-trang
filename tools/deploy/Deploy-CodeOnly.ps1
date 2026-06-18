@@ -7,8 +7,7 @@ $OutDir = Join-Path $ProjectRoot "dist\deploy-package-$Stamp"
 $ExcludeFiles = @(
     'site.json',
     'admin-credentials.json',
-    'data-fallback.js',
-    'tt-cache-version.js'
+    'data-fallback.js'
 )
 
 $ExcludeDirs = @(
@@ -82,6 +81,8 @@ NOT included (keep existing files on server):
   - data/backups/
   - assets/uploads/
   - assets/js/data-fallback.js
+
+Included (upload to refresh JS cache after code changes):
   - assets/js/tt-cache-version.js
 
 Upload steps (FTP / cPanel):
@@ -107,6 +108,17 @@ if (Test-Path (Join-Path $OutDir 'data\site.json')) {
     Write-Host 'WARNING: site.json was copied - remove it before upload!' -ForegroundColor Red
     Remove-Item (Join-Path $OutDir 'data\site.json') -Force
 }
+
+# Bust browser cache for JS after code deploy (boat-book.js, main.js, …)
+$deployIso = Get-Date -Format 'yyyy-MM-ddTHH:mm:sszzz'
+$verJs = Join-Path $OutDir 'assets\js\tt-cache-version.js'
+$verDir = Split-Path $verJs -Parent
+if (-not (Test-Path $verDir)) {
+    New-Item -ItemType Directory -Path $verDir -Force | Out-Null
+}
+$verContent = "/* Auto-generated at deploy $created */`r`nwindow.__TT_SCRIPT_V = `"$deployIso`";`r`n"
+[System.IO.File]::WriteAllText($verJs, $verContent, [System.Text.UTF8Encoding]::new($false))
+Write-Host "Cache bust: assets/js/tt-cache-version.js -> $deployIso" -ForegroundColor Green
 
 Write-Host 'Done.' -ForegroundColor Green
 Write-Host 'Excluded from package:' -ForegroundColor Yellow

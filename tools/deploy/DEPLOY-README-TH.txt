@@ -6,6 +6,9 @@
   * assets/uploads/ (รูป)
   * assets/js/data-fallback.js
 
+ต้องอัปโหลดด้วย (เปลี่ยนทุกครั้งที่อัปโค้ด — ล้างแคช JS):
+  * assets/js/tt-cache-version.js
+
 วิธีอัป:
   1. แบ็คอัพบนโฮสก่อน (admin > สำรอง & กู้คืน)
   2. อัปโหลด merge ขึ้นโฮส (อย่าลบ data/ บนโฮส)
