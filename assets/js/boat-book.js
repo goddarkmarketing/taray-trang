@@ -3,10 +3,15 @@
   const ready = (fn) => (document.readyState !== 'loading'
     ? fn() : document.addEventListener('DOMContentLoaded', fn));
 
-  const checkSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>';
-  const shieldSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>';
-  const arrowNext = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>';
-  const arrowBack = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 5l-7 7 7 7"/></svg>';
+  const icons = () => window.TT?.ICONS || {};
+  const svgSize = (svg, w = 16, h = 16) => {
+    if (!svg) return '';
+    return /width=/.test(svg) ? svg : svg.replace('<svg ', `<svg width="${w}" height="${h}" `);
+  };
+  const checkSvg = () => icons().check || '';
+  const shieldSvg = () => icons().shield || '';
+  const arrowNext = () => svgSize(icons().arrow || '');
+  const arrowBack = () => svgSize(icons().arrowLeft || icons().arrow || '');
 
   const STEPS = [
     { id: 'boat', label: 'เรือ' },
@@ -141,17 +146,6 @@
             if (childEl.value !== next) childEl.value = next;
           }
         }
-      });
-    }
-
-    function expandItemizedQuoteLines(lines) {
-      return lines.flatMap((item) => {
-        if (!item.splitLines || item.qty <= 1) return [item];
-        return Array.from({ length: item.qty }, () => ({
-          ...item,
-          qty: 1,
-          lineTotal: item.unitPrice,
-        }));
       });
     }
 
@@ -503,10 +497,7 @@
       if (unit === 'perVan' || unit === 'perQty') {
         const qty = addonQty[addon.id] || 0;
         if (!qty) return [];
-        return [{
-          ...qtyLine(addon.label, qty, price),
-          splitLines: unit === 'perQty' && ctx.itemizedQuote,
-        }];
+        return [qtyLine(addon.label, qty, price)];
       }
       return [qtyLine(addon.label, 1, price)];
     }
@@ -663,9 +654,9 @@
       return `
         <div class="wizard-nav${forwardOnly ? ' is-forward-only' : ''}">
           ${back
-            ? `<button type="button" class="btn btn-ghost wizard-back" data-back="${back}">${arrowBack} ย้อนกลับ</button>`
+            ? `<button type="button" class="btn btn-ghost wizard-back" data-back="${back}">${arrowBack()} ย้อนกลับ</button>`
             : ''}
-          ${extra || `<button type="button" class="btn btn-primary wizard-next" data-next="${next}">${nextLabel || 'ถัดไป'} ${arrowNext}</button>`}
+          ${extra || `<button type="button" class="btn btn-primary wizard-next" data-next="${next}">${nextLabel || 'ถัดไป'} ${arrowNext()}</button>`}
         </div>`;
     }
 
@@ -834,7 +825,7 @@
             </span>
             <span class="bb-addon-meta">
               <span class="bb-addon-price">${a.priceLabel || fmt.format(a.price) + ' บาท'}</span>
-              ${isQty ? qtyField : `<span class="bb-addon-check"><span class="bb-addon-check-txt">เพิ่ม</span>${checkSvg}</span>`}
+              ${isQty ? qtyField : `<span class="bb-addon-check"><span class="bb-addon-check-txt">เพิ่ม</span>${checkSvg()}</span>`}
             </span>`;
         if (isQty) {
           return `<div class="bb-addon bb-addon--${unit} bb-addon--has-qty" data-addon-id="${a.id}">${body}</div>`;
@@ -867,7 +858,7 @@
         ${guideBlock}
         ${safetyBlock}
         <div class="bb-insurance" aria-live="polite">
-          <span class="bb-insurance-icon" aria-hidden="true">${shieldSvg}</span>
+          <span class="bb-insurance-icon" aria-hidden="true">${shieldSvg()}</span>
           <div class="bb-insurance-text">
             <strong>ค่าประกันอุบัติเหตุ (บังคับ)</strong>
             <span id="bb-insurance-formula">${profile.insurancePerPerson} บาท × จำนวนคน</span>
@@ -902,7 +893,7 @@
                     <strong>${b.name}</strong>
                     <span class="bb-boat-pick-capacity">${b.capacity}</span>
                   </span>
-                  <span class="bb-pick-check">${checkSvg}</span>
+                  <span class="bb-pick-check">${checkSvg()}</span>
                 </label>`).join('')}
             </div>
           </div>
@@ -922,7 +913,7 @@
                     <span class="bb-route-name">${r.name}</span>
                     ${r.subtitle ? `<span class="bb-route-sub">${r.subtitle}</span>` : ''}
                   </span>
-                  <span class="bb-pick-check">${checkSvg}</span>
+                  <span class="bb-pick-check">${checkSvg()}</span>
                 </label>`).join('')}
             </div>
           </div>
@@ -1403,7 +1394,7 @@
       if (calc.insurance) {
         L.push(`${insLabel} ${calc.people} x ${calc.insuranceRate} = ${fmt.format(calc.insurance)}`);
       }
-      expandItemizedQuoteLines(calc.addonLines).forEach((item) => L.push(priceLineText(item)));
+      calc.addonLines.forEach((item) => L.push(priceLineText(item)));
       if (calc.safetyStaffTotal) {
         L.push(`สต๊าฟดูแลความปลอดภัย ${calc.safetyStaffCount} x ${fmt.format(calc.safetyStaffRate)} = ${fmt.format(calc.safetyStaffTotal)}`);
       }
