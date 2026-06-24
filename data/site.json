@@ -1,7 +1,7 @@
 {
     "meta": {
         "version": 1,
-        "updated": "2026-06-24T04:35:58.397Z",
+        "updated": "2026-06-24T11:17:19.208Z",
         "tiktokRssSynced": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/rss/talaytrang.xml"
     },
     "images": {
@@ -5246,6 +5246,14 @@
     ],
     "videos": [
         {
+            "id": "7654912312549182727",
+            "platform": "tiktok",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_oYEijAa2hjVAYVSVFGEAApvjBA7biNBAt6nuI~tplv-tiktokx-origin.image.jpg",
+            "title": "ความสุขของเรา = การได้ดูแลลูกค้าทุกท่าน ❤️🌴 📌 จองวันนี้ มัดจำวันนี้ / เริ่มเที่ยว 1 ตุลาคม 2569 เป็นต้นไป #ทะเลตรังดอทคอม #เที่ยวทะเลตรัง #ขอบคุณลูกค้าทุกท่าน #TikTokพาเที่ยว #FootballTikTok",
+            "views": "",
+            "url": "https://www.tiktok.com/@talaytrang/video/7654912312549182727"
+        },
+        {
             "id": "7654810606054264072",
             "platform": "tiktok",
             "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_o4AItWebE1eI4bdE67aGeDIjNtALAArAAyNUIk~tplv-tiktokx-origin.image.jpg",
@@ -5332,14 +5340,6 @@
             "title": "🌊 เปิดจองแล้ววันนี้! แพ็กเกจเที่ยวทะเลตรัง ไปเช้า-เย็นกลับ 🛶 เรือหางยาวแบบบจอยทริป 🍱 อาหารกล่อง 💙 เพียง 650 บาท/ท่าน 📅 เที่ยวได้ตั้งแต่ 1 ตุลาคม เป็นต้นไป รีบจองก่อนวันเต็มนะคะ 🏝️✨ #ทะเลตรัง#ทะเลตรังดอทคอม #เปิดฤดูกาลท่องเที่ยว #tikokพาเที่ยว #การท่องเที่",
             "views": "",
             "url": "https://www.tiktok.com/@talaytrang/video/7652319601056910599"
-        },
-        {
-            "id": "7652215632598994184",
-            "platform": "tiktok",
-            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_oowGWACAIBuAQzLAoe5ArQIeYZeGJfRykIGAGV~tplv-tiktokx-origin.image.jpg",
-            "title": "📣 เปิดจองแล้ว! 🌊 เที่ยวได้ตั้งแต่ 1 ตุลาคม เป็นต้นไป เที่ยวทะเลตรัง ไปเช้าเย็นกลับ 🚢 เรือใหญ่ 🍽️ อาหารบุฟเฟ่ต์ 💸 เพียง 950 บาท/ท่าน จองก่อน ได้เลือกวันเที่ยวก่อนนะคะ 💙✨ #ทะเลตรัง #เปิดฤดูกาลท่องเที่ยว#ทะเลตรังดอทคอม #tikokพาเที่ยว #การท่องเที่ยวแห่งประเทศ",
-            "views": "",
-            "url": "https://www.tiktok.com/@talaytrang/video/7652215632598994184"
         }
     ],
     "whyUs": [
