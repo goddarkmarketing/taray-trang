@@ -1,7 +1,7 @@
 {
     "meta": {
         "version": 1,
-        "updated": "2026-07-05T04:20:20.169Z",
+        "updated": "2026-07-05T10:27:53.265Z",
         "tiktokRssSynced": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/rss/talaytrang.xml"
     },
     "images": {
@@ -5246,6 +5246,14 @@
     ],
     "videos": [
         {
+            "id": "7658894930114383111",
+            "platform": "tiktok",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_o8BJKEpIByO6OB3rwifVAOAA1iX4A1ACLw8IkJ~tplv-tiktokx-origin.image.jpg",
+            "title": "🌊 เที่ยวทะเลตรังแบบส่วนตัว เหมาลำสุดคุ้ม! 🚤✨ 🚤 เหมาลำเรือหางยาวส่วนตัว 💙 เริ่มต้นเพียง 4,000 บาท/ลำ 📅 เปิดจองแล้ววันนี้ เที่ยวได้ตั้งแต่ ตุลาคม 2569 เป็นต้นไป ชวนแก๊ง ชวนครอบครัว หรือคนรู้ใจ ไปเก็บภาพความประทับใจกลางทะเลตรังกัน 🌞🌊 📩 ทักแชทสอบถามรายละเอียด",
+            "views": "",
+            "url": "https://www.tiktok.com/@talaytrang/video/7658894930114383111"
+        },
+        {
             "id": "7658625229803015431",
             "platform": "tiktok",
             "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_ooWLcIEtIejoC4Az5e4fRQc0UjAzDGLakAIAAD~tplv-tiktokx-origin.image.jpg",
@@ -5332,14 +5340,6 @@
             "title": "🌊 เที่ยวทะเลตรัง + พักผ่อนสุดชิล 2 วัน 1 คืน พักหาดปากเมง พร้อมทริปเที่ยวทะเล 💙 ราคาเริ่มต้นเพียง 1,375 บาท/ท่าน ✨ เปิดจองแล้ววันนี้ 📅 เดินทางได้ตั้งแต่ 1 ตุลาคม 2569 เป็นต้นไป 📩 ทักแชทสอบถามรายละเอียดและจองได้เลย! #ทะเลตรังดอทคอม #เที่ยวทะเลตรัง #TikTokพ",
             "views": "",
             "url": "https://www.tiktok.com/@talaytrang/video/7656393784674094344"
-        },
-        {
-            "id": "7656291973443095826",
-            "platform": "tiktok",
-            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_o0x0EUT5FDAQnTAUAJFfBRqABEugXCIQIEf0AE~tplv-tiktokx-origin.image.jpg",
-            "title": "🌊 เปิดจองแล้ววันนี้! แพ็กเกจ ค้างคืน + ทริปเที่ยวทะเลตรัง 💙 2 วัน 1 คืน ราคาเริ่มต้นเพียง 1,075 บาท/ท่าน ❤️ 3 วัน 2 คืน ราคาเริ่มต้นเพียง 1399 บาท/ท่าน ✨ จองวันนี้ มัดจำเพียงเล็กน้อย 📅 เริ่มเดินทาง 1 ตุลาคม 2569 เป็นต้นไป รีบจองก่อนเต็ม แล้วออกไปเติมความส",
-            "views": "",
-            "url": "https://www.tiktok.com/@talaytrang/video/7656291973443095826"
         }
     ],
     "whyUs": [
