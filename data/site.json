@@ -1,7 +1,7 @@
 {
     "meta": {
         "version": 1,
-        "updated": "2026-07-10T04:14:42.891Z",
+        "updated": "2026-07-10T07:54:31.424Z",
         "tiktokRssSynced": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/rss/talaytrang.xml"
     },
     "images": {
@@ -5246,6 +5246,14 @@
     ],
     "videos": [
         {
+            "id": "7660775231354670354",
+            "platform": "tiktok",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_oYhRgUDAAQqAFCFq3cfCRkGeQxw1FIEdAEBqII~tplv-tiktokx-origin.image.jpg",
+            "title": "🌊 เที่ยวทะเลตรังแบบส่วนตัว 🛥️ เหมาลำเรือหางยาว เริ่มต้นเพียง 4,000 บาท/ลำ 📍ถ้ำมรกต • เกาะกระดาน • เกาะแหวน • เกาะเชือก ✨ เที่ยวได้เฉพาะกลุ่ม เป็นส่วนตัว ไม่ต้องเร่งรีบ 📅 จองวันนี้ เที่ยวได้ตั้งแต่ 1 ตุลาคม 2569 เป็นต้นไป 📩 อินบ็อกซ์สอบถามและจองได้เลย #ทะเ",
+            "views": "",
+            "url": "https://www.tiktok.com/@talaytrang/video/7660775231354670354"
+        },
+        {
             "id": "7660476182386740498",
             "platform": "tiktok",
             "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_o8AAuIvKUDAXeLLFAGENE70nLAUQ4gejoIuSeY~tplv-tiktokx-origin.image.jpg",
@@ -5332,14 +5340,6 @@
             "title": "🌊 เปิดจองแล้ววันนี้! เที่ยวได้ตั้งแต่ 1 ตุลาคม เป็นต้นไป 💙 ทะเลตรังน้ำใส ดำน้ำชมปะการัง สัมผัสความสวยของ 📍ถ้ำมรกต • เกาะกระดาน • เกาะแหวน • เกาะเชือก 🚤 เรือทัวร์ พร้อมอาหารบุฟเฟต์ 💰 เพียง 950 บาท/ท่าน รีบจองก่อนเต็ม แล้วไปเติมความสุขริมทะเลด้วยกัน! ☀️🏝️ #",
             "views": "",
             "url": "https://www.tiktok.com/@talaytrang/video/7658255102658104583"
-        },
-        {
-            "id": "7658158178789494023",
-            "platform": "tiktok",
-            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_oMBeEOiBA1vAK9LAP15HCl3IlAiyvIAIqUBKGw~tplv-tiktokx-origin.image.jpg",
-            "title": "🌊 เที่ยวทะเลตรังสุดคุ้ม! แพ็กเกจไปเช้าเย็นกลับ เพียง 950 บาท/ท่าน 💙 🏝️ ถ้ำมรกต • เกาะกระดาน • เกาะแหวน • เกาะเชือก ✨ จองวันนี้ เที่ยวได้ตั้งแต่ 1 ตุลาคม เป็นต้นไป 📩 ทักแชทจองวันเดินทางได้เลย #ทะเลตรัง #ทะเลตรังดอทคอม #TikTokพาเที่ยว #FootballTikTok #เที่ย",
-            "views": "",
-            "url": "https://www.tiktok.com/@talaytrang/video/7658158178789494023"
         }
     ],
     "whyUs": [
