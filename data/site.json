@@ -1,7 +1,7 @@
 {
     "meta": {
         "version": 1,
-        "updated": "2026-07-10T07:54:31.424Z",
+        "updated": "2026-07-10T11:19:10.096Z",
         "tiktokRssSynced": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/rss/talaytrang.xml"
     },
     "images": {
@@ -5246,6 +5246,14 @@
     ],
     "videos": [
         {
+            "id": "7660850447963393287",
+            "platform": "tiktok",
+            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_oY7AZxu8IiHXI5uvQliYHrIxtEDNiBaAzMQDB~tplv-tiktokx-origin.image.jpg",
+            "title": "🌊 เที่ยวทะเลตรังแบบคุ้มๆ พัก + เที่ยว ครบจบในแพ็กเกจเดียว! 🏝️ ✨ แพ็กเกจค้างคืน เริ่มเที่ยว 1 ตุลาคม 2569 เป็นต้นไป 🏨 2 วัน 1 คืน เริ่มเพียง 1,075.-/ท่าน 🌴 3 วัน 2 คืน เริ่มเพียง 1,399.-/ท่าน 📞 สอบถามรายละเอียดและสำรองที่นั่งได้เลย #ทะเลตรังดอทคอม #TikTokพ",
+            "views": "",
+            "url": "https://www.tiktok.com/@talaytrang/video/7660850447963393287"
+        },
+        {
             "id": "7660775231354670354",
             "platform": "tiktok",
             "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_oYhRgUDAAQqAFCFq3cfCRkGeQxw1FIEdAEBqII~tplv-tiktokx-origin.image.jpg",
@@ -5332,14 +5340,6 @@
             "title": "🌊 เปิดจองแล้ว! แพ็คเกจค้างคืน เที่ยวทะเลตรัง 🏝️ พักผ่อนแบบเต็มอิ่ม พร้อมทริปเที่ยวทะเลสุดฟิน ✨ 2 วัน 1 คืน เริ่มต้นเพียงท่านละ 1,075.- ✨ 3 วัน 2 คืน เริ่มต้นเพียงท่านละ 1,399.- 📍จองวันนี้ เที่ยวได้ตั้งแต่ 1 ตุลาคม 2569 เป็นต้นไป 💙 น้ำทะเลใส หาดทรายขาว บรร",
             "views": "",
             "url": "https://www.tiktok.com/@talaytrang/video/7658521878406974728"
-        },
-        {
-            "id": "7658255102658104583",
-            "platform": "tiktok",
-            "thumb": "https://raw.githubusercontent.com/goddarkmarketing/tiktok-rss-flat/main/thumbnails/talaytrang/screenshot_oEqAcuHh1CpE5AFRoBYIKnUAAREWgSfB0ZlDEe~tplv-tiktokx-origin.image.jpg",
-            "title": "🌊 เปิดจองแล้ววันนี้! เที่ยวได้ตั้งแต่ 1 ตุลาคม เป็นต้นไป 💙 ทะเลตรังน้ำใส ดำน้ำชมปะการัง สัมผัสความสวยของ 📍ถ้ำมรกต • เกาะกระดาน • เกาะแหวน • เกาะเชือก 🚤 เรือทัวร์ พร้อมอาหารบุฟเฟต์ 💰 เพียง 950 บาท/ท่าน รีบจองก่อนเต็ม แล้วไปเติมความสุขริมทะเลด้วยกัน! ☀️🏝️ #",
-            "views": "",
-            "url": "https://www.tiktok.com/@talaytrang/video/7658255102658104583"
         }
     ],
     "whyUs": [
